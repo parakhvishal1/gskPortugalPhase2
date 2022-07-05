@@ -55,12 +55,12 @@ html,
 body {
     height: 100%;
     width: 100%;
-    background-color: #fff5f5;
+    background: #f0efed;
     -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
 }
 
 #bodyContent, .container__box {
-    height: 100%;
+    height: calc(100% - 14px);
     width: 100%;
 }
 
