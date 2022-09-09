@@ -1,5 +1,9 @@
 
 /* Order Card Start */
+.profile_setting_card {
+    margin: 10px 20px 20px 20px;
+}
+
 .order_card {
     background: #ffffff;
     border: 1px solid #959595;
@@ -22,6 +26,19 @@
     cursor: pointer;
 }
 
+.order_card.menu .title .name {
+    font-weight: 500;
+    font-size: 14px;
+}
+
+.order_card.menu .title .name:hover {
+    font-weight: 700;
+}
+
+.order_card.menu .info.cta:hover {
+    font-weight: 700;
+}
+
 .order_card .title .name,
 .progress_plan .title .name {
     font-weight: 700;
@@ -36,6 +53,7 @@
 .order_card .title .arrow.edit img {
     height: 15px;
     width: 20px;
+    cursor: pointer;
 }
 
 .order_card .info {
@@ -82,4 +100,8 @@
 .calendar-picker .arrow-down {
     height: 10px;
     width: 10px;
+}
+
+.title.backbtn  {
+    margin-bottom: 20px;
 }

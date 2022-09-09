@@ -78,7 +78,13 @@
     border-bottom-right-radius: 6px;
     /* background-color: #f36633; */
     background-color: #f36633;
-    opacity: 0.9;
+    /* opacity: 0.9; */
+    z-index: 2;
+}
+
+.progressbar .progressbar_ratio.inverted {
+    background-color: #959595;
+    z-index: 3;
 }
 
 .progressbar .progressbar_ratio .ratio_wrapper {
@@ -378,6 +384,27 @@ table {
     padding: 8px 16px;
 }
 
+
+.info_data > input {
+    padding: 2px 4px;
+    text-align: center;
+    color: #151515;
+    background: #fff;
+    border: 1px solid transparent;
+    border-radius: 2px;
+    font-size: 14px;
+}
+
+.info_data.active > input {
+    padding: 2px 4px;
+    text-align: center;
+    color: #151515;
+    background: #E6E6E6;
+    border: 1px solid #E6E6E6;
+    border-radius: 2px;
+    font-size: 14px;
+}
+
 .order_cart .detail .table thead .info_row .info_data:first-child,
 .order_cart .detail .table tbody .info_row .info_data:first-child {
     padding: 8px 0;
@@ -509,9 +536,19 @@ table {
     cursor: pointer;
 }
 
-.accordion-item-header.orderdetail.active {
-    border-bottom: 1px solid #e6e6e6;
+.accordion-item-header.notification:before {
+    content: '';
+    position: absolute;
+    top: 15px;
+    right: 2rem;
+    background: green;
+    padding: 6px;
+    border-radius: 50%;
 }
+
+/* .accordion-item-header.orderdetail.active {
+    border-bottom: 1px solid #e6e6e6;
+} */
 
 .accordion-item-header::after {
     content: url("data:image/svg+xml,%3Csvg width='12' height='7' viewBox='0 0 12 7' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M11 1L6 6L1 1' stroke='%23959595' stroke-width='1.5' stroke-miterlimit='10' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E%0A");
@@ -592,7 +629,7 @@ table {
 
 .accordian.table .info_row {
     font-size: 13px;
-    border-bottom: 0.5px solid #e6e6e6;
+    /* border-bottom: 0.5px solid #e6e6e6; */
 }
 
 .accordian.table tbody tr .title {
@@ -613,7 +650,7 @@ table {
 
 .accordian.table .info_row .info_data {
     padding: 12px 0;
-    vertical-align: top;
+    vertical-align: middle;
 }
 
 .accordian.table .info_row .info_data .upload_icon {
@@ -701,12 +738,14 @@ table {
     line-height: 20px;
     color: #151515;
     margin: 12px 0;
+    padding: 6px;
 }
 
 .account_select .account_list .item:hover {
     background: #0f0f0f7e;
     color: #fff;
     cursor: pointer;
+    border-radius: 6px;
 }
 
 .account_select .account_list .item:first-child {
@@ -765,3 +804,16 @@ table {
 
 
 
+.frame {
+    width: 100%;
+    height: 32px;
+    display: flex;
+    align-items: center;
+    background: transparent;
+    z-index: 27;
+}
+
+.frame .sub-frame-block {
+    width: 20%;
+    height: -webkit-fill-available;
+}

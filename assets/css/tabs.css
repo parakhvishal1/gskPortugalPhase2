@@ -32,6 +32,7 @@
     transition: all 0.3s ease-in-out;
     border-bottom: 1px solid rgba(239, 237, 239, 0.5);
 }
+
 .order_section .tabs [class^="tab"] [type="radio"]:checked,
 .order_section .tabs [class*=" tab"] [type="radio"]:checked {
     border-bottom: 3px solid #f36633;
@@ -60,9 +61,15 @@
     overflow-y: auto;
 }
 
+
+.order_section .tabs .tab-2.active {
+    z-index: 1;
+}
+
 .order_section .tabs .tab-2 {
     width: 50%;
     height: 100%;
+    z-index: 0;
 }
 
 .order_section .tabs .tab-2 .block {
