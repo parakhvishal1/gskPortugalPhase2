@@ -111,7 +111,8 @@ function showSkuLevelDetails(data) {
         e.preventDefault();
         e.stopPropagation();
         e.stopImmediatePropagation();
-        loadBrandSelectionUI(originalData);
+        let parseData = JSON.parse(localStorage.getItem('data'));
+        loadBrandSelectionUI(parseData);
     });
 
     $("#continue").click(function(e) {
@@ -141,25 +142,27 @@ function showSkuLevelDetails(data) {
     
 }
 
-function showBrandLevelDetails(data, originalData) {
+function showBrandLevelDetails(data, currentSku) {
+    let filteredBrand = data["plan_progress"]["brands"].filter(brand => brand["sku"] === currentSku);
+    let brandData = filteredBrand[0];
+    
     $("#content_box").empty();
     $("#content_box").append(`
         <div class="order_details_container choosebrands">
             <div class="menu_header">
-                <div class="label">${data["brands"]["products"][0]["name"]}</div>
+                <div class="label">${brandData["name"]}</div>
                 <div class="icon"><i class="fa fa-shopping-cart"></i></div>
             </div>
             <div class="sub_detail_wrapper">
                 <div class="sub_detail"><strong>Start:</strong> ${data["start_date"]} <span></span> <strong>End:</strong> ${data["last_date"]}</div>
                 <div class="sub_detail highlight">Additional Discount</div>
             </div>
-            ${loadProgressCards(data["brands"], true, true)}
+            <div class="brand_level_progress">${loadProgressCards({"brands": filteredBrand}, true, true)}</div>
             <div class="new_orders"></div>
 
             <div class="place_order">
                 <button class="btn outline" id="addanotheraccount" data=${encodeURIComponent(JSON.stringify(data))}>Add Another Account or Deferral Date</button>
             </div>
-            
             <div id="previous-orders-accordion">
             </div>
         </div> 
@@ -172,19 +175,20 @@ function showBrandLevelDetails(data, originalData) {
                 </div>
             </div>
         </div>
-        
-
         <div class="account_select hide">
-            <div class="account_list">
-                
-            </div>
+            <div class="account_list"></div>
         </div>
     `);
+    
+    /* 
+    $("#test").click(function(e) {
+        let progressCards = loadProgressCards({"brands": filteredBrand}, true, true)
+        $(".brand_level_progress").append(progressCards);
+    }); 
+    */
 
-    data && data["products"] && data["products"].map((order, index) => {
-        $(".account_list").append(`
-            <div class="item" data=${encodeURIComponent(JSON.stringify(order))}>${order["account_no"]}</div>
-        `);
+    data && data["available_orders"] && data["available_orders"]["orders"] && data["available_orders"]["orders"].map((order, index) => {
+        $(".account_list").append(`<div class="item" skudata=${order["sku"]}>${order["account_no"]}</div>`);
     })
     
     let lastOrder = data && data["order_history"] && data["order_history"] && data["order_history"]["orders"][0]
@@ -223,16 +227,19 @@ function showBrandLevelDetails(data, originalData) {
         e.preventDefault();
         e.stopPropagation();
         e.stopImmediatePropagation();
-        loadBrandSelectionUI(originalData);
+        let parseData = JSON.parse(localStorage.getItem("data"));
+        loadBrandSelectionUI(parseData);
     });
 
     $("#continue").click(function(e) {
         e.preventDefault();
         e.stopPropagation();
         e.stopImmediatePropagation();
-        data["products"] = orderCartData["orders"];
-        if(orderCartData && orderCartData["orders"] && orderCartData["orders"].length > 0) {
-            ToApp("ordercart-screen", data, originalData)
+        // data["products"] = orderCartData["orders"];
+        let storedData = localStorage.getItem("data");
+        let parseStoredData = JSON.parse(storedData);
+        if(parseStoredData && parseStoredData?.["new_orders"]?.["orders"] && parseStoredData?.["new_orders"]?.["orders"].length > 0) {
+            ToApp("ordercart-screen", parseStoredData)
         }
     });
 
@@ -255,43 +262,34 @@ function showBrandLevelDetails(data, originalData) {
     $(".account_list .item").click(function(e) {
         e.stopPropagation();
         e.stopImmediatePropagation();
-        let currentElementData = $(this).attr("data");
-        let parsedCurrentElementData = JSON.parse(decodeURIComponent(currentElementData));
-        
+        $(".account_select").addClass("hide");
+        let currentElementData = $(this).attr("skudata");
+        let filteredData = data["available_orders"]["orders"].filter((order, index) => order["sku"] === currentElementData)
+        let orderData = filteredData[0];
         if(cartData && cartData.length !== 0) {
             cartData.map(v => {
-                if(v["account_no"] !== parsedCurrentElementData["account_no"]) {
-                    cartData.push(parsedCurrentElementData);
+                if(currentElementData !== v["sku"]) {
+                    cartData.push(orderData);
                 }
             });
         } else {
-            cartData.push(parsedCurrentElementData);
+            cartData.push(orderData);
         }
-        
-        window.orderCartData["orders"] = cartData;
-        window.orderCartData["brands"] = {};
-        window.orderCartData["brands"]["products"] = [
-            {
-                "name": "Augmentin",
-                "purchased" : "125",
-                "selected": "",
-                "max_limit": "300"
-            },
-            {
-                "name": "Ventolin",
-                "purchased" : "45",
-                "selected": "",
-                "max_limit": "200"
-            },
-            {
-                "name": "Seretide",
-                "purchased" : "75",
-                "selected": "",
-                "max_limit": "600"
-            }
-        ];
+        data["new_orders"] = {};
+        data["new_orders"]["orders"] = cartData;
+        localStorage.setItem("data", JSON.stringify(data));
+        addnewOrder(orderData);
+    });
+
+    $(".account_select").click(function(e) {
+        e.stopPropagation();
+        e.stopImmediatePropagation();
         $(".account_select").addClass("hide");
-        addnewOrder(parsedCurrentElementData);
+    });
+
+    $(".account_list").click(function(e) {
+        e.stopPropagation();
+        e.stopImmediatePropagation();
     });
 
     $("#addanotheraccount").click(function(e) {
@@ -302,13 +300,13 @@ function showBrandLevelDetails(data, originalData) {
         $(".account_select").removeClass("hide");
     });
 
-    $('input[id$=tbDate]').datepicker({
-        dateFormat: 'M dd, y',
-        minDate: 0
-    });
+    $('input[id$=tbDate]').datepicker({ dateFormat: 'M dd, y', minDate: 0 });
     $('input[id$=tbDate]').datepicker("setDate", "today");
 
-    orderCartData && orderCartData["orders"] && orderCartData["orders"].map(ordr => {
+    let newData = localStorage.getItem("data");
+    let parseNewData = JSON.parse(newData);
+
+    parseNewData && parseNewData?.["new_orders"] && parseNewData?.["new_orders"]?.["orders"] && parseNewData?.["new_orders"]?.["orders"].map(ordr => {
         addnewOrder(ordr);
     })
 }
@@ -337,7 +335,6 @@ function getPreviousOrderTableData(data) {
 }
 
 function addnewOrder(data) {
-    
     $(".new_orders").prepend(`
         <div class="accordion">
             <div class="accordion-item">
@@ -348,7 +345,7 @@ function addnewOrder(data) {
                             ${showDatePicker()}
                         </div>
                         <table class="accordian table">
-                            <tbody id="new_order_body" data=${encodeURIComponent(JSON.stringify(data))}>
+                            <tbody id="new_order_body" skudata=${data["sku"]}>
                                 
                             </tbody>
                         </table>
@@ -358,17 +355,16 @@ function addnewOrder(data) {
         </div>
     `);
 
-    data["additional_details"]["product_details"].map((productData, index) => {
-        let timestamp = new Date().getTime();
+    data["product_details"].map((productData, index) => {
         let uuid = create_UUID();
         $("#new_order_body").append(`
             <tr class="info_row">
                 <td class="info_data">${productData["name"]}</td>
                 <td class="info_data">
                     <div class="counter__wrapper">
-                        <div class="counter__container">
-                            <div class="counter__box__container">
-                                <div class="counter__minus key${uuid}" id="minus" product="${encodeURIComponent(JSON.stringify({productData}))}">
+                        <div class="counter__container" skudata="${productData["sku"]}" parentskudata=${data["sku"]} >
+                            <div class="counter__box__container sub">
+                                <div class="counter__minus key${uuid}" id="minus" >
                                     <svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
                                         <g clip-path="url(#clip0_138_2417)">
                                         <path d="M9 1.5C7.51664 1.5 6.0666 1.93987 4.83323 2.76398C3.59986 3.58809 2.63856 4.75943 2.07091 6.12987C1.50325 7.50032 1.35472 9.00832 1.64411 10.4632C1.9335 11.918 2.64781 13.2544 3.6967 14.3033C4.7456 15.3522 6.08197 16.0665 7.53683 16.3559C8.99168 16.6453 10.4997 16.4968 11.8701 15.9291C13.2406 15.3614 14.4119 14.4001 15.236 13.1668C16.0601 11.9334 16.5 10.4834 16.5 9C16.5 8.01509 16.306 7.03982 15.9291 6.12987C15.5522 5.21993 14.9997 4.39314 14.3033 3.6967C13.6069 3.00026 12.7801 2.44781 11.8701 2.0709C10.9602 1.69399 9.98492 1.5 9 1.5ZM11.25 9.75H6.75C6.55109 9.75 6.36033 9.67098 6.21967 9.53033C6.07902 9.38968 6 9.19891 6 9C6 8.80109 6.07902 8.61032 6.21967 8.46967C6.36033 8.32902 6.55109 8.25 6.75 8.25H11.25C11.4489 8.25 11.6397 8.32902 11.7803 8.46967C11.921 8.61032 12 8.80109 12 9C12 9.19891 11.921 9.38968 11.7803 9.53033C11.6397 9.67098 11.4489 9.75 11.25 9.75Z" fill="#FDE0D6"/>
@@ -383,8 +379,8 @@ function addnewOrder(data) {
                             </div>
                         
                             <input id="counter_input_${index}" class="counter__input home" type="text" value=${productData["units"]} size="4" maxlength="4" autocomplete="off" previous-value="1" />
-                            <div class="counter__box__container">
-                                <div class="counter__plus key${uuid}" id="plus" product="${encodeURIComponent(JSON.stringify({productData}))}">
+                            <div class="counter__box__container add">
+                                <div class="counter__plus key${uuid}" id="plus">
                                     <svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
                                         <g clip-path="url(#clip0_138_2422)">
                                         <path d="M9 1.5C7.51664 1.5 6.0666 1.93987 4.83323 2.76398C3.59986 3.58809 2.63856 4.75943 2.07091 6.12987C1.50325 7.50032 1.35472 9.00832 1.64411 10.4632C1.9335 11.918 2.64781 13.2544 3.6967 14.3033C4.7456 15.3522 6.08197 16.0665 7.53683 16.3559C8.99168 16.6453 10.4997 16.4968 11.8701 15.9291C13.2406 15.3614 14.4119 14.4001 15.236 13.1668C16.0601 11.9334 16.5 10.4834 16.5 9C16.5 8.01509 16.306 7.03982 15.9291 6.12987C15.5522 5.21993 14.9997 4.39314 14.3033 3.6967C13.6069 3.00026 12.7801 2.44781 11.8701 2.0709C10.9602 1.69399 9.98492 1.5 9 1.5ZM11.25 9.75H9.75V11.25C9.75 11.4489 9.67099 11.6397 9.53033 11.7803C9.38968 11.921 9.19892 12 9 12C8.80109 12 8.61033 11.921 8.46967 11.7803C8.32902 11.6397 8.25 11.4489 8.25 11.25V9.75H6.75C6.55109 9.75 6.36033 9.67098 6.21967 9.53033C6.07902 9.38968 6 9.19891 6 9C6 8.80109 6.07902 8.61032 6.21967 8.46967C6.36033 8.32902 6.55109 8.25 6.75 8.25H8.25V6.75C8.25 6.55109 8.32902 6.36032 8.46967 6.21967C8.61033 6.07902 8.80109 6 9 6C9.19892 6 9.38968 6.07902 9.53033 6.21967C9.67099 6.36032 9.75 6.55109 9.75 6.75V8.25H11.25C11.4489 8.25 11.6397 8.32902 11.7803 8.46967C11.921 8.61032 12 8.80109 12 9C12 9.19891 11.921 9.38968 11.7803 9.53033C11.6397 9.67098 11.4489 9.75 11.25 9.75Z" fill="#F36633"/>
@@ -409,6 +405,11 @@ function addnewOrder(data) {
     
         $(`.counter__plus.key${uuid}`).click(function (e) {
             updateCounter(this, "add");
+            let parsedata = JSON.parse(localStorage.getItem("data"));
+            let filteredBrand = parsedata["plan_progress"]["brands"].filter(brand => brand["sku"] === parsedata["selected_brand"]);
+
+            let progressCards = loadProgressCards({"brands": filteredBrand}, true, true)
+            $(".brand_level_progress").append(progressCards);
         });
     });
 
@@ -437,35 +438,64 @@ function addnewOrder(data) {
 }
 
 function updateCounter(counterInput, type) {
+    let storeddata = localStorage.getItem("data");
+    let parseStoredData = JSON.parse(storeddata);
     let siblingWrapper = $(counterInput).parent().siblings(".counter__input");
+    console.log(siblingWrapper);
     if (type === "add") {
         var $input = $(siblingWrapper);
+        siblingWrapper.siblings(".counter__box__container.sub").children().children().children().children().css("fill", "#f36633");
+        let datepickedElement =  $(counterInput).parent().parent().parent().parent().parent().parent().parent().siblings(".date-picker-value").children().children(".hasDatepicker");
+        let formattedDate = datepickedElement.datepicker({ dateFormat: 'M dd, y' }).val();
         $input.val(parseInt($input.val()) + 1);
         $input.change();
-        let name = $(counterInput).parent().parent().parent().parent().siblings(".info_data");
-        let account = $(counterInput).parent().parent().parent().parent().parent().parent();
-        let nameData = $(name).text();
-        let accountData = $(account).attr("data");
-        let parsedCurrentAccountData = JSON.parse(decodeURIComponent(accountData));
-        let fieldName = parsedCurrentAccountData["account_no"];
+        // let name = $(counterInput).parent().parent().parent().parent().siblings(".info_data");
+        // let account = $(counterInput).parent().parent().parent().parent().parent().parent();
+        // let nameData = $(name).text();
+        let skuData = $(counterInput).parent().parent().attr("skudata");
+        let parentSkuData = $(counterInput).parent().parent().attr("parentskudata");
+
+        // let accountData = $(account).attr("data");
+        // let parsedCurrentAccountData = JSON.parse(decodeURIComponent(accountData));
+        // let fieldName = parsedCurrentAccountData["account_no"];
+        
         window.cartData = {
             ...window.cartData,
-            [fieldName]: {
-                ...window.cartData[fieldName],
-                [nameData] : $input.val()
+            [parentSkuData]: {
+                ...window.cartData[parentSkuData],
+                [skuData] : $input.val()
             }
         };
-        parsedCurrentAccountData["additional_details"]["product_details"];
+
+        console.log(window.cartData)
+
         
-        parsedCurrentAccountData["additional_details"]["product_details"].forEach(item => {
-            for (const [key, value] of Object.entries(window.cartData[fieldName])) {
-                if(key === item["name"]) {
-                    item["quantity"] = $input.val();
-                }
+        parseStoredData && parseStoredData["new_orders"] && parseStoredData["new_orders"]["orders"] && parseStoredData["new_orders"]["orders"].forEach(order => {
+            if(order["sku"] === parentSkuData) {
+                order["product_details"].forEach(product => {
+                    if(product["sku"] === skuData) {
+                        order["ordered_date"] = formattedDate;
+                        product["quantity"] = $input.val();
+                        window.cartData[parentSkuData][skuData] = $input.val() - Number(product["units"]);
+                    }
+                });
             }
         });
-        
+
         let total = calculateSumAmount(window.cartData);
+        
+        console.log("total -> ", total);
+
+        parseStoredData && parseStoredData["plan_progress"] && parseStoredData["plan_progress"]["brands"].map(brandDataItem => {
+            if(brandDataItem["sku"] === parseStoredData["selected_brand"]) {
+                brandDataItem["selected"] = total;
+            }
+        })
+
+        console.log("parseStoredData -> ", parseStoredData);
+
+        localStorage.setItem("data", JSON.stringify(parseStoredData));
+        
         $input.attr("previous-value", $input.val());
         return false;
     }

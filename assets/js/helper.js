@@ -6,19 +6,7 @@ function addInputEventListener() {
         $(`.tab_body`).map((v) => {
             $($(`.tab_body`)[v]).removeClass("active");
         });
-        // console.log($(`#${this.id}`).parent('.block').parent(".tab-2"));
-       /*  
-        if($($(`#${this.id}`).parent('.block').parent(".tab-2")).hasClass("active")) {
-            console.log($(`#${this.id}`).parent('.block').parent(".tab-2"));
-            alert("1")
-        } else {
-            console.log($(`#${this.id}`).parent('.block').parent(".tab-2"));
-            alert("2")
-
-        } */
-        console.log($(`.tab-2`)[0])
         $(`.tab-2`).map((item, index) => {
-            console.log($(`.tab-2`)[item])
             $($(`.tab-2`)[item]).removeClass("active");
         });
         $(`#${this.id}`).parent('.block').parent(".tab-2").toggleClass('active');
@@ -71,6 +59,13 @@ function showHeader(data) {
             </div>
         </div>
     `);
+
+    $(".svg_icon_wrapper").click(function(e) {
+        e.stopPropagation();
+        e.stopImmediatePropagation();
+        let parsedData = JSON.parse(localStorage.getItem("data"));
+        ToApp("userwelcome-screen", parsedData)
+    });
 }
 
 function showDatePicker() {
@@ -87,12 +82,27 @@ function lastOrderQuantity() {
 
 }
 
-function create_UUID(){
+function create_UUID() {
     var dt = new Date().getTime();
-    var uuid = 'xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx'.replace(/[xy]/g, function(c) {
-        var r = (dt + Math.random()*16)%16 | 0;
-        dt = Math.floor(dt/16);
-        return (c=='x' ? r :(r&0x3|0x8)).toString(16);
+    var uuid = 'xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx'.replace(/[xy]/g, function (c) {
+        var r = (dt + Math.random() * 16) % 16 | 0;
+        dt = Math.floor(dt / 16);
+        return (c == 'x' ? r : (r & 0x3 | 0x8)).toString(16);
     });
     return uuid;
+}
+
+function PosEnd(end) {
+    var len = end.value.length;
+    end.focus();
+    if (end.setSelectionRange) {
+        end.focus();
+        end.setSelectionRange(len, len);
+    } else if (end.createTextRange) {
+        var t = end.createTextRange();
+        t.collapse(true);
+        t.moveEnd('character', len);
+        t.moveStart('character', len);
+        t.select();
+    }
 }

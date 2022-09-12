@@ -1,13 +1,13 @@
 
-function loadOrderCart(data, originalData) {
+function loadOrderCart(data) {
     $("#content_box").empty();
     $("#content_box").append(`
         <div class="order_details_container choosebrands">
             <div class="menu_header">
                 <div class="label">Order Details</div>
-                <div class="icon hide"><img src="/assets/images/svg/plus.svg" /></div>
+                <div class="icon goToBrandLevel cursor"><img src="/assets/images/svg/plus.svg" /></div>
             </div>
-            ${getAccordianAccounts(data["products"])}
+            ${getAccordianAccounts(data["new_orders"]["orders"])}
         </div>
         <div class="bottom">
             <div class="btn_wrapper">
@@ -19,16 +19,24 @@ function loadOrderCart(data, originalData) {
         </div>
     `);
 
+    $(".goToBrandLevel").click(function (e) {
+        e.stopPropagation();
+        e.stopImmediatePropagation();
+        let parseData = JSON.parse(localStorage.getItem("data"));
+        showBrandLevelDetails(parseData, parseData["selected_brand"]);
+    });
+
     $("#cancel").click(function (e) {
         e.stopPropagation();
         e.stopImmediatePropagation();
-        showBrandLevelDetails(data, originalData)
+        let parseData = JSON.parse(localStorage.getItem("data"));
+        showBrandLevelDetails(parseData, parseData["selected_brand"]);
     });
 
     $("#confirm").click(function (e) {
         e.stopPropagation();
         e.stopImmediatePropagation();
-        ToApp("ordercart-final-screen", data, originalData);
+        ToApp("ordercart-final-screen", data);
     });
 
     $(".accordion-item-header.account_detail").click(function (e) {
@@ -55,9 +63,17 @@ function getAccordianAccounts(data) {
                     <div class="accordion-item-header account_detail">${order["account_no"]}</div>
                     <div class="accordion-item-body parent">
                         <div class="accordion-item-body-content" style="height: 300px; overflow: auto;">
+                            <div class="date-picker-value date_order ${order["ordered_date"] ? "" : "hide"}">
+                                <div class="flex calendar-picker">
+                                    <img class="picker" src="/assets/images/svg/calendar.svg" />
+                                    <div class="input_date_picker" readonly="readonly">${order["ordered_date"]}</div>
+                                    <img class="arrow-down" src="/assets/images/svg/down.svg" />
+                                </div>
+                            </div>
+                            <div class="flex title">PRODUCTS</div>
                             <table class="accordian table">
                                 <thead>
-                                    <tr class="info_row">
+                                    <tr class="info_row borderBottom">
                                         <td class="info_data title" colspan="1">Est. Price</td>
                                         <td class="info_data title" colspan="1">Units</td>
                                         <td class="info_data title" colspan="1">Free Goods</td>
@@ -66,14 +82,14 @@ function getAccordianAccounts(data) {
                                     </tr>
                                 </thead>
                                 <tbody>
-                                    ${getAccordianAccountsData(order["additional_details"]["product_details"])}
+                                    ${getAccordianAccountsData(order["product_details"])}
                                 </tbody>
                             </table>
                         </div>
                     </div>
                 </div>
             </div>
-        `
+        `;
     });
     return accordianAccounts.join("");
 }
@@ -83,7 +99,7 @@ function getAccordianAccountsData(data) {
         return `
             <tr>
                 <td colspan="5">
-                    <div class="title">
+                    <div class="title paddingTop">
                         <div class="name">${item["name"]}</div>
                         <div class="arrow hide">
                             <img src="/assets/images/svg/edit.svg" />
@@ -91,9 +107,9 @@ function getAccordianAccountsData(data) {
                     </div>
                 </td>
             </tr>
-            <tr class="info_row">
+            <tr class="info_row borderBottom">
                 <td class="info_data" colspan="1">£ ${item["price"]}</td>
-                <td class="info_data" colspan="1">${item["units"]}</td>
+                <td class="info_data" colspan="1">${item["quantity"] || item["units"]}</td>
                 <td class="info_data" colspan="1">+${item["free_goods"]}</td>
                 <td class="info_data" colspan="1">${item["discount"]}%</td>
                 <td class="info_data" colspan="1">${item["payterm"]} D</td>
@@ -103,13 +119,12 @@ function getAccordianAccountsData(data) {
     return accordianAccountsData.join("");
 }
 
-function loadOrderFinalCart(data, originalData) {
-    let pgData = JSON.parse(JSON.stringify(data));
-    let brandData = {
-        "products": [
-            pgData["brands"]["products"][0]
-        ]
-    }
+function loadOrderFinalCart(data) {
+    let selectedBrand = data["selected_brand"];
+    let filteredBrand = data["plan_progress"]["brands"].filter(brand => brand["sku"] === selectedBrand);
+
+    let filteredBrandData = filteredBrand[0];
+
     $("#content_box").empty();
     $("#content_box").append(`
         <div class="order_details_container choosebrands">
@@ -117,8 +132,8 @@ function loadOrderFinalCart(data, originalData) {
                 <div class="label">Order Details</div>
                 <div class="icon"><img src="/assets/images/svg/plus.svg" /></div>
             </div>
-            ${loadProgressCards(brandData, true, true)}
-            ${getAccordianAccounts(data["products"])}
+            ${loadProgressCards({"brands": filteredBrand}, true, true)}
+            ${getAccordianAccounts(data["new_orders"]["orders"])}
         </div>
         <div class="bottom">
             <div class="btn_wrapper">
@@ -143,7 +158,7 @@ function loadOrderFinalCart(data, originalData) {
     $("#continueFinalCheckout").click(function (e) {
         e.stopPropagation();
         e.stopImmediatePropagation();
-        ToApp("choosebrands-screen-from-cart", data, originalData);
+        ToApp("choosebrands-screen-from-cart", data);
     });
 
     $(".accordion-item-header.account_detail").click(function (e) {

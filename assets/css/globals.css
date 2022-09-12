@@ -45,6 +45,7 @@
     box-sizing: border-box;
     -moz-box-sizing: border-box;
     -webkit-box-sizing: border-box;
+    animation: bouncein 0.5s cubic-bezier(0.445, 0.05, 0.55, 0.95);
 }
 
 html {
@@ -112,6 +113,14 @@ button {
     color: #f36633 !important;
     cursor: pointer;
     display: inline-block;
+}
+
+.cursor {
+    cursor: pointer;
+}
+
+.borderBottom {
+    border-bottom: 0.5px solid #e6e6e6;
 }
 
 img,
@@ -206,6 +215,29 @@ svg {
     to {
         bottom: 60px;
         opacity: 1;
+    }
+}
+
+
+@-webkit-keyframes bouncein {
+    0% {
+        opacity: 0;
+        transform: translate3d(10px,0,0);
+    }
+    100% {
+        opacity: 1;
+        transform: translateZ(0);
+    }
+}
+
+@keyframes  bouncein {
+    0% {
+        opacity: 0;
+        transform: translate3d(10px,0,0);
+    }
+    100% {
+        opacity: 1;
+        transform: translateZ(0);
     }
 }
 

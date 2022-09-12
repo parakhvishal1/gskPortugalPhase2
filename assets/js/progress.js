@@ -1,5 +1,6 @@
 
 function loadPlanProgress(data, basicProgress) {
+    $("#progress_plan_main").empty();
     $("#progress_plan_main").prepend(`
         <div class="title">
             <div class="name">${data["title"]}</div>
@@ -12,20 +13,20 @@ function loadPlanProgress(data, basicProgress) {
         </div>
         <div id="plan_items"></div>
     `);
-    data && data["products"] && data["products"].map(item => {
-        $("#plan_items").append(getProductsProgress(item, false, false, basicProgress));
-    });
 
+    data && data["brands"] && data["brands"].map(item => {
+        $("#plan_items").append(getProductsProgress(item, false, false, basicProgress, "#f36633"));
+    });
 }
 
 function loadProgressCards(data, detailed, hideAdd) {
-    console.log(data);
-    let progresscards = data["products"].map(item => {
+    $(".brand_level_progress").empty();
+    let progresscards = data["brands"].map(item => {
         return `
             <div class="progress_card ${detailed ? "transparent" : ""}">
                 <div class="progress_plan">
                     <div class="grouped">
-                        ${getProductsProgress(item, detailed, hideAdd)}
+                        ${getProductsProgress(item, detailed, hideAdd, false, "#959595")}
                         <div class="quantity_inc">
                             <i class="fa fa-plus-circle" aria-hidden="true"></i>
                         </div>
@@ -34,18 +35,43 @@ function loadProgressCards(data, detailed, hideAdd) {
             </div>
         `;
     })
-    return progresscards;
+    return progresscards.join("");
 }
 
 function getProgressHeaderFooterLabels(data, sourceContainer) {
+    let limit = Number(data["max_limit"]) / 5;
+
+
+    function getRange(rangeData) {
+      
+        let rangeDataDivs = rangeData.map(range => {
+            return `
+                <div class="sub-block" style="border-color: #fff">${range["discount"]}%</div>
+            `;
+        })
+        console.log("rangeDataDivs ->", rangeDataDivs);
+        return rangeDataDivs.join("");
+    }
+
+    if(sourceContainer === "header") {
+        return `
+            <div class="detail_bar">
+                <div class="main">
+                    ${getRange(data["discount_range"])}
+                </div>
+                ${sourceContainer === "header" ? '<div class="progress_header_label">Disc.</div>' : ""}
+                ${sourceContainer === "footer" ? '<div class="progress_footer_label">Value</div>' : ""}
+            </div>
+        `;
+    }
     return `
         <div class="detail_bar">
             <div class="main">
-                <div class="sub-block" style="border-color: "#fff">10%</div>
-                <div class="sub-block" style="border-color: "#fff">11%</div>
-                <div class="sub-block" style="border-color: "#fff">12%</div>
-                <div class="sub-block" style="border-color: "#fff">13%</div>
-                <div class="sub-block" style="border-color: "#fff">14%</div>
+                <div class="sub-block" style="border-color: #fff">${1*limit}</div>
+                <div class="sub-block" style="border-color: #fff">${2*limit}</div>
+                <div class="sub-block" style="border-color: #fff">${3*limit}</div>
+                <div class="sub-block" style="border-color: #fff">${4*limit}</div>
+                <div class="sub-block" style="border-color: #fff">${5*limit}</div>
             </div>
             ${sourceContainer === "header" ? '<div class="progress_header_label">Disc.</div>' : ""}
             ${sourceContainer === "footer" ? '<div class="progress_footer_label">Value</div>' : ""}
@@ -53,17 +79,17 @@ function getProgressHeaderFooterLabels(data, sourceContainer) {
     `;
 }
 
-function getProductsProgress(item, detailed, hideAdd, basicProgress) {
-    console.log(item)
+function getProductsProgress(item, detailed, hideAdd, basicProgress, colorscheme) {
     let progressPercent = Math.ceil((item["purchased"] / item["max_limit"]) * 100);
-    let progressPercentSelected = Math.ceil((item["selected"] / item["max_limit"]) * 100);
+    let progressPercentSelected = Math.ceil(( (parseInt(item["purchased"]) + parseInt(item["selected"])) / item["max_limit"]) * 100);
+
     let addBtn = `
         ${basicProgress ?
             ""
             :
             `
                 <label style="font-size: 12px;">${parseInt(item["purchased"]) + parseInt(item["selected"])}</label>
-                <div class="progressbar_wrapper addproduct" data=${encodeURIComponent(JSON.stringify(item))}>
+                <div class="progressbar_wrapper addproduct" skudata=${`${item["sku"]}`} >
                     <div class="main reset" style="cursor: pointer;">
                         <img src="/assets/images/png/Plus.png" class="icon_add"/>
                     </div>
@@ -80,17 +106,19 @@ function getProductsProgress(item, detailed, hideAdd, basicProgress) {
                 ${detailed ? getProgressHeaderFooterLabels(item, "header") : ""}
                 <div class="progressbar_wrapper">
                     <div class="main">
-                        <div class="sub-block" style="border-color: ${progressPercent < 20 ? "#959595" : "#fff"}"></div>
-                        <div class="sub-block" style="border-color: ${progressPercent < 40 ? "#959595" : "#fff"}"></div>
-                        <div class="sub-block" style="border-color: ${progressPercent < 60 ? "#959595" : "#fff"}"></div>
-                        <div class="sub-block" style="border-color: ${progressPercent < 80 ? "#959595" : "#fff"}"></div>
-                        <div class="sub-block" style="border-color: ${progressPercent < 100 ? "#959595" : "#fff"}"></div>
+                        
                     </div>
-                    
-                    
-                    
-                    ${getInvertedProgress(item, progressPercent)}
-                    ${getInvertedProgress(item, progressPercentSelected)}
+                    ${getInvertedProgress(item, progressPercent, colorscheme)}
+                    ${getSelectedProgress(item, progressPercentSelected, "#f36633")}
+                    <div class="progressbar_ratio inverted" style="width:${100}%; background: transparent !important;">
+                        <div class="main" style="background: transparent;">
+                            <div class="sub-block" style="border-color: ${progressPercent < 20 ? "#959595" : "#fff"}"></div>
+                            <div class="sub-block" style="border-color: ${progressPercent < 40 ? "#959595" : "#fff"}"></div>
+                            <div class="sub-block" style="border-color: ${progressPercent < 60 ? "#959595" : "#fff"}"></div>
+                            <div class="sub-block" style="border-color: ${progressPercent < 80 ? "#959595" : "#fff"}"></div>
+                            <div class="sub-block" style="border-color: ${progressPercent < 100 ? "#959595" : "#fff"}"></div>
+                        </div>
+                    </div>
                 </div>
                 ${detailed ? getProgressHeaderFooterLabels(item, "footer") : ""}
             </div>
@@ -101,10 +129,10 @@ function getProductsProgress(item, detailed, hideAdd, basicProgress) {
     `;
 }
 
-function getInvertedProgress(item, progressPercent) {
+function getInvertedProgress(item, progressPercent, colorscheme) {
     if(progressPercent) {
         return `
-            <div class="progressbar_ratio inverted" style="width:${progressPercent}%;">
+            <div class="progressbar_ratio inverted" style="width:${progressPercent}%; background: ${colorscheme} !important;">
                 <div class="ratio_wrapper">
                     <div class="ratio">${item["purchased"]}</div>
                 </div>
@@ -115,12 +143,12 @@ function getInvertedProgress(item, progressPercent) {
     }
 }
 
-function getSelectedProgress(item, progressPercentSelected) {
+function getSelectedProgress(item, progressPercentSelected, colorscheme) {
     if(progressPercentSelected) {
         return `
-            <div class="progressbar_ratio" style="width:${progressPercentSelected}%;">
+            <div class="progressbar_ratio" style="width:${progressPercentSelected}%; background: ${colorscheme} !important;">
                 <div class="ratio_wrapper">
-                    <div class="ratio">+ ${item["selected"] - item["purchased"]}</div>
+                    <div class="ratio">+ ${parseInt(item["purchased"]) + parseInt(item["selected"])}</div>
                 </div>
             </div>
         `;

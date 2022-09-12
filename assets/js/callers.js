@@ -111,10 +111,17 @@ function ToBot(eventName, data) {
             }), '*');
             break;
         case "update-order-data":
+            console.log("update last order data --> \n", data);
             window.parent.postMessage(JSON.stringify({
                 event_code: '',
                 data: data
             }), '*');
+            let newData = localStorage.getItem("data");
+            let parseNewData = JSON.parse(newData);
+            parseNewData["plan_progress"]["brands"].forEach(brand => {
+                brand["purchased"] = Number(brand["purchased"]) + 5;
+            })
+            ToApp("userwelcome-screen", parseNewData);
             break;
         case "value":
 
@@ -125,34 +132,6 @@ function ToBot(eventName, data) {
         case "value":
 
             break;
-        case "value":
-
-            break;
-        case "value":
-
-            break;
-        case "value":
-
-            break;
-        case "value":
-
-            break;
-        case "value":
-
-            break;
-        case "value":
-
-            break;
-        case "value":
-
-            break;
-        case "value":
-
-            break;
-        case "value":
-
-            break;
-
         default:
             break;
     }
@@ -172,8 +151,9 @@ function ToApp(eventName, data, orgData) {
             loadTermsUI(data);
             break;
         case "userwelcome-screen":
+            localStorage.setItem("data", JSON.stringify(data));
             loadUserWelcomeUI(data);
-            data["brands"] && loadPlanProgress(data["brands"], true);
+            data["plan_progress"] && loadPlanProgress(data["plan_progress"], true);
             break;
         case "choosebrands-screen":
             loadBrandSelectionUI(data);
@@ -191,13 +171,13 @@ function ToApp(eventName, data, orgData) {
             loadClientList(data);
             break;
         case "ordercart-screen":
-            loadOrderCart(data, orgData);
+            loadOrderCart(data);
             break;
         case "ordercart-final-screen":
-            loadOrderFinalCart(data, orgData);
+            loadOrderFinalCart(data);
             break;
         case "choosebrands-screen-from-cart":
-            loadBrandSelectionUI(orgData);
+            loadBrandSelectionUI(data);
             break;
         case "value":
 
