@@ -106,14 +106,14 @@ function ToBot(eventName, data) {
             break;
         case "terms-conditions":
             window.parent.postMessage(JSON.stringify({
-                event_code: '',
+                event_code: eventName,
                 data: data
             }), '*');
             break;
         case "update-order-data":
             console.log("update last order data --> \n", data);
             window.parent.postMessage(JSON.stringify({
-                event_code: '',
+                event_code: eventName,
                 data: data
             }), '*');
             let newData = localStorage.getItem("data");
@@ -123,8 +123,11 @@ function ToBot(eventName, data) {
             })
             ToApp("userwelcome-screen", parseNewData);
             break;
-        case "value":
-
+        case "logout":
+            window.parent.postMessage(JSON.stringify({
+                event_code: eventName,
+                data: data
+            }), '*');
             break;
         case "value":
 
