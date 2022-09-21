@@ -207,6 +207,8 @@ function loadProfileOptions() {
     }
 
     $("#logout").click(function(e) {
+        removeHeader();
+        $("#profile_setting_card").hide();
         ToBot("logout", {
             "timestamp": new Date().getTime(),
         });
