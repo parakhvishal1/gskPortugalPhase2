@@ -192,8 +192,10 @@ function loadProfileOptions() {
     if (elementIsActive) {
         $("#profile_setting_card").removeClass("active");
         $("#profile_setting_card").empty();
+        $("#profile_setting_card").hide();
     } else {
         $("#profile_setting_card").addClass("active");
+        $("#profile_setting_card").show();
         $("#profile_setting_card").append(`
             <div class="order_card menu">
                 <div class="title">
