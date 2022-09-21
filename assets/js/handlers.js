@@ -349,7 +349,7 @@ function addnewOrder(data) {
             <div class="accordion-item">
                 <div class="accordion-item-header orderdetail">${data["account_no"]}</div>
                 <div class="accordion-item-body parent">
-                    <div class="accordion-item-body-content" style="height: 300px; overflow: auto;">
+                    <div class="accordion-item-body-content" style="height: 270px; overflow: auto;">
                         <div class="date-picker-value">
                             ${showDatePicker()}
                         </div>
@@ -368,8 +368,8 @@ function addnewOrder(data) {
         let uuid = create_UUID();
         $("#new_order_body").append(`
             <tr class="info_row">
-                <td class="info_data">${productData["name"]}</td>
-                <td class="info_data">
+                <td class="info_data" style="vertical-align: middle; padding: 8px 0 0 0;">${productData["name"]}</td>
+                <td class="info_data" style="vertical-align: middle; padding: 8px 0 0 0;">
                     <div class="counter__wrapper">
                         <div class="counter__container" skudata="${productData["sku"]}" parentskudata=${data["sku"]} >
                             <div class="counter__box__container sub">
@@ -483,7 +483,7 @@ function updateCounter(counterInput, type) {
             if(order["sku"] === parentSkuData) {
                 order["product_details"].forEach(product => {
                     if(product["sku"] === skuData) {
-                        order["ordered_date"] = formattedDate;
+                        order["ordered_date"] = formattedDate ? formattedDate : new Date();
                         product["quantity"] = $input.val();
                         window.cartData[parentSkuData][skuData] = $input.val() - Number(product["units"]);
                     }

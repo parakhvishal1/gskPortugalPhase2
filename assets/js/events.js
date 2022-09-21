@@ -442,6 +442,63 @@ function CallScreen(caseNum) {
                             ]
                         }
                     ]
+                },
+                "rebates_orders": {
+                    "orders": [
+                        {
+                            "account_no": "Period Eligible / Rebates",
+                            "order_no": "6921030003",
+                            "sku": "GSK-REBATES-A0001",
+                            "ordered_date": "Jan 01, 22",
+                            "product_details" : [
+                                {
+                                    "name" : "Augmentin 25mcg Tabs",
+                                    "price": "4.01",
+                                    "units": "25",
+                                    "free_goods": "2",
+                                    "discount": "40",
+                                    "payterm": "30",
+                                    "sku": "GSK-REBATES-PRODUCT-A0001-1"
+                                },
+                                {
+                                    "name" : "Augmentin 50mcg Tabs",
+                                    "price": "4.01",
+                                    "units": "25",
+                                    "free_goods": "2",
+                                    "discount": "40",
+                                    "payterm": "30",
+                                    "sku": "GSK-REBATES-PRODUCT-A0001-2"
+                                },
+                                {
+                                    "name" : "Augmentin 75mcg Tabs",
+                                    "price": "4.01",
+                                    "units": "25",
+                                    "free_goods": "2",
+                                    "discount": "40",
+                                    "payterm": "30",
+                                    "sku": "GSK-REBATES-PRODUCT-A0001-3"
+                                },
+                                {
+                                    "name" : "Augmentin 100mcg Tabs",
+                                    "price": "4.01",
+                                    "units": "25",
+                                    "free_goods": "2",
+                                    "discount": "40",
+                                    "payterm": "30",
+                                    "sku": "GSK-REBATES-PRODUCT-A0001-4"
+                                },
+                                {
+                                    "name" : "Augmentin 125mcg Tabs-5",
+                                    "price": "4.01",
+                                    "units": "25",
+                                    "free_goods": "2",
+                                    "discount": "40",
+                                    "payterm": "30",
+                                    "sku": "GSK-REBATES-PRODUCT-A0001-5"
+                                }
+                            ]
+                        }
+                    ]
                 }
             });
             break;
