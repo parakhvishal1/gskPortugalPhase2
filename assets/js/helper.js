@@ -78,6 +78,16 @@ function showDatePicker() {
     `;
 }
 
+function showDatePickerWhite() {
+    return `
+        <div class="flex calendar-picker">
+            <img class="picker" src="/assets/images/svg/calendar-white.svg" />
+            <input type='text' id='tbDate' placeholder='select a date' readonly="readonly" />
+            <img class="arrow-down" src="/assets/images/svg/down-white.svg" />
+        </div>
+    `;
+}
+
 function lastOrderQuantity() {
 
 }

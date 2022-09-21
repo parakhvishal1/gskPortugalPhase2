@@ -550,7 +550,8 @@ table {
     box-shadow: 0px 3px 12px rgba(84, 79, 64, 0.1);
 }
 
-.accordion-item.inverted div{
+.accordion-item.inverted div,
+.accordion-item.inverted input  {
     color: #fff;
 }
 
@@ -590,6 +591,18 @@ table {
     content: url("data:image/svg+xml,%3Csvg width='12' height='7' viewBox='0 0 12 7' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M1 6L6 1L11 6' stroke='%23959595' stroke-width='1.5' stroke-miterlimit='10' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E%0A");
 }
 
+.accordion-item-header.white::after {
+    content: url("data:image/svg+xml,%3Csvg width='12' height='7' viewBox='0 0 12 7' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M11 1L6 6L1 1' stroke='%23FFF' stroke-width='1.5' stroke-miterlimit='10' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E%0A");
+    font-size: 14px;
+    position: absolute;
+    right: 1rem;
+}
+
+.accordion-item-header.active.white::after {
+    content: url("data:image/svg+xml,%3Csvg width='12' height='7' viewBox='0 0 12 7' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M1 6L6 1L11 6' stroke='%23FFF' stroke-width='1.5' stroke-miterlimit='10' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E%0A");
+}
+
+
 .accordion-item-body {
     max-height: 0;
     overflow: hidden;
@@ -599,6 +612,24 @@ table {
 .accordion-item-body.inverted div {
     background: #959595;
     color: #fff; 
+}
+
+.accordion-item.inverted .accordion-item-body-content .title {
+    font-size: 13px;
+    font-weight: 700;
+    padding: 12px 0;
+    text-transform: uppercase;
+}
+
+.accordion-item.inverted .accordion-item-body-content input[id$="tbDate"] {
+    padding: 0;
+}
+
+.accordion-item.inverted .accordion-item-body-content .order_status,
+.accordion-item.inverted .accordion-item-body-content .order_on_date {
+    font-size: 14px;
+    font-weight: 400;
+    padding: 14px 0 12px 0;
 }
 
 .accordion-item-body-content {
@@ -691,6 +722,10 @@ table {
     justify-content: space-between;
 }
 
+.accordion-item.inverted .accordian.table tbody tr .title {
+    padding-top: 12px;
+}
+
 .accordian.table tbody tr:first-child .title.paddingTop {
     padding-top: 12px;
 }
@@ -710,8 +745,8 @@ table {
 }
 
 .accordian.table .info_row .info_data {
-    padding: 12px 0 14px 0;
-    vertical-align: middle;
+    padding: 10px 0 14px 0;
+    vertical-align: top;
 }
 
 .accordian.table .info_row .info_data .upload_icon {

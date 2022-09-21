@@ -102,7 +102,7 @@ function getProductsProgress(item, detailed, hideAdd, basicProgress, colorscheme
         <div class="progressbar flex">
             <div class="wrapper_brand_progress" style="width: ${detailed ? '5' : '0'}%;"></div>
             <div class="wrapper_brand_progress" style="width: ${detailed ? '75' : basicProgress ? '100' : '90'}%;">
-                <label class="${detailed ? "abs" : ""}">${!hideAdd ? item["name"] : ""}</label>
+                <label class="${detailed ? "abs" : ""} ${!hideAdd ? "" : "hide"}">${!hideAdd ? item["name"] : ""}</label>
                 ${detailed ? getProgressHeaderFooterLabels(item, "header") : ""}
                 <div class="progressbar_wrapper">
                     <div class="main">
