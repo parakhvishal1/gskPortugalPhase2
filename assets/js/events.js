@@ -118,7 +118,7 @@ function CallScreen(caseNum) {
                     "orders": [
                         {
                             "account_no": "Wholesaler A - Accoount: A0001",
-                            "order_no": "Order No: 6921030003",
+                            "order_no": "6921030003",
                             "sku": "GSK-ACCOUNT_NO-A0001",
                             "product_details" : [
                                 {
@@ -170,7 +170,7 @@ function CallScreen(caseNum) {
                         },
                         {
                             "account_no": "Wholesaler A - Accoount: A0002",
-                            "order_no": "Order No: 6921030003",
+                            "order_no": "6921030003",
                             "sku": "GSK-ACCOUNT_NO-A0002",
                             "product_details" : [
                                 {
@@ -222,7 +222,7 @@ function CallScreen(caseNum) {
                         },
                         {
                             "account_no": "Wholesaler A - Accoount: A0003",
-                            "order_no": "Order No: 6921030003",
+                            "order_no": "6921030003",
                             "sku": "GSK-ACCOUNT_NO-A0003",
                             "product_details" : [
                                 {
@@ -278,9 +278,10 @@ function CallScreen(caseNum) {
                     "orders": [
                         {
                             "account_no": "Wholesaler A - Accoount: A0001",
-                            "order_no": "Order No: 6921030003",
+                            "order_no": "6921030003",
                             "status": "Cancelled",
                             "delivery_date": "May 30 22",
+                            "ordered_date": "Jan 01, 22",
                             "sku": "GSK-ACCOUNT_NO-A0001",
                             "product_details" : [
                                 {
@@ -332,9 +333,10 @@ function CallScreen(caseNum) {
                         },
                         {
                             "account_no": "Wholesaler A - Accoount: A0002",
-                            "order_no": "Order No: 6921030003",
+                            "order_no": "6921030003",
                             "status": "Sent",
                             "delivery_date": "May 30 22",
+                            "ordered_date": "Jan 01, 22",
                             "sku": "GSK-ACCOUNT_NO-A0002",
                             "product_details" : [
                                 {
@@ -386,9 +388,10 @@ function CallScreen(caseNum) {
                         },
                         {
                             "account_no": "Wholesaler A - Accoount: A0003",
-                            "order_no": "Order No: 6921030003",
+                            "order_no": "6921030003",
                             "status": "Invoiced",
                             "delivery_date": "May 30 22",
+                            "ordered_date": "Jan 01, 22",
                             "sku": "GSK-ACCOUNT_NO-A0003",
                             "product_details" : [
                                 {

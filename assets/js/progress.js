@@ -91,7 +91,7 @@ function getProductsProgress(item, detailed, hideAdd, basicProgress, colorscheme
                 <label style="font-size: 12px;">${parseInt(item["purchased"]) + parseInt(item["selected"])}</label>
                 <div class="progressbar_wrapper addproduct" skudata=${`${item["sku"]}`} >
                     <div class="main reset" style="cursor: pointer;">
-                        <img src="/assets/images/png/Plus.png" class="icon_add"/>
+                        <img src="/assets/images/svg/plus.svg" class="icon_add"/>
                     </div>
                 </div>
             `
@@ -122,7 +122,7 @@ function getProductsProgress(item, detailed, hideAdd, basicProgress, colorscheme
                 </div>
                 ${detailed ? getProgressHeaderFooterLabels(item, "footer") : ""}
             </div>
-            <div class="wrapper_brand_progress" style="width: ${detailed ? '10' : basicProgress ? '0' : '5'}%; padding-right: ${hideAdd ? "0px" : basicProgress ? '0px' : "12px"}; font-size: 12px;">
+            <div class="wrapper_brand_progress" style="width: ${detailed ? '10' : basicProgress ? '0' : '10'}%; padding-left: ${hideAdd ? "0px" : basicProgress ? '0px' : "5%"}; font-size: 12px;">
                 ${hideAdd ? `<div><div style='margin-top: -20px;'>On Invoice</div><div style='margin-top: 10px;'><strong> ${parseInt(item["purchased"]) + parseInt(item["selected"])}</strong></div></div>` : addBtn}
             </div>
         </div>
