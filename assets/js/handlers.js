@@ -20,7 +20,7 @@ function showSkuLevelDetails(data) {
             
             <div class="accordion">
                 <div class="accordion-item inverted">
-                    <div class="accordion-item-header account_detail">Associated Accounts</div>
+                    <div class="accordion-item-header account_detail active">Associated Accounts</div>
                     <div class="accordion-item-body parent">
                         <div class="accordion-item-body-content" style="height: 300px; overflow: auto;">
                             <table class="accordian table">
@@ -196,8 +196,8 @@ function showBrandLevelDetails(data, currentSku) {
         $("#previous-orders-accordion").append(`
             <div class="accordion">
                 <div class="accordion-item inverted">
-                    <div class="accordion-item-header account_detail white">${order["account_no"]}</div>
-                    <div class="accordion-item-body parent">
+                    <div class="accordion-item-header account_detail white active">${order["account_no"]}</div>
+                    <div class="accordion-item-body parent opened orderbrandselection">
                         <div class="accordion-item-body-content" style="height: 300px; overflow: auto;">
                             <div class="date-picker-value pointernone">
                                 ${showDatePickerWhite()}
@@ -287,6 +287,12 @@ function showBrandLevelDetails(data, currentSku) {
         data["new_orders"] = {};
         data["new_orders"]["orders"] = cartData;
         localStorage.setItem("data", JSON.stringify(data));
+        if(cartData.length > 1) {
+            let openedAccContainers = [...$(".accordion-item-body.orderbrandselection")];
+            openedAccContainers.forEach(openAcc => {
+                $(openAcc).removeClass("opened")
+            });
+        }
         addnewOrder(orderData);
     });
 
@@ -347,8 +353,8 @@ function addnewOrder(data) {
     $(".new_orders").prepend(`
         <div class="accordion">
             <div class="accordion-item">
-                <div class="accordion-item-header orderdetail">${data["account_no"]}</div>
-                <div class="accordion-item-body parent">
+                <div class="accordion-item-header orderdetail active">${data["account_no"]}</div>
+                <div class="accordion-item-body parent opened orderbrandselection">
                     <div class="accordion-item-body-content" style="height: 270px; overflow: auto;">
                         <div class="date-picker-value">
                             ${showDatePicker()}

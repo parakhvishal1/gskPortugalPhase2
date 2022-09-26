@@ -10,6 +10,7 @@ function loadUserProfile(data) {
     let notification = data["notification"];
 
     $("#content_box").append(`
+        <div class="profile_section_container">
         <div class="accordion">
             <div class="accordion-item">
                 <div class="accordion-item-header parent">Profile Details</div>
@@ -42,6 +43,7 @@ function loadUserProfile(data) {
                     </div>
                 </div>
             </div>
+        </div>
         </div>
     `);
 

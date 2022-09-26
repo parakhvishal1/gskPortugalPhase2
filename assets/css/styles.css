@@ -652,6 +652,10 @@ table {
     color: #959595;
 }
 
+.accordion-item-body.opened {
+    max-height: fit-content;
+}
+
 .accordion-item-body.parent .accordion-item-body-content .accordion {
     width: 100%;
     margin: 0;
@@ -913,4 +917,9 @@ table {
 .frame .sub-frame-block {
     width: 20%;
     height: -webkit-fill-available;
+}
+
+.profile_section_container {
+    height: 85%;
+    overflow-y: auto;
 }
