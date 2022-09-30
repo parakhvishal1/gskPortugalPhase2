@@ -741,6 +741,7 @@ table {
 .accordian.table tbody tr .title .arrow {
     height: 16px;
     width: 20px;
+    cursor: pointer;
 }
 
 .accordian.table tbody .info_row:last-child {
