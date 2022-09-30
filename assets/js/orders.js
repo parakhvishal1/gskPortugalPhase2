@@ -308,6 +308,8 @@ function loadUserWelcomeUI(data) {
 
 function loadBrandSelectionUI(data) {
     let orginalData = JSON.parse(JSON.stringify(data));
+    // console.log(data)
+    // console.log(JSON.parse(localStorage.getItem("data")));
     console.log(window.cartData);
     $(".header").removeClass('hide');
     $("#content_box").empty();
@@ -363,6 +365,6 @@ function loadBrandSelectionUI(data) {
         // })
         // data["brands"]["products"] = filteredProducts;
         
-        !parsedData["isSku"] ? showSkuLevelDetails(parsedData, currentElementSkuData) : showBrandLevelDetails(parsedData, currentElementSkuData);
+        !parsedData["isSku"] ? showSkuLevelDetailsBrand(parsedData, currentElementSkuData) : showBrandLevelDetails(parsedData, currentElementSkuData);
     });
 }
