@@ -135,7 +135,7 @@ function loadOrderFinalCart(data) {
                 <div class="label">Order Details</div>
                 <div class="icon"><img src="/assets/images/svg/plus.svg" /></div>
             </div>
-            ${loadProgressCards({"brands": filteredBrand}, true, true)}
+            ${loadProgressCards({ "brands": filteredBrand }, true, true)}
             ${getAccordianAccounts(data["new_orders"]["orders"])}
         </div>
         <div class="bottom">
@@ -181,6 +181,6 @@ function loadOrderFinalCart(data) {
 }
 
 function goBack() {
-    let parseData = JSON.parse(localStorage.getItem("data"));
-    showBrandLevelDetails(parseData, parseData["selected_brand"]);
+    let parsedData = JSON.parse(localStorage.getItem("data"));
+    !parsedData["isSku"] ? showSkuLevelDetailsBrand(parsedData, parsedData["selected_brand"]) : showBrandLevelDetails(parsedData, parsedData["selected_brand"]);
 };

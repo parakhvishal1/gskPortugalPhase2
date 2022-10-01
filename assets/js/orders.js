@@ -1,6 +1,6 @@
 function loadUserWelcomeUI(data) {
     let lastOrder = data["previous_orders"]["orders"][data["previous_orders"]["orders"].length - 1];
-    
+
     $(".header").removeClass('hide');
     $("#content_box").empty();
 
@@ -239,10 +239,10 @@ function loadUserWelcomeUI(data) {
                         ...window.updateCartData,
                         [currentElementDataSku]: {
                             ...window.updateCartData[currentElementDataSku],
-                            [siblingElementDataSku] : value
+                            [siblingElementDataSku]: value
                         }
                     };
-                    if(getElementValue !== getElementPrevValue) {
+                    if (getElementValue !== getElementPrevValue) {
                         ToBot("update-order-data", window.updateCartData)
                     }
                 });
@@ -335,7 +335,7 @@ function loadBrandSelectionUI(data) {
     `);
 
     let total = calculateSumAmount(window.cartData);
-    if(total) {
+    if (total) {
         $(".count_wrapper").removeClass("hide");
         $(".place_order.checkout").parent().removeClass("hide");
         $(".count_wrapper").parent(".icon").addClass("cursor");
@@ -345,7 +345,7 @@ function loadBrandSelectionUI(data) {
     $(".view_checkout").click(function (e) {
         e.stopPropagation();
         e.stopImmediatePropagation();
-        if(total) {
+        if (total) {
             loadOrderCart(data);
         }
     });
@@ -361,10 +361,10 @@ function loadBrandSelectionUI(data) {
         // let parsedCurrentElementData = JSON.parse(decodeURIComponent(currentElementData));
         // let products = data["brands"]["products"];
         // let filteredProducts = products.filter(product => {
-            // return product["name"] === parsedCurrentElementData["name"];
+        // return product["name"] === parsedCurrentElementData["name"];
         // })
         // data["brands"]["products"] = filteredProducts;
-        
+
         !parsedData["isSku"] ? showSkuLevelDetailsBrand(parsedData, currentElementSkuData) : showBrandLevelDetails(parsedData, currentElementSkuData);
     });
 }

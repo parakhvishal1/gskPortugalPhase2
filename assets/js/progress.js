@@ -39,21 +39,22 @@ function loadProgressCards(data, detailed, hideAdd) {
 }
 
 function getProgressHeaderFooterLabels(data, sourceContainer) {
-    let limit = Number(data["max_limit"]) / 5;
+    let discount_range = data["discount_range"];
+    let limit = Math.floor(Number(data["max_limit"]) / discount_range.length);
 
 
     function getRange(rangeData) {
-      
+        let rangeDataWidth = 100 / rangeData.length;
         let rangeDataDivs = rangeData.map(range => {
             return `
-                <div class="sub-block" style="border-color: #fff">${range["discount"]}%</div>
+                <div class="sub-block" style="width: ${rangeDataWidth}%;border-color: #fff;">${range["discount"]}%</div>
             `;
         })
         console.log("rangeDataDivs ->", rangeDataDivs);
         return rangeDataDivs.join("");
     }
 
-    if(sourceContainer === "header") {
+    if (sourceContainer === "header") {
         return `
             <div class="detail_bar">
                 <div class="main">
@@ -64,14 +65,21 @@ function getProgressHeaderFooterLabels(data, sourceContainer) {
             </div>
         `;
     }
+
+
+    let rangeDataDivsWidth = 100 / discount_range.length;
+    let discountRangeData = discount_range.map((range, index) => {
+        if (index === discount_range.length - 1) return;
+        return `<div class="sub-block" style="width: ${rangeDataDivsWidth}%;border-color: #fff;">${(index + 1) * limit}</div>`
+    });
+    discountRangeData = discountRangeData.join("");
+    console.log(discountRangeData)
     return `
-        <div class="detail_bar">
+        <div class="detail_bar discount_range">
             <div class="main">
-                <div class="sub-block" style="border-color: #fff">${1*limit}</div>
-                <div class="sub-block" style="border-color: #fff">${2*limit}</div>
-                <div class="sub-block" style="border-color: #fff">${3*limit}</div>
-                <div class="sub-block" style="border-color: #fff">${4*limit}</div>
-                <div class="sub-block" style="border-color: #fff">${5*limit}</div>
+                <div class="sub-block" style="border-color: #fff; justify-content: left;">0</div>
+                ${discountRangeData}
+                <div class="sub-block" style="border-color: #fff; justify-content: right;">${Number(data["max_limit"])}</div>
             </div>
             ${sourceContainer === "header" ? '<div class="progress_header_label">Disc.</div>' : ""}
             ${sourceContainer === "footer" ? '<div class="progress_footer_label">Value</div>' : ""}
@@ -81,7 +89,7 @@ function getProgressHeaderFooterLabels(data, sourceContainer) {
 
 function getProductsProgress(item, detailed, hideAdd, basicProgress, colorscheme) {
     let progressPercent = Math.ceil((item["purchased"] / item["max_limit"]) * 100);
-    let progressPercentSelected = Math.ceil(( (parseInt(item["purchased"]) + parseInt(item["selected"])) / item["max_limit"]) * 100);
+    let progressPercentSelected = Math.ceil(((parseInt(item["purchased"]) + parseInt(item["selected"])) / item["max_limit"]) * 100);
 
     let addBtn = `
         ${basicProgress ?
@@ -98,6 +106,19 @@ function getProductsProgress(item, detailed, hideAdd, basicProgress, colorscheme
         }
     `;
 
+
+    let rangeDataDivsWidth = item["discount_range"].length;
+    let blocksWidth = 100 / rangeDataDivsWidth;
+
+
+    let rangeDataDivs = item["discount_range"].map((range, index) => {
+        return `
+            <div class="sub-block" style="width: ${100 / rangeDataDivsWidth}%; border-color: ${progressPercent < ((index + 1) * (100 / rangeDataDivsWidth)) ? "#959595" : "#fff"}"></div>
+        `;
+    })
+
+    rangeDataDivs = rangeDataDivs.join("");
+
     return `
         <div class="progressbar flex">
             <div class="wrapper_brand_progress" style="width: ${detailed ? '5' : '0'}%;"></div>
@@ -112,11 +133,7 @@ function getProductsProgress(item, detailed, hideAdd, basicProgress, colorscheme
                     ${getSelectedProgress(item, progressPercentSelected, "#f36633")}
                     <div class="progressbar_ratio inverted" style="width:${100}%; background: transparent !important;">
                         <div class="main" style="background: transparent;">
-                            <div class="sub-block" style="border-color: ${progressPercent < 20 ? "#959595" : "#fff"}"></div>
-                            <div class="sub-block" style="border-color: ${progressPercent < 40 ? "#959595" : "#fff"}"></div>
-                            <div class="sub-block" style="border-color: ${progressPercent < 60 ? "#959595" : "#fff"}"></div>
-                            <div class="sub-block" style="border-color: ${progressPercent < 80 ? "#959595" : "#fff"}"></div>
-                            <div class="sub-block" style="border-color: ${progressPercent < 100 ? "#959595" : "#fff"}"></div>
+                            ${rangeDataDivs}
                         </div>
                     </div>
                 </div>
@@ -130,7 +147,7 @@ function getProductsProgress(item, detailed, hideAdd, basicProgress, colorscheme
 }
 
 function getInvertedProgress(item, progressPercent, colorscheme) {
-    if(progressPercent) {
+    if (progressPercent) {
         return `
             <div class="progressbar_ratio inverted" style="width:${progressPercent}%; background: ${colorscheme} !important;">
                 <div class="ratio_wrapper">
@@ -144,7 +161,7 @@ function getInvertedProgress(item, progressPercent, colorscheme) {
 }
 
 function getSelectedProgress(item, progressPercentSelected, colorscheme) {
-    if(progressPercentSelected) {
+    if (progressPercentSelected) {
         return `
             <div class="progressbar_ratio" style="width:${progressPercentSelected}%; background: ${colorscheme} !important;">
                 <div class="ratio_wrapper">

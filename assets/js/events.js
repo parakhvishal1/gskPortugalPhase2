@@ -72,44 +72,42 @@ function CallScreen(caseNum) {
                     "brands": [
                         {
                             "name": "Augmentin",
-                            "purchased" : "125",
+                            "purchased": "125",
                             "selected": "0",
-                            "max_limit": "300",
+                            "max_limit": "260",
                             "sku": "GSK-BRAND-1",
                             "discount_range": [
-                                {"discount": "5"},
-                                {"discount": "10"},
-                                {"discount": "15"},
-                                {"discount": "20"},
-                                {"discount": "25"},
+                                { "discount": "5" },
+                                { "discount": "10" },
+                                { "discount": "15" },
                             ]
                         },
                         {
                             "name": "Ventolin",
-                            "purchased" : "45",
+                            "purchased": "45",
                             "selected": "0",
                             "max_limit": "200",
                             "sku": "GSK-BRAND-2",
                             "discount_range": [
-                                {"discount": "15"},
-                                {"discount": "20"},
-                                {"discount": "35"},
-                                {"discount": "40"},
-                                {"discount": "45"},
+                                { "discount": "15" },
+                                { "discount": "20" },
+                                { "discount": "35" },
+                                { "discount": "40" },
+                                { "discount": "45" },
                             ]
                         },
                         {
                             "name": "Seretide",
-                            "purchased" : "75",
+                            "purchased": "75",
                             "selected": "0",
                             "max_limit": "400",
                             "sku": "GSK-BRAND-3",
                             "discount_range": [
-                                {"discount": "5"},
-                                {"discount": "15"},
-                                {"discount": "25"},
-                                {"discount": "35"},
-                                {"discount": "45"},
+                                { "discount": "5" },
+                                { "discount": "15" },
+                                { "discount": "25" },
+                                { "discount": "35" },
+                                { "discount": "45" },
                             ]
                         }
                     ]
@@ -120,9 +118,9 @@ function CallScreen(caseNum) {
                             "account_no": "Wholesaler A - Accoount: A0001",
                             "order_no": "6921030003",
                             "sku": "GSK-ACCOUNT_NO-A0001",
-                            "product_details" : [
+                            "product_details": [
                                 {
-                                    "name" : "Augmentin 25mcg Tabs",
+                                    "name": "Augmentin 25mcg Tabs",
                                     "price": "4.01",
                                     "units": "25",
                                     "free_goods": "2",
@@ -131,7 +129,7 @@ function CallScreen(caseNum) {
                                     "sku": "GSK-PRODUCT-A0001-1"
                                 },
                                 {
-                                    "name" : "Augmentin 50mcg Tabs",
+                                    "name": "Augmentin 50mcg Tabs",
                                     "price": "4.01",
                                     "units": "25",
                                     "free_goods": "2",
@@ -140,7 +138,7 @@ function CallScreen(caseNum) {
                                     "sku": "GSK-PRODUCT-A0001-2"
                                 },
                                 {
-                                    "name" : "Augmentin 75mcg Tabs",
+                                    "name": "Augmentin 75mcg Tabs",
                                     "price": "4.01",
                                     "units": "25",
                                     "free_goods": "2",
@@ -149,7 +147,7 @@ function CallScreen(caseNum) {
                                     "sku": "GSK-PRODUCT-A0001-3"
                                 },
                                 {
-                                    "name" : "Augmentin 100mcg Tabs",
+                                    "name": "Augmentin 100mcg Tabs",
                                     "price": "4.01",
                                     "units": "25",
                                     "free_goods": "2",
@@ -158,7 +156,7 @@ function CallScreen(caseNum) {
                                     "sku": "GSK-PRODUCT-A0001-4"
                                 },
                                 {
-                                    "name" : "Augmentin 125mcg Tabs-5",
+                                    "name": "Augmentin 125mcg Tabs-5",
                                     "price": "4.01",
                                     "units": "25",
                                     "free_goods": "2",
@@ -172,9 +170,9 @@ function CallScreen(caseNum) {
                             "account_no": "Wholesaler A - Accoount: A0002",
                             "order_no": "6921030003",
                             "sku": "GSK-ACCOUNT_NO-A0002",
-                            "product_details" : [
+                            "product_details": [
                                 {
-                                    "name" : "Augmentin 25mcg Tabs",
+                                    "name": "Augmentin 25mcg Tabs",
                                     "price": "4.01",
                                     "units": "25",
                                     "free_goods": "2",
@@ -183,7 +181,7 @@ function CallScreen(caseNum) {
                                     "sku": "GSK-PRODUCT-A0002-1"
                                 },
                                 {
-                                    "name" : "Augmentin 50mcg Tabs",
+                                    "name": "Augmentin 50mcg Tabs",
                                     "price": "4.01",
                                     "units": "25",
                                     "free_goods": "2",
@@ -192,7 +190,7 @@ function CallScreen(caseNum) {
                                     "sku": "GSK-PRODUCT-A0002-2"
                                 },
                                 {
-                                    "name" : "Augmentin 75mcg Tabs",
+                                    "name": "Augmentin 75mcg Tabs",
                                     "price": "4.01",
                                     "units": "25",
                                     "free_goods": "2",
@@ -201,7 +199,7 @@ function CallScreen(caseNum) {
                                     "sku": "GSK-PRODUCT-A0002-3"
                                 },
                                 {
-                                    "name" : "Augmentin 100mcg Tabs",
+                                    "name": "Augmentin 100mcg Tabs",
                                     "price": "4.01",
                                     "units": "25",
                                     "free_goods": "2",
@@ -210,7 +208,7 @@ function CallScreen(caseNum) {
                                     "sku": "GSK-PRODUCT-A0002-4"
                                 },
                                 {
-                                    "name" : "Augmentin 125mcg Tabs-5",
+                                    "name": "Augmentin 125mcg Tabs-5",
                                     "price": "4.01",
                                     "units": "25",
                                     "free_goods": "2",
@@ -224,9 +222,9 @@ function CallScreen(caseNum) {
                             "account_no": "Wholesaler A - Accoount: A0003",
                             "order_no": "6921030003",
                             "sku": "GSK-ACCOUNT_NO-A0003",
-                            "product_details" : [
+                            "product_details": [
                                 {
-                                    "name" : "Augmentin 25mcg Tabs",
+                                    "name": "Augmentin 25mcg Tabs",
                                     "price": "4.01",
                                     "units": "25",
                                     "free_goods": "2",
@@ -235,7 +233,7 @@ function CallScreen(caseNum) {
                                     "sku": "GSK-PRODUCT-A0003-1"
                                 },
                                 {
-                                    "name" : "Augmentin 50mcg Tabs",
+                                    "name": "Augmentin 50mcg Tabs",
                                     "price": "4.01",
                                     "units": "25",
                                     "free_goods": "2",
@@ -244,7 +242,7 @@ function CallScreen(caseNum) {
                                     "sku": "GSK-PRODUCT-A0003-2"
                                 },
                                 {
-                                    "name" : "Augmentin 75mcg Tabs",
+                                    "name": "Augmentin 75mcg Tabs",
                                     "price": "4.01",
                                     "units": "25",
                                     "free_goods": "2",
@@ -253,7 +251,7 @@ function CallScreen(caseNum) {
                                     "sku": "GSK-PRODUCT-A0003-3"
                                 },
                                 {
-                                    "name" : "Augmentin 100mcg Tabs",
+                                    "name": "Augmentin 100mcg Tabs",
                                     "price": "4.01",
                                     "units": "25",
                                     "free_goods": "2",
@@ -262,7 +260,7 @@ function CallScreen(caseNum) {
                                     "sku": "GSK-PRODUCT-A0003-4"
                                 },
                                 {
-                                    "name" : "Augmentin 125mcg Tabs-5",
+                                    "name": "Augmentin 125mcg Tabs-5",
                                     "price": "4.01",
                                     "units": "25",
                                     "free_goods": "2",
@@ -283,9 +281,9 @@ function CallScreen(caseNum) {
                             "delivery_date": "May 30 22",
                             "ordered_date": "Jan 01, 22",
                             "sku": "GSK-ACCOUNT_NO-A0001",
-                            "product_details" : [
+                            "product_details": [
                                 {
-                                    "name" : "Augmentin 25mcg Tabs",
+                                    "name": "Augmentin 25mcg Tabs",
                                     "price": "4.01",
                                     "units": "25",
                                     "free_goods": "2",
@@ -294,7 +292,7 @@ function CallScreen(caseNum) {
                                     "sku": "GSK-PRODUCT-A0001-1"
                                 },
                                 {
-                                    "name" : "Augmentin 50mcg Tabs",
+                                    "name": "Augmentin 50mcg Tabs",
                                     "price": "4.01",
                                     "units": "25",
                                     "free_goods": "2",
@@ -303,7 +301,7 @@ function CallScreen(caseNum) {
                                     "sku": "GSK-PRODUCT-A0001-2"
                                 },
                                 {
-                                    "name" : "Augmentin 75mcg Tabs",
+                                    "name": "Augmentin 75mcg Tabs",
                                     "price": "4.01",
                                     "units": "25",
                                     "free_goods": "2",
@@ -312,7 +310,7 @@ function CallScreen(caseNum) {
                                     "sku": "GSK-PRODUCT-A0001-3"
                                 },
                                 {
-                                    "name" : "Augmentin 100mcg Tabs",
+                                    "name": "Augmentin 100mcg Tabs",
                                     "price": "4.01",
                                     "units": "25",
                                     "free_goods": "2",
@@ -321,7 +319,7 @@ function CallScreen(caseNum) {
                                     "sku": "GSK-PRODUCT-A0001-4"
                                 },
                                 {
-                                    "name" : "Augmentin 125mcg Tabs-5",
+                                    "name": "Augmentin 125mcg Tabs-5",
                                     "price": "4.01",
                                     "units": "25",
                                     "free_goods": "2",
@@ -338,9 +336,9 @@ function CallScreen(caseNum) {
                             "delivery_date": "May 30 22",
                             "ordered_date": "Jan 01, 22",
                             "sku": "GSK-ACCOUNT_NO-A0002",
-                            "product_details" : [
+                            "product_details": [
                                 {
-                                    "name" : "Augmentin 25mcg Tabs",
+                                    "name": "Augmentin 25mcg Tabs",
                                     "price": "4.01",
                                     "units": "25",
                                     "free_goods": "2",
@@ -349,7 +347,7 @@ function CallScreen(caseNum) {
                                     "sku": "GSK-PRODUCT-A0002-1"
                                 },
                                 {
-                                    "name" : "Augmentin 50mcg Tabs",
+                                    "name": "Augmentin 50mcg Tabs",
                                     "price": "4.01",
                                     "units": "25",
                                     "free_goods": "2",
@@ -358,7 +356,7 @@ function CallScreen(caseNum) {
                                     "sku": "GSK-PRODUCT-A0002-2"
                                 },
                                 {
-                                    "name" : "Augmentin 75mcg Tabs",
+                                    "name": "Augmentin 75mcg Tabs",
                                     "price": "4.01",
                                     "units": "25",
                                     "free_goods": "2",
@@ -367,7 +365,7 @@ function CallScreen(caseNum) {
                                     "sku": "GSK-PRODUCT-A0002-3"
                                 },
                                 {
-                                    "name" : "Augmentin 100mcg Tabs",
+                                    "name": "Augmentin 100mcg Tabs",
                                     "price": "4.01",
                                     "units": "25",
                                     "free_goods": "2",
@@ -376,7 +374,7 @@ function CallScreen(caseNum) {
                                     "sku": "GSK-PRODUCT-A0002-4"
                                 },
                                 {
-                                    "name" : "Augmentin 125mcg Tabs-5",
+                                    "name": "Augmentin 125mcg Tabs-5",
                                     "price": "4.01",
                                     "units": "25",
                                     "free_goods": "2",
@@ -393,9 +391,9 @@ function CallScreen(caseNum) {
                             "delivery_date": "May 30 22",
                             "ordered_date": "Jan 01, 22",
                             "sku": "GSK-ACCOUNT_NO-A0003",
-                            "product_details" : [
+                            "product_details": [
                                 {
-                                    "name" : "Augmentin 25mcg Tabs",
+                                    "name": "Augmentin 25mcg Tabs",
                                     "price": "4.01",
                                     "units": "25",
                                     "free_goods": "2",
@@ -404,7 +402,7 @@ function CallScreen(caseNum) {
                                     "sku": "GSK-PRODUCT-A0003-1"
                                 },
                                 {
-                                    "name" : "Augmentin 50mcg Tabs",
+                                    "name": "Augmentin 50mcg Tabs",
                                     "price": "4.01",
                                     "units": "25",
                                     "free_goods": "2",
@@ -413,7 +411,7 @@ function CallScreen(caseNum) {
                                     "sku": "GSK-PRODUCT-A0003-2"
                                 },
                                 {
-                                    "name" : "Augmentin 75mcg Tabs",
+                                    "name": "Augmentin 75mcg Tabs",
                                     "price": "4.01",
                                     "units": "25",
                                     "free_goods": "2",
@@ -422,7 +420,7 @@ function CallScreen(caseNum) {
                                     "sku": "GSK-PRODUCT-A0003-3"
                                 },
                                 {
-                                    "name" : "Augmentin 100mcg Tabs",
+                                    "name": "Augmentin 100mcg Tabs",
                                     "price": "4.01",
                                     "units": "25",
                                     "free_goods": "2",
@@ -431,7 +429,7 @@ function CallScreen(caseNum) {
                                     "sku": "GSK-PRODUCT-A0003-4"
                                 },
                                 {
-                                    "name" : "Augmentin 125mcg Tabs-5",
+                                    "name": "Augmentin 125mcg Tabs-5",
                                     "price": "4.01",
                                     "units": "25",
                                     "free_goods": "2",
@@ -450,9 +448,9 @@ function CallScreen(caseNum) {
                             "order_no": "6921030003",
                             "sku": "GSK-REBATES-A0001",
                             "ordered_date": "Jan 01, 22",
-                            "product_details" : [
+                            "product_details": [
                                 {
-                                    "name" : "Augmentin 25mcg Tabs",
+                                    "name": "Augmentin 25mcg Tabs",
                                     "price": "4.01",
                                     "units": "25",
                                     "free_goods": "2",
@@ -461,7 +459,7 @@ function CallScreen(caseNum) {
                                     "sku": "GSK-REBATES-PRODUCT-A0001-1"
                                 },
                                 {
-                                    "name" : "Augmentin 50mcg Tabs",
+                                    "name": "Augmentin 50mcg Tabs",
                                     "price": "4.01",
                                     "units": "25",
                                     "free_goods": "2",
@@ -470,7 +468,7 @@ function CallScreen(caseNum) {
                                     "sku": "GSK-REBATES-PRODUCT-A0001-2"
                                 },
                                 {
-                                    "name" : "Augmentin 75mcg Tabs",
+                                    "name": "Augmentin 75mcg Tabs",
                                     "price": "4.01",
                                     "units": "25",
                                     "free_goods": "2",
@@ -479,7 +477,7 @@ function CallScreen(caseNum) {
                                     "sku": "GSK-REBATES-PRODUCT-A0001-3"
                                 },
                                 {
-                                    "name" : "Augmentin 100mcg Tabs",
+                                    "name": "Augmentin 100mcg Tabs",
                                     "price": "4.01",
                                     "units": "25",
                                     "free_goods": "2",
@@ -488,7 +486,7 @@ function CallScreen(caseNum) {
                                     "sku": "GSK-REBATES-PRODUCT-A0001-4"
                                 },
                                 {
-                                    "name" : "Augmentin 125mcg Tabs-5",
+                                    "name": "Augmentin 125mcg Tabs-5",
                                     "price": "4.01",
                                     "units": "25",
                                     "free_goods": "2",
