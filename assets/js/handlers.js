@@ -394,7 +394,14 @@ function addnewOrder(data) {
     $(".new_orders").prepend(`
         <div class="accordion">
             <div class="accordion-item">
-                <div class="accordion-item-header orderdetail active">${data["account_no"]}</div>
+                <div class="accordion-item-header orderdetail active">
+                    <div class="flex">
+                        <div class="edit switchWholesalerAccount" style="height: auto; width: 16px; margin-right: 10px;" skudata=${data["sku"]}>
+                            <img src="/assets/images/svg/edit.svg" />
+                        </div>
+                        ${data["account_no"]}
+                    </div>
+                </div>
                 <div class="accordion-item-body parent opened orderbrandselection">
                     <div class="accordion-item-body-content" style="height: 270px; overflow: auto;">
                         <div class="date-picker-value">
