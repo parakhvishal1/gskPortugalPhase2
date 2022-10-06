@@ -122,7 +122,7 @@ function CallScreen(caseNum) {
                                 {
                                     "name": "Augmentin 25mcg Tabs",
                                     "price": "4.01",
-                                    "units": "25",
+                                    "units": "0",
                                     "free_goods": "2",
                                     "discount": "40",
                                     "payterm": "30",
@@ -131,7 +131,7 @@ function CallScreen(caseNum) {
                                 {
                                     "name": "Augmentin 50mcg Tabs",
                                     "price": "4.01",
-                                    "units": "25",
+                                    "units": "0",
                                     "free_goods": "2",
                                     "discount": "40",
                                     "payterm": "30",
@@ -140,7 +140,7 @@ function CallScreen(caseNum) {
                                 {
                                     "name": "Augmentin 75mcg Tabs",
                                     "price": "4.01",
-                                    "units": "25",
+                                    "units": "0",
                                     "free_goods": "2",
                                     "discount": "40",
                                     "payterm": "30",
@@ -149,7 +149,7 @@ function CallScreen(caseNum) {
                                 {
                                     "name": "Augmentin 100mcg Tabs",
                                     "price": "4.01",
-                                    "units": "25",
+                                    "units": "0",
                                     "free_goods": "2",
                                     "discount": "40",
                                     "payterm": "30",
@@ -158,7 +158,7 @@ function CallScreen(caseNum) {
                                 {
                                     "name": "Augmentin 125mcg Tabs-5",
                                     "price": "4.01",
-                                    "units": "25",
+                                    "units": "0",
                                     "free_goods": "2",
                                     "discount": "40",
                                     "payterm": "30",
@@ -174,7 +174,7 @@ function CallScreen(caseNum) {
                                 {
                                     "name": "Augmentin 25mcg Tabs",
                                     "price": "4.01",
-                                    "units": "25",
+                                    "units": "0",
                                     "free_goods": "2",
                                     "discount": "40",
                                     "payterm": "30",
@@ -183,7 +183,7 @@ function CallScreen(caseNum) {
                                 {
                                     "name": "Augmentin 50mcg Tabs",
                                     "price": "4.01",
-                                    "units": "25",
+                                    "units": "0",
                                     "free_goods": "2",
                                     "discount": "40",
                                     "payterm": "30",
@@ -192,7 +192,7 @@ function CallScreen(caseNum) {
                                 {
                                     "name": "Augmentin 75mcg Tabs",
                                     "price": "4.01",
-                                    "units": "25",
+                                    "units": "0",
                                     "free_goods": "2",
                                     "discount": "40",
                                     "payterm": "30",
@@ -201,7 +201,7 @@ function CallScreen(caseNum) {
                                 {
                                     "name": "Augmentin 100mcg Tabs",
                                     "price": "4.01",
-                                    "units": "25",
+                                    "units": "0",
                                     "free_goods": "2",
                                     "discount": "40",
                                     "payterm": "30",
@@ -210,7 +210,7 @@ function CallScreen(caseNum) {
                                 {
                                     "name": "Augmentin 125mcg Tabs-5",
                                     "price": "4.01",
-                                    "units": "25",
+                                    "units": "0",
                                     "free_goods": "2",
                                     "discount": "40",
                                     "payterm": "30",
@@ -226,7 +226,7 @@ function CallScreen(caseNum) {
                                 {
                                     "name": "Augmentin 25mcg Tabs",
                                     "price": "4.01",
-                                    "units": "25",
+                                    "units": "0",
                                     "free_goods": "2",
                                     "discount": "40",
                                     "payterm": "30",
@@ -235,7 +235,7 @@ function CallScreen(caseNum) {
                                 {
                                     "name": "Augmentin 50mcg Tabs",
                                     "price": "4.01",
-                                    "units": "25",
+                                    "units": "0",
                                     "free_goods": "2",
                                     "discount": "40",
                                     "payterm": "30",
@@ -244,7 +244,7 @@ function CallScreen(caseNum) {
                                 {
                                     "name": "Augmentin 75mcg Tabs",
                                     "price": "4.01",
-                                    "units": "25",
+                                    "units": "0",
                                     "free_goods": "2",
                                     "discount": "40",
                                     "payterm": "30",
@@ -253,7 +253,7 @@ function CallScreen(caseNum) {
                                 {
                                     "name": "Augmentin 100mcg Tabs",
                                     "price": "4.01",
-                                    "units": "25",
+                                    "units": "0",
                                     "free_goods": "2",
                                     "discount": "40",
                                     "payterm": "30",
@@ -262,7 +262,7 @@ function CallScreen(caseNum) {
                                 {
                                     "name": "Augmentin 125mcg Tabs-5",
                                     "price": "4.01",
-                                    "units": "25",
+                                    "units": "0",
                                     "free_goods": "2",
                                     "discount": "40",
                                     "payterm": "30",

@@ -135,3 +135,23 @@ function PosEnd(end) {
         t.select();
     }
 }
+
+function getParsedData() {
+    return JSON.parse(localStorage.getItem("data"));
+}
+
+function saveParsedData() {
+
+}
+
+function calculateSumAmount(data) {
+    let sum = 0;
+    let sumValues = obj => Object.values(obj).reduce((a, b) => {
+        return Number(a) + Number(b);
+    });
+
+    for (let key in data) {
+        sum = sum + Number(sumValues(data[key]));
+    }
+    return sum;
+}

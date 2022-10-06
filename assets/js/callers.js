@@ -11,6 +11,7 @@
         window.orderCartData = {};
         window.updateCartData = {};
         window.cartData = {};
+        window.wholesalerAccountData = [];
         CallScreen(1);
         CallScreen(4);
     }, 500);
