@@ -308,9 +308,6 @@ function loadUserWelcomeUI(data) {
 
 function loadBrandSelectionUI(data) {
     let orginalData = JSON.parse(JSON.stringify(data));
-    // console.log(data)
-    // console.log(JSON.parse(localStorage.getItem("data")));
-    console.log(window.cartData);
     $(".header").removeClass('hide');
     $("#content_box").empty();
     $("#content_box").append(`
@@ -354,7 +351,6 @@ function loadBrandSelectionUI(data) {
         e.stopPropagation();
         e.stopImmediatePropagation();
         let currentElementSkuData = $(this).attr("skudata");
-        console.log("currentElementSkuData -> ", currentElementSkuData);
         let data = localStorage.getItem("data");
         let parsedData = JSON.parse(data);
         parsedData["selected_brand"] = currentElementSkuData;

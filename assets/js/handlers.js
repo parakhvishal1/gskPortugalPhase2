@@ -590,8 +590,6 @@ function addnewOrderBrand(data) {
             let parsedata = JSON.parse(localStorage.getItem("data"));
             let filteredBrand = parsedata["plan_progress"]["brands"].filter(brand => brand["sku"] === parsedata["selected_brand"]);
             let progressCards = loadProgressCards({ "brands": filteredBrand }, true, true)
-            console.log($(this).parent(".counter__box__container.add").parent(".counter__container").parent(".counter__wrapper").parent(".info_data").parent(".info_row.brandscreen").prev(".info_row.brandscreen").children(".info_data.skuBrand_level_progress"));
-            console.log($(this).parent().parent().parent().parent().parent().siblings(".info_row.brandscreen").children(".info_data.skuBrand_level_progress"))
             $(this).parent(".counter__box__container.add").parent(".counter__container").parent(".counter__wrapper").parent(".info_data").parent(".info_row.brandscreen").prev(".info_row.brandscreen").children(".info_data.skuBrand_level_progress").empty();
             $(this).parent(".counter__box__container.add").parent(".counter__container").parent(".counter__wrapper").parent(".info_data").parent(".info_row.brandscreen").prev(".info_row.brandscreen").children(".info_data.skuBrand_level_progress").append(progressCards);
         });
@@ -623,7 +621,6 @@ function updateCounter(counterInput, type) {
     let storeddata = localStorage.getItem("data");
     let parseStoredData = JSON.parse(storeddata);
     let siblingWrapper = $(counterInput).parent().siblings(".counter__input");
-    console.log("siblingWrapper");
     if (type === "add") {
         var $input = $(siblingWrapper);
         siblingWrapper.siblings(".counter__box__container.sub").children().children().children().children().css("fill", "#f36633");
@@ -649,9 +646,6 @@ function updateCounter(counterInput, type) {
             }
         };
 
-        console.log(window.cartData)
-
-
         parseStoredData && parseStoredData["new_orders"] && parseStoredData["new_orders"]["orders"] && parseStoredData["new_orders"]["orders"].forEach(order => {
             if (order["sku"] === parentSkuData) {
                 order["product_details"].forEach(product => {
@@ -666,18 +660,13 @@ function updateCounter(counterInput, type) {
 
         let total = calculateSumAmount(window.cartData);
 
-        console.log("total -> ", total);
-
         parseStoredData && parseStoredData["plan_progress"] && parseStoredData["plan_progress"]["brands"].map(brandDataItem => {
             if (brandDataItem["sku"] === parseStoredData["selected_brand"]) {
                 brandDataItem["selected"] = total;
             }
         })
 
-        console.log("parseStoredData -> ", parseStoredData);
-
         localStorage.setItem("data", JSON.stringify(parseStoredData));
-
         $input.attr("previous-value", $input.val());
         return false;
     }

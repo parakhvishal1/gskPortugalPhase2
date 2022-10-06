@@ -50,7 +50,6 @@ function getProgressHeaderFooterLabels(data, sourceContainer) {
                 <div class="sub-block" style="width: ${rangeDataWidth}%;border-color: #fff;">${range["discount"]}%</div>
             `;
         })
-        console.log("rangeDataDivs ->", rangeDataDivs);
         return rangeDataDivs.join("");
     }
 
@@ -73,7 +72,6 @@ function getProgressHeaderFooterLabels(data, sourceContainer) {
         return `<div class="sub-block" style="width: ${rangeDataDivsWidth}%;border-color: #fff;">${(index + 1) * limit}</div>`
     });
     discountRangeData = discountRangeData.join("");
-    console.log(discountRangeData)
     return `
         <div class="detail_bar discount_range">
             <div class="main">

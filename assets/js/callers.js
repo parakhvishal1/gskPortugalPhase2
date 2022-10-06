@@ -114,7 +114,6 @@ function ToBot(eventName, data) {
             }), '*');
             break;
         case "update-order-data":
-            console.log("update last order data --> \n", data);
             window.parent.postMessage(JSON.stringify({
                 event_code: eventName,
                 data: data
