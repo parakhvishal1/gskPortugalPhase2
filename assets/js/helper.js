@@ -155,3 +155,7 @@ function calculateSumAmount(data) {
     }
     return sum;
 }
+
+function orderCalculate() {
+    
+}
