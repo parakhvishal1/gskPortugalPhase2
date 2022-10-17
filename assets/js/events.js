@@ -66,6 +66,7 @@ function CallScreen(caseNum) {
                 "last_date": "Jan 31, 22",
                 "isSku": true,
                 "download_url": "https://stats.govt.nz/assets/Uploads/Annual-enterprise-survey/Annual-enterprise-survey-2021-financial-year-provisional/Download-data/annual-enterprise-survey-2021-financial-year-provisional-csv.csv",
+                "totalcheckout": "",
                 "plan_progress": {
                     "title": "Plan Progress",
                     "last_date": "Jan 31, 22",
@@ -75,11 +76,21 @@ function CallScreen(caseNum) {
                             "purchased": "125",
                             "selected": "0",
                             "max_limit": "260",
-                            "sku": "GSK-BRAND-1",
-                            "discount_range": [
+                            "sku": "GSK-BRAND-AUGMENTIN",
+                            "on_invoice_range": [
                                 { "discount": "5" },
                                 { "discount": "10" },
                                 { "discount": "15" },
+                            ], 
+                            "off_invoice_range": [
+                                { "discount": "5" },
+                                { "discount": "10" },
+                                { "discount": "15" },
+                            ], 
+                            "total_invoice_range": [
+                                { "discount": "10" },
+                                { "discount": "11" },
+                                { "discount": "12" },
                             ]
                         },
                         {
@@ -87,13 +98,27 @@ function CallScreen(caseNum) {
                             "purchased": "45",
                             "selected": "0",
                             "max_limit": "200",
-                            "sku": "GSK-BRAND-2",
-                            "discount_range": [
+                            "sku": "GSK-BRAND-VENTOLIN",
+                            "on_invoice_range": [
                                 { "discount": "15" },
                                 { "discount": "20" },
                                 { "discount": "35" },
                                 { "discount": "40" },
                                 { "discount": "45" },
+                            ],
+                            "off_invoice_range": [
+                                { "discount": "15" },
+                                { "discount": "20" },
+                                { "discount": "35" },
+                                { "discount": "40" },
+                                { "discount": "45" },
+                            ],
+                            "total_invoice_range": [
+                                { "discount": "10" },
+                                { "discount": "11" },
+                                { "discount": "12" },
+                                { "discount": "13" },
+                                { "discount": "14" },
                             ]
                         },
                         {
@@ -101,13 +126,27 @@ function CallScreen(caseNum) {
                             "purchased": "75",
                             "selected": "0",
                             "max_limit": "400",
-                            "sku": "GSK-BRAND-3",
-                            "discount_range": [
+                            "sku": "GSK-BRAND-SERETIDE",
+                            "on_invoice_range": [
                                 { "discount": "5" },
                                 { "discount": "15" },
                                 { "discount": "25" },
                                 { "discount": "35" },
                                 { "discount": "45" },
+                            ],
+                            "off_invoice_range": [
+                                { "discount": "15" },
+                                { "discount": "20" },
+                                { "discount": "35" },
+                                { "discount": "40" },
+                                { "discount": "45" },
+                            ], 
+                            "total_invoice_range": [
+                                { "discount": "10" },
+                                { "discount": "11" },
+                                { "discount": "12" },
+                                { "discount": "13" },
+                                { "discount": "14" },
                             ]
                         }
                     ]
@@ -126,7 +165,8 @@ function CallScreen(caseNum) {
                                     "free_goods": "2",
                                     "discount": "40",
                                     "payterm": "30",
-                                    "sku": "GSK-PRODUCT-A0001-1"
+                                    "sku": "GSK-PRODUCT-AUGMENTIN-A0001-1",
+                                    "brand": "GSK-BRAND-AUGMENTIN"
                                 },
                                 {
                                     "name": "Augmentin 50mcg Tabs",
@@ -135,34 +175,48 @@ function CallScreen(caseNum) {
                                     "free_goods": "2",
                                     "discount": "40",
                                     "payterm": "30",
-                                    "sku": "GSK-PRODUCT-A0001-2"
+                                    "sku": "GSK-PRODUCT-AUGMENTIN-A0001-2",
+                                    "brand": "GSK-BRAND-AUGMENTIN"
                                 },
                                 {
-                                    "name": "Augmentin 75mcg Tabs",
+                                    "name": "Ventolin 25mcg Tabs",
                                     "price": "4.01",
                                     "units": "0",
                                     "free_goods": "2",
                                     "discount": "40",
                                     "payterm": "30",
-                                    "sku": "GSK-PRODUCT-A0001-3"
+                                    "sku": "GSK-PRODUCT-VENTOLIN-A0001-3",
+                                    "brand": "GSK-BRAND-VENTOLIN"
                                 },
                                 {
-                                    "name": "Augmentin 100mcg Tabs",
+                                    "name": "Ventolin 50mcg Tabs",
                                     "price": "4.01",
                                     "units": "0",
                                     "free_goods": "2",
                                     "discount": "40",
                                     "payterm": "30",
-                                    "sku": "GSK-PRODUCT-A0001-4"
+                                    "sku": "GSK-PRODUCT-VENTOLIN-A0001-4",
+                                    "brand": "GSK-BRAND-VENTOLIN"
                                 },
                                 {
-                                    "name": "Augmentin 125mcg Tabs-5",
+                                    "name": "Seretide 25mcg Tabs",
                                     "price": "4.01",
                                     "units": "0",
                                     "free_goods": "2",
                                     "discount": "40",
                                     "payterm": "30",
-                                    "sku": "GSK-PRODUCT-A0001-5"
+                                    "sku": "GSK-PRODUCT-SERETIDE-A0001-5",
+                                    "brand": "GSK-BRAND-SERETIDE"
+                                },
+                                {
+                                    "name": "Seretide 50mcg Tabs",
+                                    "price": "4.01",
+                                    "units": "0",
+                                    "free_goods": "2",
+                                    "discount": "40",
+                                    "payterm": "30",
+                                    "sku": "GSK-PRODUCT-SERETIDE-A0001-6",
+                                    "brand": "GSK-BRAND-SERETIDE"
                                 }
                             ]
                         },
@@ -178,7 +232,8 @@ function CallScreen(caseNum) {
                                     "free_goods": "2",
                                     "discount": "40",
                                     "payterm": "30",
-                                    "sku": "GSK-PRODUCT-A0002-1"
+                                    "sku": "GSK-PRODUCT-AUGMENTIN-A0002-1",
+                                    "brand": "GSK-BRAND-AUGMENTIN"
                                 },
                                 {
                                     "name": "Augmentin 50mcg Tabs",
@@ -187,86 +242,48 @@ function CallScreen(caseNum) {
                                     "free_goods": "2",
                                     "discount": "40",
                                     "payterm": "30",
-                                    "sku": "GSK-PRODUCT-A0002-2"
+                                    "sku": "GSK-PRODUCT-AUGMENTIN-A0002-2",
+                                    "brand": "GSK-BRAND-AUGMENTIN"
                                 },
                                 {
-                                    "name": "Augmentin 75mcg Tabs",
+                                    "name": "Ventolin 25mcg Tabs",
                                     "price": "4.01",
                                     "units": "0",
                                     "free_goods": "2",
                                     "discount": "40",
                                     "payterm": "30",
-                                    "sku": "GSK-PRODUCT-A0002-3"
+                                    "sku": "GSK-PRODUCT-VENTOLIN-A0002-3",
+                                    "brand": "GSK-BRAND-VENTOLIN"
                                 },
                                 {
-                                    "name": "Augmentin 100mcg Tabs",
+                                    "name": "Ventolin 50mcg Tabs",
                                     "price": "4.01",
                                     "units": "0",
                                     "free_goods": "2",
                                     "discount": "40",
                                     "payterm": "30",
-                                    "sku": "GSK-PRODUCT-A0002-4"
+                                    "sku": "GSK-PRODUCT-VENTOLIN-A0002-4",
+                                    "brand": "GSK-BRAND-VENTOLIN"
                                 },
                                 {
-                                    "name": "Augmentin 125mcg Tabs-5",
+                                    "name": "Seretide 25mcg Tabs",
                                     "price": "4.01",
                                     "units": "0",
                                     "free_goods": "2",
                                     "discount": "40",
                                     "payterm": "30",
-                                    "sku": "GSK-PRODUCT-A0002-5"
-                                }
-                            ]
-                        },
-                        {
-                            "account_no": "Wholesaler A - Accoount: A0003",
-                            "order_no": "6921030003",
-                            "sku": "GSK-ACCOUNT_NO-A0003",
-                            "product_details": [
-                                {
-                                    "name": "Augmentin 25mcg Tabs",
-                                    "price": "4.01",
-                                    "units": "0",
-                                    "free_goods": "2",
-                                    "discount": "40",
-                                    "payterm": "30",
-                                    "sku": "GSK-PRODUCT-A0003-1"
+                                    "sku": "GSK-PRODUCT-SERETIDE-A0002-5",
+                                    "brand": "GSK-BRAND-SERETIDE"
                                 },
                                 {
-                                    "name": "Augmentin 50mcg Tabs",
+                                    "name": "Seretide 50mcg Tabs",
                                     "price": "4.01",
                                     "units": "0",
                                     "free_goods": "2",
                                     "discount": "40",
                                     "payterm": "30",
-                                    "sku": "GSK-PRODUCT-A0003-2"
-                                },
-                                {
-                                    "name": "Augmentin 75mcg Tabs",
-                                    "price": "4.01",
-                                    "units": "0",
-                                    "free_goods": "2",
-                                    "discount": "40",
-                                    "payterm": "30",
-                                    "sku": "GSK-PRODUCT-A0003-3"
-                                },
-                                {
-                                    "name": "Augmentin 100mcg Tabs",
-                                    "price": "4.01",
-                                    "units": "0",
-                                    "free_goods": "2",
-                                    "discount": "40",
-                                    "payterm": "30",
-                                    "sku": "GSK-PRODUCT-A0003-4"
-                                },
-                                {
-                                    "name": "Augmentin 125mcg Tabs-5",
-                                    "price": "4.01",
-                                    "units": "0",
-                                    "free_goods": "2",
-                                    "discount": "40",
-                                    "payterm": "30",
-                                    "sku": "GSK-PRODUCT-A0003-5"
+                                    "sku": "GSK-PRODUCT-SERETIDE-A0002-6",
+                                    "brand": "GSK-BRAND-SERETIDE"
                                 }
                             ]
                         }
@@ -285,54 +302,69 @@ function CallScreen(caseNum) {
                                 {
                                     "name": "Augmentin 25mcg Tabs",
                                     "price": "4.01",
-                                    "units": "25",
+                                    "units": "0",
                                     "free_goods": "2",
                                     "discount": "40",
                                     "payterm": "30",
-                                    "sku": "GSK-PRODUCT-A0001-1"
+                                    "sku": "GSK-PRODUCT-AUGMENTIN-A0001-1",
+                                    "brand": "GSK-BRAND-AUGMENTIN"
                                 },
                                 {
                                     "name": "Augmentin 50mcg Tabs",
                                     "price": "4.01",
-                                    "units": "25",
+                                    "units": "0",
                                     "free_goods": "2",
                                     "discount": "40",
                                     "payterm": "30",
-                                    "sku": "GSK-PRODUCT-A0001-2"
+                                    "sku": "GSK-PRODUCT-AUGMENTIN-A0001-2",
+                                    "brand": "GSK-BRAND-AUGMENTIN"
                                 },
                                 {
-                                    "name": "Augmentin 75mcg Tabs",
+                                    "name": "Ventolin 25mcg Tabs",
                                     "price": "4.01",
-                                    "units": "25",
+                                    "units": "0",
                                     "free_goods": "2",
                                     "discount": "40",
                                     "payterm": "30",
-                                    "sku": "GSK-PRODUCT-A0001-3"
+                                    "sku": "GSK-PRODUCT-VENTOLIN-A0001-3",
+                                    "brand": "GSK-BRAND-VENTOLIN"
                                 },
                                 {
-                                    "name": "Augmentin 100mcg Tabs",
+                                    "name": "Ventolin 50mcg Tabs",
                                     "price": "4.01",
-                                    "units": "25",
+                                    "units": "0",
                                     "free_goods": "2",
                                     "discount": "40",
                                     "payterm": "30",
-                                    "sku": "GSK-PRODUCT-A0001-4"
+                                    "sku": "GSK-PRODUCT-VENTOLIN-A0001-4",
+                                    "brand": "GSK-BRAND-VENTOLIN"
                                 },
                                 {
-                                    "name": "Augmentin 125mcg Tabs-5",
+                                    "name": "Seretide 25mcg Tabs",
                                     "price": "4.01",
-                                    "units": "25",
+                                    "units": "0",
                                     "free_goods": "2",
                                     "discount": "40",
                                     "payterm": "30",
-                                    "sku": "GSK-PRODUCT-A0001-5"
+                                    "sku": "GSK-PRODUCT-SERETIDE-A0001-5",
+                                    "brand": "GSK-BRAND-SERETIDE"
+                                },
+                                {
+                                    "name": "Seretide 50mcg Tabs",
+                                    "price": "4.01",
+                                    "units": "0",
+                                    "free_goods": "2",
+                                    "discount": "40",
+                                    "payterm": "30",
+                                    "sku": "GSK-PRODUCT-SERETIDE-A0001-6",
+                                    "brand": "GSK-BRAND-SERETIDE"
                                 }
                             ]
                         },
                         {
                             "account_no": "Wholesaler A - Accoount: A0002",
                             "order_no": "6921030003",
-                            "status": "Sent",
+                            "status": "Invoiced",
                             "delivery_date": "May 30 22",
                             "ordered_date": "Jan 01, 22",
                             "sku": "GSK-ACCOUNT_NO-A0002",
@@ -340,105 +372,66 @@ function CallScreen(caseNum) {
                                 {
                                     "name": "Augmentin 25mcg Tabs",
                                     "price": "4.01",
-                                    "units": "25",
+                                    "units": "0",
                                     "free_goods": "2",
                                     "discount": "40",
                                     "payterm": "30",
-                                    "sku": "GSK-PRODUCT-A0002-1"
+                                    "sku": "GSK-PRODUCT-AUGMENTIN-A0002-1",
+                                    "brand": "GSK-BRAND-AUGMENTIN"
                                 },
                                 {
                                     "name": "Augmentin 50mcg Tabs",
                                     "price": "4.01",
-                                    "units": "25",
+                                    "units": "0",
                                     "free_goods": "2",
                                     "discount": "40",
                                     "payterm": "30",
-                                    "sku": "GSK-PRODUCT-A0002-2"
+                                    "sku": "GSK-PRODUCT-AUGMENTIN-A0002-2",
+                                    "brand": "GSK-BRAND-AUGMENTIN"
                                 },
                                 {
-                                    "name": "Augmentin 75mcg Tabs",
+                                    "name": "Ventolin 25mcg Tabs",
                                     "price": "4.01",
-                                    "units": "25",
+                                    "units": "0",
                                     "free_goods": "2",
                                     "discount": "40",
                                     "payterm": "30",
-                                    "sku": "GSK-PRODUCT-A0002-3"
+                                    "sku": "GSK-PRODUCT-VENTOLIN-A0002-3",
+                                    "brand": "GSK-BRAND-VENTOLIN"
                                 },
                                 {
-                                    "name": "Augmentin 100mcg Tabs",
+                                    "name": "Ventolin 50mcg Tabs",
                                     "price": "4.01",
-                                    "units": "25",
+                                    "units": "0",
                                     "free_goods": "2",
                                     "discount": "40",
                                     "payterm": "30",
-                                    "sku": "GSK-PRODUCT-A0002-4"
+                                    "sku": "GSK-PRODUCT-VENTOLIN-A0002-4",
+                                    "brand": "GSK-BRAND-VENTOLIN"
                                 },
                                 {
-                                    "name": "Augmentin 125mcg Tabs-5",
+                                    "name": "Seretide 25mcg Tabs",
                                     "price": "4.01",
-                                    "units": "25",
+                                    "units": "0",
                                     "free_goods": "2",
                                     "discount": "40",
                                     "payterm": "30",
-                                    "sku": "GSK-PRODUCT-A0002-5"
+                                    "sku": "GSK-PRODUCT-SERETIDE-A0002-5",
+                                    "brand": "GSK-BRAND-SERETIDE"
+                                },
+                                {
+                                    "name": "Seretide 50mcg Tabs",
+                                    "price": "4.01",
+                                    "units": "0",
+                                    "free_goods": "2",
+                                    "discount": "40",
+                                    "payterm": "30",
+                                    "sku": "GSK-PRODUCT-SERETIDE-A0002-6",
+                                    "brand": "GSK-BRAND-SERETIDE"
                                 }
                             ]
                         },
-                        {
-                            "account_no": "Wholesaler A - Accoount: A0003",
-                            "order_no": "6921030003",
-                            "status": "Invoiced",
-                            "delivery_date": "May 30 22",
-                            "ordered_date": "Jan 01, 22",
-                            "sku": "GSK-ACCOUNT_NO-A0003",
-                            "product_details": [
-                                {
-                                    "name": "Augmentin 25mcg Tabs",
-                                    "price": "4.01",
-                                    "units": "25",
-                                    "free_goods": "2",
-                                    "discount": "40",
-                                    "payterm": "30",
-                                    "sku": "GSK-PRODUCT-A0003-1"
-                                },
-                                {
-                                    "name": "Augmentin 50mcg Tabs",
-                                    "price": "4.01",
-                                    "units": "25",
-                                    "free_goods": "2",
-                                    "discount": "40",
-                                    "payterm": "30",
-                                    "sku": "GSK-PRODUCT-A0003-2"
-                                },
-                                {
-                                    "name": "Augmentin 75mcg Tabs",
-                                    "price": "4.01",
-                                    "units": "25",
-                                    "free_goods": "2",
-                                    "discount": "40",
-                                    "payterm": "30",
-                                    "sku": "GSK-PRODUCT-A0003-3"
-                                },
-                                {
-                                    "name": "Augmentin 100mcg Tabs",
-                                    "price": "4.01",
-                                    "units": "25",
-                                    "free_goods": "2",
-                                    "discount": "40",
-                                    "payterm": "30",
-                                    "sku": "GSK-PRODUCT-A0003-4"
-                                },
-                                {
-                                    "name": "Augmentin 125mcg Tabs-5",
-                                    "price": "4.01",
-                                    "units": "25",
-                                    "free_goods": "2",
-                                    "discount": "40",
-                                    "payterm": "30",
-                                    "sku": "GSK-PRODUCT-A0003-5"
-                                }
-                            ]
-                        }
+                        
                     ]
                 },
                 "rebates_orders": {
@@ -452,47 +445,62 @@ function CallScreen(caseNum) {
                                 {
                                     "name": "Augmentin 25mcg Tabs",
                                     "price": "4.01",
-                                    "units": "25",
+                                    "units": "0",
                                     "free_goods": "2",
                                     "discount": "40",
                                     "payterm": "30",
-                                    "sku": "GSK-REBATES-PRODUCT-A0001-1"
+                                    "sku": "GSK-PRODUCT-A0001-1",
+                                    "brand": "GSK-BRAND-AUGMENTIN"
                                 },
                                 {
                                     "name": "Augmentin 50mcg Tabs",
                                     "price": "4.01",
-                                    "units": "25",
+                                    "units": "0",
                                     "free_goods": "2",
                                     "discount": "40",
                                     "payterm": "30",
-                                    "sku": "GSK-REBATES-PRODUCT-A0001-2"
+                                    "sku": "GSK-PRODUCT-A0001-2",
+                                    "brand": "GSK-BRAND-AUGMENTIN"
                                 },
                                 {
-                                    "name": "Augmentin 75mcg Tabs",
+                                    "name": "Ventolin 25mcg Tabs",
                                     "price": "4.01",
-                                    "units": "25",
+                                    "units": "0",
                                     "free_goods": "2",
                                     "discount": "40",
                                     "payterm": "30",
-                                    "sku": "GSK-REBATES-PRODUCT-A0001-3"
+                                    "sku": "GSK-PRODUCT-A0001-3",
+                                    "brand": "GSK-BRAND-VENTOLIN"
                                 },
                                 {
-                                    "name": "Augmentin 100mcg Tabs",
+                                    "name": "Ventolin 50mcg Tabs",
                                     "price": "4.01",
-                                    "units": "25",
+                                    "units": "0",
                                     "free_goods": "2",
                                     "discount": "40",
                                     "payterm": "30",
-                                    "sku": "GSK-REBATES-PRODUCT-A0001-4"
+                                    "sku": "GSK-PRODUCT-A0001-4",
+                                    "brand": "GSK-BRAND-VENTOLIN"
                                 },
                                 {
-                                    "name": "Augmentin 125mcg Tabs-5",
+                                    "name": "Seretide 25mcg Tabs",
                                     "price": "4.01",
-                                    "units": "25",
+                                    "units": "0",
                                     "free_goods": "2",
                                     "discount": "40",
                                     "payterm": "30",
-                                    "sku": "GSK-REBATES-PRODUCT-A0001-5"
+                                    "sku": "GSK-PRODUCT-A0001-5",
+                                    "brand": "GSK-BRAND-SERETIDE"
+                                },
+                                {
+                                    "name": "Seretide 50mcg Tabs",
+                                    "price": "4.01",
+                                    "units": "0",
+                                    "free_goods": "2",
+                                    "discount": "40",
+                                    "payterm": "30",
+                                    "sku": "GSK-PRODUCT-A0001-6",
+                                    "brand": "GSK-BRAND-SERETIDE"
                                 }
                             ]
                         }
@@ -536,27 +544,6 @@ function CallScreen(caseNum) {
                     },
                 ],
             });
-            break;
-        case "6":
-
-            break;
-        case "7":
-
-            break;
-        case "8":
-
-            break;
-        case "9":
-
-            break;
-        case "10":
-
-            break;
-        case "11":
-
-            break;
-        case "12":
-
             break;
         default:
             break;

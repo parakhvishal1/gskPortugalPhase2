@@ -262,7 +262,7 @@ input[id$="tbDate"] {
     display: flex;
     flex-flow: column;
     width: 100%;
-    height: 300px;
+    max-height: 300px;
 }
 
 .tableLayoutBody {
