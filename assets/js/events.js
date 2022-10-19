@@ -78,9 +78,9 @@ function CallScreen(caseNum) {
                             "max_limit": "260",
                             "sku": "GSK-BRAND-AUGMENTIN",
                             "on_invoice_range": [
-                                { "discount": "5" },
-                                { "discount": "10" },
-                                { "discount": "15" },
+                                { "discount": "5", "label": "85" },
+                                { "discount": "10", "label": "85" },
+                                { "discount": "15", "label": "90" },
                             ], 
                             "off_invoice_range": [
                                 { "discount": "5" },
@@ -100,11 +100,11 @@ function CallScreen(caseNum) {
                             "max_limit": "200",
                             "sku": "GSK-BRAND-VENTOLIN",
                             "on_invoice_range": [
-                                { "discount": "15" },
-                                { "discount": "20" },
-                                { "discount": "35" },
-                                { "discount": "40" },
-                                { "discount": "45" },
+                                { "discount": "15", "label": "40" },
+                                { "discount": "20", "label": "40" },
+                                { "discount": "35", "label": "40" },
+                                { "discount": "40", "label": "40" },
+                                { "discount": "45", "label": "40"},
                             ],
                             "off_invoice_range": [
                                 { "discount": "15" },
@@ -128,11 +128,11 @@ function CallScreen(caseNum) {
                             "max_limit": "400",
                             "sku": "GSK-BRAND-SERETIDE",
                             "on_invoice_range": [
-                                { "discount": "5" },
-                                { "discount": "15" },
-                                { "discount": "25" },
-                                { "discount": "35" },
-                                { "discount": "45" },
+                                { "discount": "15", "label": "80" },
+                                { "discount": "20", "label": "80" },
+                                { "discount": "35", "label": "80" },
+                                { "discount": "40", "label": "80" },
+                                { "discount": "45", "label": "80"},
                             ],
                             "off_invoice_range": [
                                 { "discount": "15" },
