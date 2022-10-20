@@ -133,7 +133,7 @@ function getProductsProgress(item, detailed, hideAdd, basicProgress, colorscheme
     let rangeDataDivs = item["on_invoice_range"].map((range, index) => {
         let newRangeDataDivsWidth = (range["label"]/item["max_limit"]) * 100;
         return `
-            <div class="sub-block" style="width: ${newRangeDataDivsWidth}%; border-color: ${progressPercent < ((index + 1) * (newRangeDataDivsWidth)) ? "#959595" : "#fff"}"></div>
+            <div class="sub-block ${progressPercent < ((index + 1) * (newRangeDataDivsWidth)) ? "withmarkings" : "withoutmarkings"}" style="width: ${newRangeDataDivsWidth}%; border-color: ${progressPercent < ((index + 1) * (newRangeDataDivsWidth)) ? "#959595" : "#fff"}"></div>
         `;
     });
 
@@ -186,7 +186,7 @@ function getSelectedProgress(item, progressPercentSelected, colorscheme, hideSel
         return `
             <div class="progressbar_ratio" style="width:${progressPercentSelected}%; background: ${colorscheme} !important;">
                 <div class="ratio_wrapper">
-                    <div class="ratio">${!hideSelectedProgress ? "+" : ""} ${parseInt(item["purchased"]) + parseInt(item["selected"])}</div>
+                    <div class="ratio">${!hideSelectedProgress ? "+" : ""} ${parseInt(item["selected"])}</div>
                 </div>
             </div>
         `;
