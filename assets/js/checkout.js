@@ -72,6 +72,9 @@ function loadOrderCart(data) {
 }
 
 function getAccordianAccounts(data, rebates) {
+    let parsedData = getParsedData();
+    let filteredBrand = parsedData["plan_progress"]["brands"].filter(brand => brand["sku"] === parsedData["selected_brand"]);
+    console.log(filteredBrand)
     let accordianAccounts = data.map(order => {
         return `
             <div class="accordion">
@@ -95,7 +98,7 @@ function getAccordianAccounts(data, rebates) {
                                         <td class="info_data title" colspan="1">Est. Price</td>
                                         <td class="info_data title" colspan="1">Units</td>
                                         <td class="info_data title" colspan="1">Free Goods</td>
-                                        <td class="info_data title" colspan="1">On Invoice Discount</td>
+                                        <td class="info_data title" colspan="1">${(rebates || filteredBrand[0]["off_invoice_range"]) ? "Off Invoice Discount" : "On Invoice Discount"}</td>
                                         <td class="info_data title" colspan="1">Pay Term</td>
                                     </tr>
                                 </thead>

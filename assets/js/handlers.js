@@ -14,7 +14,7 @@ function showSkuLevelDetailsBrand(data, currentSku) {
                 <div class="sub_detail"><strong>Start:</strong> ${data["start_date"]} <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span> <strong>End:</strong> ${data["last_date"]}</div>
                 <div class="sub_detail highlight">${isAdditionDiscountEligible ? "Additional Discount" : ""}</div>
             </div>
-            <div class="brand_level_progress">${loadProgressCards({ "brands": filteredBrand }, true, true)}</div>
+            
             <div class="new_orders"></div>
 
             <div class="place_order">
@@ -274,6 +274,7 @@ function showBrandLevelDetails(data, currentSku) {
         e.preventDefault();
         e.stopPropagation();
         e.stopImmediatePropagation();
+        localStorage.setItem("data", JSON.stringify(window.dataStore));
         let parseData = getParsedData();
         if (parseData && parseData?.["new_orders"]?.["orders"] && parseData?.["new_orders"]?.["orders"].length > 0) {
             loadBrandSelectionUI(parseData);
@@ -394,9 +395,11 @@ function addnewOrder(data, currentSku) {
             <div class="accordion-item">
                 <div class="accordion-item-header orderdetail active">
                     <div class="flex">
+                        <!-- 
                         <div class="edit switchWholesalerAccount" style="height: auto; width: 16px; margin-right: 10px;" skudata=${data["sku"]}>
                             <img src="/assets/images/svg/edit.svg" />
                         </div>
+                        -->
                         ${data["account_no"]}
                     </div>
                 </div>
@@ -468,11 +471,6 @@ function addnewOrder(data, currentSku) {
 
         $(`.counter__plus.key${uuid}`).click(function (e) {
             updateCounter(this, "add", currentSku);
-            let parsedata = JSON.parse(localStorage.getItem("data"));
-            let filteredBrand = parsedata["plan_progress"]["brands"].filter(brand => brand["sku"] === parsedata["selected_brand"]);
-
-            let progressCards = loadProgressCards({ "brands": filteredBrand }, true, true)
-            $(".brand_level_progress").append(progressCards);
         });
     });
 
@@ -534,10 +532,10 @@ function addnewOrderBrand(data) {
                 </td>
             </tr>
             <tr class="info_row brandscreen">
-                <td class="info_data" style="vertical-align: middle; padding: 8px 0 0 0;" colspan="2">
+                <td class="info_data" style="vertical-align: middle; padding: 0px 0 0 0;" colspan="2">
                     Period Total:   125
                 </td>
-                <td class="info_data" style="vertical-align: middle; padding: 8px 0 0 0;" colspan="2">
+                <td class="info_data" style="vertical-align: middle; padding: 0px 0 0 0;" colspan="2">
                     <div class="counter__wrapper">
                         <div class="counter__container" skudata="${productData["sku"]}" parentskudata=${data["sku"]} >
                             <div class="counter__box__container sub">
@@ -661,7 +659,10 @@ function updateCounter(counterInput, type, currentSku) {
             }
         })
 
-        localStorage.setItem("data", JSON.stringify(parseStoredData));
+        window.dataStore = parseStoredData;
+        let filteredBrand = window.dataStore["plan_progress"]["brands"].filter(brand => brand["sku"] === window.dataStore["selected_brand"]);
+        let progressCards = loadProgressCards({ "brands": filteredBrand }, true, true)
+        $(".brand_level_progress").append(progressCards);
         $input.attr("previous-value", $input.val());
         return false;
     }
@@ -671,7 +672,10 @@ function updateCounter(counterInput, type, currentSku) {
         var count = parseInt($input.val()) - 1;
         if (count >= 0) {
             if (count == 0) {
-
+                $input.val(count);
+                $input.change();
+                $input.attr("previous-value", $input.val());
+                siblingWrapper.siblings(".counter__box__container.sub").children().children().children().children().css("fill", "#FDE0D6");
             } else {
                 $input.val(count);
                 $input.change();

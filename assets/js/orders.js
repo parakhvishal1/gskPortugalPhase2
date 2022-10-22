@@ -85,7 +85,7 @@ function loadUserWelcomeUI(data) {
                                 <td class="info_data" colspan="1">Est. Price</td>
                                 <td class="info_data" colspan="1">Units</td>
                                 <td class="info_data" colspan="1">Free Goods</td>
-                                <td class="info_data" colspan="1">On Invoice Discount</td>
+                                <td class="info_data" colspan="1">${Boolean(lastOrder["on_invoice"]) ? "On Invoice Discount" : "Off Invoice Discount"}</td>
                                 <td class="info_data" colspan="1">Pay Term</td>
                             </tr>
                         </thead>
@@ -160,7 +160,7 @@ function loadUserWelcomeUI(data) {
                                     <td class="info_data" colspan="1">Est. Price</td>
                                     <td class="info_data" colspan="1">Units</td>
                                     <td class="info_data" colspan="1">Free Goods</td>
-                                    <td class="info_data" colspan="2">On Invoice Discount</td>
+                                    <td class="info_data" colspan="2">${Boolean(lastOrder["on_invoice"]) ? "On Invoice Discount" : "Off Invoice Discount"}</td>
                                     <td class="info_data" colspan="1">Pay Term</td>
                                 </tr>
                             </thead>

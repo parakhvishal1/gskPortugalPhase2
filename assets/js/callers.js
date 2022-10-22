@@ -12,6 +12,7 @@
         window.updateCartData = {};
         window.cartData = {};
         window.wholesalerAccountData = [];
+        window.dataStore = {};
         CallScreen(1);
         CallScreen(4);
     }, 500);
@@ -139,6 +140,7 @@ function ToBot(eventName, data) {
             }), '*');
             break;
         case "view-checkout":
+            console.log("data ", data);
             window.parent.postMessage(JSON.stringify({
                 event_code: eventName,
                 data: data
