@@ -116,8 +116,19 @@ function getAccordianAccounts(data, rebates) {
 }
 
 function getAccordianAccountsData(data, rebates) {
+    let parsedData = getParsedData();
+    let brand = parsedData["plan_progress"]["brands"].filter(brand => brand["sku"] === parsedData["selected_brand"]);
+    let filteredBrand = brand[0];
+    console.log("filteredBrand --> ", filteredBrand);
+    
+    let discount = 0;
     let accordianAccountsData = data.map((item, index) => {
-        
+        if(rebates) {
+            discount = item["discount"];
+        } else {
+            discount = filteredBrand["eligible_discount"] ? filteredBrand["eligible_discount"] : "-";
+        }
+
         if(rebates || item["quantity"]) {
             return `
                 <tr>
@@ -134,7 +145,7 @@ function getAccordianAccountsData(data, rebates) {
                     <td class="info_data" colspan="1">£ ${item["price"]}</td>
                     <td class="info_data" colspan="1">${item["quantity"] || item["units"]}</td>
                     <td class="info_data" colspan="1">+${item["free_goods"]}</td>
-                    <td class="info_data" colspan="1">${item["discount"]}%</td>
+                    <td class="info_data" colspan="1">${discount}%</td>
                     <td class="info_data" colspan="1">${item["payterm"]} D</td>
                 </tr>
             `

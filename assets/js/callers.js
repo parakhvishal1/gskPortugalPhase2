@@ -13,6 +13,7 @@
         window.cartData = {};
         window.wholesalerAccountData = [];
         window.dataStore = {};
+        window.discountData = {};
         CallScreen(1);
         CallScreen(4);
     }, 500);
@@ -21,6 +22,7 @@
 
 
 function ToBot(eventName, data) {
+    console.log("to bot called --> ", eventName);
     switch (eventName) {
         case "fetch-user-details":
             delete data["isLoggedIn"];

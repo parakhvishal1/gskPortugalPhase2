@@ -56,6 +56,7 @@ function getProgressHeaderFooterLabels(data, sourceContainer) {
 
             if(progressPercent > ((index) * (rangeDataWidth)) &&  progressPercent <= ((index + 1) * (rangeDataWidth))) {
                 temp = true;
+                data["eligible_discount"] = range["discount"];
             } else {
                 temp = false;
             }
