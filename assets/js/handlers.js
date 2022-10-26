@@ -321,13 +321,20 @@ function showBrandLevelDetails(data, currentSku) {
         let filteredData = data["available_orders"]["orders"].filter((order, index) => order["sku"] === currentElementData)
         let orderData = filteredData[0];
         if (window.wholesalerAccountData && window.wholesalerAccountData.length !== 0) {
-            window.wholesalerAccountData.map(v => {
-                if (orderData["sku"] !== v["sku"]) {
-                    window.wholesalerAccountData.push(orderData);
-                    addWholeSalerAccordion(data, orderData, currentSku);
-                    return;
+            let shouldWholeSalerAccountAdd = false;
+            window.wholesalerAccountData.every(v => {
+                if (orderData["sku"] === v["sku"]) {
+                    shouldWholeSalerAccountAdd = false;
+                    return false;
+                } else {
+                    shouldWholeSalerAccountAdd = true;
+                    return true;
                 }
             });
+            if(shouldWholeSalerAccountAdd) {
+                window.wholesalerAccountData.push(orderData);
+                addWholeSalerAccordion(data, orderData, currentSku);
+            }
         } else {
             window.wholesalerAccountData.push(orderData);
             addWholeSalerAccordion(data, orderData, currentSku);

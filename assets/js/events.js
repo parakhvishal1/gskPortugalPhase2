@@ -72,7 +72,7 @@ function CallScreen(caseNum) {
                     "brands": [
                         {
                             "name": "Augmentin",
-                            "isSku": !true,
+                            "isSku": true,
                             "additional_discount": true,
                             "purchased": "125",
                             "selected": "0",
