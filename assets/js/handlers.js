@@ -97,8 +97,26 @@ function showSkuLevelDetailsBrand(data, currentSku) {
         localStorage.setItem("data", JSON.stringify(window.dataStore));
         let parseData = getParsedData();
         if (parseData && parseData?.["new_orders"]?.["orders"] && parseData?.["new_orders"]?.["orders"].length > 0) {
-            loadBrandSelectionUI(parseData);
-            ToBot("ordercart-continue", parseData);
+            let totalSelectedQuantity = 0;
+            parseData?.["new_orders"]?.["orders"].map(order => {
+                order["product_details"].map(product => {
+                    if(filteredBrand[0]["sku"] === product["brand"]) {
+                        if(product["quantity"]) {
+                            totalSelectedQuantity = totalSelectedQuantity + Number(product["quantity"]);
+                        }
+                    }
+
+                });
+            });
+            
+            window.dataStore["plan_progress"]["brands"].map(brand => {
+                if(brand["sku"] === currentSku) {
+                    brand["selected"] = totalSelectedQuantity;
+                }
+            });
+            localStorage.setItem("data", JSON.stringify(window.dataStore));
+            loadBrandSelectionUI(window.dataStore);
+            ToBot("ordercart-continue", window.dataStore);
         }
     });
 
@@ -662,8 +680,6 @@ function updateCounter(counterInput, type, currentSku, skulevel) {
                         product["discount"]["selected"] = $input.val();
                         if(skulevel) {
                             // let currentItemValue = calculateSumAmount({[parentSkuData]: {...window.cartData[parentSkuData]}});
-                            console.log(product);
-                            console.log(`skulevelprogress-${product["sku"]}`);
                             let progressCards = loadProgressCards({ "brands": [product["discount"]] }, true, true)
                             $(`#skulevelprogress-${product["sku"]}`).empty();
                             $(`#skulevelprogress-${product["sku"]}`).append(progressCards);
