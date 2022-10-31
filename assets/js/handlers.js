@@ -705,11 +705,19 @@ function updateCounter(counterInput, type, currentSku, skulevel) {
             }
         });
 
-        let total = calculateSumAmount({
+        let totalCalculationTemporary = JSON.parse(JSON.stringify({
             [parentSkuData]: {
                 ...window.cartData[parentSkuData]
             }
-        });
+        }));
+
+        for(key in totalCalculationTemporary[parentSkuData]) {
+            if(!key.includes(brand[0]["name"]?.toUpperCase())) {
+                delete totalCalculationTemporary[parentSkuData][key];    
+            }
+        }
+
+        let total = calculateSumAmount(totalCalculationTemporary);
 
         parseStoredData && parseStoredData["plan_progress"] && parseStoredData["plan_progress"]["brands"].map(brandDataItem => {
             if (brandDataItem["sku"] === parseStoredData["selected_brand"]) {
