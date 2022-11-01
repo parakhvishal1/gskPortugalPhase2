@@ -313,7 +313,10 @@ function loadBrandSelectionUI(data) {
     $("#content_box").append(`
         <div class="choosebrands">
             <div class="menu_header">
-                <div class="label">Choose Brands</div>
+                <div class="label">
+                    <img class="back-arrow" src="/assets/images/svg/right.svg"/>
+                    Choose Brands
+                </div>
                 <div class="icon">
                     <img src="/assets/images/svg/basket.svg" class="view_checkout" />
                     <div class="count_wrapper hide"></div>
@@ -346,6 +349,12 @@ function loadBrandSelectionUI(data) {
             // loadOrderCart(data);
             ToBot("view-checkout", data);
         }
+    });
+
+    $(".back-arrow").click(function (e) {
+        e.stopPropagation();
+        e.stopImmediatePropagation();
+        ToApp('userwelcome-screen', data);
     });
 
     $(".progressbar_wrapper.addproduct").click(function (e) {
