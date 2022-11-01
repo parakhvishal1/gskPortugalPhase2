@@ -142,11 +142,13 @@ function ToBot(eventName, data) {
             }), '*');
             break;
         case "view-checkout":
-            console.log("data ", data);
             window.parent.postMessage(JSON.stringify({
                 event_code: eventName,
                 data: data
             }), '*');
+            if(window.location.hostname === 'localhost') {
+                ToApp('ordercart-screen', data);
+            }
             break;
         case "brand-select":
             window.parent.postMessage(JSON.stringify({

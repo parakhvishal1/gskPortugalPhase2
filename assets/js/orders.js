@@ -343,7 +343,7 @@ function loadBrandSelectionUI(data) {
         e.stopPropagation();
         e.stopImmediatePropagation();
         if (total) {
-            loadOrderCart(data);
+            // loadOrderCart(data);
             ToBot("view-checkout", data);
         }
     });
