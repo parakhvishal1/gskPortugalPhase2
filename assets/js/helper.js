@@ -161,3 +161,13 @@ function calculateSumAmount(data) {
 function orderCalculate() {
     
 }
+
+function getMonthNumber(monthName) {
+    const date = new Date(`${monthName} ${new Date().getDate()}, ${new Date().getFullYear()}`);
+  
+    if (isNaN(date)) {
+         console.error('Invalid month name.');
+    }
+  
+    return date.getMonth() + 1;
+}
