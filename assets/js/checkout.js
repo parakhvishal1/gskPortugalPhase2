@@ -8,7 +8,12 @@ function loadOrderCart(data) {
                 <div class="icon goToBrandLevel cursor"><img src="/assets/images/svg/plus.svg" /></div>
             </div>
             ${getAccordianAccounts(data["new_orders"]["orders"])}
-            ${data["rebates_orders"] && data["rebates_orders"]["orders"] && getAccordianAccounts(data["rebates_orders"]["orders"], true)}
+            <div>
+                ${data["rebates_orders"] && data["rebates_orders"]["orders"] && `<div class="menu_header"><div class="category_label">Period Eligible / Rebates</div></div>`}
+                <div id="rebates_order">
+                    ${data["rebates_orders"] && data["rebates_orders"]["orders"] && getAccordianAccounts([data["rebates_orders"]["orders"][0]], true)}
+                </div>
+            </div>
         </div>
         <div class="bottom">
             <div class="btn_wrapper">
@@ -18,7 +23,14 @@ function loadOrderCart(data) {
                 </div>
             </div>
         </div>
+        <div class="periodrebates hide">
+            <div class="rebates_list"></div>
+        </div>
     `);
+
+    data && data["rebates_orders"] && data["rebates_orders"]["orders"] && data["rebates_orders"]["orders"].map((rebates, index) => {
+        $(".rebates_list").append(`<div class="item" skudata=${rebates["sku"]}>${rebates["account_no"]}</div>`);
+    });
 
     $(".goToBrandLevel").click(function (e) {
         e.stopPropagation();
@@ -69,18 +81,63 @@ function loadOrderCart(data) {
             accordionItemBody.css("maxHeight", "0");
         }
     });
+
+    if(getAccordianAccounts(data["rebates_orders"]["orders"])) {
+        $(".periodrebates").click(function (e) {
+            e.stopPropagation();
+            e.stopImmediatePropagation();
+            $(".periodrebates").addClass("hide");
+        });
+
+        $(".rebates_list .item").click(function (e) {
+            e.stopPropagation();
+            e.stopImmediatePropagation();
+            $(".periodrebates").addClass("hide");
+            let currentElementData = $(this).attr("skudata");
+            let filteredRebates = data["rebates_orders"]["orders"].filter((rebates, index) => rebates["sku"] === currentElementData)
+            console.log("currentElementData checkout --> ", currentElementData);
+            $('#rebates_order').empty();
+            $('#rebates_order').append(getAccordianAccounts(filteredRebates, true));
+            $('.switchWholesalerAccount').click(function (e) {
+                e.stopPropagation();
+                e.stopImmediatePropagation();
+                $(".periodrebates").removeClass("hide");
+            });
+        });
+
+        $('.switchWholesalerAccount').click(function (e) {
+            e.stopPropagation();
+            e.stopImmediatePropagation();
+            $(".periodrebates").removeClass("hide");
+        });
+    }
 }
 
 function getAccordianAccounts(data, rebates) {
     let parsedData = getParsedData();
     let filteredBrand = parsedData["plan_progress"]["brands"].filter(brand => brand["sku"] === parsedData["selected_brand"]);
-    console.log(filteredBrand)
+    const getRebatesSwitchOption = (rebates) => {
+        if(rebates) {
+            return `
+                <div class="edit switchWholesalerAccount" style="height: auto; width: 16px; margin-right: 10px;" skudata=${data["sku"]}>
+                    <img src="/assets/images/svg/edit.svg" />
+                </div>
+            `
+        } 
+        return "";
+    }
     let accordianAccounts = data.map(order => {
         return `
             <div class="accordion">
                 <div class="accordion-item">
-                    <div class="accordion-item-header account_detail active">
+                    <!--  <div class="accordion-item-header account_detail active">
                         ${order["account_no"]}
+                    </div> -->
+                    <div class="accordion-item-header account_detail active">
+                        <div class="flex">
+                            ${getRebatesSwitchOption(rebates)}
+                            ${order["account_no"]}
+                        </div>
                     </div>
                     <div class="accordion-item-body parent opened">
                         <div class="accordion-item-body-content" style="max-height: 300px; overflow: auto;">
