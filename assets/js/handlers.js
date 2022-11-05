@@ -337,6 +337,22 @@ function showBrandLevelDetails(data, currentSku) {
         }
     });
 
+    if (window.wholesalerAccountData && window.wholesalerAccountData.length === 0) {
+        let orderData = data["available_orders"]["orders"][0];
+        if(!window.orderCartData.includes(filteredBrand[0]["sku"])) {
+            window.orderCartData.push(filteredBrand[0]["sku"]);
+        }
+        window.wholesalerAccountData.push({...orderData, "brandsku": `${orderData["sku"]}-${filteredBrand[0]["sku"]}`});
+        addWholeSalerAccordion(data, orderData, currentSku);
+    } else {
+        let orderData = data["available_orders"]["orders"][0];
+        if(!window.orderCartData.includes(filteredBrand[0]["sku"]) ) {
+            window.orderCartData.push(filteredBrand[0]["sku"]);
+            window.wholesalerAccountData.push({...orderData, "brandsku": `${orderData["sku"]}-${filteredBrand[0]["sku"]}`});
+            addWholeSalerAccordion(data, orderData, currentSku);
+        }
+    }
+
     $(".account_list .item").click(function (e) {
         e.stopPropagation();
         e.stopImmediatePropagation();
@@ -375,18 +391,20 @@ function showBrandLevelDetails(data, currentSku) {
         }
     });
 
-    let parseData = getParsedData();
-    parseData && parseData?.["new_orders"] && parseData?.["new_orders"]?.["orders"] && parseData?.["new_orders"]?.["orders"].map((ordr, index) => {
-        window[`shouldNewWholeSalerAccountAdd-${index}`] = true;
-        ordr["product_details"].map(product => {
-            let parentSku = window.cartData[ordr["sku"]];
-            let skuproduct = parentSku[product["sku"]];
-            if(window[`shouldNewWholeSalerAccountAdd-${index}`] && skuproduct && (product["brand"] === currentSku && ordr["brandsku"].includes(currentSku))) {
-                addnewOrder(ordr, currentSku);
-                window[`shouldNewWholeSalerAccountAdd-${index}`] = false;
-            }
+    if (window.wholesalerAccountData && window.wholesalerAccountData.length !== 0 && window.cartData && Object.keys(window.cartData).length !== 0) {
+        let parseData = getParsedData();
+        parseData && parseData?.["new_orders"] && parseData?.["new_orders"]?.["orders"] && parseData?.["new_orders"]?.["orders"].map((ordr, index) => {
+            window[`shouldNewWholeSalerAccountAdd-${index}`] = true;
+            ordr["product_details"].map(product => {
+                let parentSku = window.cartData[ordr["sku"]];
+                let skuproduct = parentSku[product["sku"]];
+                if(window[`shouldNewWholeSalerAccountAdd-${index}`] && skuproduct && (product["brand"] === currentSku && ordr["brandsku"].includes(currentSku))) {
+                    addnewOrder(ordr, currentSku);
+                    window[`shouldNewWholeSalerAccountAdd-${index}`] = false;
+                }
+            });
         });
-    });
+    }
 }
 
 function addWholeSalerAccordionSku(data, orderData, currentSku) {
