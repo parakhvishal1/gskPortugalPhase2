@@ -137,9 +137,6 @@ function showSkuLevelDetailsBrand(data, currentSku) {
         $(".account_select").removeClass("hide");
     });
 
-    $('input[id$=tbDate]').datepicker({ dateFormat: 'M dd, y', minDate: 0 });
-    $('input[id$=tbDate]').datepicker("setDate", "today");
-
     $(".accordion-item-header.account_detail").click(function (e) {
         e.stopPropagation();
         e.stopImmediatePropagation();
@@ -319,9 +316,6 @@ function showBrandLevelDetails(data, currentSku) {
         $(".account_select").removeClass("hide");
     });
 
-    $('input[id$=tbDate]').datepicker({ dateFormat: 'M dd, y', minDate: 0 });
-    $('input[id$=tbDate]').datepicker("setDate", "today");
-
     $(".accordion-item-header.account_detail").click(function (e) {
         e.stopPropagation();
         e.stopImmediatePropagation();
@@ -484,6 +478,14 @@ function addnewOrder(data, currentSku) {
         </div>
     `);
 
+    const getLocalDataForDate = getParsedData();
+    const startDate = getLocalDataForDate['start_date'];
+    const endDate = getLocalDataForDate['last_date'];
+    const minDate = `${getMonthName( new Date(startDate))} ${new Date(startDate).getDate()}, ${String(new Date(startDate).getFullYear()).substring(2)}`;
+    const maxDate = `${getMonthName( new Date(endDate))} ${new Date(endDate).getDate()}, ${String(new Date(endDate).getFullYear()).substring(2)}`;
+    $('input[id$=tbDate]').datepicker({ dateFormat: 'M dd, y', minDate: minDate, maxDate: maxDate });
+    $('input[id$=tbDate]').datepicker("setDate", "today");
+
     data["product_details"].map((productData, index) => {
         let uuid = create_UUID();
         if(productData["brand"] === currentSku) {
@@ -581,6 +583,14 @@ function addnewOrderBrand(data, currentSku, skulevel) {
             </div>
         </div>
     `);
+
+    const getLocalDataForDate = getParsedData();
+    const startDate = getLocalDataForDate['start_date'];
+    const endDate = getLocalDataForDate['last_date'];
+    const minDate = `${getMonthName( new Date(startDate))} ${new Date(startDate).getDate()}, ${String(new Date(startDate).getFullYear()).substring(2)}`;
+    const maxDate = `${getMonthName( new Date(endDate))} ${new Date(endDate).getDate()}, ${String(new Date(endDate).getFullYear()).substring(2)}`;
+    $('input[id$=tbDate]').datepicker({ dateFormat: 'M dd, y', minDate: minDate, maxDate: maxDate });
+    $('input[id$=tbDate]').datepicker("setDate", "today");
 
     data["product_details"].map((productData, index) => {
         console.log(productData);
