@@ -42,9 +42,10 @@ function loadOrderCart(data) {
     $("#cancel").click(function (e) {
         e.stopPropagation();
         e.stopImmediatePropagation();
-        let parseData = JSON.parse(localStorage.getItem("data"));
+        let parseData = JSON.parse(localStorage.getItem("init"));
         ToBot("cancel-order", parseData);
-        showBrandLevelDetails(parseData, parseData["selected_brand"]);
+        ToApp("userwelcome-screen", parseData);
+        // showBrandLevelDetails(parseData, parseData["selected_brand"]);
     });
 
     $("#confirm").click(function (e) {
@@ -52,12 +53,12 @@ function loadOrderCart(data) {
         e.stopImmediatePropagation();
         let data = getParsedData();
         let filteredBrand = data["plan_progress"]["brands"].filter(brand => brand["sku"] === data["selected_brand"]);
-        ToBot("confirm-order", data);
         if(filteredBrand && filteredBrand[0] && filteredBrand[0]["total_invoice_range"]) {
             ToApp("ordercart-final-screen", data);
         } else {
-            loadUserWelcomeUI(data);
-            data["plan_progress"] && loadPlanProgress(data["plan_progress"], true, true);
+            ToBot("confirm-order", data);
+            /* loadUserWelcomeUI(data);
+            data["plan_progress"] && loadPlanProgress(data["plan_progress"], true, true); */
         }
         /* data["plan_progress"]["brands"].map(progress => {
             progress["purchased"] = Number(progress["purchased"]) + Number(progress["selected"]);
@@ -251,13 +252,15 @@ function loadOrderFinalCart(data) {
     $("#backFinalCheckout").click(function (e) {
         e.stopPropagation();
         e.stopImmediatePropagation();
+        let parseData = JSON.parse(localStorage.getItem("init"));
         ToBot("cancel-order-total-invoice", data);
+        ToApp("userwelcome-screen", parseData);
     });
 
     $("#continueFinalCheckout").click(function (e) {
         e.stopPropagation();
         e.stopImmediatePropagation();
-        ToApp("choosebrands-screen-from-cart", data);
+        // ToApp("choosebrands-screen-from-cart", data);
         ToBot("confirm-order-total-invoice", data);
     });
 

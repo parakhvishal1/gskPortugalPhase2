@@ -8,18 +8,25 @@
 
 (function () {
     setTimeout(() => {
-        window.orderCartData = [];
-        window.updateCartData = {};
-        window.cartData = {};
-        window.wholesalerAccountData = [];
-        window.dataStore = {};
-        window.discountData = {};
+        GlobalVarInit();
         CallScreen(1);
         CallScreen(4);
     }, 500);
 })();
 
+function GlobalVarInit() {
+    window.orderCartData = [];
+    window.updateCartData = {};
+    window.cartData = {};
+    window.wholesalerAccountData = [];
+    window.dataStore = {};
+    window.discountData = {};
+}
 
+function StoreDataIn(data) {
+    localStorage.setItem("data", JSON.stringify(data));
+    localStorage.setItem("init", JSON.stringify(data));
+}
 
 function ToBot(eventName, data) {
     console.log("to bot called --> ", eventName);
@@ -167,6 +174,10 @@ function ToBot(eventName, data) {
                 event_code: eventName,
                 data: data
             }), '*');
+            if(window.location.hostname === 'localhost') {
+                loadUserWelcomeUI(data);
+                data["plan_progress"] && loadPlanProgress(data["plan_progress"], true, true);
+            }
             break;
         case "cancel-order":
             window.parent.postMessage(JSON.stringify({
@@ -179,6 +190,9 @@ function ToBot(eventName, data) {
                 event_code: eventName,
                 data: data
             }), '*');
+            if(window.location.hostname === 'localhost') {
+                ToApp("userwelcome-screen", data);
+            }
             break;
         case "cancel-order-total-invoice":
             window.parent.postMessage(JSON.stringify({
@@ -205,7 +219,8 @@ function ToApp(eventName, data, orgData) {
             loadTermsUI(data);
             break;
         case "userwelcome-screen":
-            localStorage.setItem("data", JSON.stringify(data));
+            StoreDataIn(data);
+            GlobalVarInit();
             loadUserWelcomeUI(data);
             data["plan_progress"] && loadPlanProgress(data["plan_progress"], true);
             break;
@@ -233,11 +248,15 @@ function ToApp(eventName, data, orgData) {
         case "choosebrands-screen-from-cart":
             loadBrandSelectionUI(data);
             break;
-        case "value":
-
+        case "show-brand-selection":
+            GlobalVarInit();
+            StoreDataIn(data);
+            ToApp("choosebrands-screen", data);
             break;
-        case "value":
-
+        case "show-brand-detailing":
+            GlobalVarInit();
+            StoreDataIn(data);
+            loadBrandSelectionUIByBrandName(data);
             break;
         case "value":
 
