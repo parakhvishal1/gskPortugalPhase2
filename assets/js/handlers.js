@@ -476,7 +476,7 @@ function addnewOrder(data, currentSku) {
                 </div>
                 <div class="accordion-item-body parent opened orderbrandselection">
                     <div class="accordion-item-body-content" style="max-height: 270px; overflow-y: auto;">
-                        <div class="date-picker-value">
+                        <div class="date-picker-value" id="dpicker-${currentSku}">
                             ${showDatePicker()}
                         </div>
                         <table class="accordian table">
