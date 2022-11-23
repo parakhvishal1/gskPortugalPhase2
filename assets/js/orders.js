@@ -336,7 +336,7 @@ function loadBrandSelectionUI(data) {
                     <div class="count_wrapper hide"></div>
                 </div>
             </div>
-            <div class="sub_detail"><span class="bold highlight">Start:</span> ${data["start_date"]} <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span> <span class="bold highlight">End:</span> ${data["last_date"]}</div>
+            <div class="sub_detail"><span class="bold highlight">Start Date:</span> ${data["start_date"]} <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span> <span class="bold highlight">End Date:</span> ${data["last_date"]}</div>
             ${loadProgressCards(data["plan_progress"])}
         </div> 
         <div class="bottom">
