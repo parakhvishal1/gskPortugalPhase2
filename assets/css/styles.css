@@ -335,6 +335,48 @@
     color: #fff;
 }
 
+.place_order .btn.continue,
+.place_order .btn.confirm {
+    padding: 8px 28px 8px 48px;
+}
+
+.place_order .btn.continue::after,
+.place_order .btn.confirm::after {
+    content: '';
+    position: absolute;
+    top: 2px;
+    bottom: 0;
+    right: 10px;
+    height: 2px;
+    width: 2px;
+    margin: auto;
+    font-size: 13px;
+    padding: 5px 4px;
+    border: 1px solid #e6e6e6;
+}
+
+.place_order .btn.back,
+.place_order .btn.cancel {
+    padding: 8px 18px 8px 48px;
+    color: #959595;
+    background: #e6e6e6;
+}
+
+.place_order .btn.back::before,
+.place_order .btn.cancel::before {
+    content: '';
+    position: absolute;
+    top: 2px;
+    bottom: 0;
+    left: 30px;
+    height: 2px;
+    width: 2px;
+    margin: auto;
+    font-size: 13px;
+    padding: 5px 4px;
+    border: 1px solid #959595;
+}
+
 .order_history {
     height: 100%;
     width: 100%;

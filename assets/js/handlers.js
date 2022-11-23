@@ -28,8 +28,8 @@ function showSkuLevelDetailsBrand(data, currentSku) {
         <div class="bottom">
             <div class="btn_wrapper">
                 <div class="place_order">
-                    <button class="btn solid inverted" id="back">Back</button>
-                    <button class="btn solid" id="continue">Continue</button>
+                    <button class="btn solid back" id="back">Back</button>
+                    <button class="btn solid continue" id="continue">Continue</button>
                 </div>
             </div>
         </div>
@@ -222,8 +222,8 @@ function showBrandLevelDetails(data, currentSku) {
         <div class="bottom">
             <div class="btn_wrapper">
                 <div class="place_order">
-                    <button class="btn solid inverted" id="back">Back</button>
-                    <button class="btn solid" id="continue">Continue</button>
+                    <button class="btn solid back" id="back">Back</button>
+                    <button class="btn solid continue" id="continue">Continue</button>
                 </div>
             </div>
         </div>
