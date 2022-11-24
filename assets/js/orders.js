@@ -360,7 +360,17 @@ function loadBrandSelectionUI(data) {
         autoHideScrollbar: true
     });
 
-    let total = calculateSumAmount(window.cartData);
+    // let total = calculateSumAmount(window.cartData);
+    
+    let parseData = getParsedData();
+    let total = 0;
+    parseData && parseData?.["new_orders"] && parseData?.["new_orders"]?.["orders"] && parseData?.["new_orders"]?.["orders"].map((ordr, index) => {
+        ordr["product_details"].map(product => {
+            let quantity = product["quantity"] ? Number(product["quantity"]) : 0;
+            total = total + quantity;
+        });
+    });
+
     if (total) {
         $(".count_wrapper").removeClass("hide");
         $(".place_order.checkout").parent().removeClass("disabled");

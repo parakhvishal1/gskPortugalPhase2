@@ -409,19 +409,24 @@ function showBrandLevelDetails(data, currentSku) {
         }
     });
 
-    if (window.wholesalerAccountData && window.wholesalerAccountData.length !== 0 && window.cartData && Object.keys(window.cartData).length !== 0) {
-        let parseData = getParsedData();
-        parseData && parseData?.["new_orders"] && parseData?.["new_orders"]?.["orders"] && parseData?.["new_orders"]?.["orders"].map((ordr, index) => {
-            window[`shouldNewWholeSalerAccountAdd-${index}`] = true;
-            ordr["product_details"].map(product => {
-                let parentSku = window.cartData[ordr["sku"]];
-                let skuproduct = parentSku[product["sku"]];
-                if(window[`shouldNewWholeSalerAccountAdd-${index}`] && skuproduct && (product["brand"] === currentSku && ordr["brandsku"].includes(currentSku))) {
-                    addnewOrder(ordr, currentSku);
-                    window[`shouldNewWholeSalerAccountAdd-${index}`] = false;
-                }
+    if (window.wholesalerAccountData && window.wholesalerAccountData.length !== 0) {
+        if(window.cartData && Object.keys(window.cartData).length !== 0) {
+            let parseData = getParsedData();
+            parseData && parseData?.["new_orders"] && parseData?.["new_orders"]?.["orders"] && parseData?.["new_orders"]?.["orders"].map((ordr, index) => {
+                window[`shouldNewWholeSalerAccountAdd-${index}`] = true;
+                ordr["product_details"].map(product => {
+                    let parentSku = window.cartData[ordr["sku"]];
+                    let skuproduct = parentSku[product["sku"]];
+                    if(window[`shouldNewWholeSalerAccountAdd-${index}`] && skuproduct && (product["brand"] === currentSku && ordr["brandsku"].includes(currentSku))) {
+                        addnewOrder(ordr, currentSku);
+                        window[`shouldNewWholeSalerAccountAdd-${index}`] = false;
+                    }
+                });
             });
-        });
+        } else {
+            window.wholesalerAccountData = [];
+        }
+       
     }
 
     $(".order_details_container.choosebrands").mCustomScrollbar({
