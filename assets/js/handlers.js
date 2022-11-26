@@ -814,7 +814,19 @@ function updateCounter(counterInput, type, currentSku, skulevel, brandData) {
             }
         }
 
-        let total = calculateSumAmount(totalCalculationTemporary);
+        let total = 0;
+        if(skulevel) {
+            total = calculateSumAmount(totalCalculationTemporary);
+        } else {
+            parseStoredData && parseStoredData?.["new_orders"] && parseStoredData?.["new_orders"]?.["orders"] && parseStoredData?.["new_orders"]?.["orders"].map((ordr, index) => {
+                ordr["product_details"].map(product => {
+                    if(currentSku === product["brand"]) {
+                        let quantity = product["quantity"] ? Number(product["quantity"]) : 0;
+                        total = total + quantity;
+                    }
+                });
+            });
+        }
 
         parseStoredData && parseStoredData["plan_progress"] && parseStoredData["plan_progress"]["brands"].map(brandDataItem => {
             if (brandDataItem["sku"] === parseStoredData["selected_brand"]) {
