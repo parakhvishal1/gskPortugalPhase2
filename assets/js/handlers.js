@@ -313,7 +313,9 @@ function showBrandLevelDetails(data, currentSku) {
                 });
             }
         });
-        parseData["new_orders"]["orders"] = window.wholesalerAccountData;
+        if(parseData?.["new_orders"]?.["orders"]){
+            parseData["new_orders"]["orders"] = window.wholesalerAccountData;
+        }
         saveParsedData(parseData);
         loadBrandSelectionUI(parseData);
         ToBot("ordercart-back", parseData);
@@ -763,8 +765,14 @@ function updateCounter(counterInput, type, currentSku, skulevel, brandData) {
     /* check added: if counter is clicked for another medicine data should not reset */
     let parseStoredData = Object.keys(window.dataStore).length !== 0 ? JSON.parse(JSON.stringify(window.dataStore)) : JSON.parse(storeddata);
     let siblingWrapper = $(counterInput).parent().siblings(".counter__input");
+    let brand = parseStoredData["plan_progress"]["brands"].filter(brand => brand["sku"] === currentSku);
     if (type === "add") {
         var $input = $(siblingWrapper);
+        let totalMedSelected = Number(brand[0]["purchased"] ? brand[0]["purchased"] : 0) + Number(brand[0]["selected"] ? brand[0]["selected"] : Number($input.val())) ;
+        if(totalMedSelected >= brand[0]["max_limit"]) {
+            showSnackbar(true, "Maximum reached!!!");
+            return;
+        }
         siblingWrapper.siblings(".counter__box__container.sub").children().children().children().children().css("fill", "#f36633");
         let datepickedElement = $(counterInput).parent().parent().parent().parent().parent().parent().parent().siblings(".date-picker-value").children().children(".hasDatepicker");
         let formattedDate = datepickedElement.datepicker({ dateFormat: 'M dd, y' }).val();
@@ -772,8 +780,6 @@ function updateCounter(counterInput, type, currentSku, skulevel, brandData) {
         $input.change();
         let skuData = $(counterInput).parent().parent().attr("skudata");
         let parentSkuData = $(counterInput).parent().parent().attr("parentskudata");
-
-        let brand = parseStoredData["plan_progress"]["brands"].filter(brand => brand["sku"] === currentSku);
         let filteredProductDetails = brandData["product_details"].map(data => {
             if(data["brand"] === currentSku) {
                 return data["sku"];
@@ -873,6 +879,10 @@ function updateCounter(counterInput, type, currentSku, skulevel, brandData) {
     if (type === "minus") {
         var $input = $(siblingWrapper);
         var count = parseInt($input.val()) - 1;
+        /* let totalMedSelected = Number(brand[0]["purchased"] ? brand[0]["purchased"] : 0) + Number($input.val());
+        if(totalMedSelected >= brand[0]["max_limit"]) {
+            return;
+        } */
         let datepickedElement = $(counterInput).parent().parent().parent().parent().parent().parent().parent().siblings(".date-picker-value").children().children(".hasDatepicker");
         let formattedDate = datepickedElement.datepicker({ dateFormat: 'M dd, y' }).val();
         let skuData = $(counterInput).parent().parent().attr("skudata");
@@ -889,9 +899,15 @@ function updateCounter(counterInput, type, currentSku, skulevel, brandData) {
                 $input.attr("previous-value", $input.val());
             }
 
-            let brand = parseStoredData["plan_progress"]["brands"].filter(brand => brand["sku"] === currentSku);
-            let filteredProductDetails = brandData["product_details"].filter(data => data["sku"] === skuData);
-
+            /* let brand = parseStoredData["plan_progress"]["brands"].filter(brand => brand["sku"] === currentSku);
+            let filteredProductDetails = brandData["product_details"].filter(data => data["sku"] === skuData); */
+            
+            let filteredProductDetails = brandData["product_details"].map(data => {
+                if(data["brand"] === currentSku) {
+                    return data["sku"];
+                }
+            });
+            
             window.cartData = {
                 ...window.cartData,
                 [parentSkuData]: {
@@ -900,9 +916,9 @@ function updateCounter(counterInput, type, currentSku, skulevel, brandData) {
                 }
             };
             
-            parseStoredData && parseStoredData["new_orders"] && parseStoredData["new_orders"]["orders"] && parseStoredData["new_orders"]["orders"].forEach(order => {
+            parseStoredData && parseStoredData["new_orders"] && parseStoredData["new_orders"]["orders"] && parseStoredData["new_orders"]["orders"].forEach((order, mainIndex) => {
                 if (order["sku"] === parentSkuData) {
-                    order["product_details"].forEach(product => {
+                    let productDetails = order["product_details"].map((product, index) => {
                         /* if(currentSku === product["brand"]) {
                             
                         } */
@@ -917,11 +933,24 @@ function updateCounter(counterInput, type, currentSku, skulevel, brandData) {
                                 $(`#skulevelprogress-${product["sku"]}`).empty();
                                 $(`#skulevelprogress-${product["sku"]}`).append(progressCards);
                             }
+                            if(parseStoredData["available_orders"]["orders"][mainIndex]["sku"] === parentSkuData) {
+                                if(parseStoredData["available_orders"]["orders"][mainIndex]["product_details"][index]["sku"] === skuData) {
+                                    parseStoredData["available_orders"]["orders"][mainIndex]["ordered_date"] = order["ordered_date"];
+                                    parseStoredData["available_orders"]["orders"][mainIndex]["product_details"][index] = product;
+                                }
+                            }
+                            
                             // window.cartData[parentSkuData][skuData] = $input.val() - Number(product["units"]);
                         }
                     });
+                    if(window.wholesalerAccountData[mainIndex]["sku"] === parentSkuData) {
+                        window.wholesalerAccountData[mainIndex]["ordered_date"] = parseStoredData["new_orders"]["orders"][mainIndex]["ordered_date"];
+                        window.wholesalerAccountData[mainIndex]["product_details"] = parseStoredData["new_orders"]["orders"][mainIndex]["product_details"];
+                    }
                 }
             });
+
+            console.log("parseStoredData --> ", parseStoredData);
 
             let totalCalculationTemporary = JSON.parse(JSON.stringify({
                 [parentSkuData]: {
@@ -930,12 +959,24 @@ function updateCounter(counterInput, type, currentSku, skulevel, brandData) {
             }));
     
             for(key in totalCalculationTemporary[parentSkuData]) {
-                if(brand[0]["sku"] !== filteredProductDetails[0]["brand"]) {
+                if(!filteredProductDetails.includes(key)){
                     delete totalCalculationTemporary[parentSkuData][key];    
                 }
             }
     
-            let total = calculateSumAmount(totalCalculationTemporary);
+            let total = 0;
+            if(skulevel) {
+                total = calculateSumAmount(totalCalculationTemporary);
+            } else {
+                parseStoredData && parseStoredData?.["new_orders"] && parseStoredData?.["new_orders"]?.["orders"] && parseStoredData?.["new_orders"]?.["orders"].map((ordr, index) => {
+                    ordr["product_details"].map(product => {
+                        if(currentSku === product["brand"]) {
+                            let quantity = product["quantity"] ? Number(product["quantity"]) : 0;
+                            total = total + quantity;
+                        }
+                    });
+                });
+            }
     
             parseStoredData && parseStoredData["plan_progress"] && parseStoredData["plan_progress"]["brands"].map(brandDataItem => {
                 if (brandDataItem["sku"] === parseStoredData["selected_brand"]) {
