@@ -191,30 +191,15 @@ function getAccordianAccountsData(data, rebates) {
     let parsedData = getParsedData();
     let brand = parsedData["plan_progress"]["brands"].filter(brand => brand["sku"] === parsedData["selected_brand"]);
     let filteredBrand = brand[0];
-    let eligibleFreeGoods = 0;
-    let discount = 0;
     let accordianAccountsData = data.map((item, index) => {
-        if(rebates) {
-            discount = item["discount"];
-        } else {
-            if(item["discount"]) {
-                discount = item["discount"]["eligible_discount"] ? `${item["discount"]["eligible_discount"]}%` : "-";
-            } else {
-                discount = filteredBrand["eligible_discount"] ? `${filteredBrand["eligible_discount"]}%` : "-";
-            }
-            if(item["quantity"]) {
-                eligibleFreeGoods = Number(item["quantity"]) > Number(item["free_goods_range"]["limit"]) ? `+${Number(item["free_goods_range"]["eligible_goods"])}` : '-';
-            }
-        }
-
         if(rebates || item["quantity"]) {
             return `
                 <tr>
                     <td colspan="5">
                         <div class="title paddingTop">
                             <div class="name">${item["name"]}</div>
-                            <div class="arrow edit quantityEdit">
-                                <img src="/assets/images/svg/edit.svg" key=${index} onclick="goBack()" />
+                            <div class="arrow edit quantityEditBackToSelection" brand="${item['brand']}">
+                                <img src="/assets/images/svg/edit.svg" key=${index} />
                             </div>
                         </div>
                     </td>
@@ -228,6 +213,19 @@ function getAccordianAccountsData(data, rebates) {
                 </tr>
             `
         }
+    });
+
+    $(".quantityEditBackToSelection").click(function (e) {
+        e.stopPropagation();
+        e.stopImmediatePropagation();
+        let parseData = JSON.parse(localStorage.getItem("data"));
+        let selectedBrand = $(this).attr("brand");
+        // showBrandLevelDetails(parseData, selectedBrand);
+
+
+        const filteredBrand = parseData["plan_progress"]["brands"].filter(brand => brand["sku"] === selectedBrand);
+        const isBrandSku = filteredBrand[0]["isSku"];
+        isBrandSku ? showSkuLevelDetailsBrand(parsedData, selectedBrand) : showBrandLevelDetails(parsedData, selectedBrand);
     });
     return accordianAccountsData.join("");
 }
