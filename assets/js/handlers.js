@@ -361,6 +361,10 @@ function showBrandLevelDetails(data, currentSku) {
                             quant = quant + Number(pd["units"]);
                             if(window.cartData[pdo["sku"]]) {
                                 if(!Number(pd["units"])) {
+                                    if(whData["product_details"][ind]["sku"] === pd["sku"]) {
+                                        whData["product_details"][ind]["units"] = '0';
+                                        delete whData["product_details"][ind]["quantity"];
+                                    }
                                     delete window.cartData[pdo["sku"]][pd["sku"]];
                                  }
                             }
