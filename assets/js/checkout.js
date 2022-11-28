@@ -36,7 +36,8 @@ function loadOrderCart(data) {
         e.stopPropagation();
         e.stopImmediatePropagation();
         let parseData = JSON.parse(localStorage.getItem("data"));
-        showBrandLevelDetails(parseData, parseData["selected_brand"]);
+        ToApp("choosebrands-screen", parseData);
+        // showBrandLevelDetails(parseData, parseData["selected_brand"]);
     });
 
     $("#cancel").click(function (e) {
