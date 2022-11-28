@@ -221,8 +221,8 @@ function getAccordianAccountsData(data, rebates) {
                 <tr class="info_row borderBottom">
                     <td class="info_data" colspan="1">£ ${item["price"]}</td>
                     <td class="info_data" colspan="1">${item["quantity"] || item["units"]}</td>
-                    <td class="info_data" colspan="1">${eligibleFreeGoods || +item["free_goods"]}</td>
-                    <td class="info_data" colspan="1">${discount}</td>
+                    <td class="info_data" colspan="1">${item["free_goods"]}</td>
+                    <td class="info_data" colspan="1">${item["discount"]}</td>
                     <td class="info_data" colspan="1">${item["payterm"]} D</td>
                 </tr>
             `
