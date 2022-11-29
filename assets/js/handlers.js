@@ -350,36 +350,24 @@ function showBrandLevelDetails(data, currentSku) {
         e.stopPropagation();
         e.stopImmediatePropagation();
         let parseData = getParsedData();
-        window.wholesalerAccountData && window.wholesalerAccountData.map((whData, index) => {
-            if(!window.cartData[whData["sku"]]) {
-                window.wholesalerAccountData.splice(index, 1);
-            } else {
-                parseData && parseData?.["new_orders"]?.["orders"] && parseData?.["new_orders"]?.["orders"].map((pdo, index) => {
-                    let quant = 0;
-                    pdo["product_details"].map((pd , ind) => {
-                        if(pd["brand"] === currentSku) {
-                            quant = quant + Number(pd["units"]);
-                            if(window.cartData[pdo["sku"]]) {
-                                if(!Number(pd["units"])) {
-                                    if(whData["product_details"][ind]["sku"] === pd["sku"]) {
-                                        whData["product_details"][ind]["units"] = '0';
-                                        delete whData["product_details"][ind]["quantity"];
-                                    }
-                                    delete window.cartData[pdo["sku"]][pd["sku"]];
-                                 }
-                            }
-                        }
-                    });
-                    if(!quant) {
-                        delete window.cartData[pdo["sku"]];
+        let getSkuAcc = [];
+        getSkuAcc = window.wholesalerAccountData && window.wholesalerAccountData.map((whData, index) => {
+            return whData["sku"];
+        });
+        if(parseData && parseData?.["new_orders"]?.["orders"] && parseData?.["new_orders"]?.["orders"].length !== 0) {
+            parseData && parseData?.["new_orders"]?.["orders"] && parseData?.["new_orders"]?.["orders"].map((pdo, index) => {
+                window.wholesalerAccountData && window.wholesalerAccountData.map((whData, index) => {
+                    if(!getSkuAcc.includes(pdo["sku"])) {
+                        window.wholesalerAccountData.splice(index, 1);
                     }
                 });
-            }
-        });
-        if(parseData?.["new_orders"]?.["orders"]){
-            parseData["new_orders"]["orders"] = window.wholesalerAccountData;
+            });
+            window.dataStore["new_orders"]["orders"] = window.wholesalerAccountData;
+        } else {
+            window.cartData = {};
+            window.wholesalerAccountData = [];
+            delete window.dataStore["new_orders"];
         }
-        saveParsedData(parseData);
         loadBrandSelectionUI(parseData);
         ToBot("ordercart-back", parseData);
     });
@@ -388,6 +376,9 @@ function showBrandLevelDetails(data, currentSku) {
         e.preventDefault();
         e.stopPropagation();
         e.stopImmediatePropagation();
+        /* 
+        data["new_orders"] = {};
+        data["new_orders"]["orders"] = window.wholesalerAccountData; */
         localStorage.setItem("data", JSON.stringify(window.dataStore));
         let parseData = getParsedData();
         if (parseData && parseData?.["new_orders"]?.["orders"] && parseData?.["new_orders"]?.["orders"].length > 0) {
@@ -538,11 +529,11 @@ function addWholeSalerAccordionSku(data, orderData, currentSku) {
 }
 
 function addWholeSalerAccordion(data, orderData, currentSku) {
-    data["new_orders"] = {};
-    data["new_orders"]["orders"] = window.wholesalerAccountData;
+   /*  data["new_orders"] = {};
+    data["new_orders"]["orders"] = window.wholesalerAccountData; */
     window.dataStore["new_orders"] = {};
     window.dataStore["new_orders"]["orders"] = window.wholesalerAccountData;
-    localStorage.setItem("data", JSON.stringify(data));
+    // localStorage.setItem("data", JSON.stringify(data));
     if (window.wholesalerAccountData.length > 1) {
         let openedAccContainers = [...$(".accordion-item-body.orderbrandselection")];
         openedAccContainers.forEach(openAcc => { $(openAcc).removeClass("opened") });
