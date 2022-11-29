@@ -220,6 +220,15 @@ function ToBot(eventName, data) {
                 event_code: eventName,
                 data: updatedData
             }), '*');
+            if(window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1') {
+                ToApp("get-data-on-refresh", updatedData);
+            }
+            break;
+        case "back-on-orderhistory":
+            window.parent.postMessage(JSON.stringify({
+                event_code: eventName,
+                data: data
+            }), '*');
             break;
         default:
             break;
