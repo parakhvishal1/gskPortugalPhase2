@@ -6,7 +6,7 @@ function showSkuLevelDetailsBrand(data, currentSku) {
 
     $("#content_box").empty();
     $("#content_box").append(`
-        <div class="order_details_container choosebrands">
+        <div class="order_details_container choosebrands" id="order_details_container_choosebrands_skulevel">
             <div class="menu_header">
                 <div class="label">${filteredBrand[0]["name"]}</div>
                 <div class="icon"><i class="fa fa-shopping-cart"></i></div>
@@ -253,14 +253,14 @@ function showSkuLevelDetailsBrand(data, currentSku) {
        
     }
 
-    /* $(".accordion-item-body-content").mCustomScrollbar({
+    $("#order_details_container_choosebrands_skulevel").mCustomScrollbar({
         theme: "dark-thin",
         scrollButtons: { enable: false },
         autoHideScrollbar: true
-    }); */
+    });
 }
 
-function showBrandLevelDetails(data, currentSku) {
+function showBrandLevelDetails(data, currentSku, requestType) {
     window.dataStore = JSON.parse(JSON.stringify(data));
     const lastOrder = data && data["previous_orders"] && data["previous_orders"] && data["previous_orders"]["orders"][0];
     const filteredBrand = data["plan_progress"]["brands"].filter(brand => brand["sku"] === currentSku);
@@ -268,7 +268,7 @@ function showBrandLevelDetails(data, currentSku) {
 
     $("#content_box").empty();
     $("#content_box").append(`
-        <div class="order_details_container choosebrands">
+        <div class="order_details_container choosebrands" id="order_details_container_choosebrands_brandlevel">
             <div class="menu_header">
                 <div class="label">${filteredBrand[0]["name"]}</div>
                 <div class="icon"><i class="fa fa-shopping-cart"></i></div>
@@ -517,11 +517,11 @@ function showBrandLevelDetails(data, currentSku) {
        
     }
 
-    /* $(".order_details_container.choosebrands").mCustomScrollbar({
+    $("#order_details_container_choosebrands_brandlevel").mCustomScrollbar({
         theme: "dark-thin",
         scrollButtons: { enable: true },
         autoHideScrollbar: true
-    }); */
+    });
 }
 
 function addWholeSalerAccordionSku(data, orderData, currentSku) {
