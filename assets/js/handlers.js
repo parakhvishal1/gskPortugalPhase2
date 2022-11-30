@@ -873,7 +873,7 @@ function addnewOrderBrand(data, currentSku, skulevel) {
                 </tr>
                 <tr class="info_row brandscreen">
                     <td class="info_data skuBrand_level_progress" id="skulevelprogress-${productData["sku"]}" colspan="4">
-                        ${loadProgressCards({"brands": [productData["discount"]]}, true, true)}
+                        ${loadProgressCards({"brands": [productData["discounts"]]}, true, true)}
                     </td>
                 </tr>
                 <tr class="info_row brandscreen">
