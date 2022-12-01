@@ -956,7 +956,7 @@ function addnewOrderBrand(data, currentSku, skulevel) {
                 </tr>
                 <tr class="info_row brandscreen">
                     <td class="info_data" style="vertical-align: middle; padding: 0px 0 0 0;" colspan="2">
-                        Period Total:   125
+                        Period Total:   ${productData["discounts"]["purchased"]}
                     </td>
                     <td class="info_data" style="vertical-align: middle; padding: 0px 0 0 0;" colspan="2">
                         <div class="counter__wrapper">
@@ -1096,7 +1096,8 @@ function updateCounter(counterInput, type, currentSku, skulevel, brandData) {
                         product["discounts"]["selected"] = $input.val();
                         if(skulevel) {
                             // let currentItemValue = calculateSumAmount({[parentSkuData]: {...window.cartData[parentSkuData]}});
-                            let progressCards = loadProgressCards({ "brands": [product["discounts"]] }, true, true)
+                            let progressCards = loadProgressCards({ "brands": [product["discounts"]] }, true, true);
+                            $(counterInput).parent().parent('.counter__container').parent('.counter__wrapper').parent('.info_data').siblings('.info_data').text( `Period Total: ${parseInt(product["discounts"]["purchased"]) + parseInt(product["discounts"]["selected"])}` );
                             $(`#skulevelprogress-${product["sku"]}`).empty();
                             $(`#skulevelprogress-${product["sku"]}`).append(progressCards);
                         }
