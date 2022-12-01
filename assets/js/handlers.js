@@ -1094,10 +1094,10 @@ function updateCounter(counterInput, type, currentSku, skulevel, brandData) {
                         order["ordered_date"] = formattedDate ? formattedDate : new Date();
                         product["quantity"] = $input.val();
                         product["units"] = $input.val();
-                        product["discount"]["selected"] = $input.val();
+                        product["discounts"]["selected"] = $input.val();
                         if(skulevel) {
                             // let currentItemValue = calculateSumAmount({[parentSkuData]: {...window.cartData[parentSkuData]}});
-                            let progressCards = loadProgressCards({ "brands": [product["discount"]] }, true, true)
+                            let progressCards = loadProgressCards({ "brands": [product["discounts"]] }, true, true)
                             $(`#skulevelprogress-${product["sku"]}`).empty();
                             $(`#skulevelprogress-${product["sku"]}`).append(progressCards);
                         }
@@ -1215,10 +1215,10 @@ function updateCounter(counterInput, type, currentSku, skulevel, brandData) {
                             order["ordered_date"] = formattedDate ? formattedDate : new Date();
                             product["quantity"] = $input.val();
                             product["units"] = $input.val();
-                            product["discount"]["selected"] = $input.val();
+                            product["discounts"]["selected"] = $input.val();
                             if(skulevel) {
                                 // let currentItemValue = calculateSumAmount({[parentSkuData]: {...window.cartData[parentSkuData]}});
-                                let progressCards = loadProgressCards({ "brands": [product["discount"]] }, true, true)
+                                let progressCards = loadProgressCards({ "brands": [product["discounts"]] }, true, true)
                                 $(`#skulevelprogress-${product["sku"]}`).empty();
                                 $(`#skulevelprogress-${product["sku"]}`).append(progressCards);
                             }
