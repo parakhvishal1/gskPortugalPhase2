@@ -910,8 +910,6 @@ function addnewOrder(data, currentSku) {
 }
 
 function addnewOrderBrand(data, currentSku, skulevel) {
-    let completeData = getParsedData();
-    
     $(".new_orders").prepend(`
         <div class="accordion">
             <div class="accordion-item">
@@ -978,7 +976,7 @@ function addnewOrderBrand(data, currentSku, skulevel) {
                                     </div>
                                 </div>
                             
-                                <input id="counter_input_${index}" class="counter__input home" type="text" value=${productData["units"]} size="4" maxlength="4" autocomplete="off" previous-value="1" />
+                                <input id="counter_input_${index}" class="counter__input home counter_input_wrapper" skudata="${data['sku']}" inputitem="${data['sku']}-${productData['sku']}" type="text" value=${productData["units"]} size="4" maxlength="4" autocomplete="off" previous-value="1" />
                                 <div class="counter__box__container add">
                                     <div class="counter__plus key${uuid}" id="plus">
                                         <!-- <svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -1000,6 +998,7 @@ function addnewOrderBrand(data, currentSku, skulevel) {
                 <tr class="info_row paddingBottom"><td colspan="4"></td></tr>
                 <tr class="info_row paddingTop"><td colspan="4"></td></tr>
             `);
+            addInputListener(`counter_input_wrapper`);
         }
         
 
