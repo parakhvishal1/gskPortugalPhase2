@@ -360,10 +360,55 @@ function showBrandLevelDetails(data, currentSku, requestType) {
                     if(!getSkuAcc.includes(pdo["sku"])) {
                         window.wholesalerAccountData.splice(index, 1);
                     }
+
+                    if(window.counter_input_wrapper) {
+                        let counterListnerId = [...window.counter_input_wrapper];
+                        let counterListnerIdArr = counterListnerId && counterListnerId.map((listnerID, index) => {
+                            return $(listnerID).attr("inputitem");
+                        });
+                        
+                        whData["product_details"].map((detail, ind) => {
+                            if(counterListnerIdArr.includes(`${whData['sku']}-${detail['sku']}`)) {
+                                document.querySelector(`[inputitem="${whData['sku']}-${detail['sku']}"]`);
+                                document.querySelector(`[inputitem="${whData['sku']}-${detail['sku']}"]`).removeEventListener("blur", () => {
+                                    console.log("removed");
+                                });
+                                document.querySelector(`[inputitem="${whData['sku']}-${detail['sku']}"]`).removeEventListener("keyup", () => {
+                                    console.log("removed enter");
+                                });
+                            }
+                        });
+                    }
                 });
             });
+            if(window['counter_input_wrapper']) {
+                delete window['counter_input_wrapper'];
+            }
             window.dataStore["new_orders"]["orders"] = window.wholesalerAccountData;
         } else {
+            console.log("wind --> ", window.wholesalerAccountData);
+            if(window.counter_input_wrapper) {
+                let counterListnerId = [...window.counter_input_wrapper];
+                let counterListnerIdArr = counterListnerId && counterListnerId.map((listnerID, index) => {
+                    return $(listnerID).attr("inputitem");
+                });
+    
+                window.wholesalerAccountData && window.wholesalerAccountData.map((whData, index) => {
+                    whData["product_details"].map((detail, ind) => {
+                        if(counterListnerIdArr.includes(`${whData['sku']}-${detail['sku']}`)) {
+                            document.querySelectorAll(`[inputitem="${whData['sku']}-${detail['sku']}"]`);
+                            document.querySelector(`[inputitem="${whData['sku']}-${detail['sku']}"]`).removeEventListener("blur", () => {
+                                console.log("removed");
+                            });
+                            document.querySelector(`[inputitem="${whData['sku']}-${detail['sku']}"]`).removeEventListener("keyup", () => {
+                                console.log("removed enter");
+                            });
+                        }
+                    });
+                });
+                
+                delete window['counter_input_wrapper'];
+            }
             window.cartData = {};
             window.wholesalerAccountData = [];
             delete window.dataStore["new_orders"];
@@ -379,6 +424,32 @@ function showBrandLevelDetails(data, currentSku, requestType) {
         /* 
         data["new_orders"] = {};
         data["new_orders"]["orders"] = window.wholesalerAccountData; */
+        if(window.counter_input_wrapper) {
+            let counterListnerId = [...window.counter_input_wrapper];
+            let counterListnerIdArr = counterListnerId && counterListnerId.map((listnerID, index) => {
+                return $(listnerID).attr("inputitem");
+            });
+    
+            window.dataStore["new_orders"] && window.dataStore["new_orders"]["orders"].map((whData, index) => {
+                let quant = whData["product_details"].reduce((accumulator, currentValue) => accumulator + Number(currentValue['units']), 0,);
+                whData["product_details"].map((detail, ind) => {
+                    if(counterListnerIdArr.includes(`${whData['sku']}-${detail['sku']}`)) {
+                        console.log(document.querySelector(`[inputitem="${whData['sku']}-${detail['sku']}"]`));
+                        document.querySelector(`[inputitem="${whData['sku']}-${detail['sku']}"]`).removeEventListener("blur", () => {
+                            console.log("removed");
+                        });
+                        document.querySelector(`[inputitem="${whData['sku']}-${detail['sku']}"]`).removeEventListener("keyup", () => {
+                            console.log("removed enter");
+                        });
+                    }
+                });
+                if(!quant) {
+                    window.dataStore["new_orders"]["orders"].splice(index, 1);
+                }
+            });
+            delete window['counter_input_wrapper'];
+        }
+        
         localStorage.setItem("data", JSON.stringify(window.dataStore));
         let parseData = getParsedData();
         if (parseData && parseData?.["new_orders"]?.["orders"] && parseData?.["new_orders"]?.["orders"].length > 0) {
@@ -772,7 +843,7 @@ function addnewOrder(data, currentSku) {
                                     </div>
                                 </div>
                             
-                                <input id="counter_input_${index}" class="counter__input home" type="text" value=${productData["units"]} size="4" maxlength="4" autocomplete="off" previous-value="1" />
+                                <input id="counter_input_${index}" class="counter__input home counter_input_wrapper" skudata="${data['sku']}" inputitem="${data['sku']}-${productData['sku']}" type="text" value=${productData["units"]} size="4" maxlength="4" autocomplete="off" previous-value="1" />
                                 <div class="counter__box__container add">
                                     <div class="counter__plus key${uuid}" id="plus">
                                         <!-- <svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -787,13 +858,21 @@ function addnewOrder(data, currentSku) {
                                         </svg> -->
                                     </div>
                                 </div>
+                                <div class="addmore__qty searchbox">
+                                    <div class="submit">
+                                        <img src="/assets/images/svg/icons8-ok.svg" />
+                                    </div>
+                                </div>
                             </div>
                         </div>
                     </td>
                 </tr>
             `);
+            // if(!index) {
+                addInputListener(`counter_input_wrapper`);
+            // }
         }
-        
+
         $(`.counter__minus.key${uuid}`).click(function (e) {
             updateCounter(this, "minus", currentSku, false, data);
         });
@@ -801,6 +880,7 @@ function addnewOrder(data, currentSku) {
         $(`.counter__plus.key${uuid}`).click(function (e) {
             updateCounter(this, "add", currentSku, false, data);
         });
+
     });
 
     $(".accordion-item-header.orderdetail").click(function (e) {
@@ -971,9 +1051,15 @@ function updateCounter(counterInput, type, currentSku, skulevel, brandData) {
     let brand = parseStoredData["plan_progress"]["brands"].filter(brand => brand["sku"] === currentSku);
     if (type === "add") {
         var $input = $(siblingWrapper);
-        let totalMedSelected = Number(brand[0]["purchased"] ? brand[0]["purchased"] : 0) + Number(brand[0]["selected"] ? brand[0]["selected"] : Number($input.val())) ;
-        if(totalMedSelected >= brand[0]["max_limit"]) {
+        let totalMedSelected = Number(brand[0]["purchased"] ? brand[0]["purchased"] : 0) + Number(brand[0]["selected"] ? brand[0]["selected"] : Number($input.val()));
+        if(totalMedSelected >= Number(brand[0]["max_limit"])) {
             showSnackbar(true, "Maximum reached!!!");
+            return;
+        }
+        if((totalMedSelected + parseInt($input.val())) >= Number(brand[0]["max_limit"])) {
+            showSnackbar(true, "Maximum reached!!!");
+            $input.val(0);
+            $input.change();
             return;
         }
         siblingWrapper.siblings(".counter__box__container.sub").children().children().children().children().css("fill", "#f36633");
