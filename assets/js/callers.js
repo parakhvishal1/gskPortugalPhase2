@@ -10,7 +10,7 @@
     setTimeout(() => {
         GlobalVarInit();
         CallScreen(1);
-        CallScreen(4);
+        CallScreen(6);
     }, 500);
 })();
 
@@ -215,16 +215,30 @@ function ToBot(eventName, data) {
             break;
         case "update-data-on-refresh":
             let updatedData = JSON.parse(data);
-            updatedData["currentScreen"] = window.currentScreen || "";
-            window.parent.postMessage(JSON.stringify({
-                event_code: eventName,
-                data: updatedData
-            }), '*');
-            if(window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1') {
-                ToApp("get-data-on-refresh", updatedData);
+            if(window.currentScreen) {
+                updatedData["currentScreen"] = window.currentScreen || "";
+                window.parent.postMessage(JSON.stringify({
+                    event_code: eventName,
+                    data: updatedData
+                }), '*');
+                if(window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1') {
+                    ToApp("get-data-on-refresh", updatedData);
+                }
             }
             break;
         case "back-on-orderhistory":
+            window.parent.postMessage(JSON.stringify({
+                event_code: eventName,
+                data: data
+            }), '*');
+            break;
+        case "checkout-add-brands":
+            window.parent.postMessage(JSON.stringify({
+                event_code: eventName,
+                data: data
+            }), '*');
+            break;
+        case "checkout-to-brand-detailing":
             window.parent.postMessage(JSON.stringify({
                 event_code: eventName,
                 data: data

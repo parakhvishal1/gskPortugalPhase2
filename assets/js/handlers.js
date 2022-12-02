@@ -694,7 +694,7 @@ function addnewOrder(data, currentSku) {
     `);
 
     const getLocalDataForDate = getParsedData();
-    const startDate = getLocalDataForDate['start_date'];
+    const startDate = new Date();
     const endDate = getLocalDataForDate['last_date'];
     const minDate = `${getMonthName( new Date(startDate))} ${new Date(startDate).getDate()}, ${String(new Date(startDate).getFullYear()).substring(2)}`;
     const maxDate = `${getMonthName( new Date(endDate))} ${new Date(endDate).getDate()}, ${String(new Date(endDate).getFullYear()).substring(2)}`;
@@ -937,7 +937,7 @@ function addnewOrderBrand(data, currentSku, skulevel) {
     `);
 
     const getLocalDataForDate = getParsedData();
-    const startDate = getLocalDataForDate['start_date'];
+    const startDate = new Date();
     const endDate = getLocalDataForDate['last_date'];
     const minDate = `${getMonthName( new Date(startDate))} ${new Date(startDate).getDate()}, ${String(new Date(startDate).getFullYear()).substring(2)}`;
     const maxDate = `${getMonthName( new Date(endDate))} ${new Date(endDate).getDate()}, ${String(new Date(endDate).getFullYear()).substring(2)}`;
