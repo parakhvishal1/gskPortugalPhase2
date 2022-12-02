@@ -218,7 +218,7 @@
 
 .sub-block.freegoods::after {
     counter-reset: x var(--label);
-    content: counter(x)"\0025";
+    content: counter(x)"\002B";
     position: absolute;
     right: -10%;
 }
