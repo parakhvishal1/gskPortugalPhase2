@@ -454,7 +454,7 @@ function showBrandLevelDetails(data, currentSku, requestType) {
             });
             delete window['counter_input_wrapper'];
         }
-        debugger
+        
         localStorage.setItem("data", JSON.stringify(window.dataStore));
         let parseData = getParsedData();
         if (parseData && parseData?.["new_orders"]?.["orders"] && parseData?.["new_orders"]?.["orders"].length > 0) {
@@ -884,7 +884,6 @@ function addnewOrder(data, currentSku) {
 
             console.log("window.cartdata --> ", window.cartData);
             console.log("mappedUnitData --> ", mappedUnitData);
-            debugger;
             filterSelectedData[0]["product_details"] = mappedUnitData;
 
             window.wholesalerAccountData && window.wholesalerAccountData.map((whData, index) => {
@@ -1127,7 +1126,6 @@ function addnewOrderBrand(data, currentSku, skulevel) {
 
             console.log("window.cartdata --> ", window.cartData);
             console.log("mappedUnitData --> ", mappedUnitData);
-            debugger;
             filterSelectedData[0]["product_details"] = mappedUnitData;
 
             window.wholesalerAccountData && window.wholesalerAccountData.map((whData, index) => {
