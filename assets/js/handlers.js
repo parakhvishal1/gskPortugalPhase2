@@ -1257,7 +1257,7 @@ function addnewOrderBrand(data, currentSku, skulevel) {
     // $('input[id$=tbDate]').datepicker("setDate", "today");
 }
 
-function updateCounter(counterInput, type, currentSku, skulevel, brandData) {
+function updateCounter(counterInput, type, currentSku, skulevel, brandData, inputtype) {
     let storeddata = localStorage.getItem("data");
     /* check added: if counter is clicked for another medicine data should not reset */
     let parseStoredData = Object.keys(window.dataStore).length !== 0 ? JSON.parse(JSON.stringify(window.dataStore)) : JSON.parse(storeddata);
@@ -1266,11 +1266,11 @@ function updateCounter(counterInput, type, currentSku, skulevel, brandData) {
     if (type === "add") {
         var $input = $(siblingWrapper);
         let totalMedSelected = Number(brand[0]["purchased"] ? brand[0]["purchased"] : 0) + Number(brand[0]["selected"] ? brand[0]["selected"] : Number($input.val()));
-        if(totalMedSelected >= Number(brand[0]["max_limit"])) {
+        if(inputtype !== "blur" && (totalMedSelected >= Number(brand[0]["max_limit"]))) {
             showSnackbar(true, "Maximum reached!!!");
             return;
         }
-        if((totalMedSelected + parseInt($input.val())) >= Number(brand[0]["max_limit"])) {
+        if(inputtype === "blur" && (totalMedSelected + parseInt($input.val())) >= Number(brand[0]["max_limit"])) {
             showSnackbar(true, "Maximum reached!!!");
             $input.val(0);
             $input.change();
