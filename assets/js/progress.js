@@ -198,9 +198,20 @@ function getProductsProgress(item, detailed, hideAdd, basicProgress, colorscheme
             if (selected > 0) {
                 if(selected > Number(discount_range[index]["label"])) {
                     aggregateSelectedProgress = aggregateSelectedProgress + (blockRatio * diff);
-                    aggregateInvertedProgress = aggregateInvertedProgress + (blockRatio * diff);
+                    // aggregateInvertedProgress = aggregateInvertedProgress + (blockRatio * diff);
                 } else {
                     aggregateSelectedProgress = aggregateSelectedProgress + (blockRatio * (selected - 0));
+                    // aggregateInvertedProgress = aggregateInvertedProgress + (blockRatio * (inverted - 0));
+                }
+                
+            }
+
+            if (inverted > 0) {
+                if(selected > Number(discount_range[index]["label"])) {
+                    // aggregateSelectedProgress = aggregateSelectedProgress + (blockRatio * diff);
+                    aggregateInvertedProgress = aggregateInvertedProgress + (blockRatio * diff);
+                } else {
+                    // aggregateSelectedProgress = aggregateSelectedProgress + (blockRatio * (selected - 0));
                     aggregateInvertedProgress = aggregateInvertedProgress + (blockRatio * (inverted - 0));
                 }
                 
@@ -223,9 +234,19 @@ function getProductsProgress(item, detailed, hideAdd, basicProgress, colorscheme
             if (selected > Number(discount_range[index - 1]["label"])) {
                 if(selected >= Number(discount_range[index]["label"])) {
                     aggregateSelectedProgress = aggregateSelectedProgress + (blockRatio * diff);
-                    aggregateInvertedProgress = aggregateInvertedProgress + (blockRatio * diff);
+                    // aggregateInvertedProgress = aggregateInvertedProgress + (blockRatio * diff);
                 } else {
                     aggregateSelectedProgress = aggregateSelectedProgress + (blockRatio * (selected - Number(discount_range[index - 1]["label"])));
+                    // aggregateInvertedProgress = aggregateInvertedProgress + (blockRatio * (inverted - Number(discount_range[index - 1]["label"])));
+                }
+            }
+
+            if (inverted > Number(discount_range[index - 1]["label"])) {
+                if(inverted >= Number(discount_range[index]["label"])) {
+                    // aggregateSelectedProgress = aggregateSelectedProgress + (blockRatio * diff);
+                    aggregateInvertedProgress = aggregateInvertedProgress + (blockRatio * diff);
+                } else {
+                    // aggregateSelectedProgress = aggregateSelectedProgress + (blockRatio * (selected - Number(discount_range[index - 1]["label"])));
                     aggregateInvertedProgress = aggregateInvertedProgress + (blockRatio * (inverted - Number(discount_range[index - 1]["label"])));
                 }
             }
@@ -236,9 +257,17 @@ function getProductsProgress(item, detailed, hideAdd, basicProgress, colorscheme
         if (selected > Number(discount_range[index - 1]["label"])) {
             if(selected > Number(discount_range[index]["label"])) {
                 aggregateSelectedProgress = aggregateSelectedProgress + (blockRatio * diff);
-                aggregateInvertedProgress = aggregateInvertedProgress + (blockRatio * diff);
+                // aggregateInvertedProgress = aggregateInvertedProgress + (blockRatio * diff);
             } else {
                 aggregateSelectedProgress = aggregateSelectedProgress + (blockRatio * (selected - Number(discount_range[index - 1]["label"])));
+                // aggregateInvertedProgress = aggregateInvertedProgress + (blockRatio * (inverted - Number(discount_range[index - 1]["label"])));
+            }
+
+            if(inverted > Number(discount_range[index]["label"])) {
+                // aggregateSelectedProgress = aggregateSelectedProgress + (blockRatio * diff);
+                aggregateInvertedProgress = aggregateInvertedProgress + (blockRatio * diff);
+            } else {
+                // aggregateSelectedProgress = aggregateSelectedProgress + (blockRatio * (selected - Number(discount_range[index - 1]["label"])));
                 aggregateInvertedProgress = aggregateInvertedProgress + (blockRatio * (inverted - Number(discount_range[index - 1]["label"])));
             }
         }
