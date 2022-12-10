@@ -10,7 +10,7 @@
     setTimeout(() => {
         GlobalVarInit();
         CallScreen(1);
-        CallScreen(6);
+        CallScreen(4);
     }, 500);
 })();
 
@@ -127,6 +127,7 @@ function ToBot(eventName, data) {
             }), '*');
             break;
         case "update-order-data":
+            console.log("update-order-data", data);
             window.parent.postMessage(JSON.stringify({
                 event_code: eventName,
                 data: data
@@ -269,6 +270,7 @@ function ToApp(eventName, data, orgData) {
             GlobalVarInit();
             loadUserWelcomeUI(data);
             data["plan_progress"] && loadPlanProgress(data["plan_progress"], true);
+            // loadBrandSelectionUIByBrandName(data);
             break;
         case "choosebrands-screen":
             loadBrandSelectionUI(data);
@@ -312,10 +314,15 @@ function ToApp(eventName, data, orgData) {
             StoreDataIn(data);
             ToApp(toScreen, data);
             break;
-        case "value":
-
+        case "confirmorderon-bot":
+            confirmOrder();
             break;
-
+        case "show-order-history-screen":
+            switchTab("tab22");
+            break;
+        case "confirm-order-from-cart":
+            confirmOrder();
+            break;
         default:
             break;
     }

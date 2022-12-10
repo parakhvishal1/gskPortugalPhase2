@@ -53,15 +53,7 @@ function loadOrderCart(data) {
     $("#confirm").click(function (e) {
         e.stopPropagation();
         e.stopImmediatePropagation();
-        let data = getParsedData();
-        let filteredBrand = data["plan_progress"]["brands"].filter(brand => brand["sku"] === data["selected_brand"]);
-        if(filteredBrand && filteredBrand[0] && filteredBrand[0]["total_invoice_range"]) {
-            ToApp("ordercart-final-screen", data);
-        } else {
-            ToBot("confirm-order", data);
-            /* loadUserWelcomeUI(data);
-            data["plan_progress"] && loadPlanProgress(data["plan_progress"], true, true); */
-        }
+        confirmOrder();
         /* data["plan_progress"]["brands"].map(progress => {
             progress["purchased"] = Number(progress["purchased"]) + Number(progress["selected"]);
         }); */
@@ -142,6 +134,7 @@ function getAccordianAccounts(data, rebates) {
         } 
         return "";
     }
+
     let accordianAccounts = data.map(order => {
         return `
             <div class="accordion">
@@ -161,7 +154,6 @@ function getAccordianAccounts(data, rebates) {
                                 <div class="flex calendar-picker">
                                     <img class="picker" src="/assets/images/svg/calendar.svg" />
                                     <div class="input_date_picker" readonly="readonly">${order["ordered_date"]}</div>
-                                    <img class="arrow-down" src="/assets/images/svg/down.svg" />
                                 </div>
                             </div>
                             <div class="flex title">PRODUCTS</div>
@@ -312,3 +304,15 @@ function goBack() {
     const isBrandSku = filteredBrand[0]["isSku"];
     !isBrandSku ? showSkuLevelDetailsBrand(parsedData, parsedData["selected_brand"]) : showBrandLevelDetails(parsedData, parsedData["selected_brand"]);
 };
+
+function confirmOrder() {
+    let data = getParsedData();
+    let filteredBrand = data["plan_progress"]["brands"].filter(brand => brand["sku"] === data["selected_brand"]);
+    if(filteredBrand && filteredBrand[0] && filteredBrand[0]["total_invoice_range"]) {
+        ToApp("ordercart-final-screen", data);
+    } else {
+        ToBot("confirm-order", data);
+        /* loadUserWelcomeUI(data);
+        data["plan_progress"] && loadPlanProgress(data["plan_progress"], true, true); */
+    }
+}
