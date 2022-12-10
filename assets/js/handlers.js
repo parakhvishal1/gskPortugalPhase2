@@ -1524,7 +1524,7 @@ function addnewOrderBrand(data, currentSku, skulevel) {
                 <tr class="info_row">
                     <td class="info_data" style="vertical-align: middle; padding: 8px 0 0 0;" colspan="2">${productData["name"]}</td>
                     <td class="info_data highlight" style="vertical-align: middle; padding: 8px 0 0 0; text-align: right;" colspan="2">
-                        ${productData["discount"]["on_invoice_range"] ? "On Invoice" : "Off Invoice"}
+                        ${productData["discounts"]["on_invoice_range"] ? "On Invoice" : "Off Invoice"}
                     </td>
                 </tr>
                 <tr class="info_row brandscreen">
