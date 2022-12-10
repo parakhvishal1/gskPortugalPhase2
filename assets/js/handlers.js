@@ -1629,7 +1629,7 @@ function updateCounter(counterInput, type, currentSku, skulevel, brandData, inpu
     if(skulevel) {
         skuData = $(counterInput).parent().parent().attr("skudata");
     } else {
-        skuData = $(counterInput).parent().parent().attr("parentskudata");
+        skuData = $(counterInput).parent().parent().attr("skudata");
     }
     
     if(skulevel) {
