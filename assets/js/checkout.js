@@ -77,7 +77,7 @@ function loadOrderCart(data) {
         }
     });
 
-    if(getAccordianAccounts(data["rebates_orders"]["orders"])) {
+    if(data["rebates_orders"]["orders"].length) {
         $(".periodrebates").click(function (e) {
             e.stopPropagation();
             e.stopImmediatePropagation();
@@ -138,7 +138,7 @@ function getAccordianAccounts(data, rebates) {
     let parsedData = getParsedData();
     let newDataJoined = [];
     if(rebates) {
-        newDataJoined = parsedData?.["rebates"]?.["orders"] || [];
+        newDataJoined = data || [];
     } else {
         newDataJoined = getJoinedCheckout(parsedData);
     }
@@ -212,7 +212,7 @@ function getAccordianAccountsData(data, rebates) {
                         <div class="title paddingTop">
                             <div class="name">${item["name"]}</div>
                             <div class="arrow edit quantityEditBackToSelection" brand="${item['brand']}">
-                                <img src="/assets/images/svg/edit.svg" key=${index} />
+                                ${rebates ? "" : '<img src="/assets/images/svg/edit.svg" key=${index} />'}
                             </div>
                         </div>
                     </td>
