@@ -130,7 +130,7 @@ function loadOrderCart(data) {
 
         const filteredBrand = parseData["plan_progress"]["brands"].filter(brand => brand["sku"] === selectedBrand);
         const isBrandSku = filteredBrand[0]["isSku"];
-        isBrandSku ? showSkuLevelDetailsBrand(parsedData, selectedBrand) : showBrandLevelDetails(parseData, selectedBrand);
+        isBrandSku ? showSkuLevelDetailsBrand(parsedData, selectedBrand, "from-checkout") : showBrandLevelDetails(parseData, selectedBrand, "from-checkout");
     });
 }
 
