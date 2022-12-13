@@ -51,14 +51,14 @@ function showSkuLevelDetailsBrand(data, currentSku, requestType, requestSku) {
                     <div class="accordion-item-body parent orderbrandselection">
                         <div class="accordion-item-body-content" style="max-height: 300px; overflow-y: auto;">
                             <div class="date-picker-value pointernone">
-                                ${showDatePickerWhite()}
+                                ${showDatePickerWhite(order["ordered_date"])}
                             </div>
                             <div class="flex">
                                 <div class="order_status">
                                     <div class="info"><span class="highlight">Order No:</span> ${lastOrder["order_no"]}</div>
                                 </div>
                                 <div class="order_on_date">
-                                    <div class="info"><span class="highlight">Status:</span> ${lastOrder["ordered_date"]}</div>
+                                    <div class="info"><span class="highlight">Status:</span> ${lastOrder["status"]}</div>
                                 </div>
                             </div>
                             <div class="title">PRODUCTS</div>
@@ -232,6 +232,24 @@ function showSkuLevelDetailsBrand(data, currentSku, requestType, requestSku) {
         localStorage.setItem("data", JSON.stringify(window.dataStore));
         let parseData = getParsedData();
         if (parseData && parseData?.["new_orders"]?.["orders"] && parseData?.["new_orders"]?.["orders"].length > 0) {
+            let totalSelectedQuantity = 0;
+            parseData?.["new_orders"]?.["orders"].map(order => {
+                order["product_details"].map(product => {
+                    if(filteredBrand[0]["sku"] === product["brand"]) {
+                        if(product["quantity"]) {
+                            totalSelectedQuantity = totalSelectedQuantity + Number(product["quantity"]);
+                        }
+                    }
+
+                });
+            });
+            window.dataStore["plan_progress"]["brands"].map(brand => {
+                if(brand["sku"] === currentSku) {
+                    brand["selected"] = totalSelectedQuantity;
+                }
+            });
+            localStorage.setItem("data", JSON.stringify(window.dataStore));
+
             if(!window.orderCartData.includes(filteredBrand[0]["sku"])) {
                 window.orderCartData.push(filteredBrand[0]["sku"]);
             }
@@ -245,8 +263,8 @@ function showSkuLevelDetailsBrand(data, currentSku, requestType, requestSku) {
                 }
             })
             if(isDateSelectedforNewOrder) {
-                loadBrandSelectionUI(parseData);
-                ToBot("ordercart-continue", parseData);
+                loadBrandSelectionUI(window.dataStore);
+                ToBot("ordercart-continue", window.dataStore);
             } else {
                 showSnackbar(true, "Please select the date!!!");
             }
@@ -473,14 +491,14 @@ function showBrandLevelDetails(data, currentSku, requestType, requestSku) {
                     <div class="accordion-item-body parent orderbrandselection">
                         <div class="accordion-item-body-content" style="max-height: 300px; overflow-y: auto;">
                             <div class="date-picker-value pointernone">
-                                ${showDatePickerWhite()}
+                                ${showDatePickerWhite(order["ordered_date"])}
                             </div>
                             <div class="flex">
                                 <div class="order_status">
                                     <div class="info"><span class="highlight">Order No:</span> ${lastOrder["order_no"]}</div>
                                 </div>
                                 <div class="order_on_date">
-                                    <div class="info"><span class="highlight">Status:</span> ${lastOrder["ordered_date"]}</div>
+                                    <div class="info"><span class="highlight">Status:</span> ${lastOrder["status"]}</div>
                                 </div>
                             </div>
                             <div class="title">PRODUCTS</div>
@@ -649,6 +667,18 @@ function showBrandLevelDetails(data, currentSku, requestType, requestSku) {
     $(".account_list").click(function (e) {
         e.stopPropagation();
         e.stopImmediatePropagation();
+    });
+
+    $(".swap_account_select").click(function (e) {
+        e.stopPropagation();
+        e.stopImmediatePropagation();
+        $(".swap_account_select").addClass("hide");
+    });
+
+    $(".swap_account_list").click(function (e) {
+        e.stopPropagation();
+        e.stopImmediatePropagation();
+        $(".swap_account_select").addClass("hide");
     });
 
     $("#addanotheraccount").click(function (e) {
@@ -1015,6 +1045,7 @@ function addnewOrder(data, currentSku) {
     $(".swapWholesalerAccount").click(function (e) {
         e.stopPropagation();
         e.stopImmediatePropagation();
+        
         $(".swap_account_list").empty();
         $(".swap_account_select").removeClass("hide");
         let swapSku = $(this).attr("skudata");
@@ -1028,6 +1059,10 @@ function addnewOrder(data, currentSku) {
         getLocalDataForDate && getLocalDataForDate["available_orders"] && getLocalDataForDate["available_orders"]["orders"] && getLocalDataForDate["available_orders"]["orders"].map((order, index) => {
             if(swapSku !== order["sku"]) {
                 $(".swap_account_list").append(`<div class="item swap" skudata=${order["sku"]} oldSkuData=${swapSku} currentWholeSaler=${swapSkudata}>${order["account_no"]}</div>`);
+            } else {
+                if(getLocalDataForDate["available_orders"] && getLocalDataForDate["available_orders"]["orders"].length === 1) {
+                    $(".swap_account_list").append(`<div class="item empty">No other accounts available</div>`);
+                }
             }
         });
         attachAccountListListener();
@@ -1344,7 +1379,7 @@ function addnewOrderBrand(data, currentSku, skulevel) {
                 </div>
                 <div class="accordion-item-body parent opened orderbrandselection">
                     <div class="accordion-item-body-content" style="max-height: 270px; overflow-y: auto;">
-                        <div class="date-picker-value" id="dpicker-${data["_id"]}" _id=${data["_id"]}>
+                        <div class="date-picker-value" id="dpicker-${data["_id"]}" _id=${data["_id"]} style="margin-top: -6px;">
                             ${showDatePicker()}
                         </div>
                         
@@ -1755,7 +1790,7 @@ function updateCounter(counterInput, type, currentSku, skulevel, brandData, inpu
     if(skulevel) {
         parentSkuData = $(counterInput).parent().parent().attr("parentskudata");
     } else {
-        parentSkuData = $(counterInput).parent().parent().attr("skudata");
+        parentSkuData = $(counterInput).parent().parent().attr("parentskudata");
     }
     let accoundIdSelected = $(counterInput).parent().parent().attr("_id");
     

@@ -1,6 +1,6 @@
 function loadUserWelcomeUI(data) {
-    const containsPrevOrder = data["previous_orders"]["orders"].length;
-    const lastOrder = data["previous_orders"]["orders"][containsPrevOrder - 1];
+    const containsPrevOrder = data?.["previous_orders"]?.["orders"].length;
+    const lastOrder = data?.["previous_orders"]?.["orders"]?.[containsPrevOrder - 1];
     $(".header").removeClass('hide');
     $("#content_box").empty();
 
@@ -372,6 +372,7 @@ function loadUserWelcomeUI(data) {
                         let parseData = getParsedData();
                         let prevEditedSku = parseData["previous_orders"]["orders"].filter(prorder => {
                             if(prorder["sku"] === previousSelectedSku && prorder["ordered_date"] === previousSelectedSkuDate) {
+                                prorder["units"] = value;
                                 return prorder;
                             }
                         });

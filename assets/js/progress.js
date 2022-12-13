@@ -83,13 +83,11 @@ function getProgressHeaderFooterLabels(data, sourceContainer) {
                     </div>
                     ${sourceContainer === "header" ? 
                         `
-                            <div class="progress_header_label">
-                                ${(data["offInvoice_discount_execution"] === "FINANCIAL") ? 'Disc.' : ''}
-                                ${(data["offInvoice_discount_execution"] === "FREE_GOODS") ? 'Free Goods' : ''}
-                            </div>
+                            ${(data["offInvoice_discount_execution"] === "FINANCIAL") ? '<div class="progress_header_label">Disc.</div>' : ''}
+                            ${(data["offInvoice_discount_execution"] === "FREE_GOODS") ? '<div class="progress_header_label" style="right: calc(100% + 4px);">Free Goods</div>' : ''}
                         ` : ""
                     }
-                    ${sourceContainer === "header" ? '<div class="progress_header_label right">Off <br/> Invoice</div>' : ""}
+                    ${sourceContainer === "header" ? '<div class="progress_header_label right">Off Invoice</div>' : ""}
                     ${sourceContainer === "footer" ? '<div class="progress_footer_label">Value</div>' : ""}
                 </div>
             `;
@@ -107,13 +105,12 @@ function getProgressHeaderFooterLabels(data, sourceContainer) {
                     </div>
                     ${sourceContainer === "header" ? 
                         `
-                            <div class="progress_header_label">
-                                ${(data["onInvoice_discount_execution"] === "FINANCIAL") ? 'Disc.' : ''}
-                                ${(data["onInvoice_discount_execution"] === "FREE_GOODS") ? 'Free<br />Goods' : ''}
-                            </div>
+                            ${(data["onInvoice_discount_execution"] === "FINANCIAL") ? '<div class="progress_header_label">Disc.</div>' : ''}
+                            ${(data["onInvoice_discount_execution"] === "FREE_GOODS") ? '<div class="progress_header_label" style="right: calc(100% + 4px);">Free Goods</div>' : ''}
+                            
                         ` : ""
                     }
-                    ${sourceContainer === "header" ? '<div class="progress_header_label right">On <br/> Invoice</div>' : ""}
+                    ${sourceContainer === "header" ? '<div class="progress_header_label right">On Invoice</div>' : ""}
                     ${sourceContainer === "footer" ? '<div class="progress_footer_label">Value</div>' : ""}
                 </div>
             `;
