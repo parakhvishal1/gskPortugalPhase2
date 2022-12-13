@@ -283,6 +283,18 @@ function showSkuLevelDetailsBrand(data, currentSku, requestType, requestSku) {
         e.stopImmediatePropagation();
     });
 
+    $(".swap_account_select").click(function (e) {
+        e.stopPropagation();
+        e.stopImmediatePropagation();
+        $(".swap_account_select").addClass("hide");
+    });
+
+    $(".swap_account_list").click(function (e) {
+        e.stopPropagation();
+        e.stopImmediatePropagation();
+        $(".swap_account_select").addClass("hide");
+    });
+
     $("#addanotheraccount").click(function (e) {
         e.stopPropagation();
         e.stopImmediatePropagation();
@@ -366,20 +378,19 @@ function showSkuLevelDetailsBrand(data, currentSku, requestType, requestSku) {
     if (window.wholesalerAccountData && window.wholesalerAccountData.length !== 0) {
         if(window.cartData && Object.keys(window.cartData).length !== 0) {
             let parseData = Object.keys(window.dataStore).length !== 0 ? JSON.parse(JSON.stringify(window.dataStore)) : getParsedData();
-            parseData && parseData?.["new_orders"] && parseData?.["new_orders"]?.["orders"] && parseData?.["new_orders"]?.["orders"].map((ordr, index) => {
-                window[`shouldNewWholeSalerAccountAdd-${index}`] = true;
-                ordr["product_details"].map(product => {
-                    let parentSku = window.cartData[`${ordr["sku"]}_${ordr["_id"]}`];
-                    let skuproduct = parentSku?.[product?.["sku"]];
-                    if(window[`shouldNewWholeSalerAccountAdd-${index}`] && skuproduct && (product["brand"] === currentSku)) {
-                        debugger
-                        if(requestType !== "from-checkout") {
+            if(requestType !== "from-checkout") {
+                parseData && parseData?.["new_orders"] && parseData?.["new_orders"]?.["orders"] && parseData?.["new_orders"]?.["orders"].map((ordr, index) => {
+                    window[`shouldNewWholeSalerAccountAdd-${index}`] = true;
+                    ordr["product_details"].map(product => {
+                        let parentSku = window.cartData[`${ordr["sku"]}_${ordr["_id"]}`];
+                        let skuproduct = parentSku?.[product?.["sku"]];
+                        if(window[`shouldNewWholeSalerAccountAdd-${index}`] && skuproduct && (product["brand"] === currentSku)) {
                             addnewOrderBrand(ordr, currentSku, true);
                             window[`shouldNewWholeSalerAccountAdd-${index}`] = false;
                         }
-                    }
+                    });
                 });
-            });
+            }
         } else {
             window.wholesalerAccountData = [];
         }
@@ -841,17 +852,19 @@ function showBrandLevelDetails(data, currentSku, requestType, requestSku) {
         if(window.cartData && Object.keys(window.cartData).length !== 0) {
             let parseData = Object.keys(window.dataStore).length !== 0 ? JSON.parse(JSON.stringify(window.dataStore)) : getParsedData();
             debugger;
-            parseData && parseData?.["new_orders"] && parseData?.["new_orders"]?.["orders"] && parseData?.["new_orders"]?.["orders"].map((ordr, index) => {
-                window[`shouldNewWholeSalerAccountAdd-${index}`] = true;
-                ordr["product_details"].map(product => {
-                    let parentSku = window.cartData[`${ordr["sku"]}_${ordr["_id"]}`];
-                    let skuproduct = parentSku?.[product?.["sku"]];
-                    if(window[`shouldNewWholeSalerAccountAdd-${index}`] && skuproduct && (product["brand"] === currentSku)) {
-                        addnewOrder(ordr, currentSku);
-                        window[`shouldNewWholeSalerAccountAdd-${index}`] = false;
-                    }
+            if(requestType !== "from-checkout") {
+                parseData && parseData?.["new_orders"] && parseData?.["new_orders"]?.["orders"] && parseData?.["new_orders"]?.["orders"].map((ordr, index) => {
+                    window[`shouldNewWholeSalerAccountAdd-${index}`] = true;
+                    ordr["product_details"].map(product => {
+                        let parentSku = window.cartData[`${ordr["sku"]}_${ordr["_id"]}`];
+                        let skuproduct = parentSku?.[product?.["sku"]];
+                        if(window[`shouldNewWholeSalerAccountAdd-${index}`] && skuproduct && (product["brand"] === currentSku)) {
+                            addnewOrder(ordr, currentSku);
+                            window[`shouldNewWholeSalerAccountAdd-${index}`] = false;
+                        }
+                    });
                 });
-            });
+            }
         } else {
             window.wholesalerAccountData = [];
         }
@@ -1457,6 +1470,10 @@ function addnewOrderBrand(data, currentSku, skulevel) {
         getLocalDataForDate && getLocalDataForDate["available_orders"] && getLocalDataForDate["available_orders"]["orders"] && getLocalDataForDate["available_orders"]["orders"].map((order, index) => {
             if(swapSku !== order["sku"]) {
                 $(".swap_account_list").append(`<div class="item swap" skudata=${order["sku"]} oldSkuData=${swapSku} currentWholeSaler=${swapSkudata}>${order["account_no"]}</div>`);
+            } else {
+                if(getLocalDataForDate["available_orders"] && getLocalDataForDate["available_orders"]["orders"].length === 1) {
+                    $(".swap_account_list").append(`<div class="item empty">No other accounts available</div>`);
+                }
             }
         });
         attachAccountListListener();
