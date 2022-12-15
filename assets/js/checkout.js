@@ -218,11 +218,11 @@ function getAccordianAccountsData(data, rebates) {
                     </td>
                 </tr>
                 <tr class="info_row borderBottom">
-                    <td class="info_data" colspan="1">£ ${item["price"] || "-"}</td>
-                    <td class="info_data" colspan="1">${item["quantity"] || item["units"]}</td>
-                    <td class="info_data" colspan="1">${item["free_goods"] || "-"}</td>
-                    <td class="info_data" colspan="1">${item["discount"] ? (item["discount"] + '%') : "-"}</td>
-                    <td class="info_data" colspan="1">${item["payterm"] ? (item["payterm"] + 'D') : "-"}</td>
+                    <td class="info_data" colspan="1">£ ${item["price"] && item["price"] !== "null" ? item["price"] : "-"}</td>
+                    <td class="info_data" colspan="1">${item["units"] && item["units"] !== "null" ? item["units"] : "-"}</td>
+                    <td class="info_data" colspan="1">${item["free_goods"] && item["free_goods"] !== "null" ? item["free_goods"] : "-"}</td>
+                    <td class="info_data" colspan="1">${item["discount"] && item["discount"] !== "null" ? (item["discount"] + '%') : "-"}</td>
+                    <td class="info_data" colspan="1">${item["payterm"] && item["payterm"] !== "null" ? (item["payterm"] + 'D') : "-"}</td>
                 </tr>
             `
         }
