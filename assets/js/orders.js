@@ -1,6 +1,9 @@
 function loadUserWelcomeUI(data) {
     const containsPrevOrder = data?.["previous_orders"]?.["orders"].length;
     const lastOrder = data?.["previous_orders"]?.["orders"]?.[containsPrevOrder - 1];
+    let localStoredData = JSON.parse(localStorage.getItem("data"));
+    let locale = localStoredData["locale"];
+
     $(".header").removeClass('hide');
     $("#content_box").empty();
 
@@ -15,7 +18,7 @@ function loadUserWelcomeUI(data) {
                 <div class="tab-2 active">
                     <div class="block active ${containsPrevOrder ? '' : 'hide'}">
                         <input id="tab21" name="tabs-two" type="radio" checked="checked">
-                        <label for="tab21" id="label">Last Order</label>
+                        <label for="tab21" id="label">${locale["labels"]["lastOrder"]}</label>
                     </div>
                     <div class="tab_body active">
                         <div class="order_history bottom">
@@ -23,7 +26,7 @@ function loadUserWelcomeUI(data) {
                             <div class="btn_wrapper">
                                 <div class="btnbox">
                                     ${
-                                        (window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1') ? '<a class="btn outline place_new_order" href="#">Place New Order</a>': ''
+                                        (window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1') ? `<a class="btn outline place_new_order" href="#">${locale["buttons"]["placeNewOrder"]}</a>`: ''
                                     }
                                 </div>
                             </div>
@@ -33,15 +36,15 @@ function loadUserWelcomeUI(data) {
                 <div class="tab-2">
                     <div class="block ${containsPrevOrder ? '' : 'hide'}">
                         <input id="tab22" name="tabs-two" type="radio">
-                        <label for="tab22" id="label">Order History</label>
+                        <label for="tab22" id="label">${locale["labels"]["orderHistory"]}</label>
                     </div>
                     <div class="tab_body">
                         <div class="order_history bottom">
                             <div class="upper_history_container" id="order_history_container"></div>
                             <div class="btn_wrapper">
                                 <div class="btnbox">
-                                    <button class="btn solid inverted" id="backbtnOh">Back</button>
-                                    <div id="download_file" class="btn outline" href=${data["download_url"]}><span class="icon"><i class="fa fa-download" aria-hidden="true"></i></span>Download Order History</div>
+                                    <button class="btn solid inverted" id="backbtnOh">${locale["buttons"]["back"]}</button>
+                                    <div id="download_file" class="btn outline" href=${data["download_url"]}><span class="icon"><i class="fa fa-download" aria-hidden="true"></i></span>${locale["labels"]["downloadOrderHistory"]}</div>
                                 </div>
                             </div>
                         </div>
@@ -79,7 +82,7 @@ function loadUserWelcomeUI(data) {
                 <div class="title backbtn hide">
                     <div class="arrow name flex back_button" style="font-weight: 400; font-size: 14px; color: #151515;">
                         <img src="/assets/images/svg/right.svg" style="transform: rotate(180deg);" />
-                        <span style="margin-left: 5px;">Back</span>
+                        <span style="margin-left: 5px;">${locale["buttons"]["back"]}</span>
                     </div>
                     <div class="arrow hide">
                         <img src="/assets/images/svg/edit.svg" style="height: 20px; width: 20px;"/>
@@ -94,36 +97,36 @@ function loadUserWelcomeUI(data) {
                     </div>
                     <div class="flex">
                         <!-- <div class="order_status">
-                            <div class="info">Order No: ${lastOrder["order_no"]}</div>
-                            <div class="info">${lastOrder["status"]}${lastOrder["delivery_date"] ? " &nbsp;|&nbsp; Delivery On: " : ""}${lastOrder["delivery_date"]}</div>
+                            <div class="info">${locale["labels"]["orderNo"]}: ${lastOrder["order_no"]}</div>
+                            <div class="info">${lastOrder["status"]}${lastOrder["delivery_date"] ? ` &nbsp;|&nbsp; ${locale["labels"]["deliveryOn"]}: ` : ""}${lastOrder["delivery_date"]}</div>
                         </div> -->
                         <div class="order_status">
-                            <div class="info"><span class="light-colored">Order No:</span> <span class="bold">${lastOrder["order_no"]}</span></div>
-                            <div class="info"><span class="light-colored">Status:</span> <span class="bold">${lastOrder["status"]}</span></div>
+                            <div class="info"><span class="light-colored">${locale["labels"]["orderNo"]}:</span> <span class="bold">${lastOrder["order_no"]}</span></div>
+                            <div class="info"><span class="light-colored">${locale["labels"]["status"]}:</span> <span class="bold">${lastOrder["status"]}</span></div>
                         </div>
                         <div class="order_status">
-                            <div class="info"><span class="light-colored">Order Date:</span> <span class="bold">${lastOrder["ordered_date"]}</span></div>
-                            <div class="info"><span class="light-colored">Status Date:</span> <span class="bold">${lastOrder["delivery_date"]}</span></div>
+                            <div class="info"><span class="light-colored">${locale["labels"]["orderDate"]}:</span> <span class="bold">${lastOrder["ordered_date"]}</span></div>
+                            <div class="info"><span class="light-colored">${locale["labels"]["statusDate"]}:</span> <span class="bold">${lastOrder["delivery_date"]}</span></div>
                         </div>
                         <div class="order_on_date">
-                            <div class="info">Ordered On:</div>
+                            <div class="info">${locale["labels"]["orderedOn"]}:</div>
                             <div class="info">${lastOrder["ordered_date"]}</div>
                         </div>
                     </div>
                 </div>
                 <div class="order_cart history hide">
                     <div class="title">
-                        <div class="name">Order Details</div>
+                        <div class="name">${locale["labels"]["orderDetails"]}</div>
                     </div>
                     <div class="detail">
                         <table class="ui very basic table" skudata=${lastOrder["sku"]} date="${lastOrder["ordered_date"]}" orderid=${lastOrder["order_no"]}>
                             <thead>
                                 <tr class="info_row">
-                                    <td class="info_data" colspan="1">Est. Price</td>
-                                    <td class="info_data" colspan="1">Units</td>
-                                    <td class="info_data" colspan="1">Free Goods</td>
+                                    <td class="info_data" colspan="1">${locale["labels"]["estPrice"]}</td>
+                                    <td class="info_data" colspan="1">${locale["labels"]["units"]}</td>
+                                    <td class="info_data" colspan="1">${locale["labels"]["freeGoods"]}</td>
                                     <td class="info_data" colspan="1">${Boolean(lastOrder["on_invoice"]) ? "On Invoice Discount" : "Off Invoice Discount"}</td>
-                                    <td class="info_data" colspan="1">Pay Term</td>
+                                    <td class="info_data" colspan="1">${locale["labels"]["payTerm"]}</td>
                                 </tr>
                             </thead>
                             <tbody id="order_card_tablebody"></tbody>
@@ -180,11 +183,11 @@ function loadUserWelcomeUI(data) {
                                 </div>
                                 <div class="flex">
                                     <div>
-                                        <div class="info">Order No: ${orderData["order_no"]}</div>
-                                        <div class="info outer" style="align-self: flex-start;"><span class=${classValue}>${orderData["status"]}</span>${orderData["delivery_date"] ? " | Delivery On: " : ""}${orderData["delivery_date"]}</div>
+                                        <div class="info">${locale["labels"]["orderNo"]}: ${orderData["order_no"]}</div>
+                                        <div class="info outer" style="align-self: flex-start;"><span class=${classValue}>${orderData["status"]}</span>${orderData["delivery_date"] ? ` | ${locale["labels"]["deliveryOn"]}: ` : ""}${orderData["delivery_date"]}</div>
                                     </div>
                                     <div class="order_on_date">
-                                        <div class="info" style="font-weight: 600;white-space: nowrap;">Ordered On:</div>
+                                        <div class="info" style="font-weight: 600;white-space: nowrap;">${locale["labels"]["orderedOn"]}:</div>
                                         <div class="info">${lastOrder["ordered_date"]}</div>
                                     </div>
                                 </div>
@@ -193,17 +196,17 @@ function loadUserWelcomeUI(data) {
                     </div>
                     <div class="order_cart history hide">
                         <div class="title">
-                            <div class="name">Order Details</div>
+                            <div class="name">${locale["labels"]["orderDetails"]}</div>
                         </div>
                         <div class="detail">
                             <table class="ui very basic table" skudata=${orderData["sku"]} orderid=${orderData["order_no"]}>
                                 <thead>
                                     <tr class="info_row">
-                                        <td class="info_data" colspan="1">Est. Price</td>
-                                        <td class="info_data" colspan="1">Units</td>
-                                        <td class="info_data" colspan="1">Free Goods</td>
+                                        <td class="info_data" colspan="1">${locale["labels"]["estPrice"]}</td>
+                                        <td class="info_data" colspan="1">${locale["labels"]["units"]}</td>
+                                        <td class="info_data" colspan="1">${locale["labels"]["freeGoods"]}</td>
                                         <td class="info_data" colspan="2">${Boolean(lastOrder["on_invoice"]) ? "On Invoice Discount" : "Off Invoice Discount"}</td>
-                                        <td class="info_data" colspan="1">Pay Term</td>
+                                        <td class="info_data" colspan="1">${locale["labels"]["payTerm"]}</td>
                                     </tr>
                                 </thead>
                                 <tbody id="order_card_tablebody" skudata=${orderData["sku"]} date="${orderData["ordered_date"]}" orderid=${orderData["order_no"]}></tbody>
@@ -292,7 +295,7 @@ function loadUserWelcomeUI(data) {
                                 prorder["product_details"].map(pd => {
                                     if(pd["sku"] === $(this).siblings(".name").attr("skudata")) {
                                         if(Number(value) > pd["maxLimit"]) {
-                                            showSnackbar(true, "Value exceeding the max limit.");
+                                            showSnackbar(true, locale["snackbars"]["exceedMaxLimit"]);
                                             $(getElement).children().val(value)
                                             $(getElement).children().change()
                                             return;
@@ -401,7 +404,7 @@ function loadUserWelcomeUI(data) {
                                 prorder["product_details"].map(pd => {
                                     if(pd["sku"] === $(this).siblings(".name").attr("skudata")) {
                                         if(Number(value) > pd["maxLimit"]) {
-                                            showSnackbar(true, "Value exceeding the maximum limit!!!");
+                                            showSnackbar(true, locale["snackbars"]["exceedMaxLimit"]);
                                             $(getElement).children().val(value)
                                             $(getElement).children().change()
                                             return;
@@ -454,7 +457,8 @@ function loadUserWelcomeUI(data) {
 }
 
 function loadBrandSelectionUI(data) {
-    let orginalData = JSON.parse(JSON.stringify(data));
+    let localStoredData = JSON.parse(localStorage.getItem("data"));
+    let locale = localStoredData["locale"];
     $(".header").removeClass('hide');
     $("#content_box").empty();
     $("#content_box").append(`
@@ -462,20 +466,20 @@ function loadBrandSelectionUI(data) {
             <div class="menu_header">
                 <div class="label">
                     <img class="back-arrow" src="/assets/images/svg/right.svg"/>
-                    Choose Brands
+                    ${locale["labels"]["chooseBrands"]}
                 </div>
                 <div class="icon view_checkout">
                     <img src="/assets/images/svg/basket.svg" />
                     <div class="count_wrapper hide"></div>
                 </div>
             </div>
-            <div class="sub_detail"><span class="bold highlight">Start Date:</span> ${data["start_date"]} <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span> <span class="bold highlight">End Date:</span> ${data["last_date"]}</div>
+            <div class="sub_detail"><span class="bold highlight">${locale["labels"]["startDate"]}:</span> ${data["start_date"]} <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span> <span class="bold highlight">${locale["labels"]["endDate"]}:</span> ${data["last_date"]}</div>
             ${loadProgressCards(data["plan_progress"])}
         </div> 
         <div class="bottom">
             <div class="btn_wrapper disabled">
                 <div class="place_order checkout">
-                    <button class="btn solid checkout view_checkout">Checkout</button>
+                    <button class="btn solid checkout view_checkout">${locale["buttons"]["checkout"]}</button>
                 </div>
             </div>
         </div>
