@@ -35,90 +35,6 @@ function ToBot(eventName, data) {
     switch (eventName) {
         case "fetch-user-details":
             delete data["isLoggedIn"];
-            setTimeout(() => {
-                ToApp("user-details", {
-                    "profile_details": {
-                        "firstName": "Valentin",
-                        "lastName": "Buteler",
-                        "countryDialCode": "91",
-                        "phone": "9898011111",
-                        "email": "valentinbuteler@gmail.com"
-                    },
-                    "associated_accounts": {
-                        "accounts": [
-                            {
-                                "name": "Wholesaler A",
-                                "active_status": "active",
-                                "account_data": [
-                                    {
-                                        "account_no": "A00000001",
-                                        "legal_id": "12345",
-                                        "status": "Active",
-                                        "invoice": "https://www.invoicesimple.com/wp-content/uploads/2018/05/InvoiceSimple-PDF-Template.pdf"
-                                    },
-                                    {
-                                        "account_no": "A00000001",
-                                        "legal_id": "12345",
-                                        "status": "Active",
-                                        "invoice": "https://www.invoicesimple.com/wp-content/uploads/2018/05/InvoiceSimple-PDF-Template.pdf"
-                                    },
-                                    {
-                                        "account_no": "A00000001",
-                                        "legal_id": "12345",
-                                        "status": "Active",
-                                        "invoice": "https://www.invoicesimple.com/wp-content/uploads/2018/05/InvoiceSimple-PDF-Template.pdf"
-                                    }
-                                ]
-                            },
-                            {
-                                "name": "Wholesaler B",
-                                "active_status": "",
-                                "account_data": [
-                                    {
-                                        "account_no": "A00000001",
-                                        "legal_id": "12345",
-                                        "status": "In-Active",
-                                        "invoice": "https://www.invoicesimple.com/wp-content/uploads/2018/05/InvoiceSimple-PDF-Template.pdf"
-                                    },
-                                    {
-                                        "account_no": "A00000001",
-                                        "legal_id": "12345",
-                                        "status": "In-Active",
-                                        "invoice": "https://www.invoicesimple.com/wp-content/uploads/2018/05/InvoiceSimple-PDF-Template.pdf"
-                                    },
-                                    {
-                                        "account_no": "A00000001",
-                                        "legal_id": "12345",
-                                        "status": "In-Active",
-                                        "invoice": "https://www.invoicesimple.com/wp-content/uploads/2018/05/InvoiceSimple-PDF-Template.pdf"
-                                    }
-                                ]
-                            },
-                            {
-                                "name": "Wholesaler C",
-                                "active_status": "active",
-                                "account_data": [
-                                    {
-                                        "account_no": "A00000001",
-                                        "legal_id": "12345",
-                                        "status": "Pending Verification",
-                                        "invoice": "https://www.invoicesimple.com/wp-content/uploads/2018/05/InvoiceSimple-PDF-Template.pdf"
-                                    },
-                                    {
-                                        "account_no": "A00000001",
-                                        "legal_id": "12345",
-                                        "status": "Pending Verification",
-                                        "invoice": "https://www.invoicesimple.com/wp-content/uploads/2018/05/InvoiceSimple-PDF-Template.pdf"
-                                    }
-                                ]
-                            }
-                        ]
-                    },
-                    "notification": {
-                        "status": "online"
-                    },
-                })
-            }, 0);
             break;
         case "terms-conditions":
             window.parent.postMessage(JSON.stringify({
@@ -242,6 +158,31 @@ function ToBot(eventName, data) {
             }), '*');
             break;
         case "checkout-to-brand-detailing":
+            window.parent.postMessage(JSON.stringify({
+                event_code: eventName,
+                data: data
+            }), '*');
+        case "help":
+            window.parent.postMessage(JSON.stringify({
+                event_code: eventName,
+                data: data
+            }), '*');
+        case "profile-details":
+            window.parent.postMessage(JSON.stringify({
+                event_code: eventName,
+                data: data
+            }), '*');
+        case "associated-accounts":
+            window.parent.postMessage(JSON.stringify({
+                event_code: eventName,
+                data: data
+            }), '*');
+        case "notification":
+            window.parent.postMessage(JSON.stringify({
+                event_code: eventName,
+                data: data
+            }), '*');
+        case "addaccount-associatedaccounts":
             window.parent.postMessage(JSON.stringify({
                 event_code: eventName,
                 data: data
