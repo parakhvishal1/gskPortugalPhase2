@@ -14,15 +14,27 @@
     }, 500);
 })();
 
-function GlobalVarInit() {
-    window.orderCartData = [];
-    window.updateCartData = {};
-    window.cartData = {};
-    window.wholesalerAccountData = [];
-    window.dataStore = {};
-    window.discountData = {};
-    // window.currentScreen = "";
-    window.brandArr = {};
+function GlobalVarInit(data) {
+    if(data && data["appstate"]) {
+        console.log(data["appstate"]);
+        window.orderCartData = data["appstate"]["orderCartData"];
+        window.updateCartData = data["appstate"]["updateCartData"];
+        window.cartData = data["appstate"]["cartData"];
+        window.wholesalerAccountData = data["appstate"]["wholesalerAccountData"];
+        window.dataStore = {};
+        window.discountData = data["appstate"]["discountData"];
+        // window.currentScreen = "";
+        window.brandArr = data["appstate"]["brandArr"];
+    } else {
+        window.orderCartData = [];
+        window.updateCartData = {};
+        window.cartData = {};
+        window.wholesalerAccountData = [];
+        window.dataStore = {};
+        window.discountData = {};
+        // window.currentScreen = "";
+        window.brandArr = {};
+    }
 }
 
 function StoreDataIn(data) {
@@ -89,6 +101,7 @@ function ToBot(eventName, data) {
             }), '*');
             break;
         case "ordercart-continue":
+            console.log("ordercart-continue -> ", data);
             window.parent.postMessage(JSON.stringify({
                 event_code: eventName,
                 data: data
@@ -209,10 +222,11 @@ function ToApp(eventName, data, orgData) {
             loadTermsUI(data);
             break;
         case "userwelcome-screen":
+            console.log("===== userwelcome =====\n", data);
             StoreDataIn(data);
-            GlobalVarInit();
+            GlobalVarInit(data);
             loadUserWelcomeUI(data);
-            data["plan_progress"] && loadPlanProgress(data["plan_progress"], true);
+            data["plan_progress"] && loadPlanProgress(data["plan_progress"], true, false, "init");
             // loadBrandSelectionUIByBrandName(data);
             break;
         case "choosebrands-screen":
