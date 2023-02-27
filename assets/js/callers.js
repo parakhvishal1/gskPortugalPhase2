@@ -175,26 +175,31 @@ function ToBot(eventName, data) {
                 event_code: eventName,
                 data: data
             }), '*');
+            break;
         case "help":
             window.parent.postMessage(JSON.stringify({
                 event_code: eventName,
                 data: data
             }), '*');
+            break;
         case "profile-details":
             window.parent.postMessage(JSON.stringify({
                 event_code: eventName,
                 data: data
             }), '*');
+            break;
         case "associated-accounts":
             window.parent.postMessage(JSON.stringify({
                 event_code: eventName,
                 data: data
             }), '*');
+            break;
         case "notification":
             window.parent.postMessage(JSON.stringify({
                 event_code: eventName,
                 data: data
             }), '*');
+            break;
         case "addaccount-associatedaccounts":
             window.parent.postMessage(JSON.stringify({
                 event_code: eventName,
