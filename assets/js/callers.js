@@ -122,6 +122,7 @@ function ToBot(eventName, data) {
                 loadUserWelcomeUI(data);
                 data["plan_progress"] && loadPlanProgress(data["plan_progress"], true, true);
             }
+            GlobalVarInit();
             break;
         case "cancel-order":
             window.parent.postMessage(JSON.stringify({
