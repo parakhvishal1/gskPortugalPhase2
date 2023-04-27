@@ -5,6 +5,7 @@ function loadUserWelcomeUI(data) {
     let locale = localStoredData["locale"];
 
     $(".header").removeClass('hide');
+    $("#bodyContent").addClass("order_welcome");
     $("#content_box").empty();
 
 
@@ -80,6 +81,9 @@ function loadUserWelcomeUI(data) {
         $("#last_order_history").append(`
             <div class="order_card last_order" data=${encodeURIComponent(JSON.stringify(lastOrder))} skudata="${lastOrder['sku']}" date="${lastOrder['ordered_date']}" orderid=${lastOrder["order_no"]}>
                 <div class="title backbtn hide">
+                    <div class="title inner" style="padding-left: 0; margin-bottom:0;">
+                        <div class="name highlight">${lastOrder["account_no"]}</div>
+                    </div>
                     <div class="arrow name flex back_button" style="font-weight: 400; font-size: 14px; color: #151515;">
                         <img src="/assets/images/svg/right.svg" style="transform: rotate(180deg);" />
                         <span style="margin-left: 5px;">${locale["buttons"]["back"]}</span>
@@ -89,7 +93,7 @@ function loadUserWelcomeUI(data) {
                     </div>
                 </div>
                 <div class="card_click" data=${encodeURIComponent(JSON.stringify(lastOrder))} skudata="${lastOrder['sku']}" date="${lastOrder['ordered_date']}" orderid=${lastOrder["order_no"]}>
-                    <div class="title">
+                    <div class="title outer">
                         <div class="name highlight">${lastOrder["account_no"]}</div>
                         <div class="arrow">
                             <img src="/assets/images/svg/right.svg" />
@@ -154,6 +158,7 @@ function loadUserWelcomeUI(data) {
             $(this).parent().addClass("hide");
             siblingElement.siblings(".card_click")
             $("#progress_plan_main").removeClass("hide");
+            siblingElement.siblings(".card_click").children(".title.outer").removeClass("hide");
             siblingElement.siblings(".card_click").css("pointer-events", "unset");
         });
 
@@ -230,6 +235,7 @@ function loadUserWelcomeUI(data) {
                 if (childElement.hasClass("hide")) {
                     childElement.removeClass("hide");
                     $("#progress_plan_main").addClass("hide");
+                    $(this).children(".title.outer").addClass("hide");
                     $(this).siblings(".title.backbtn").removeClass("hide");
                     getTableBodyChildElement.empty();
                     additionalDetails && additionalDetails.map((item, index) => {

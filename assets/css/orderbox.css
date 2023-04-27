@@ -58,7 +58,7 @@
 .order_card .title .name,
 .progress_plan .title .name {
     font-weight: 700;
-    font-size: 14px;
+    font-size: 16px;
 }
 
 .order_card .title .arrow img {
@@ -170,7 +170,7 @@
 }
 
 .title.backbtn {
-    margin-bottom: 22px;
+    margin-bottom: 16px;
 }
 
 .title.backbtn + .card_click .flex .order_status:nth-child(2) {
