@@ -9,6 +9,7 @@
 (function () {
     setTimeout(() => {
         GlobalVarInit();
+        CallScreen(0);
         CallScreen(1);
         CallScreen(4);
     }, 500);
@@ -291,6 +292,9 @@ function ToApp(eventName, data, orgData) {
             break;
         case "confirm-order-from-cart":
             confirmOrder();
+            break;
+        case "legal-copyright":
+            addLegalCopyright(data);
             break;
         default:
             break;

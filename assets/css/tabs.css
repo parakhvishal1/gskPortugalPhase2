@@ -1,6 +1,7 @@
 /* Order Section Start */
 .order_section {
-    height: calc(100% - 20px);
+    /* height: calc(100% - 20px); */
+    height: calc(100% - 0px);
     width: 100%;
     padding: 0 20px;
     margin-top: 20px;

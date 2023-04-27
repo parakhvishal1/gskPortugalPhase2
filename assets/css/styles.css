@@ -445,7 +445,8 @@
 }
 
 .order_history .upper_history_container {
-    height: calc(75% - 20px);
+    /* height: calc(75% - 20px); */
+    height: calc(75% - 0px);
     overflow-y: auto;
 }
 
@@ -765,7 +766,7 @@ table {
 
 /* Footer Start */
 .footer {
-    height: 14px;
+    height: 140px;
 }
 
 .footer .copyright {

@@ -66,11 +66,11 @@ h6 {
 }
 
 #bodyCasontent .header + .bodyContent {
-    height: calc(100% - 14px - 76px - 20px);
+    height: calc(100% - 14px - 76px - 140px);
 }
 
 #bodyCasontent .header.hide + .bodyContent {
-    height: calc(100% - 14px);
+    height: calc(100% - 140px);
 }
 
 input:focus {

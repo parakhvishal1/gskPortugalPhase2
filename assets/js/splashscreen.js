@@ -5,12 +5,13 @@ function loadGeneralWelcome(data) {
             <div class="branding">
                 
             </div>
-            <div class="legal_tnc">
-                <div class="legal_tnc_title">${data["tncHeading"]}</div>
-                <div class="legal_tnc_body">${data["tnc"]}</div>
-            </div>
         </div>
     `);
+}
+
+function addLegalCopyright(data) {
+    $(".legal_tnc_title").text(data["tncHeading"]);
+    $(".legal_tnc_body").text(data["tnc"]);
 }
 
 /* 
