@@ -123,10 +123,10 @@ function loadUserWelcomeUI(data) {
                         <div class="name">${locale["labels"]["orderDetails"]}</div>
                     </div>
                     <div class="detail">
-                        <table class="ui very basic table" skudata=${lastOrder["sku"]} date="${lastOrder["ordered_date"]}" orderid=${lastOrder["order_no"]}>
+                        <table class="ui very basic table" style="width: 100%;" skudata=${lastOrder["sku"]} date="${lastOrder["ordered_date"]}" orderid=${lastOrder["order_no"]}>
                             <thead>
                                 <tr class="info_row">
-                                    <td class="info_data" colspan="1">${locale["labels"]["estPrice"]}</td>
+                                    <td class="info_data" colspan="2">${locale["labels"]["estPrice"]}</td>
                                     <td class="info_data" colspan="1">${locale["labels"]["units"]}</td>
                                     <td class="info_data" colspan="1">${locale["labels"]["freeGoods"]}</td>
                                     <td class="info_data" colspan="1">${Boolean(lastOrder["on_invoice"]) ? "On Invoice Discount" : "Off Invoice Discount"}</td>
@@ -135,6 +135,7 @@ function loadUserWelcomeUI(data) {
                             </thead>
                             <tbody id="order_card_tablebody"></tbody>
                         </table>
+                        
                     </div>
                 </div>
             </div>

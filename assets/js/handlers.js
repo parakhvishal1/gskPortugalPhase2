@@ -15,7 +15,8 @@ function showSkuLevelDetailsBrand(data, currentSku, requestType, requestSku) {
                 <div class="icon"><i class="fa fa-shopping-cart"></i></div>
             </div>
             <div class="sub_detail_wrapper">
-                <div class="sub_detail"><strong>${locale["labels"]["start"]}:</strong> ${data["start_date"]} <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span> <strong>${locale["labels"]["end"]}:</strong> ${data["last_date"]}</div>
+                <div class="sub_detail"><strong>${locale["labels"]["start"]}:</strong> ${data["start_date"]} <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span> </div>
+                <div class="sub_detail"><strong>${locale["labels"]["end"]}:</strong> ${data["last_date"]}</div>
                 <div class="sub_detail highlight">${isAdditionDiscountEligible ? locale["labels"]["additionalDiscount"] : ""}</div>
             </div>
             
@@ -478,7 +479,8 @@ function showBrandLevelDetails(data, currentSku, requestType, requestSku) {
                 <div class="icon"><i class="fa fa-shopping-cart"></i></div>
             </div>
             <div class="sub_detail_wrapper">
-                <div class="sub_detail"><strong>${locale["labels"]["start"]}:</strong> ${data["start_date"]} <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span> <strong>${locale["labels"]["end"]}:</strong> ${data["last_date"]}</div>
+                <div class="sub_detail"><strong>${locale["labels"]["start"]}:</strong> ${data["start_date"]}</div>
+                <div class="sub_detail"><strong>${locale["labels"]["end"]}:</strong> ${data["last_date"]}</div>
                 <div class="sub_detail highlight">${isAdditionDiscountEligible ? locale["labels"]["additionalDiscount"] : ""}</div>
             </div>
             <div class="brand_level_progress">${loadProgressCards({ "brands": filteredBrand }, true, true)}</div>
