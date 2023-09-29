@@ -13,7 +13,8 @@ function CallScreen(caseNum) {
                 isLoggedIn: true,
                 name: "Valentin Buteler",
                 email: "valentinbuteler@gmail.com",
-                phone: "4455668899"
+                phone: "4455668899",
+                rep: true
             });
             break;
         case "2":
@@ -1253,35 +1254,21 @@ function CallScreen(caseNum) {
                 "title": "Client List",
                 "clients": [
                     {
-                        "name": "Valentin Buteler"
+                        "name": "Valentin Buteler1",
+                        "_id": '1'
                     },
                     {
-                        "name": "Valentin Buteler"
+                        "name": "Valentin Buteler2",
+                        "_id": '2'
                     },
                     {
-                        "name": "Valentin Buteler"
+                        "name": "Valentin Buteler3",
+                        "_id": '3'
                     },
                     {
-                        "name": "Valentin Buteler"
-                    },
-                    {
-                        "name": "Valentin Buteler"
-                    },
-                    {
-                        "name": "Valentin Buteler"
-                    },
-                    {
-                        "name": "Valentin Buteler"
-                    },
-                    {
-                        "name": "Valentin Buteler"
-                    },
-                    {
-                        "name": "Valentin Buteler"
-                    },
-                    {
-                        "name": "Valentin Buteler"
-                    },
+                        "name": "Valentin Buteler4",
+                        "_id": '4'
+                    }
                 ],
             });
             break;
