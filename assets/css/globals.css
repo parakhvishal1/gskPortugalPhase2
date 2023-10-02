@@ -1,0 +1,15 @@
+header {
+    height: 12%;
+}
+
+header.hide + main {
+    height: 76%;
+}
+
+header + main {
+    height: calc(76% - 12%);
+}
+
+footer {
+    height: 24%;
+}
