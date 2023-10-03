@@ -44,7 +44,8 @@ canvas,
 svg {
     display: block;
     max-width: 100%;
-    animation: fadeIn 1s;
+    transform-style: preserve-3d;
+    animation: zoomup 0.4s ease-out both;
 }
 
 input,
@@ -62,6 +63,7 @@ h4,
 h5,
 h6 {
     overflow-wrap: break-word;
+    animation: textfocus 0.8s cubic-bezier(0.550, 0.085, 0.680, 0.530) both;
 }
 
 table,
@@ -79,5 +81,5 @@ button {
 }
 
 div {
-    animation: bouncein 0.5s cubic-bezier(0.445, 0.05, 0.55, 0.95);
+    /* animation: bouncein 0.5s cubic-bezier(0.445, 0.05, 0.55, 0.95); */
 }

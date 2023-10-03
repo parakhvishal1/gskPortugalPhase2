@@ -25,7 +25,7 @@ function CallScreen(caseNum) {
                 "tnc": `At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis
                 praesentium voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint
                 occaecati cupiditate non provident, similique sunt in culpa qui officia deserunt mollitia.`,
-                "bg-img": "/assets/images/png/brand.png"
+                "bg-img": "/assets/images/png/welcome-banner.png"
             });
             break;
         case "3":
