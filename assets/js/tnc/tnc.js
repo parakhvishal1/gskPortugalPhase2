@@ -4,7 +4,7 @@ function loadTermsUI(data) {
     $("#content_box").append(`
         <div class="termsofuse bottom">
             <div class="main_content">
-                <div class="heading">${data["heading"]}</div>
+                <h2 class="heading">${data["heading"]}</h2>
                 <div class="termsofuse_content" id="termsofuse_content"></div>
             </div>
         </div>
@@ -13,8 +13,8 @@ function loadTermsUI(data) {
     data && data["termsofuse"] && data["termsofuse"].map(terms => {
         $("#termsofuse_content").append(`
             <div class="block">
-                <div class="title">${terms["title"]}</div>
-                <div class="detail">${terms["desc"]}</div>
+                <h3 class="title">${terms["title"]}</h3>
+                <p class="detail">${terms["desc"]}</p>
             </div>
         `);
     });
