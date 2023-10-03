@@ -9,12 +9,14 @@
     <!-- Custom stylesheets -->
     <link preload rel="stylesheet" href="/assets/css/font.css">
     <link rel="stylesheet" href="/assets/css/animation.css">
-    <link rel="stylesheet" href="/assets/css/root.css">
+    <link rel="stylesheet" href="/assets/css/scroller.css">
     <link rel="stylesheet" href="/assets/css/globals.css">
+    <link rel="stylesheet" href="/assets/css/root.css">
     <link rel="stylesheet" href="/assets/css/default.css">
     <link rel="stylesheet" href="/assets/js/snackbar/snackbar.css">
     <link rel="stylesheet" href="/assets/js/banner/banner.css">
     <link rel="stylesheet" href="/assets/js/legal/legal.css">
+    <link rel="stylesheet" href="/assets/js/tnc/tnc.css">
     
     <!-- jQuery lib -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
@@ -30,12 +32,14 @@
     <script defer src="/assets/js/snackbar/snackbar.js"></script>
     <script defer src="/assets/js/banner/banner.js"></script>
     <script defer src="/assets/js/legal/legal.js"></script>
+    <script defer src="/assets/js/tnc/tnc.js"></script>
+    <script defer src="/assets/js/helpers.js"></script>
 </head>
 
 <body id="bodyContent">
-    <header class="header hide"></header>
+    <header id="header" class="header hide"></header>
     
-    <main class="portals">
+    <main>
         <section id="bodyContent" class="bodyContent">
             <div class="content__box" id="content_box"></div>
         </section>
@@ -62,9 +66,12 @@
     </main>
 
     <footer class="footer">
-        <div class="legal_tnc">
+        <div class="legal_tnc hidden">
             <h2 class="legal_tnc_title"></h2>
             <p class="legal_tnc_body"></p>
+        </div>
+        <div class="copyright">
+            <p class="copyright-text">©2022 GSK. All Rights Reserved.</p>
         </div>
     </footer>
 

@@ -2,14 +2,35 @@ header {
     height: 12%;
 }
 
-header.hide + main {
-    height: 76%;
-}
-
 header + main {
     height: calc(76% - 12%);
 }
 
+header.hide + main {
+    height: 76%;
+}
+
+header.hide.tnc + main {
+    height: calc(100% - 3%);
+}
+
+header.hide.tnc + main + footer .legal_tnc {
+    height: 0%;
+    display: none;
+}
+
+header.hide.tnc + main + footer .copyright {
+    height: 3%;
+}
+
 footer {
-    height: 24%;
+    height: 100%;
+}
+
+footer .legal_tnc {
+    height: 21%;
+}
+
+footer .copyright {
+    height: 3%;
 }

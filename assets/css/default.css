@@ -28,6 +28,10 @@ input[id$="tbDate"] {
     display: none !important;
 }
 
+.hidden {
+    visibility: hidden !important;
+}
+
 .pointernone {
     pointer-events: none;
 }

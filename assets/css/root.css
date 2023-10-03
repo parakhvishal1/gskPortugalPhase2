@@ -37,6 +37,10 @@ body {
     -webkit-font-smoothing: antialiased;
 }
 
+main {
+    overflow-y: auto;
+}
+
 img,
 picture,
 video,

@@ -64,6 +64,39 @@ function CallScreen(caseNum) {
                         "title": "Use Of Your Personal Data",
                         "desc": `At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis
                         praesentium voluptatum.`
+                    },
+                    {
+                        "title": "Privacy Policy",
+                        "desc": `At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis
+                        praesentium voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint
+                        occaecati cupiditate non provident, similique sunt in culpa qui offiserunt mollitia animi.`
+                    },
+                    {
+                        "title": "Authorization",
+                        "desc": `At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis
+                        praesentium voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint
+                        occaecati cupiditate non provident, similique sunt in culpa qui. Nemo enim ipsam voluptatem
+                        quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui
+                        ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor
+                        sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt
+                        laboret.`
+                    },
+                    {
+                        "title": "Collection And Use Of Information",
+                        "desc": `At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis
+                        praesentium voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint
+                        occaecati cupiditate non provident, similique sunt in culpa qui.`
+                    },
+                    {
+                        "title": "Privacy Policy",
+                        "desc": `At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis
+                        praesentium voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint
+                        occaecati cupiditate non provident, similique sunt in culpa qui offiserunt mollitia animi.`
+                    },
+                    {
+                        "title": "Use Of Your Personal Data",
+                        "desc": `At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis
+                        praesentium voluptatum.`
                     }
                 ],
                 "accept": "Accept the terms",
