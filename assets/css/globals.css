@@ -6,6 +6,10 @@ header + main {
     height: calc(76% - 12%);
 }
 
+header.user + main {
+    height: calc(100% - 12% - 3%);
+}
+
 header.hide + main {
     height: 76%;
 }
@@ -14,6 +18,7 @@ header.hide.tnc + main {
     height: calc(100% - 3%);
 }
 
+header.user + main + footer .legal_tnc,
 header.hide.tnc + main + footer .legal_tnc {
     height: 0%;
     display: none;

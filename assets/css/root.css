@@ -66,6 +66,7 @@ h3,
 h4,
 h5,
 h6 {
+    letter-spacing: 0.5px;
     overflow-wrap: break-word;
     animation: textfocus 0.8s cubic-bezier(0.550, 0.085, 0.680, 0.530) both;
 }
@@ -85,5 +86,6 @@ button {
 }
 
 div {
+    letter-spacing: 0.5px;
     /* animation: bouncein 0.5s cubic-bezier(0.445, 0.05, 0.55, 0.95); */
 }

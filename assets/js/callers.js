@@ -41,7 +41,7 @@ function StoreDataIn(data) {
 }
 
 function ToBot(eventName, data) {
-    log("to bot called --> ", eventName);
+    log({"to bot called --> ": eventName});
     switch (eventName) {
         case "fetch-user-details":
             delete data["isLoggedIn"];
@@ -238,14 +238,29 @@ function ToApp(eventName, data, orgData) {
             } else {
                 localStorage.removeItem('rep');
             }
-            showHeader(userData);
+            showHeader(userData, 'user');
             break;
         case "welcome-screen":
             loadGeneralWelcome(data);
             addLegalCopyright(data);
             break;
+        case "welcome-screen-unfilled-steps":
+            loadGeneralWelcome(data);
+            addLegalCopyright(data);
+            break;
+        case "welcome-screen-filled-step1":
+            loadGeneralWelcome(data);
+            addLegalCopyright(data);
+            break;
+        case "welcome-screen-filled-step2":
+            loadGeneralWelcome(data);
+            addLegalCopyright(data);
+            break;
+        case "welcome-screen-filled-step3":
+            loadGeneralWelcome(data);
+            addLegalCopyright(data);
+            break;
         case "termsui-screen":
-            // showHeader();
             loadTermsUI(data);
             break;
         case "userwelcome-screen":

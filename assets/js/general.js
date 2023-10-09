@@ -10,6 +10,8 @@ if (!(window.location.hostname === 'localhost' || window.location.hostname === '
 
 const log = (data) => {
     if(!isLogEnabled) return;
-    console.info(data);
+    console.log(data);
+    // console.info(data);
+    // console.trace(data);
     return;
 }
