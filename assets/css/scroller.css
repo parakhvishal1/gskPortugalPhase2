@@ -1,4 +1,5 @@
   * {
+    scroll-behavior: smooth;
     scrollbar-width: auto;
     scrollbar-color: #959595 #f0efed;
   }

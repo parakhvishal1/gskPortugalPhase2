@@ -71,6 +71,10 @@ h6 {
     animation: textfocus 0.8s cubic-bezier(0.550, 0.085, 0.680, 0.530) both;
 }
 
+table {
+    width: 100%;
+}
+
 table,
 th,
 td {

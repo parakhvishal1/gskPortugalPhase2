@@ -24,6 +24,11 @@
     margin-bottom: 20px;
 }
 
+.order_card .title {
+    font-weight: 700;
+    font-size: 14px;
+}
+
 .order_card .title,
 .progress_plan .title {
     display: flex;
@@ -65,6 +70,7 @@
 .order_card .title .arrow img {
     height: 10px;
     width: 10px;
+    animation: unset;
 }
 
 .order_card .title .arrow.edit img {

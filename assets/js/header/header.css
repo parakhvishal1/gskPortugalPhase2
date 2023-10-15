@@ -11,12 +11,14 @@
     left: 0;
     height: 2px;
     width: 100%;
+    z-index: -1;
     background-color: #fff;
 }
 
 .header .header_icon_wrapper .header_bar {
     height: 100%;
     display: flex;
+    align-items: center;
     justify-content: space-between;
     flex-direction: row-reverse;
     padding: 0 20px;
@@ -74,6 +76,7 @@
 .header .header_icon_wrapper .header_bar .profile_block .svg_wrapper svg {
     height: 32px;
     width: 16px;
+    pointer-events: none;
 }
 
 .header .header_icon_wrapper .header_bar .profile_section {
@@ -89,13 +92,14 @@
 }
 
 .header .header_icon_wrapper .header_bar .profile_section .email,
-.header .header_icon_wrapper .header_bar .profile_section .block .name,
-.header .header_icon_wrapper .header_bar .profile_section .block .icon {
+.header .header_icon_wrapper .header_bar .profile_section .name,
+.header .header_icon_wrapper .header_bar .profile_section .icon {
     font-weight: 400;
     font-size: 14px;
     line-height: 18px;
     color: #959595;
     user-select: none;
+    pointer-events: none;
     animation: textfocus 0.8s cubic-bezier(0.55, 0.085, 0.68, 0.53) both;
 }
 

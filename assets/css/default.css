@@ -20,6 +20,12 @@ input[id$="tbDate"] {
     padding: 6px 0;
 }
 
+.flex {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
 .mCSB_inside > .mCSB_container {
     margin-right: 0px !important;
 }
