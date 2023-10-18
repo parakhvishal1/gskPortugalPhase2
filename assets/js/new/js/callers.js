@@ -11,7 +11,7 @@
         GlobalVarInit();
         // CallScreen(0);
         CallScreen(1);
-        CallScreen(4);
+        CallScreen(14);
         let data = {
             "start_date": "Jan 01, 22",
             "last_date": "Jan 31, 24",
@@ -2983,7 +2983,7 @@
                 }
             }
         };
-        ToApp("choosebrands-screen", data);
+        // ToApp("choosebrands-screen", data);
     }, 500);
 })();
 
@@ -3193,6 +3193,12 @@ function ToBot(eventName, data) {
             }), '*');
             break;
         case "get-client-list":
+            window.parent.postMessage(JSON.stringify({
+                event_code: eventName,
+                data: data
+            }), '*');
+            break;
+        case "delete-user":
             window.parent.postMessage(JSON.stringify({
                 event_code: eventName,
                 data: data

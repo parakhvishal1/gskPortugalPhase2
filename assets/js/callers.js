@@ -2981,7 +2981,7 @@
                 }
             }
         };
-        ToApp("choosebrands-screen", data);
+        // ToApp("choosebrands-screen", data);
     }, 500);
 })();
 
@@ -3191,6 +3191,12 @@ function ToBot(eventName, data) {
             }), '*');
             break;
         case "get-client-list":
+            window.parent.postMessage(JSON.stringify({
+                event_code: eventName,
+                data: data
+            }), '*');
+            break;
+        case "delete-user":
             window.parent.postMessage(JSON.stringify({
                 event_code: eventName,
                 data: data
