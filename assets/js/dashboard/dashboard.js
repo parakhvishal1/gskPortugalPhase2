@@ -384,3 +384,107 @@ function loadUserWelcomeUI(data) {
         $("#last_order_history").append(`<div class="progress_plan" id="progress_plan_main"></div>`);
     }
 }
+
+function loadBrandSelectionUI(data) {
+    let localStoredData = JSON.parse(localStorage.getItem("data"));
+    let locale = localStoredData["locale"];
+    $(".header").removeClass('hide');
+    $("#content_box").empty();
+    $("#content_box").append(`
+        <div class="choosebrands" id="loadBrandSelectionUI">
+            <div class="menu_header">
+                <div class="label">
+                    <img class="back-arrow" src="/assets/images/svg/right.svg"/>
+                    ${locale["labels"]["chooseBrands"]}
+                </div>
+                <div class="icon view_checkout">
+                    <img src="/assets/images/svg/basket.svg" />
+                    <div class="count_wrapper hide"></div>
+                </div>
+            </div>
+            <div class="sub_detail"><span class="bold highlight">${locale["labels"]["startDate"]}:</span> ${data["start_date"]} <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span> <span class="bold highlight">${locale["labels"]["endDate"]}:</span> ${data["last_date"]}</div>
+            ${loadProgressCards(data["plan_progress"])}
+        </div> 
+        <div class="bottom">
+            <div class="btn_wrapper disabled">
+                <div class="place_order checkout">
+                    <button class="btn solid checkout view_checkout">${locale["buttons"]["checkout"]}</button>
+                </div>
+            </div>
+        </div>
+    `);
+
+    /* $("#loadBrandSelectionUI").mCustomScrollbar({
+        theme: "dark-thin",
+        scrollButtons: { enable: true },
+        autoHideScrollbar: true
+    }); */
+
+    // let total = calculateSumAmount(window.cartData);
+    
+    let parseData = getParsedData();
+    let total = 0;
+    parseData && parseData?.["new_orders"] && parseData?.["new_orders"]?.["orders"] && parseData?.["new_orders"]?.["orders"].map((ordr, index) => {
+        ordr["product_details"].map(product => {
+            let quantity = product["quantity"] ? Number(product["quantity"]) : 0;
+            total = total + quantity;
+        });
+    });
+
+    if (total) {
+        $(".count_wrapper").removeClass("hide");
+        $(".place_order.checkout").parent().removeClass("disabled");
+        $(".count_wrapper").parent(".icon").addClass("cursor");
+        $(".count_wrapper").text(total);
+    }
+
+    $(".view_checkout").click(function (e) {
+        e.stopPropagation();
+        e.stopImmediatePropagation();
+        if (total) {
+            // loadOrderCart(data);
+            ToBot("view-checkout", data);
+        }
+    });
+
+    $(".back-arrow").click(function (e) {
+        e.stopPropagation();
+        e.stopImmediatePropagation();
+        let parseData = getParsedData()
+        loadUserWelcomeUI(parseData);
+        parseData["plan_progress"] && loadPlanProgress(parseData["plan_progress"], true);
+        ToBot('back-brand-select', parseData);
+    });
+
+    $(".progressbar_wrapper.addproduct").click(function (e) {
+        e.stopPropagation();
+        e.stopImmediatePropagation();
+        const currentElementSkuData = $(this).attr("skudata");
+        const parsedData = getParsedData();
+        if(window.dataStore && Object.keys(window.dataStore).length !== 0) {
+            window.dataStore["selected_brand"] = currentElementSkuData;
+        }
+        parsedData["selected_brand"] = currentElementSkuData;
+        saveParsedData(parsedData);
+        // let parsedCurrentElementData = JSON.parse(decodeURIComponent(currentElementData));
+        // let products = data["brands"]["products"];
+        // let filteredProducts = products.filter(product => {
+        // return product["name"] === parsedCurrentElementData["name"];
+        // })
+        // data["brands"]["products"] = filteredProducts;
+        const filteredBrand = data["plan_progress"]["brands"].filter(brand => brand["sku"] === currentElementSkuData);
+        const isBrandSku = filteredBrand[0]["isSku"];
+        ToBot("select-brand", parsedData);
+        isBrandSku ? showSkuLevelDetailsBrand(parsedData, currentElementSkuData) : showBrandLevelDetails(parsedData, currentElementSkuData);
+    });
+}
+
+function loadBrandSelectionUIByBrandName(data, name) {
+    const currentElementSkuData = data["selected_brand"];
+    if(window.dataStore && Object.keys(window.dataStore).length !== 0) {
+        window.dataStore["selected_brand"] = currentElementSkuData;
+    }
+    const filteredBrand = data["plan_progress"]["brands"].filter(brand => brand["sku"] === currentElementSkuData);
+    const isBrandSku = filteredBrand[0]["isSku"];
+    isBrandSku ? showSkuLevelDetailsBrand(data, currentElementSkuData) : showBrandLevelDetails(data, currentElementSkuData);
+}

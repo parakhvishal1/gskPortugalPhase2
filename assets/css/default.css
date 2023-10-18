@@ -105,13 +105,18 @@ td[editable] {
     color: #959595;
 }
 
-#loading {
-    display: inline-block;
-    width: 16px;
-    height: 16px;
-    border: 2px solid #f4000b;
-    border-radius: 50%;
-    border-top-color: #fff;
-    animation: spin 1s ease-in-out infinite;
-    -webkit-animation: spin 1s ease-in-out infinite;
+input:focus {
+    outline: 0;
+}
+
+input.dateSelectPicker {
+    border: none;
+    background: transparent;
+    outline: 0;
+    display: inline;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 22px;
+    color: #151515;
+    padding: 6px 0;
 }

@@ -51,7 +51,7 @@ footer .copyright {
     height: max-content;
     z-index: 9999;
     color: #fff;
-    font-size: 14px;
+    font-size: 12px;
     padding: 6px 16px;
     border-radius: 6px;
     background-color: rgba(0, 0, 0, 0.85);
@@ -75,4 +75,115 @@ footer .copyright {
 [data-tooltip-pos="left"]:hover::after {
     left: 0px;
     bottom: -6vh;
+}
+
+.place_order {
+    text-align: center;
+    position: relative;
+    padding: 30px 0 0 0;
+}
+
+.place_order.profile {
+    margin: 10px 0;
+}
+
+.place_order.profile button {
+    padding: 8px 16px;
+    box-shadow: none;
+    border: 1px solid #f36633;
+}
+
+.place_order.checkout .btn::before {
+   content: url("/assets/images/svg/basket_white.svg");
+   position: absolute;
+   left: 20px;
+   /* transform: translate(0%, 10%); */
+   transform: scale(1.5);
+}
+
+.place_order .btn {
+    padding: 6px 8px;
+    outline: none;
+    border-radius: 5px;
+    margin: auto 9px;
+    position: relative;
+    font-weight: 600;
+    font-size: 16px;
+}
+
+.place_order.checkout .btn {
+    padding: 12px 18px 12px 108px;
+}
+
+.place_order .btn .icon {
+    margin-right: 10px;
+}
+
+.place_order .btn.outline {
+    background: #fff;
+    color: #f36633;
+}
+
+.place_order .btn.outline.profile_details {
+    font-size: 15px;
+    font-weight: 400;
+}
+
+.place_order .btn.solid {
+    background: #f36633;
+    color: #fff;
+    border: 1.5px solid #f36633;
+}
+
+.place_order .btn.continue,
+.place_order .btn.confirm {
+    padding: 6px 32px 6px 16px;
+}
+
+.place_order .btn.continue::after {
+    content: '';
+    background: url("/assets/images/png/next_white.png");
+    background-size: cover;
+    background-repeat: no-repeat;
+    position: absolute;
+    top: -1px;
+    bottom: 0;
+    right: 10px;
+    height: 16px;
+    width: 16px;
+    margin: auto;
+    font-size: 13px;
+}
+
+.place_order .btn.back,
+.place_order .btn.cancel {
+    padding: 6px 16px 6px 32px;
+    color: #959595;
+    background: #e6e6e6;
+    border: 1.5px solid #e6e6e6;
+}
+
+.place_order .btn.back::before {
+    content: '';
+    background: url("/assets/images/png/previous_black.png");
+    background-size: cover;
+    background-repeat: no-repeat;
+    position: absolute;
+    top: -1px;
+    bottom: 0;
+    left: 8px;
+    height: 16px;
+    width: 16px;
+    margin: auto;
+    font-size: 13px;
+}
+
+.place_order .btn.cancel,
+.place_order .btn.confirm {
+    padding: 6px 16px 6px 16px;
+}
+
+.place_order .btn.cancel::before,
+.place_order .btn.confirm::after {
+    background: unset;
 }

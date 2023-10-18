@@ -8,8 +8,10 @@
 
 (function () {
     setTimeout(() => {
+        GlobalVarInit();
+        // CallScreen(0);
         CallScreen(1);
-        CallScreen(14);
+        CallScreen(4);
         let data = {
             "start_date": "Jan 01, 22",
             "last_date": "Jan 31, 24",
@@ -2987,7 +2989,7 @@
 
 function GlobalVarInit(data) {
     if(data && data["appstate"]) {
-        log(data["appstate"]);
+        console.log(data["appstate"]);
         window.orderCartData = data["appstate"]["orderCartData"];
         window.updateCartData = data["appstate"]["updateCartData"];
         window.cartData = data["appstate"]["cartData"];
@@ -3014,7 +3016,7 @@ function StoreDataIn(data) {
 }
 
 function ToBot(eventName, data) {
-    log({"to bot called --> ": eventName});
+    console.log("to bot called --> ", eventName);
     switch (eventName) {
         case "fetch-user-details":
             delete data["isLoggedIn"];
@@ -3026,7 +3028,7 @@ function ToBot(eventName, data) {
             }), '*');
             break;
         case "update-order-data":
-            log("update-order-data", data);
+            console.log("update-order-data", data);
             window.parent.postMessage(JSON.stringify({
                 event_code: eventName,
                 data: data
@@ -3072,7 +3074,7 @@ function ToBot(eventName, data) {
             }), '*');
             break;
         case "ordercart-continue":
-            log("ordercart-continue -> ", data);
+            console.log("ordercart-continue -> ", data);
             window.parent.postMessage(JSON.stringify({
                 event_code: eventName,
                 data: data
@@ -3120,7 +3122,7 @@ function ToBot(eventName, data) {
             let updatedData = JSON.parse(data);
             if(window.currentScreen) {
                 updatedData["currentScreen"] = window.currentScreen || "";
-                log("updatedData -> ", updatedData);
+                console.log("updatedData -> ", updatedData);
                 window.parent.postMessage(JSON.stringify({
                     event_code: eventName,
                     data: updatedData
@@ -3178,7 +3180,7 @@ function ToBot(eventName, data) {
                 data: data
             }), '*');
         case "delete":
-            log("data ", data);
+            console.log("data ", data);
             window.parent.postMessage(JSON.stringify({
                 event_code: eventName,
                 data: data
@@ -3214,32 +3216,19 @@ function ToApp(eventName, data, orgData) {
             showHeader(userData, 'user');
             break;
         case "welcome-screen":
+            StoreDataIn(data);
             loadGeneralWelcome(data);
-            addLegalCopyright(data);
-            break;
-        case "welcome-screen-unfilled-steps":
-            loadGeneralWelcome(data);
-            addLegalCopyright(data);
-            break;
-        case "welcome-screen-filled-step1":
-            loadGeneralWelcome(data);
-            addLegalCopyright(data);
-            break;
-        case "welcome-screen-filled-step2":
-            loadGeneralWelcome(data);
-            addLegalCopyright(data);
-            break;
-        case "welcome-screen-filled-step3":
-            loadGeneralWelcome(data);
-            addLegalCopyright(data);
             break;
         case "termsui-screen":
+            // showHeader();
             loadTermsUI(data);
             break;
         case "userwelcome-screen":
-            log("===== userwelcome =====\n", data);
+            console.log("===== userwelcome =====\n", data);
+            StoreDataIn(data);
+            GlobalVarInit(data);
             loadUserWelcomeUI(data);
-            // data["plan_progress"] && loadPlanProgress(data["plan_progress"], true, false, "init");
+            data["plan_progress"] && loadPlanProgress(data["plan_progress"], true, false, "init");
             // loadBrandSelectionUIByBrandName(data);
             break;
         case "choosebrands-screen":
@@ -3294,7 +3283,7 @@ function ToApp(eventName, data, orgData) {
             confirmOrder();
             break;
         case "legal-copyright":
-            addLegalCopyright(data);
+            // addLegalCopyright(data);
             break;
         default:
             break;
