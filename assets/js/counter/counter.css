@@ -91,7 +91,7 @@
 
 .counter__container .counter__input.home {
     padding: 2px 4px;
-    margin: 5px 0px;
+    margin: 2px 0px;
 }
 
 @keyframes slideToRight {

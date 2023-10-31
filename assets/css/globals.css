@@ -78,9 +78,17 @@ footer .copyright {
 }
 
 .place_order {
-    text-align: center;
     position: relative;
-    padding: 30px 0 0 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    padding: 25px 0 15px 0;
+    /* min-height: calc(100% - 12% - 160px); */
+}
+
+.place_order.addanotheraccount {
+    height: unset;
 }
 
 .place_order.profile {
@@ -96,9 +104,9 @@ footer .copyright {
 .place_order.checkout .btn::before {
    content: url("/assets/images/svg/basket_white.svg");
    position: absolute;
-   left: 20px;
-   /* transform: translate(0%, 10%); */
-   transform: scale(1.5);
+   left: 14px;
+   height: 12px;
+   width: 12px;
 }
 
 .place_order .btn {
@@ -112,7 +120,7 @@ footer .copyright {
 }
 
 .place_order.checkout .btn {
-    padding: 12px 18px 12px 108px;
+    padding: 6px 16px 6px 44px;
 }
 
 .place_order .btn .icon {
@@ -122,6 +130,7 @@ footer .copyright {
 .place_order .btn.outline {
     background: #fff;
     color: #f36633;
+    border: 1px;
 }
 
 .place_order .btn.outline.profile_details {

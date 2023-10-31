@@ -1,0 +1,137 @@
+.choosebrands {
+    position: relative;
+    padding-top: 0px;
+    height: calc(88% - 0px);
+    overflow-y: auto;
+    z-index: 1;
+}
+
+.choosebrands + .btn_wrapper {
+    height: 12%;
+}
+
+.choosebrands .menu_header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 4px 16px 0 16px;
+    background: #f0efed;
+    position: sticky;
+    top: 0;
+    left: 0;
+    z-index: 9;
+}
+
+.choosebrands .menu_header .label,
+.choosebrands .category_label {
+    font-weight: 600;
+    font-size: 18px;
+    line-height: 26px;
+    text-transform: uppercase;
+    color: #f36633;
+}
+
+.choosebrands .category_label {
+    margin-bottom: -0.5rem;
+    font-weight: 700;
+}
+
+.choosebrands .menu_header .label .back-arrow {
+    transform: rotate(180deg);
+    display: inline-block;
+    height: 10px;
+    margin-right: 4px;
+    font-weight: 700;
+    cursor: pointer;
+    animation: unset;
+}
+
+.choosebrands .menu_header .icon {
+    height: 30px;
+    width: 30px;
+    position: relative;
+    /* margin-top: 15px; */
+    margin-top: 0px;
+}
+
+.choosebrands .menu_header .icon.view_checkout {
+    margin-top: 0px;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+}
+
+.choosebrands .menu_header .icon.goToBrandLevel {
+    margin-top: 8px;
+}
+
+.choosebrands .menu_header .icon .count_wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #f36633;
+    color: #fde0d6;
+    font-size: 9px;
+    font-weight: 400;
+    border-radius: 50%;
+    position: absolute;
+    top: -2px;
+    right: -2px;
+    height: 22px;
+    width: 22px;
+}
+
+.choosebrands .sub_detail {
+    font-size: 11px;
+    line-height: 20px;
+    color: #151515;
+    padding: 0 16px;
+    white-space: nowrap;
+}
+
+.choosebrands .sub_detail strong {
+    color: #ff7900;
+}
+
+.choosebrands .sub_detail_wrapper {
+    display: flex;
+    justify-content: space-between;
+}
+
+.choosebrands .sub_detail_wrapper div:first-child {
+    align-self: flex-start;
+}
+
+.choosebrands .sub_detail_wrapper div:last-child {
+    align-self: flex-end;
+    white-space: normal;
+}
+
+.choosebrands .menu_header .sub_detail span {
+    margin: 0 20px;
+}
+
+.choosebrands .progress_card {
+    background: #ffffff;
+    border: 1px solid #959595;
+    box-shadow: 0px 3px 12px rgba(84, 79, 64, 0.1);
+    border-radius: 5px;
+    padding: 0 6px 0 12px;
+    /* margin: 6px 16px; */
+    margin: 6px 16px 0 16px;
+    animation: unset;
+    overflow: hidden;
+    position: relative;
+}
+
+.choosebrands .progress_card.addproduct {
+    cursor: pointer;
+}
+
+.choosebrands .progress_card.transparent {
+    background: transparent;
+}
+
+.choosebrands .progress_card .progress_plan {
+    margin: 0;
+}

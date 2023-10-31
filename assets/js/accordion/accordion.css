@@ -1,0 +1,381 @@
+/* Main Content End */
+.accordion {
+    width: 100%;
+    padding: 0 16px;
+}
+
+.accordion-item {
+    padding: 8px 0;
+    background-color: #fff;
+    color: #111;
+    margin: 0.6rem 0 1rem 0;
+    border-radius: 5px;
+    box-shadow: 0px 3px 12px rgba(84, 79, 64, 0.1);
+}
+
+.accordion-item.inverted div,
+.accordion-item.inverted input  {
+    color: #959595;
+}
+
+.accordion-item.inverted div thead tr td.info_data {
+    color: #F36633;
+}
+
+.accordion-item-header {
+    padding: 0 12px 0 12px;
+    font-weight: 600;
+    font-size: 14px;
+    color: #151515;
+    display: flex;
+    align-items: center;
+    position: relative;
+    cursor: pointer;
+}
+
+.accordion-item-header.notification:before {
+    content: '';
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: green;
+    border-radius: 50%;
+    height: 12px;
+    width: 12px;
+    margin: auto 36px auto auto;
+}
+
+/* .accordion-item-header.orderdetail.active {
+    border-bottom: 1px solid #e6e6e6;
+} */
+
+.accordion-item-header::after {
+    content: url("data:image/svg+xml,%3Csvg width='12' height='7' viewBox='0 0 12 7' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M11 1L6 6L1 1' stroke='%23959595' stroke-width='1.5' stroke-miterlimit='10' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E%0A");
+    font-size: 14px;
+    position: absolute;
+    right: 1rem;
+}
+
+.accordion-item-header.active::after {
+    content: url("data:image/svg+xml,%3Csvg width='12' height='7' viewBox='0 0 12 7' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M1 6L6 1L11 6' stroke='%23959595' stroke-width='1.5' stroke-miterlimit='10' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E%0A");
+}
+
+.accordion-item-header.white::after {
+    content: url("data:image/svg+xml,%3Csvg width='12' height='7' viewBox='0 0 12 7' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M11 1L6 6L1 1' stroke='%23FFF' stroke-width='1.5' stroke-miterlimit='10' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E%0A");
+    font-size: 14px;
+    position: absolute;
+    right: 1rem;
+}
+
+.accordion-item-header.active.white::after {
+    content: url("data:image/svg+xml,%3Csvg width='12' height='7' viewBox='0 0 12 7' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M1 6L6 1L11 6' stroke='%23FFF' stroke-width='1.5' stroke-miterlimit='10' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E%0A");
+}
+
+
+.accordion-item-body {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.2s ease-out;
+}
+
+.accordion-item-body.inverted div {
+    background: #959595;
+    color: #fff; 
+}
+
+.accordion-item.inverted .accordion-item-body-content .title {
+    font-size: 13px;
+    font-weight: 700;
+    padding: 2px 0;
+}
+
+.accordion-item.inverted .accordion-item-body-content .item_data_wrapper_row.title .item_data {
+    padding: 2px 2px 2px 2px;
+}
+
+.accordion-item.inverted .accordion-item-body-content input.dateSelectPicker {
+    padding: 0 0.25rem 0 1.5rem;
+}
+
+.accordion-item.inverted .accordion-item-body-content .order_status,
+.accordion-item.inverted .accordion-item-body-content .order_on_date {
+    font-size: 14px;
+    font-weight: 400;
+    padding: 0;
+}
+
+.accordion-item-body-content {
+    padding: 0 12px;
+}
+
+.accordion-item-body-content.profile_details {
+    padding: 0;
+}
+
+.accordian_upperwrapper.profile_details {
+    padding-top: 12px;
+}
+
+.accordion-item-body-content .block {
+    margin: 10px 0;
+}
+
+.accordion-item-body-content .block .label {
+    font-weight: 600;
+    font-size: 12px;
+    color: #151515;
+}
+
+.accordion-item-body-content .block.delete {
+    margin: 0;
+    text-align: right;
+}
+
+.accordion-item-body-content .block.delete .info {
+    display: inline-block;
+    font-size: 13px;
+    line-height: 22px;
+    color: #e71c24;
+    cursor: pointer;
+}
+
+.accordion-item-body-content .block .info {
+    font-size: 12px;
+    line-height: 22px;
+    color: #959595;
+}
+
+.accordion-item-body.opened {
+    max-height: fit-content;
+}
+
+.accordion-item-body.parent .accordion-item-body-content .accordion {
+    width: 100%;
+    margin: 0;
+    padding-left: 12px;
+}
+
+.accordion-item-body.parent .accordion-item-body-content .accordion .accordion-item {
+    margin: 0;
+    border-radius: unset;
+    border-bottom: 0.5px solid #e6e6e6;
+    box-shadow: none;
+}
+
+.accordion-item-body.parent .accordion-item-body-content .accordion .accordion-item.profile {
+    border-top: 0.5px solid #e6e6e6;
+}
+
+.accordion-item-body.parent .accordion-item-body-content .accordion.associated_accounts:last-child .accordion-item.profile {
+   border-bottom: 0;
+}
+
+.accordion-item-body.parent .accordion-item-body-content .accordion .accordion-item .accordion-item-header.active {
+    border: none;
+    box-shadow: none;
+}
+
+.accordion-item-body.parent .accordion-item-body-content .accordion .accordion-item .accordion-item-body-content {
+    /* padding: 0; */
+}
+
+.accordion-item-body.parent .accordion-item-body-content .accordion.associated_accounts .accordion-item .accordion-item-body-content {
+    padding: 0;
+}
+
+.accordion-item-body.parent .accordion-item-body-content .accordion .accordion-item .accordion-item-header {
+    padding: 12px 0;
+}
+
+.accordion-item-body.parent .accordion-item-body-content .accordion .accordion-item .accordion-item-header.inner.profile {
+    padding: 0;
+}
+
+.accordion-item-body.parent .accordion-item-body-content .accordion .accordion-item .accordion-item-header .account_status {
+    display: none;
+}
+
+.accordion-item-body.parent .accordion-item-body-content .accordion .accordion-item .accordion-item-header.active .account_status {
+    display: block;
+    font-size: 13px;
+    font-weight: 300;
+    color: #959595;
+    text-transform: capitalize;
+}
+
+.accordion-item-body.parent .accordion-item-body-content .accordion .accordion-item .accordion-item-header.active .account_status.success {
+    color: #008A00;
+}
+
+.accordion-item-body.parent .accordion-item-body-content .accordion .accordion-item .accordion-item-header::after {
+    right: 5px;
+}
+
+.accordian.table {
+    border-collapse: collapse;
+    table-layout: fixed;
+}
+
+.accordian.table .info_row {
+    font-size: 13px;
+    /* border-bottom: 0.5px solid #e6e6e6; */
+}
+
+.accordian.table .info_row.brandscreen .info_data .counter__wrapper .counter__container {
+    padding-right: 0px;
+    /* border-bottom: 0.5px solid #e6e6e6; */
+}
+
+.accordian.table .info_row.paddingTop {
+    height: 8px;
+    border-top: 1px solid #E6E6E6;
+}
+
+.accordian.table .info_row.paddingBottom {
+    height: 8px;
+    border-bottom: 1px solid #E6E6E6;
+}
+
+.accordian.table .info_row.brandscreen td.skuBrand_level_progress {
+    padding: 0;
+    margin: 0;
+}
+
+.accordian.table .info_row.brandscreen td.skuBrand_level_progress .progress_card {
+    padding: 0;
+    margin: 0;
+}
+
+.accordian.table .info_row.brandscreen td .progress_card {
+    margin-left: 0;
+    margin-right: 0;
+    margin-bottom: 0;
+    border: none;
+    padding: 4px 0 0 0;
+    box-shadow: none;
+}
+.accordian.table .info_row.brandscreen td .progress_card .progress_plan .grouped .progressbar{
+    margin-bottom: 0;
+}
+
+.accordian.table .info_row.brandscreen td .progress_card .progress_plan .grouped .progressbar .wrapper_brand_progress:nth-child(1){
+    width: 5% !important;
+}
+
+.accordian.table .info_row.brandscreen td .progress_card .progress_plan .grouped .progressbar .wrapper_brand_progress:nth-child(2){
+    /* width: 94% !important; */
+    /* padding-left: 20px; */
+}
+
+.accordian.table .info_row.brandscreen td .progress_card .progress_plan .grouped .progressbar .wrapper_brand_progress:nth-child(3){
+    /* display: none; */
+    /* width: 0 !important; */
+}
+
+.accordian.table .info_row {
+    padding: 20px;
+}
+
+.accordian.table .info_row.bordered {
+    border-bottom: 1px solid #e6e6e6;
+}
+
+.accordion-item-body-content .accordian_upperwrapper.profile_details .accordion.associated_accounts .accordian.table tbody .info_row.bordered:last-child {
+    padding-bottom: 0px;
+}
+
+.accordion-item-body-content .accordian_upperwrapper.profile_details .accordion.associated_accounts .accordian.table tbody .info_row.bordered:last-child .info_data {
+    padding: 10px 0 6px 0;
+}
+
+.accordian.table tbody tr .title {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.accordion-item.inverted .accordian.table tbody tr .title {
+    padding-top: 6px;
+}
+
+.accordian.table tbody tr:first-child .title.paddingTop {
+    padding: 6px 0;
+}
+
+.accordian.table tbody tr .title.paddingTop {
+    padding-top: 6px;
+}
+
+.accordian.table tbody tr .title .arrow {
+    height: 16px;
+    width: 20px;
+    cursor: pointer;
+}
+
+.accordian.table tbody .info_row:last-child {
+    font-size: 13px;
+    border-bottom: none;
+}
+
+.accordian.table .info_row .info_data {
+    padding: 0px 0 6px 0;
+    vertical-align: top;
+}
+
+.accordian.table .info_row .info_data .upload_icon {
+    width: 12px;
+    display: inline-block;
+    cursor: pointer;
+}
+
+.accordian.table .info_row .info_data .upload_icon svg {
+    height: 14px;
+    width: 12px;
+}
+
+.accordian.table .info_row .info_data .inline_block {
+    display: inline-block;
+    margin-right: 8px;
+}
+
+.accordian.table .info_row .info_data .inline_block.top {
+    vertical-align: top;
+    cursor: pointer;
+}
+
+.accordian.table .info_row .info_data:last-child {
+    border-bottom: none;
+}
+
+.accordian.table .info_row .info_data .inline_block div:first-child {
+    margin-bottom: 4px;
+}
+
+.accordian.table .info_row .info_data .inline_block div:last-child {
+    margin-top: 4px;
+}
+
+.accordian.table .info_row .info_data .inline_block .success {
+    color: #008a00;
+}
+
+.accordian.table .info_row .info_data .inline_block .warning {
+    color: #efaa4b;
+}
+
+.accordian.table .info_row .info_data .inline_block .failed {
+    color: #f23904;
+}
+
+.accordian.table .info_row .info_data.title {
+    font-weight: 700;
+    font-size: 13px;
+    line-height: 20px;
+    color: #f36633;
+    padding: 4px 2px 4px 0;
+    padding-top: 0;
+    text-align: left;
+    vertical-align: top;
+}

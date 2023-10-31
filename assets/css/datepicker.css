@@ -35,7 +35,7 @@
 
 .calendar-picker input {
     width: 6.5rem;
-    padding: 3px 0.25rem 3px 1.5rem;
+    padding: 2px 0.25rem 0px 1.5rem;
     cursor: pointer;
     z-index: 2;
     position: relative;

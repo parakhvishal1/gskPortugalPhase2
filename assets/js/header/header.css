@@ -16,12 +16,14 @@
 }
 
 .header .header_icon_wrapper .header_bar {
+    position: relative;
     height: 100%;
     display: flex;
     align-items: center;
     justify-content: space-between;
     flex-direction: row-reverse;
     padding: 0 20px;
+    z-index: 2;
 }
 
 .header .header_icon_wrapper .header_bar .icons-grouped {

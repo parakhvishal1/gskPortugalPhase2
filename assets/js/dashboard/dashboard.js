@@ -24,19 +24,20 @@ function loadUserWelcomeUI(data) {
                 </div>
                 <div class="card_click" data=${encodeURIComponent(JSON.stringify(lastOrder))} skudata="${lastOrder['sku']}" date="${lastOrder['ordered_date']}" orderid=${lastOrder["order_no"]}>
                     <div class="title outer">
-                        <div class="name highlight">${lastOrder["account_no"]}</div>
-                        <div class="arrow">
+                        <!-- <div class="name highlight">${lastOrder["account_no"]}</div> -->
+                        <!-- <div class="arrow">
                             <img src="/assets/images/svg/right.svg" />
-                        </div>
+                        </div> -->
                     </div>
                     <div class="flex">
                         <div class="order_status">
+                        <div class="info highlight">${lastOrder["account_no"]}</div>
                             <div class="info"><span class="light-colored">${locale["labels"]["orderNo"]}:</span> <span class="bold">${lastOrder["order_no"]}</span></div>
-                            <div class="info"><span class="light-colored">${locale["labels"]["status"]}:</span> <span class="bold">${lastOrder["status"]}</span></div>
                         </div>
                         <div class="order_status">
                             <div class="info"><span class="light-colored">${locale["labels"]["orderDate"]}:</span> <span class="bold">${lastOrder["ordered_date"]}</span></div>
-                            <div class="info"><span class="light-colored">${locale["labels"]["statusDate"]}:</span> <span class="bold">${lastOrder["delivery_date"]}</span></div>
+                            <div class="info"><span class="light-colored">${locale["labels"]["status"]}:</span> <span class="bold">${lastOrder["status"]}</span></div>
+                            <!-- <div class="info"><span class="light-colored">${locale["labels"]["statusDate"]}:</span> <span class="bold">${lastOrder["delivery_date"]}</span></div> -->
                         </div>
                         <div class="order_on_date">
                             <div class="info"><span class="light-colored">${locale["labels"]["orderedOn"]}:</span></div>
@@ -405,11 +406,9 @@ function loadBrandSelectionUI(data) {
             <div class="sub_detail"><span class="bold highlight">${locale["labels"]["startDate"]}:</span> ${data["start_date"]} <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span> <span class="bold highlight">${locale["labels"]["endDate"]}:</span> ${data["last_date"]}</div>
             ${loadProgressCards(data["plan_progress"])}
         </div> 
-        <div class="bottom">
-            <div class="btn_wrapper disabled">
-                <div class="place_order checkout">
-                    <button class="btn solid checkout view_checkout">${locale["buttons"]["checkout"]}</button>
-                </div>
+        <div class="btn_wrapper disabled">
+            <div class="place_order checkout">
+                <button class="btn solid checkout view_checkout">${locale["buttons"]["checkout"]}</button>
             </div>
         </div>
     `);
@@ -456,7 +455,7 @@ function loadBrandSelectionUI(data) {
         ToBot('back-brand-select', parseData);
     });
 
-    $(".progressbar_wrapper.addproduct").click(function (e) {
+    $(".progress_card.addproduct").click(function (e) {
         e.stopPropagation();
         e.stopImmediatePropagation();
         const currentElementSkuData = $(this).attr("skudata");

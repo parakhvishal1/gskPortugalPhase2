@@ -25,7 +25,7 @@ function showDatePicker(id) {
     let localStoredData = JSON.parse(localStorage.getItem("data"));
     let locale = localStoredData["locale"];
     return `
-        <div class="flex calendar-picker">
+        <div class="inline-flex calendar-picker">
             <img class="picker" src="/assets/images/svg/calendar.svg" />
             <input type='text' id='tbDate-${id}' placeholder='${locale["labels"]["pickDate"]}' readonly="readonly" class='dateSelectPicker' />
             <img class="arrow-down" src="/assets/images/svg/down.svg" />
@@ -37,7 +37,7 @@ function showDatePickerWhite(date) {
     let localStoredData = JSON.parse(localStorage.getItem("data"));
     let locale = localStoredData["locale"];
     return `
-        <div class="flex calendar-picker">
+        <div class="inline-flex calendar-picker">
             <img class="picker" src="/assets/images/svg/calendar-white.svg" />
             <input type='text' id='tbDate' placeholder='${date ? date : locale["labels"]["pickDate"]}' readonly="readonly"></input>
             <!-- <img class="arrow-down" src="/assets/images/svg/down-white.svg" /> -->

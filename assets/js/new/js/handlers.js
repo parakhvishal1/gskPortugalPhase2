@@ -32,19 +32,17 @@ function showSkuLevelDetailsBrand(data, currentSku, requestType, requestSku) {
             </div>
             <!-- <div class="new_orders"></div> -->
 
-            <div class="place_order">
+            <div class="place_order addanotheraccount">
                 <button class="btn outline" id="addanotheraccount" data=${encodeURIComponent(JSON.stringify(data))}>${locale["buttons"]["addAnotherAccount"]}</button>
             </div>
             <div id="previous-orders-accordion">
             </div>
         </div> 
         
-        <div class="bottom">
-            <div class="btn_wrapper">
-                <div class="place_order">
-                    <button class="btn solid back" id="back">${locale["buttons"]["back"]}</button>
-                    <button class="btn solid continue" id="continue">${locale["buttons"]["continue"]}</button>
-                </div>
+        <div class="btn_wrapper">
+            <div class="place_order">
+                <button class="btn solid back" id="back">${locale["buttons"]["back"]}</button>
+                <button class="btn solid continue" id="continue">${locale["buttons"]["continue"]}</button>
             </div>
         </div>
         <div class="account_select hide">
@@ -600,19 +598,17 @@ function showBrandLevelDetails(data, currentSku, requestType, requestSku) {
             </div>
             <div class="new_orders"></div>
 
-            <div class="place_order">
+            <div class="place_order addanotheraccount">
                 <button class="btn outline" id="addanotheraccount" data=${encodeURIComponent(JSON.stringify(data))}>${locale["buttons"]["addAnotherAccount"]}</button>
             </div>
             <div id="previous-orders-accordion">
             </div>
         </div> 
         
-        <div class="bottom">
-            <div class="btn_wrapper">
-                <div class="place_order">
-                    <button class="btn solid back" id="back">${locale["buttons"]["back"]}</button>
-                    <button class="btn solid continue" id="continue">${locale["buttons"]["continue"]}</button>
-                </div>
+        <div class="btn_wrapper">
+            <div class="place_order">
+                <button class="btn solid back" id="back">${locale["buttons"]["back"]}</button>
+                <button class="btn solid continue" id="continue">${locale["buttons"]["continue"]}</button>
             </div>
         </div>
         <div class="account_select hide">
@@ -1554,8 +1550,8 @@ function addnewOrder(data, currentSku) {
         if(productData["brand"] === currentSku) {
             $("#new_order_body").append(`
                 <tr class="info_row">
-                    <td class="info_data" style="vertical-align: middle; padding: 2px 0 0 0;">${productData["name"]}</td>
-                    <td class="info_data" style="vertical-align: middle; padding: 2px 0 0 0;">
+                    <td class="info_data" style="vertical-align: middle; padding: 0; width: calc(100% - 24px); font-size: 12px;">${productData["name"]}</td>
+                    <td class="info_data" style="vertical-align: middle; padding: 0;">
                         <div class="counter__wrapper">
                             <div class="counter__container" skudata="${productData["sku"]}" parentskudata=${data["sku"]} _id=${data["_id"]}>
                                 <div class="counter__box__container sub">
@@ -1955,7 +1951,7 @@ function addnewOrderBrand(data, currentSku, skulevel) {
         if(productData["brand"] === currentSku) {
             $("#new_order_body").append(`
                 <tr class="info_row">
-                    <td class="info_data" style="vertical-align: middle; padding: 8px 0 0 0;" colspan="2">${productData["name"]}</td>
+                    <td class="info_data" style="vertical-align: middle; padding: 0; width: calc(100% - 24px); font-size: 12px;" colspan="2">${productData["name"]}</td>
                     <!-- <td class="info_data highlight" style="vertical-align: middle; padding: 8px 0 0 0; text-align: right;" colspan="2">
                         ${productData["discounts"]["on_invoice_range"] ? "On Invoice" : "Off Invoice"}
                     </td> -->

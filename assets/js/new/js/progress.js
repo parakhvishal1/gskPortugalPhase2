@@ -39,7 +39,7 @@ function loadProgressCards(data, detailed, hideAdd) {
     $(".brand_level_progress").empty();
     let progresscards = data["brands"].map(item => {
         return `
-            <div class="progress_card ${detailed ? "transparent" : ""}">
+            <div class="progress_card ${detailed ? "transparent" : ""} ${!detailed ? "addproduct" : "" }" skudata=${`${item["sku"]}`}>
                 <div class="progress_plan">
                     <!-- <div class="confetti left"></div> -->
                     <div class="grouped">
@@ -60,7 +60,11 @@ function loadProgressCards(data, detailed, hideAdd) {
 function getProgressHeaderFooterLabels(data, sourceContainer) {
     let localStoredData = JSON.parse(localStorage.getItem("data"));
     let locale = localStoredData["locale"];
-    let discount_range = data["on_invoice_range"] ? data["on_invoice_range"] : data["off_invoice_range"];
+    let discount_range = data["on_invoice_range"] ? data["on_invoice_range"] || [] : data["off_invoice_range"] || [];
+    if(sourceContainer === "footerSuper") {
+        discount_range = data["payterm_range"] || [];
+    }
+    if(!discount_range.length) return "";
     let backgroundProgressWidth = Number(data["max_limit"])/discount_range.length;
     let backgroundProgressPerc = (backgroundProgressWidth/Number(data["max_limit"])) * 100;
     // console.log("backgroundProgressWidth -> ", backgroundProgressPerc);
@@ -105,7 +109,7 @@ function getProgressHeaderFooterLabels(data, sourceContainer) {
                     ${sourceContainer === "header" ? 
                         `
                             ${(data["offInvoice_discount_execution"] === "FINANCIAL") ? `<div class="progress_header_label">${locale["labels"]["discAbbr"]}.</div>` : ''}
-                            ${(data["offInvoice_discount_execution"] === "FREE_GOODS") ? `<div class="progress_header_label" style="right: calc(100% + 4px);">${locale["labels"]["freeGoods"]}</div>` : ''}
+                            ${(data["offInvoice_discount_execution"] === "FREE_GOODS") ? `<div class="progress_header_label">${locale["labels"]["freeGoods"]}</div>` : ''}
                         ` : ""
                     }
                     ${sourceContainer === "header" ? `<div class="progress_header_label right">${locale["labels"]["offInvoice"]}</div>` : ""}
@@ -127,7 +131,7 @@ function getProgressHeaderFooterLabels(data, sourceContainer) {
                     ${sourceContainer === "header" ? 
                         `
                             ${(data["onInvoice_discount_execution"] === "FINANCIAL") ? `<div class="progress_header_label">${locale["labels"]["discAbbr"]}.</div>` : ''}
-                            ${(data["onInvoice_discount_execution"] === "FREE_GOODS") ? `<div class="progress_header_label" style="right: calc(100% + 4px);">${locale["labels"]["freeGoods"]}</div>` : ''}
+                            ${(data["onInvoice_discount_execution"] === "FREE_GOODS") ? `<div class="progress_header_label">${locale["labels"]["freeGoods"]}</div>` : ''}
                             
                         ` : ""
                     }
@@ -159,6 +163,7 @@ function getProgressHeaderFooterLabels(data, sourceContainer) {
         return `<div labelvalue="${range['label']}" class="sub-block labeller" style="width: ${backgroundProgressPerc}%;border-color: #fff; justify-content: right;"></div>`;
     });
     discountRangeData = discountRangeData.join("");
+
     return `
         <div class="detail_bar discount_range">
             <!--
@@ -171,8 +176,9 @@ function getProgressHeaderFooterLabels(data, sourceContainer) {
             <div class="main" style="justify-content: center;">
                 ${discountRangeData}
             </div>
-            ${sourceContainer === "header" ? `<div class="progress_header_label">${locale["labels"]["discAbbr"]}.</div>` : ""}
-            ${sourceContainer === "footer" ? `<div class="progress_footer_label">${locale["labels"]["value"]}</div>` : ""}
+            ${sourceContainer === "header" && discount_range.length ? `<div class="progress_header_label">${locale["labels"]["discAbbr"]}.</div>` : ""}
+            ${sourceContainer === "footer" && discount_range.length ? `<div class="progress_footer_label">${locale["labels"]["value"]}</div>` : ""}
+            ${sourceContainer === "footerSuper" && discount_range.length ? `<div class="progress_footer_label">Pay Term</div>` : ""}
         </div>
     `;
 }
@@ -198,12 +204,13 @@ function getProductsProgress(item, detailed, hideAdd, basicProgress, colorscheme
             :
             `
                 <label style="font-size: 12px;">${parseInt(item["purchased"] || 0) + parseInt(item["selected"]) > parseInt(item["max_limit"]) ? parseInt(item["max_limit"]) : parseInt(item["selected"])}</label>
-                <div class="progressbar_wrapper addproduct" skudata=${`${item["sku"]}`} >
+                <div class="progressbar_wrapper" skudata=${`${item["sku"]}`} >
                     <!--<div class="main reset" style="cursor: pointer;">
                         <img src="/assets/images/svg/plus.svg" class="icon_add"/>
                     </div>-->
                     <div class="main reset rounded_btn">
                         <div class="inner">
+                            <img src="/assets/images/svg/edit.svg" />
                         </div>
                     </div>
                 </div>
@@ -351,9 +358,9 @@ function getProductsProgress(item, detailed, hideAdd, basicProgress, colorscheme
 
     return `
         <div class="progressbar flex">
-            <div class="wrapper_brand_progress" style="width: ${detailed ? '5' : '0'}%;"></div>
-            <div class="wrapper_brand_progress" style="width: ${detailed ? '75' : basicProgress ? '100' : '90'}%;">
-                <label class="${detailed ? "abs" : ""} ${!hideAdd ? "" : "hide"}">${!hideAdd ? item["name"] : ""}</label>
+            <div class="wrapper_brand_progress ${detailed ? 'detailed': ''}" style="width: ${detailed ? '5' : '0'}%;"></div>
+            <div class="wrapper_brand_progress ${detailed ? 'detailed': ''}" style="width: ${detailed ? '75' : basicProgress ? '100' : '90'}%;">
+                <label class="${detailed ? "abs" : "noabs"} ${!hideAdd ? "" : "hide"}">${!hideAdd ? item["name"] : ""}</label>
                 ${detailed ? getProgressHeaderFooterLabels(item, "header") : ""}
                 <div class="progressbar_wrapper">
                     <div class="main">
@@ -369,8 +376,9 @@ function getProductsProgress(item, detailed, hideAdd, basicProgress, colorscheme
                     </div>
                 </div>
                 ${detailed ? getProgressHeaderFooterLabels(item, "footer") : ""}
+                ${detailed ? getProgressHeaderFooterLabels(item, "footerSuper") : ""}
             </div>
-            <div class="wrapper_brand_progress" style="width: ${detailed ? '10' : basicProgress ? '0' : '10'}%; padding-left: ${hideAdd ? "0px" : basicProgress ? '0px' : "4%"}; font-size: 12px;">
+            <div class="wrapper_brand_progress ${detailed ? 'detailed': ''}" style="width: ${detailed ? '10' : basicProgress ? '0' : '10'}%; padding-left: ${hideAdd ? "0px" : basicProgress ? '0px' : "4%"}; font-size: 12px;">
                 ${hideAdd ? `` : addBtn}
             </div>
         </div>
