@@ -24,8 +24,8 @@
 
 .choosebrands .menu_header .label,
 .choosebrands .category_label {
+    font-size: 13px;
     font-weight: 600;
-    font-size: 18px;
     line-height: 26px;
     text-transform: uppercase;
     color: #f36633;

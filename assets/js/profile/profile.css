@@ -97,17 +97,17 @@
     padding: 0 16px;
 }
 
-.order_card .info.outer .success {
+.order_card.history .status_bar_bordered .info.outer .success {
     color: #008a00;
     background: transparent;
 }
 
-.order_card .info.outer .warning {
+.order_card.history .status_bar_bordered .info.outer .warning {
     color: #efaa4b;
     background: transparent;
 }
 
-.order_card .info.outer .failed {
+.order_card.history .status_bar_bordered .info.outer .failed {
     color: #f23904;
     background: transparent;
 }
