@@ -25,7 +25,7 @@ function CallScreen(caseNum) {
                 "tnc": `At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis
                 praesentium voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint
                 occaecati cupiditate non provident, similique sunt in culpa qui officia deserunt mollitia.`,
-                "bg-img": "/assets/images/png/welcome-banner.png"
+                "bg-img": "/gskPortugalPhase2/assets/images/png/welcome-banner.png"
             });
             break;
         case "3":
@@ -3347,7 +3347,7 @@ function CallScreen(caseNum) {
                 "tnc": `At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis
                 praesentium voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint
                 occaecati cupiditate non provident, similique sunt in culpa qui officia deserunt mollitia.`,
-                "bg-img": "/assets/images/svg/Registration-1-800x600.svg"
+                "bg-img": "/gskPortugalPhase2/assets/images/svg/Registration-1-800x600.svg"
             });
             break;
         case "8":
@@ -3358,7 +3358,7 @@ function CallScreen(caseNum) {
                 "tnc": `At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis
                 praesentium voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint
                 occaecati cupiditate non provident, similique sunt in culpa qui officia deserunt mollitia.`,
-                "bg-img": "/assets/images/svg/Registration-2-800x600.svg"
+                "bg-img": "/gskPortugalPhase2/assets/images/svg/Registration-2-800x600.svg"
             });
             break;
         case "9":
@@ -3369,7 +3369,7 @@ function CallScreen(caseNum) {
                 "tnc": `At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis
                 praesentium voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint
                 occaecati cupiditate non provident, similique sunt in culpa qui officia deserunt mollitia.`,
-                "bg-img": "/assets/images/svg/Registration-3-800x600.svg"
+                "bg-img": "/gskPortugalPhase2/assets/images/svg/Registration-3-800x600.svg"
             });
             break;
         case "10":
@@ -3380,7 +3380,7 @@ function CallScreen(caseNum) {
                 "tnc": `At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis
                 praesentium voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint
                 occaecati cupiditate non provident, similique sunt in culpa qui officia deserunt mollitia.`,
-                "bg-img": "/assets/images/svg/Registration-4-800x600.svg"
+                "bg-img": "/gskPortugalPhase2/assets/images/svg/Registration-4-800x600.svg"
             });
             break;
         case "14":

@@ -8,7 +8,7 @@ function loadOrderCart(data) {
         <div class="order_details_container checkoutpage">
             <div class="menu_header heading_block">
                 <div class="label">${locale["labels"]["orderDetails"]}</div>
-                <div class="icon goToBrandLevel cursor"  data-tooltip="Add More" data-tooltip-pos="right"><img src="/assets/images/svg/plus.svg" /></div>
+                <div class="icon goToBrandLevel cursor"  data-tooltip="Add More" data-tooltip-pos="right"><img src="/gskPortugalPhase2/assets/images/svg/plus.svg" /></div>
             </div>
             ${getAccordianAccounts(data["new_orders"]["orders"])}
             <div>
@@ -151,7 +151,7 @@ function getAccordianAccounts(data, rebates) {
         if(rebates) {
             return `
                 <div class="edit switchWholesalerAccount" style="height: auto; width: 16px; margin-right: 10px;" skudata=${data["sku"]}>
-                    <img src="/assets/images/svg/edit.svg" />
+                    <img src="/gskPortugalPhase2/assets/images/svg/edit.svg" />
                 </div>
             `
         } 
@@ -176,7 +176,7 @@ function getAccordianAccounts(data, rebates) {
                         <div class="accordion-item-body-content" style="max-height: 300px; overflow-y: auto;">
                             <div class="date-picker-value date_order ${order["ordered_date"] ? "" : "hide"}">
                                 <div class="flex calendar-picker">
-                                    <img class="picker" src="/assets/images/svg/calendar.svg" />
+                                    <img class="picker" src="/gskPortugalPhase2/assets/images/svg/calendar.svg" />
                                     <div class="input_date_picker" readonly="readonly">${order["ordered_date"]}</div>
                                 </div>
                             </div>
@@ -231,7 +231,7 @@ function getAccordianAccountsData(data, rebates) {
                                 </div>
                                 <div class="checkout_edit_icon">
                                     <div class="arrow edit quantityEditBackToSelection" brand="${item['brand']}">
-                                        ${rebates ? "" : '<img src="/assets/images/svg/edit.svg" key=${index} />'}
+                                        ${rebates ? "" : '<img src="/gskPortugalPhase2/assets/images/svg/edit.svg" key=${index} />'}
                                     </div>
                                 </div>
                             </div>
@@ -244,7 +244,7 @@ function getAccordianAccountsData(data, rebates) {
                                 </div>
                                 <div class="checkout_edit_icon">
                                     <div class="arrow edit quantityEditBackToSelection" brand="${item['brand']}">
-                                        ${rebates ? "" : '<img src="/assets/images/svg/edit.svg" key=${index} />'}
+                                        ${rebates ? "" : '<img src="/gskPortugalPhase2/assets/images/svg/edit.svg" key=${index} />'}
                                     </div>
                                 </div>
                             </div>
@@ -271,7 +271,7 @@ function loadOrderFinalCart(data) {
         <div class="order_details_container choosebrands">
             <div class="menu_header">
                 <div class="label">${locale["labels"]["orderDetails"]}</div>
-                <div class="icon"><img src="/assets/images/svg/plus.svg" /></div>
+                <div class="icon"><img src="/gskPortugalPhase2/assets/images/svg/plus.svg" /></div>
             </div>
             ${loadProgressCards({ "brands": filteredBrand }, true, true)}
             ${getAccordianAccounts(data["new_orders"]["orders"])}

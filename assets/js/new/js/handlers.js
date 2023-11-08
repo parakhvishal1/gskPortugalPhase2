@@ -1242,7 +1242,7 @@ function addnewOrder(data, currentSku) {
                 <div class="accordion-item-header orderdetail active">
                     <div class="flex">
                         <div class="edit swapWholesalerAccount" style="height: auto; width: 16px; margin-right: 10px;" skudata=${data["sku"]} _id=${data["_id"]}>
-                            <img src="/assets/images/svg/edit.svg" />
+                            <img src="/gskPortugalPhase2/assets/images/svg/edit.svg" />
                         </div>
                         ${data["account_no"]}
                     </div>
@@ -1586,7 +1586,7 @@ function addnewOrder(data, currentSku) {
                                 </div>
                                 <div class="addmore__qty searchbox">
                                     <div class="submit">
-                                        <img src="/assets/images/svg/icons8-ok.svg" />
+                                        <img src="/gskPortugalPhase2/assets/images/svg/icons8-ok.svg" />
                                     </div>
                                 </div>
                             </div>
@@ -1643,7 +1643,7 @@ function addnewOrderBrand(data, currentSku, skulevel) {
                 <div class="accordion-item-header orderdetail active">
                     <div class="flex">
                         <div class="edit swapWholesalerAccount" style="height: auto; width: 16px; margin-right: 10px;" skudata=${data["sku"]} _id=${data["_id"]}>
-                            <img src="/assets/images/svg/edit.svg" />
+                            <img src="/gskPortugalPhase2/assets/images/svg/edit.svg" />
                         </div>
                         ${data["account_no"]}
                     </div>

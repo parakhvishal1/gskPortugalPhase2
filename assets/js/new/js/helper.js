@@ -26,9 +26,9 @@ function showDatePicker(id) {
     let locale = localStoredData["locale"];
     return `
         <div class="inline-flex calendar-picker">
-            <img class="picker" src="/assets/images/svg/calendar.svg" />
+            <img class="picker" src="/gskPortugalPhase2/assets/images/svg/calendar.svg" />
             <input type='text' id='tbDate-${id}' placeholder='${locale["labels"]["pickDate"]}' readonly="readonly" class='dateSelectPicker' />
-            <img class="arrow-down" src="/assets/images/svg/down.svg" />
+            <img class="arrow-down" src="/gskPortugalPhase2/assets/images/svg/down.svg" />
         </div>
     `;
 }
@@ -38,9 +38,9 @@ function showDatePickerWhite(date) {
     let locale = localStoredData["locale"];
     return `
         <div class="inline-flex calendar-picker">
-            <img class="picker" src="/assets/images/svg/calendar-white.svg" />
+            <img class="picker" src="/gskPortugalPhase2/assets/images/svg/calendar-white.svg" />
             <input type='text' id='tbDate' placeholder='${date ? date : locale["labels"]["pickDate"]}' readonly="readonly"></input>
-            <!-- <img class="arrow-down" src="/assets/images/svg/down-white.svg" /> -->
+            <!-- <img class="arrow-down" src="/gskPortugalPhase2/assets/images/svg/down-white.svg" /> -->
         </div>
     `;
 }

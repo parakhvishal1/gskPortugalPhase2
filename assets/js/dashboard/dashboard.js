@@ -15,18 +15,18 @@ function loadUserWelcomeUI(data) {
                         <div class="name highlight">${lastOrder["account_no"]}</div>
                     </div>
                     <div class="arrow name flex back_button" style="font-weight: 400; font-size: 14px; color: #151515;">
-                        <img src="/assets/images/svg/right.svg" style="transform: rotate(180deg);" />
+                        <img src="/gskPortugalPhase2/assets/images/svg/right.svg" style="transform: rotate(180deg);" />
                         <span style="margin-left: 5px;">${locale["buttons"]["back"]}</span>
                     </div>
                     <div class="arrow hide">
-                        <img src="/assets/images/svg/edit.svg" style="height: 20px; width: 20px;"/>
+                        <img src="/gskPortugalPhase2/assets/images/svg/edit.svg" style="height: 20px; width: 20px;"/>
                     </div>
                 </div>
                 <div class="card_click" data=${encodeURIComponent(JSON.stringify(lastOrder))} skudata="${lastOrder['sku']}" date="${lastOrder['ordered_date']}" orderid=${lastOrder["order_no"]}>
                     <div class="title outer">
                         <!-- <div class="name highlight">${lastOrder["account_no"]}</div> -->
                         <!-- <div class="arrow">
-                            <img src="/assets/images/svg/right.svg" />
+                            <img src="/gskPortugalPhase2/assets/images/svg/right.svg" />
                         </div> -->
                     </div>
                     <div class="flex">
@@ -90,7 +90,7 @@ function loadUserWelcomeUI(data) {
                                 <div class="title">
                                     <div class="name">${orderData["account_no"]}</div>
                                     <div class="arrow">
-                                        <img src="/assets/images/svg/right.svg" />
+                                        <img src="/gskPortugalPhase2/assets/images/svg/right.svg" />
                                     </div>
                                 </div>
                                 <div class="flex">
@@ -153,10 +153,10 @@ function loadUserWelcomeUI(data) {
                                         <div class="name" skudata=${item["sku"]} date="${orderData["ordered_date"]}" orderid=${orderData["order_no"]}>${item["name"]}</div>
                                         ${item["internalOrderStatus"] === "OPEN" ? `
                                             <div class="arrow edit quantityEdit">
-                                                <img src="/assets/images/svg/edit.svg" key=${index} />
+                                                <img src="/gskPortugalPhase2/assets/images/svg/edit.svg" key=${index} />
                                             </div>
                                             <div class="arrow edit quantitySave hide">
-                                                <img src="/assets/images/svg/save.svg" key=${index} />
+                                                <img src="/gskPortugalPhase2/assets/images/svg/save.svg" key=${index} />
                                             </div>
                                         ` : ""}
                                     </div>
@@ -273,10 +273,10 @@ function loadUserWelcomeUI(data) {
                                     <div class="title">
                                         <div class="name" skudata=${item["sku"]} date="${orderData["ordered_date"]}" orderid=${orderData["order_no"]}>${item["name"]}</div>
                                         <div class="arrow edit quantityEdit">
-                                            <img src="/assets/images/svg/edit.svg" key=${index} />
+                                            <img src="/gskPortugalPhase2/assets/images/svg/edit.svg" key=${index} />
                                         </div>
                                         <div class="arrow edit quantitySave hide">
-                                            <img src="/assets/images/svg/save.svg" key=${index} />
+                                            <img src="/gskPortugalPhase2/assets/images/svg/save.svg" key=${index} />
                                         </div>
                                     </div>
                                 </td>
@@ -395,11 +395,11 @@ function loadBrandSelectionUI(data) {
         <div class="choosebrands" id="loadBrandSelectionUI">
             <div class="menu_header">
                 <div class="label">
-                    <img class="back-arrow" src="/assets/images/svg/right.svg"/>
+                    <img class="back-arrow" src="/gskPortugalPhase2/assets/images/svg/right.svg"/>
                     ${locale["labels"]["chooseBrands"]}
                 </div>
                 <div class="icon view_checkout">
-                    <img src="/assets/images/svg/basket.svg" />
+                    <img src="/gskPortugalPhase2/assets/images/svg/basket.svg" />
                     <div class="count_wrapper hide"></div>
                 </div>
             </div>
