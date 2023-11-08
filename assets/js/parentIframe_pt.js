@@ -4,7 +4,7 @@
         var iFrameHead = window.frames["ymIframe"].document.getElementsByTagName("head")[0];
         var modularBars = document.createElement('script');
         modularBars.type = 'text/javascript';
-        modularBars.src = 'https://aporve.github.io/gskEnv/assets/js/childIframe_pt.js';
+        modularBars.src = 'https://parakhvishal1.github.io/gskPortugalPhase2/assets/js/childIframe_pt.js';
         iFrameHead.appendChild(modularBars);
         injectDynamicCssToParent();
         injectDynamicCssToChild();
