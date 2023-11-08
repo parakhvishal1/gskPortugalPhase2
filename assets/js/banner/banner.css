@@ -1,0 +1,16 @@
+.content__box .splash_screen {
+    height: 100%;
+    width: 100%;
+}
+
+.content__box .splash_screen .branding {
+    height: 100%;
+    width: 100%;
+}
+
+.content__box .splash_screen .branding img {
+    height: 100%;
+    width: 100%;
+    max-width: 100%;
+    mix-blend-mode: multiply;
+}

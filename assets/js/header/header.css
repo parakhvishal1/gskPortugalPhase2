@@ -1,0 +1,111 @@
+.header .header_icon_wrapper {
+    position: relative;
+    height: 100%;
+    text-align: left;
+}
+
+.header .header_icon_wrapper::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    height: 2px;
+    width: 100%;
+    z-index: -1;
+    background-color: #fff;
+}
+
+.header .header_icon_wrapper .header_bar {
+    position: relative;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-direction: row-reverse;
+    padding: 0 20px;
+    z-index: 2;
+}
+
+.header .header_icon_wrapper .header_bar .icons-grouped {
+    display: flex;
+    align-items: center;
+}
+
+.header .header_icon_wrapper .header_bar .svg_icon_wrapper {
+    width: 44px;
+    height: 44px;
+    cursor: pointer;
+    animation: zoomup 0.8s ease-out both;
+}
+.header .header_icon_wrapper .header_bar .svg_icon_wrapper:first-child {
+    margin-right: 10px;
+    width: 30px;
+    height: 30px;
+}
+.header .header_icon_wrapper .header_bar .svg_icon_wrapper:last-child {
+    margin-left: 10px;
+}
+
+.header .header_icon_wrapper .header_bar .svg_icon_wrapper svg {
+    width: 44px;
+    height: 44px;
+    transition: scale 0.2s ease-in;
+}
+
+.header .header_icon_wrapper .header_bar .svg_icon_wrapper svg:hover {
+    scale: 1.2;
+}
+
+.header .header_icon_wrapper .header_bar .profile_block {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    position: relative;
+    cursor: pointer;
+}
+
+/* .header .header_icon_wrapper .header_bar .profile_block:hover .svg_wrapper svg {
+    scale: 1.2;
+    transition: scale 0.2s ease-in;
+} */
+
+.header .header_icon_wrapper .header_bar .profile_block .svg_wrapper {
+    height: 32px;
+    width: 16px;
+    margin-left: -10px;
+}
+
+.header .header_icon_wrapper .header_bar .profile_block .svg_wrapper svg {
+    height: 32px;
+    width: 16px;
+    pointer-events: none;
+    animation: textfocus 0.8s cubic-bezier(0.55, 0.085, 0.68, 0.53) both;
+}
+
+.header .header_icon_wrapper .header_bar .profile_section {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin-left: 10px;
+}
+
+.header .header_icon_wrapper .header_bar .profile_section .block {
+    display: flex;
+    justify-content: space-between;
+}
+
+.header .header_icon_wrapper .header_bar .profile_section .email,
+.header .header_icon_wrapper .header_bar .profile_section .name,
+.header .header_icon_wrapper .header_bar .profile_section .icon {
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 18px;
+    color: #959595;
+    user-select: none;
+    pointer-events: none;
+    animation: textfocus 0.8s cubic-bezier(0.55, 0.085, 0.68, 0.53) both;
+}
+
+.header .header_icon_wrapper .header_bar .profile_section .block .name {
+    font-weight: 500;
+}

@@ -1,0 +1,83 @@
+.client_list {
+    padding-top: 20px;
+}
+
+.client_list .space-bw {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin: 0 8px;
+    padding: 0 8px;
+}
+
+.client_list .space-bw:hover {
+    background: #fff;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.client_list .heading {
+    margin: 0 8px;
+    padding: 0 8px;
+    animation: textfocus 0.8s cubic-bezier(0.55, 0.085, 0.68, 0.53) both;
+}
+
+.client_list .heading,
+.client_list .space-bw .label {
+    font-weight: 700;
+    font-size: 13px;
+    line-height: 24px;
+    text-transform: uppercase;
+    color: #151515;
+    overflow-y: auto;
+}
+
+.client_list .space-bw .icon {
+    cursor: pointer;
+}
+
+.client_list .space-bw .icon img {
+    pointer-events: none;
+    height: 8px;
+    width: 8px;
+    animation: zoomup 0.8s ease-out both;
+    transition: height 0.2s ease-out;
+}
+
+.client_list .space-bw:hover .icon img {
+    height: 12px;
+    width: 12px;
+}
+
+.client_list ul {
+    margin-top: 5px;
+}
+
+.client_list ul .item {
+    list-style-type: none;
+    border-bottom: 0.5px solid #e6e6e6;
+}
+
+.client_list ul .item .icon {
+    font-size: 16px;
+}
+
+.client_list ul .detail {
+    font-size: 12px;
+    line-height: 24px;
+    margin: 12px 0;
+    animation: textfocus 0.8s cubic-bezier(0.55, 0.085, 0.68, 0.53) both;
+}
+
+.client_list .space-bw:hover .detail {
+    font-size: 12.5px;
+    transition: font-size 0.25s ease-out;
+}
+
+.client_list ul .detail .span {
+    font-weight: 400;
+}
+
+.client_list ul .detail span.bold {
+    font-weight: 700;
+}

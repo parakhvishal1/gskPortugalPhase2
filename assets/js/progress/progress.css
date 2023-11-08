@@ -1,0 +1,591 @@
+/* PROGRESS PLAN START */
+.progress_plan {
+    margin-bottom: 20px;
+    position: relative;
+    animation: unset;
+}
+
+.progress_plan div {
+    animation: unset;
+}
+
+.progress_plan #plan_items {
+    padding: 0;
+}
+
+.progress_plan .grouped{
+    width: 100%;
+}
+
+.progress_plan .grouped .quantity_inc img{
+    width: 18px;
+    height: 18px;
+}
+
+.progress_plan .title {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 4px;
+    padding: 0 0 !important;
+}
+
+.progress_plan .title .name {
+    font-weight: 700;
+    font-size: 14px;
+}
+
+.progress_plan .title .arrow {
+    display: flex;
+    height: 100%;
+    align-items: center;
+    vertical-align: middle;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 20px;
+    color: #151515;
+}
+
+.progress_plan .title .arrow.calendar img {
+    height: 12px;
+    margin-right: 15px;
+}
+
+.progressbar {
+    margin: 6px 0 6px 0;
+    animation: unset;
+}
+
+.brand_level_progress {
+    position: relative;
+}
+
+.brand_level_progress .progressbar {
+    margin: 0;
+}
+
+.progressbar .detail_bar {
+    margin-bottom: 0;
+}
+ 
+.progressbar .detail_bar:not(:last-child) {
+    margin: 0;
+}
+
+.progressbar .detail_bar,
+.progressbar .progressbar_wrapper {
+    position: relative;
+}
+
+.progressbar .progressbar_wrapper {
+    /* margin-top: 5px; */
+    height: 32px;
+    width: 75%;
+}
+
+.progressbar .progressbar_ratio {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    height: 32px;
+    border-top-right-radius: 6px;
+    border-bottom-right-radius: 6px;
+    /* background-color: #f36633; */
+    background-color: #f36633;
+    /* opacity: 0.9; */
+    border-radius: 6px;
+    border-top-right-radius: 10px;
+    border-bottom-right-radius: 10px;
+    z-index: 2;
+}
+
+.progressbar .progressbar_ratio.inverted {
+    background-color: #959595;
+    z-index: 3;
+}
+
+.progressbar .progressbar_ratio .ratio_wrapper {
+    height: 100%;
+    width: 100%;
+    position: relative;
+}
+
+.progressbar .progressbar_ratio .ratio {
+    position: absolute;
+    height: 100%;
+    right: 5px;
+    margin: auto 0;
+    display: flex;
+    align-items: center;
+    font-weight: 500;
+    font-size: 14px;
+    color: #f0efed;
+    white-space: nowrap;
+}
+
+.choosebrands .progress_card.transparent .progress_plan .grouped .progressbar .progressbar_ratio .ratio_wrapper .ratio {
+    color: #f0efed;
+}
+
+.progress_plan .grouped .progressbar .progressbar_ratio .ratio_wrapper .ratio,
+.accordian.table .info_row.brandscreen td.skuBrand_level_progress .progress_card.transparent .progress_plan .grouped .progressbar .progressbar_ratio .ratio_wrapper .ratio {
+    color: #ffffff;
+}
+
+.progressbar label {
+    font-weight: 600;
+    font-size: 14px;
+    line-height: 20px;
+    color: #151515;
+    text-align: left !important;
+    cursor: pointer;
+    width: 25%;
+    margin-right: 4px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.progressbar label.abs {
+   margin-left: -40px;
+}
+
+.progressbar label.noabs {
+   padding: 0;
+}
+
+.main {
+    background: #959595;
+    /* border: 1px solid #959595; */
+    /* box-shadow: 0px 3px 12px rgba(84, 79, 64, 0.1); */
+    border-radius: 5px;
+    width: 100%;
+    height: 32px;
+    display: flex;
+    align-items: center;
+}
+
+.progressbar .detail_bar .main {
+    border: none;
+    background: transparent;
+    box-shadow: none;
+    height: 24px;
+}
+
+.progressbar .quantity_total {
+    display: inline-block;
+    position: absolute;
+    top: 5px;
+    right: -35px;
+    color: #151515;
+    font-weight: 700;
+    font-size: 14px;
+    line-height: 22px;
+}
+
+.sub-block {
+    /* background-color: #f36633; */
+    width: 20%;
+    height: -webkit-fill-available;
+    /* border-left: 1px; */
+    /* border-right: 1px; */
+    /* border-right-style: solid; */
+    /* color: #fff; */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 11px;
+    margin: 6px 0;
+    z-index: 1;
+    position: relative;
+}
+xr
+.sub-block.initial:first-child::before {
+    content: '0';
+    position: absolute;
+    left: -2.5px;
+    font-size: 12px;
+    margin: 6px 0;
+    z-index: 1;
+}
+
+.sub-block.initial.labeller::after {
+    content: attr(labelvalue);
+    position: absolute;
+    right: -10%;
+}
+
+.sub-block.labeller::after {
+    content: attr(labelvalue);
+    position: absolute;
+    right: -10%;
+}
+
+.sub-block.markerInit.labeller::after {
+    content: attr(labelvalue);
+    position: absolute;
+    right: unset;
+    left: 0;
+}
+
+
+.sub-block.discount::after {
+    /* counter-reset: x var(--label);
+    content: counter(x)"\0025"; */
+    content: attr(labelvalue)"\0025";
+    position: absolute;
+    left: -10%;
+}
+
+.sub-block.freegoods::after {
+    content: "\002B"attr(labelvalue);
+    position: absolute;
+    left: -10%;
+}
+
+.sub-block.highlight::after {
+    scale: 1.4;
+}
+
+.wrapper_brand_progress.detailed .sub-block.withmarkings:not(:last-child)::before ,
+.wrapper_brand_progress.detailed .sub-block.withoutmarkings:not(:last-child)::before,
+.wrapper_brand_progress.detailed .sub-block.withmarkings:not(:last-child)::after,
+.wrapper_brand_progress.detailed .sub-block.withoutmarkings:not(:last-child)::after {
+    display: unset;
+}
+
+.sub-block.withmarkings:not(:last-child)::before ,
+.sub-block.withoutmarkings:not(:last-child)::before,
+.sub-block.withmarkings:not(:last-child)::after,
+.sub-block.withoutmarkings:not(:last-child)::after  {
+    content: "";
+    display: none;
+    position: absolute;
+    height: 10px;
+    width: 4px;
+    border-radius: 2px;
+    background: #fff;
+}
+
+.sub-block.withmarkings::before {
+    /* top: -6.8px; */
+    right: -1px;
+    border-bottom-left-radius: 2px;
+    border-bottom-right-radius: 2px;
+}
+
+.sub-block.withmarkings::after {
+    /* bottom: -6.8px; */
+    right: -1px;
+    border-top-left-radius: 2px;
+    border-top-right-radius: 2px;
+}
+
+.sub-block.withoutmarkings:not(:last-child)::before,
+.sub-block.withoutmarkings:not(:last-child)::after {
+    content: "";
+    position: absolute;
+    height: 6px;
+    width: 4px;
+    border-radius: unset;
+    background: #fff;
+}
+
+.sub-block.withoutmarkings:not(:last-child)::before {
+    top: -6px;
+    right: -1px;
+    border-bottom-left-radius: 2px;
+    border-bottom-right-radius: 2px;
+}
+
+.sub-block.active.withoutmarkings:not(:last-child)::before {
+    animation: animateBricksUp 2s cubic-bezier(0.19, 1, 0.22, 1);
+}
+
+.sub-block.withoutmarkings:not(:last-child)::after {
+    bottom: -6px;
+    right: -1px;
+    border-top-left-radius: 2px;
+    border-top-right-radius: 2px;
+}
+
+.sub-block.active.withoutmarkings:not(:last-child)::after {
+    animation: animateBricksDown 2s cubic-bezier(0.19, 1, 0.22, 1);
+}
+
+@keyframes animateBricksUp  {
+    from {
+        top: 0px;
+    }
+    to {
+        top: -6px;
+    }
+}
+
+@keyframes animateBricksDown  {
+    from {
+        bottom: 0px;
+    }
+    to {
+        bottom: -6px;
+    }
+}
+
+.progressbar .detail_bar .sub-block  {
+    color: #111;
+    border: none;
+    /* justify-content: flex-start; */
+    justify-content: center;
+}
+
+.sub-block:first-child {
+    border-left: none;
+}
+
+.sub-block:last-child {
+    border-right: none;
+}
+
+.progressbar .detail_bar .progress_header_label {
+    position: absolute;
+    /* top: -2px; */
+    top: 6.5px;
+    /* left: -40px; */
+    right: calc(100% + 14px);
+    font-size: 12px;
+    line-height: 12px;
+    font-weight: 600;
+    color: #f26633;
+}
+
+.progressbar .detail_bar .progress_header_label.right {
+    position: absolute;
+    top: 5.5px;
+    left: unset;
+    right: -50px;
+    font-size: 12px;
+    font-weight: 600;
+}
+
+.progressbar .detail_bar .progress_footer_label {
+    position: absolute;
+    bottom: 7.5px;
+    right: calc(100% + 14px);
+    font-size: 12px;
+    font-weight: 600;
+    white-space: nowrap;
+}
+
+.order_history {
+    height: 100%;
+    width: 100%;
+}
+
+.order_history .upper_history_container {
+    height: calc(75% - 20px);
+    overflow-y: auto;
+}
+
+.order_card.inverted {
+    background: #959595;
+}
+
+.order_card.inverted div,
+.order_card.inverted td {
+    color: #fff;
+}
+
+.order_card.history .status_bar_bordered {
+    display: flex;
+    align-items: center;
+    width: 100%;
+}
+
+.order_card.history .status_bar_bordered .bordered {
+    height: 40px;
+    width: 4px;
+    background: #008a00;
+    border-radius: 0px 10px 10px 0px;
+}
+
+.order_card.history .status_bar_bordered .success {
+    background: #008a00;
+}
+
+.order_card.history .status_bar_bordered .warning {
+    background: #efaa4b;
+}
+
+.order_card.history .status_bar_bordered .failed {
+    background: #f23904;
+}
+
+.order_cart {
+    background: transparent;
+    /* background: #ffffff; */
+    /* border: 1px solid #959595; */
+    /* box-shadow: 0px 3px 12px rgba(84, 79, 64, 0.1); */
+    border-radius: 5px;
+    /* padding: 14px 0 0 0; */
+    /* margin-bottom: 20px; */
+}
+
+.order_cart .menu_header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 16px;
+}
+
+.order_cart .menu_header div {
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 20px;
+    color: #151515;
+}
+
+.order_cart .menu_header div:first-child span {
+    margin-right: 10px;
+}
+
+.order_cart .menu_header div:last-child {
+    font-size: 20px;
+    font-weight: 300;
+    color: #f26633;
+}
+
+.order_cart .title {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 16px;
+    font-weight: 700;
+    font-size: 14px;
+    margin-top: 6px;
+    margin-bottom: 8px;
+}
+
+.order_cart .title .arrow {
+    font-size: 18px;
+    font-weight: 300;
+    color: #f26633;
+}
+
+.order_cart .detail {
+    /* border-bottom: 0.5px solid #e6e6e6; */
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin: 0 16px;
+    /* padding-bottom: 16px; */
+}
+
+.order_cart .detail .block {
+    display: block !important;
+}
+
+.order_cart .detail .block .info_label {
+    font-weight: 600;
+    font-size: 14px;
+    margin-bottom: 4px;
+}
+
+.order_cart .detail .block .desc {
+    font-weight: 400;
+    font-size: 12px;
+}
+
+.order_cart table {
+    border-collapse: collapse;
+}
+
+.order_cart.history table {
+    display: flex;
+    flex-flow: column;
+    width: 100%;
+    max-height: 300px;
+}
+
+.order_cart.history tbody {
+    flex: 1 1 auto;
+    overflow-y: scroll;
+    scroll-behavior: smooth;
+}
+
+.order_cart.history tr {
+    width: 100%;
+    display: table;
+    table-layout: fixed;
+}
+
+.order_cart.account {
+    margin: 16px;
+}
+
+table {
+    width: 100%;
+}
+
+.order_cart .detail .table thead {
+    /* border-bottom: 0.5px solid #e6e6e6; */
+}
+
+.order_cart .detail .table tbody .info_row,
+.order_cart .detail .table thead .info_row {
+    color: #f26633;
+    font-weight: 700;
+    font-size: 13px;
+    line-height: 20px;
+    border-radius: 0.5px;
+    border-bottom: 1px solid #e6e6e6;
+}
+
+.order_cart .detail .table tbody .info_row {
+    font-weight: 400;
+    color: #151515;
+}
+
+.order_cart .detail .table tbody .info_row:last-child {
+    border-bottom: none;
+}
+
+.order_cart .detail .table tbody tr td .title {
+    padding: 6px 0 0px 0;
+    margin: 0;
+}
+
+.order_cart .detail .table thead .info_row .info_data,
+.order_cart .detail .table tbody .info_row .info_data {
+    padding: 6px 16px 6px 16px;
+    vertical-align: top;
+    width: 20%;
+}
+
+
+.info_data > input {
+    padding: 2px 4px 2px 0px;;
+    text-align: center;
+    color: #151515;
+    background: #fff;
+    border: 1px solid transparent;
+    border-radius: 2px;
+    font-size: 14px;
+    text-align: left;
+}
+
+.info_data.active > input {
+    padding: 2px 4px;
+    text-align: center;
+    color: #151515;
+    background: #E6E6E6;
+    border: 1px solid #E6E6E6;
+    border-radius: 2px;
+    font-size: 14px;
+}
+
+.order_cart .detail .table thead .info_row .info_data:first-child,
+.order_cart .detail .table tbody .info_row .info_data:first-child {
+    padding: 6px 0 6px 0;
+}
+/* PROGRESS PLAN END */

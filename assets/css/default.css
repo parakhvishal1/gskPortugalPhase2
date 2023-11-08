@@ -1,0 +1,128 @@
+.bodyContent,
+.content__box {
+    height: 100%;
+    width: 100%;
+}
+
+#ui-datepicker-div {
+    z-index: 999 !important;
+}
+
+input[id$="tbDate"] {
+    border: none;
+    background: transparent;
+    outline: 0;
+    display: inline;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 22px;
+    color: #151515;
+    padding: 6px 0;
+}
+
+.flex {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.inline-flex {
+    display: inline-flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.mCSB_inside > .mCSB_container {
+    margin-right: 0px !important;
+}
+
+.hide {
+    display: none !important;
+}
+
+.hidden {
+    visibility: hidden !important;
+}
+
+.pointernone {
+    pointer-events: none;
+}
+
+.highlight {
+    color: #f36633 !important;
+}
+
+.nohighlight {
+    color: #151515 !important;
+}
+
+.cta {
+    color: #f36633 !important;
+    cursor: pointer;
+    display: inline-block;
+}
+
+.cursor {
+    cursor: pointer;
+}
+
+.borderBottom {
+    border-bottom: 0.5px solid #e6e6e6;
+}
+
+.tableLayout {
+    display: flex;
+    flex-flow: column;
+    width: 100%;
+    max-height: 300px;
+}
+
+.tableLayoutBody {
+    flex: 1 1 auto;
+    overflow-y: scroll;
+    scroll-behavior: smooth;
+}
+.name {
+    font-size: 15px;
+    font-weight: 500;
+    color: #151515;
+}
+
+thead .info_row .info_data {
+    font-weight: 500;
+}
+
+.info_data,
+.info_data > input {
+    font-size: 13px;
+    font-weight: 400;
+}
+
+td.editable,
+td[editable] {
+    padding-top: 4px !important;
+}
+
+.bold {
+    font-weight: 700;
+}
+
+.light-colored {
+    color: #959595;
+}
+
+input:focus {
+    outline: 0;
+}
+
+input.dateSelectPicker {
+    border: none;
+    background: transparent;
+    outline: 0;
+    display: inline;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 22px;
+    color: #151515;
+    padding: 6px 0;
+}

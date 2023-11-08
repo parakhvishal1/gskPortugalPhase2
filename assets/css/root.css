@@ -1,0 +1,95 @@
+:root {
+    --orange-primary: #f26633;
+    --orange-secondary: #f36633;
+    --grey-primary: #f0efed;
+    --grey-secondary: #959595;
+}
+
+* {
+    padding: 0;
+    margin: 0;
+    font-family: "GSK", -apple-system, BlinkMacSystemFont, sans-serif;
+    box-sizing: border-box;
+}
+
+html {
+    font-size: 100%;
+    -webkit-text-size-adjust: 100%;
+}
+
+html,
+body {
+    height: 100%;
+    width: 100%;
+    background: var(--grey-primary);
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+    overflow-x: hidden;
+    overflow-y: hidden;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    max-width: 100%;
+    line-height: 1.5;
+    position: relative;
+    isolation: isolate;
+    -webkit-font-smoothing: antialiased;
+}
+
+main {
+    overflow-y: auto;
+}
+
+img,
+picture,
+video,
+canvas,
+svg {
+    display: block;
+    max-width: 100%;
+    transform-style: preserve-3d;
+    animation: zoomup 0.4s ease-out both;
+}
+
+input,
+button,
+textarea,
+select {
+    font: inherit;
+}
+
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    letter-spacing: 0.5px;
+    overflow-wrap: break-word;
+    animation: textfocus 0.8s cubic-bezier(0.550, 0.085, 0.680, 0.530) both;
+}
+
+table {
+    width: 100%;
+}
+
+table,
+th,
+td {
+    border-collapse: collapse;
+}
+
+input:focus {
+    outline: 0;
+}
+
+button {
+    cursor: pointer;
+}
+
+div {
+    letter-spacing: 0.5px;
+    /* animation: bouncein 0.5s cubic-bezier(0.445, 0.05, 0.55, 0.95); */
+}

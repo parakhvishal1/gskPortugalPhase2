@@ -1,0 +1,60 @@
+.date-picker-value.date_order {
+    margin-bottom: 6px;
+}
+
+.date-picker-value.date_order + .flex.title {
+    font-size: 13px;
+    line-height: 20px;
+    color: #151515;
+    margin-bottom: 6px;
+}
+
+.calendar-picker {
+    justify-content: unset;
+    /* margin-top: 2px; */
+    position: relative;
+    display: inline-block;
+}
+
+.calendar-picker .picker {
+    height: 14px;
+    width: 20px;
+    position: absolute;
+    left: -3px;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    margin: auto 0;
+    z-index: 1;
+}
+
+.calendar-picker .picker + .input_date_picker {
+    font-size: 14px;
+    margin: 0 0.75rem 0 1.5rem;
+}
+
+.calendar-picker input {
+    width: 6.5rem;
+    padding: 2px 0.25rem 0px 1.5rem;
+    cursor: pointer;
+    z-index: 2;
+    position: relative;
+}
+
+.icon .arrow-down {
+    height: 10px;
+    width: 10px;
+}
+
+.calendar-picker .arrow-down {
+    height: 10px;
+    width: 10px;
+
+    position: absolute;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    margin: auto 0;
+    z-index: 1;
+}
