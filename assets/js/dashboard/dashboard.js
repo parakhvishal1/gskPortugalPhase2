@@ -28,13 +28,12 @@ function loadUserWelcomeUI(data) {
                     </div>
                     <div class="flex">
                         <div class="order_status">
-                        <div class="info highlight">${lastOrder["account_no"]}</div>
+                            <div class="info highlight outer">${lastOrder["account_no"]}</div>
                             <div class="info"><span class="light-colored">${locale["labels"]["orderNo"]}:</span> <span class="bold">${lastOrder["order_no"]}</span></div>
                         </div>
                         <div class="order_status">
-                            <div class="info"><span class="light-colored">${locale["labels"]["orderDate"]}:</span> <span class="bold">${lastOrder["ordered_date"]}</span></div>
+                        <div class="info"><span class="light-colored">${locale["labels"]["orderNo"]}:</span> <span class="bold">${lastOrder["order_no"]}</span></div>
                             <div class="info"><span class="light-colored">${locale["labels"]["status"]}:</span> <span class="bold">${lastOrder["status"]}</span></div>
-                            <!-- <div class="info"><span class="light-colored">${locale["labels"]["statusDate"]}:</span> <span class="bold">${lastOrder["delivery_date"]}</span></div> -->
                         </div>
                         <div class="order_on_date">
                             <div class="info"><span class="light-colored">${locale["labels"]["orderedOn"]}:</span></div>
@@ -141,6 +140,9 @@ function loadUserWelcomeUI(data) {
                     $("#progress_plan_main").addClass("hide");
                     $(this).children(".title.outer").addClass("hide");
                     $(this).siblings(".title.backbtn").removeClass("hide");
+                    $(this).siblings(".title.backbtn").siblings(".card_click").children().children(".order_status:first-child").addClass("hide");
+                    $(this).siblings(".title.backbtn").siblings(".card_click").children().children(".order_status:first-child").children(".info.highlight.outer").addClass("hide");
+                    $(this).siblings(".title.backbtn").siblings(".card_click").children().children(".order_status:first-child").children(".info.highlight.outer").siblings().addClass("hide");
                     getTableBodyChildElement.empty();
                     additionalDetails && additionalDetails.map((item, index) => {
                         getTableBodyChildElement.append(`
@@ -375,6 +377,9 @@ function loadUserWelcomeUI(data) {
             siblingElement.siblings(".card_click")
             $("#progress_plan_main").removeClass("hide");
             siblingElement.siblings(".card_click").children(".title.outer").removeClass("hide");
+            $(this).parent().siblings(".card_click").children(".title.outer").siblings(".flex").children(".order_status:first-child").removeClass("hide");
+            $(this).parent().siblings(".card_click").children(".title.outer").siblings(".flex").children(".order_status:first-child").children(".info.highlight.outer").removeClass("hide");
+            $(this).parent().siblings(".card_click").children(".title.outer").siblings(".flex").children(".order_status:first-child").children(".info.highlight.outer").siblings().removeClass("hide");
             siblingElement.siblings(".card_click").css("pointer-events", "unset");
         });
     } else {

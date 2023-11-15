@@ -95,7 +95,7 @@
 }
 
 .order_card.last_order .title.backbtn + .card_click .flex .order_status:nth-child(2) {
-    display: none;
+    /* display: none; */
 }
 
 .order_card.last_order .title.backbtn.hide + .card_click .flex .order_status:nth-child(2) {

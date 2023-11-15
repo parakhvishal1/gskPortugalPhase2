@@ -1,4 +1,5 @@
 function loadConfetti() {
+    if(!isConfetiEnabled) return;
     document.getElementsByClassName("confetti") && document.getElementsByClassName("confetti").length ? document.getElementsByClassName("confetti")[0].style.display = "block" : "";
     document.getElementsByClassName("confetti") && document.getElementsByClassName("confetti").length ? document.getElementsByClassName("confetti")[1].style.display = "block" : "";
     document.getElementsByClassName("reward_snackbar") && document.getElementsByClassName("confetti").length ? document.getElementsByClassName("reward_snackbar")[0].classList.add("active") : "";
