@@ -378,7 +378,7 @@ function loadUserWelcomeUI(data) {
             siblingElement.siblings(".card_click").css("pointer-events", "unset");
         });
     } else {
-        $("#content_box").append(`<div class='empty_screen_msg'>${locale["labels"]["emptyOrder"]}`);
+        $("#content_box").prepend(`<div class='empty_screen_msg'>${locale["labels"]["emptyOrder"]}`);
         $("#last_order_history").append(`<div class="progress_plan" id="progress_plan_main"></div>`);
     }
 }
