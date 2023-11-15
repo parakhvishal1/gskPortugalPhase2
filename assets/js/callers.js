@@ -252,9 +252,29 @@ function ToApp(eventName, data, orgData) {
         case "welcome-screen":
             StoreDataIn(data);
             loadGeneralWelcome(data);
+            addLegalCopyright(data);
+            break;
+        case "welcome-screen-unfilled-steps":
+            StoreDataIn(data);
+            loadGeneralWelcome(data);
+            addLegalCopyright(data);
+            break;
+        case "welcome-screen-filled-step1":
+            StoreDataIn(data);
+            loadGeneralWelcome(data);
+            addLegalCopyright(data);
+            break;
+        case "welcome-screen-filled-step2":
+            StoreDataIn(data);
+            loadGeneralWelcome(data);
+            addLegalCopyright(data);
+            break;
+        case "welcome-screen-filled-step3":
+            StoreDataIn(data);
+            loadGeneralWelcome(data);
+            addLegalCopyright(data);
             break;
         case "termsui-screen":
-            // showHeader();
             loadTermsUI(data);
             break;
         case "userwelcome-screen":
@@ -317,7 +337,7 @@ function ToApp(eventName, data, orgData) {
             confirmOrder();
             break;
         case "legal-copyright":
-            // addLegalCopyright(data);
+            addLegalCopyright(data);
             break;
         default:
             break;
