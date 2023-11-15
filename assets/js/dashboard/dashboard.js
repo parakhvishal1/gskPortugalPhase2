@@ -18,9 +18,6 @@ function loadUserWelcomeUI(data) {
                         <img src="/assets/images/svg/right.svg" style="transform: rotate(180deg);" />
                         <span style="margin-left: 5px;">${locale["buttons"]["back"]}</span>
                     </div>
-                    <div class="arrow hide">
-                        <img src="/assets/images/svg/edit.svg" style="height: 20px; width: 20px;"/>
-                    </div>
                 </div>
                 <div class="card_click" data=${encodeURIComponent(JSON.stringify(lastOrder))} skudata="${lastOrder['sku']}" date="${lastOrder['ordered_date']}" orderid=${lastOrder["order_no"]}>
                     <div class="title outer">
@@ -152,10 +149,10 @@ function loadUserWelcomeUI(data) {
                                     <div class="title">
                                         <div class="name" skudata=${item["sku"]} date="${orderData["ordered_date"]}" orderid=${orderData["order_no"]}>${item["name"]}</div>
                                         ${item["internalOrderStatus"] === "OPEN" ? `
-                                            <div class="arrow edit quantityEdit">
+                                            <div class="arrow edit quantityEdit hint--left hint--rounded hint--bounce" aria-label="Edit">
                                                 <img src="/assets/images/svg/edit.svg" key=${index} />
                                             </div>
-                                            <div class="arrow edit quantitySave hide">
+                                            <div class="arrow edit quantitySave hide hint--left hint--rounded hint--bounce" aria-label="Save">
                                                 <img src="/assets/images/svg/save.svg" key=${index} />
                                             </div>
                                         ` : ""}
@@ -272,10 +269,10 @@ function loadUserWelcomeUI(data) {
                                 <td colspan="5">
                                     <div class="title">
                                         <div class="name" skudata=${item["sku"]} date="${orderData["ordered_date"]}" orderid=${orderData["order_no"]}>${item["name"]}</div>
-                                        <div class="arrow edit quantityEdit">
+                                        <div class="arrow edit quantityEdit hint--left hint--rounded hint--bounce" aria-label="Edit">
                                             <img src="/assets/images/svg/edit.svg" key=${index} />
                                         </div>
-                                        <div class="arrow edit quantitySave hide">
+                                        <div class="arrow edit quantitySave hide hint--left hint--rounded hint--bounce" aria-label="Save">
                                             <img src="/assets/images/svg/save.svg" key=${index} />
                                         </div>
                                     </div>
@@ -395,10 +392,12 @@ function loadBrandSelectionUI(data) {
         <div class="choosebrands" id="loadBrandSelectionUI">
             <div class="menu_header">
                 <div class="label">
-                    <img class="back-arrow" src="/assets/images/svg/right.svg"/>
+                    <div class="hint--right hint--rounded hint--bounce" aria-label="Back">
+                        <img class="back-arrow" src="/assets/images/svg/right.svg"/>
+                    </div>
                     ${locale["labels"]["chooseBrands"]}
                 </div>
-                <div class="icon view_checkout">
+                <div class="icon view_checkout hint--left hint--rounded hint--bounce" aria-label="Cart">
                     <img src="/assets/images/svg/basket.svg" />
                     <div class="count_wrapper hide"></div>
                 </div>

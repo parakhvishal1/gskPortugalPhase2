@@ -29,7 +29,7 @@ function showDatePicker(id) {
     let localStoredData = JSON.parse(localStorage.getItem("data"));
     let locale = localStoredData["locale"];
     return `
-        <div class="inline-flex calendar-picker">
+        <div class="inline-flex calendar-picker hint--bottom hint--rounded hint--bounce" aria-label="Change Date">
             <img class="picker" src="/assets/images/svg/calendar.svg" />
             <input type='text' id='tbDate-${id}' placeholder='${locale["labels"]["pickDate"]}' readonly="readonly" class='dateSelectPicker' />
             <img class="arrow-down" src="/assets/images/svg/down.svg" />

@@ -77,7 +77,7 @@ function showHeader(data, type='') {
         ToBot('get-client-list', {})
     });
 
-    $(".profile_section").click(function(e) {
+    $(".profile_block").click(function(e) {
         e.stopPropagation();
         e.stopImmediatePropagation();
         loadProfileOptions();

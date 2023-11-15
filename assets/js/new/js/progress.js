@@ -209,7 +209,7 @@ function getProductsProgress(item, detailed, hideAdd, basicProgress, colorscheme
                         <img src="/assets/images/svg/plus.svg" class="icon_add"/>
                     </div>-->
                     <div class="main reset rounded_btn">
-                        <div class="inner">
+                        <div class="inner hint--left hint--rounded hint--bounce" aria-label="Edit">
                             <img src="/assets/images/svg/edit.svg" />
                         </div>
                     </div>
