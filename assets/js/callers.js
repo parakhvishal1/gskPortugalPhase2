@@ -10,8 +10,8 @@
     setTimeout(() => {
         GlobalVarInit();
         // CallScreen(0);
-      //  CallScreen(1);
-       // CallScreen(4);
+        //CallScreen(1);
+        //CallScreen(4);
     }, 500);
 })();
 
@@ -207,7 +207,6 @@ function ToBot(eventName, data) {
                 event_code: eventName,
                 data: data
             }), '*');
-            break;
         case "delete":
         console.log("data ", data);
             window.parent.postMessage(JSON.stringify({
@@ -222,19 +221,6 @@ function ToBot(eventName, data) {
             }), '*');
             break;
         case "get-client-list":
-            window.parent.postMessage(JSON.stringify({
-                event_code: eventName,
-                data: data
-            }), '*');
-            break;
-             case "profile-settings":
-            console.log("data ", data);
-            window.parent.postMessage(JSON.stringify({
-                event_code: eventName,
-                data: data
-            }), '*');
-            break;
-        case "get-data-from-localstorage":
             window.parent.postMessage(JSON.stringify({
                 event_code: eventName,
                 data: data
@@ -266,9 +252,29 @@ function ToApp(eventName, data, orgData) {
         case "welcome-screen":
             StoreDataIn(data);
             loadGeneralWelcome(data);
+            addLegalCopyright(data);
+            break;
+        case "welcome-screen-unfilled-steps":
+            StoreDataIn(data);
+            loadGeneralWelcome(data);
+            addLegalCopyright(data);
+            break;
+        case "welcome-screen-filled-step1":
+            StoreDataIn(data);
+            loadGeneralWelcome(data);
+            addLegalCopyright(data);
+            break;
+        case "welcome-screen-filled-step2":
+            StoreDataIn(data);
+            loadGeneralWelcome(data);
+            addLegalCopyright(data);
+            break;
+        case "welcome-screen-filled-step3":
+            StoreDataIn(data);
+            loadGeneralWelcome(data);
+            addLegalCopyright(data);
             break;
         case "termsui-screen":
-            // showHeader();
             loadTermsUI(data);
             break;
         case "userwelcome-screen":
@@ -330,138 +336,10 @@ function ToApp(eventName, data, orgData) {
         case "confirm-order-from-cart":
             confirmOrder();
             break;
-        case "cancelorderon-bot":
-            cancelOrder();
-            break;
         case "legal-copyright":
-            // addLegalCopyright(data);
+            addLegalCopyright(data);
             break;
         default:
             break;
     }
 }
-
-
-
-window.addEventListener('message', function (eventData) {
-    let parsedEventData = JSON.parse(eventData.data);
-
-    if (parsedEventData.event_code === "welcome-screen" && parsedEventData.data) {
-        // document.querySelector("iframe").contentWindow.postMessage(JSON.stringify({
-        //     event_code: 'welcome-screen',                                                // added new event name
-        //     data: parsedEventData.data
-        // }), '*');
-        let eventName = parsedEventData.event_code;
-        let data = parsedEventData.data;
-        console.log("eventName---", eventName);
-        console.log('Event Data---', data);
-        ToApp(eventName, data);
-    }
-
-    if (parsedEventData.event_code === "termsui-screen" && parsedEventData.data) {
-        // document.querySelector("iframe").contentWindow.postMessage(JSON.stringify({
-        //     event_code: 'termsui-screen',                                                // added new event name
-        //     data: parsedEventData.data
-        // }), '*');
-        let eventName = parsedEventData.event_code;
-        let data = parsedEventData.data;
-        console.log("eventName---", eventName);
-        console.log('Event Data---', data);
-        ToApp(eventName, data);
-    }
-
-    if (parsedEventData.event_code === "legal-copyright" && parsedEventData.data) {
-        // document.querySelector("iframe").contentWindow.postMessage(JSON.stringify({
-        //     event_code: 'legal-copyright',                                                // added new event name
-        //     data: parsedEventData.data
-        // }), '*');
-        let eventName = parsedEventData.event_code;
-        let data = parsedEventData.data;
-        console.log("eventName---", eventName);
-        console.log('Event Data---', data);
-        ToApp(eventName, data);
-    }
-
-    if (parsedEventData.event_code === "userwelcome-screen" && parsedEventData.data) {
-        // document.querySelector("iframe").contentWindow.postMessage(JSON.stringify({
-        //     event_code: 'userwelcome-screen',                                                // added new event name
-        //     data: parsedEventData.data
-        // }), '*');
-        let eventName = parsedEventData.event_code;
-        let data = parsedEventData.data;
-        console.log("eventName---", eventName);
-        console.log('Event Data---', data);
-        ToApp(eventName, data);
-    }
-
-    if (parsedEventData.event_code === "user-login" && parsedEventData.data) {
-        // document.querySelector("iframe").contentWindow.postMessage(JSON.stringify({
-        //     event_code: 'user-login',                                                // added new event name
-        //     data: parsedEventData.data
-        // }), '*');
-        let eventName = parsedEventData.event_code;
-        let data = parsedEventData.data;
-        console.log("eventName---", eventName);
-        console.log('Event Data---', data);
-        ToApp(eventName, data);
-    }
-
-    if (parsedEventData.event_code === "ordercart-screen" && parsedEventData.data) {
-        let eventName = parsedEventData.event_code;
-        let data = parsedEventData.data;
-        console.log("eventName---", eventName);
-        console.log('Event Data---', data);
-        ToApp(eventName, data);
-    }
-
-    if (parsedEventData.event_code === "load-userwelcome-screen" && parsedEventData.data) {
-        let eventName = parsedEventData.event_code;
-        let data = parsedEventData.data;
-        console.log("eventName---", eventName);
-        console.log('Event Data---', data);
-        ToApp("userwelcome-screen", data);
-    }
-
-    if (parsedEventData.event_code === "show-brand-selection" && parsedEventData.data) {
-        let eventName = parsedEventData.event_code;
-        let data = parsedEventData.data;
-        console.log("eventName---", eventName);
-        console.log('Event Data---', data);
-        ToApp("show-brand-selection", data);
-    }
-
-    if (parsedEventData.event_code === "show-brand-detailing" && parsedEventData.data) {
-        let eventName = parsedEventData.event_code;
-        let data = parsedEventData.data;
-        console.log("eventName---", eventName);
-        console.log('Event Data---', data);
-        ToApp("show-brand-detailing", data);
-    }
-
-    if (parsedEventData.event_code === "orderhistory-screen" && parsedEventData.data) {
-        let eventName = parsedEventData.event_code;
-        let data = parsedEventData.data;
-        console.log("eventName---", eventName);
-        console.log('Event Data---', data);
-        ToApp("show-order-history-screen", data);
-    }
-
-    if (parsedEventData.event_code === "confirmorderon-bot" && parsedEventData.data) {
-        let eventName = parsedEventData.event_code;
-        let data = parsedEventData.data;
-        console.log("eventName---", eventName);
-        console.log('Event Data---', data);
-        ToApp("confirm-order-from-cart", data);
-    }
-
-    if (parsedEventData.event_code === "bot-reloaded" && parsedEventData.data) {
-        let eventName = parsedEventData.event_code;
-        let data = parsedEventData.data;
-        console.log("eventName---", eventName);
-        console.log('refreshed local storage data in caller.js', JSON.parse(data));
-        console.log('reload parse data', data)
-        ToApp("get-data-on-refresh", JSON.parse(data));
-    }
-
-
-});

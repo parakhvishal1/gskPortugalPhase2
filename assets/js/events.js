@@ -10854,6 +10854,5212 @@ function CallScreen(caseNum) {
                 ]
             });
             break;
+        case "18":
+            ToApp("userwelcome-screen", {
+                "start_date": "2022-09-09",
+                "last_date": "2023-12-31",
+                "locale": {
+                    "labels": {
+                        "title": "Plan Progress",
+                        "lastOrder": "Last Order",
+                        "orderHistory": "Order History",
+                        "startDate": "Start Date",
+                        "endDate": "End Date",
+                        "start": "Start",
+                        "end": "End",
+                        "estPrice": "Est. Price",
+                        "units": "Units",
+                        "freeGoods": "Free Goods",
+                        "payTerm": "Pay Term",
+                        "pickDate": "Pick Date",
+                        "offInvoice": "Off Invoice",
+                        "onInvoice": "On Invoice",
+                        "offInvoiceDiscount": "Off Invoice Discount",
+                        "onInvoiceDiscount": "On Invoice Discount",
+                        "discAbbr": "Disc",
+                        "discount": "Discount",
+                        "value": "Value",
+                        "additionalDiscount": "Additional Discount",
+                        "orderDetails": "Order Details",
+                        "products": "PRODUCTS",
+                        "rebates": "Period Eligible / Rebates",
+                        "orderNo": "Order No",
+                        "status": "Status",
+                        "orderDate": "Order Date",
+                        "orderedOn": "Ordered On",
+                        "statusDate": "Status Date",
+                        "periodTotal": "Period Total",
+                        "deliveryOn": "Delivery On",
+                        "yes": "Yes",
+                        "no": "No",
+                        "logOutPopupTitle": "Are you sure you want to log-off?",
+                        "downloadOrderHistory": "Download Order History",
+                        "chooseBrands": "Choose Brands"
+                    },
+                    "buttons": {
+                        "back": "Back",
+                        "cancel": "Cancel",
+                        "confirm": "Confirm",
+                        "continue": "Continue",
+                        "placeNewOrder": "Place New Order",
+                        "logOut": "Logout",
+                        "chooseBrands": "Choose Brands",
+                        "checkout": "Checkout",
+                        "addAnotherAccount": "Add Another Account or Deferral Date",
+                        "accept": "Accept the terms",
+                        "decline": "Decline"
+                    },
+                    "snackbars": {
+                        "exceedMaxLimit": "Value exceeding the max limit.",
+                        "selectDate": "Please select date!!!",
+                        "maxReached": "Maximum reached!!!",
+                        "accountSelected": "All Acc Selected!!!"
+                    }
+                },
+                "download_url": "LOC,Period,Order Date,Order Type,Internal Order Status,Internal Order Number,External Order Number,External Order Status,External Order Date,Wholesaler Code,Account Code,Legal Id Code,Brand #,Brand,EAN,SKU#,SKU,Requested Volume,Invoiced Volume,On Invoice Discount,On Invoice Free Goods,On Invoice Payment Terms,Off Invoice Discount,Off Invoice Free Goods,Offer Type,User Identifier,Order Id,Delete Record(YES/NO)\n",
+                "totalcheckout": "",
+                "plan_progress": {
+                    "title": "Plan Progress",
+                    "last_date": "Fri Feb 24 2023",
+                    "brands": [
+                        {
+                            "name": "AUGMENTIN",
+                            "isSku": false,
+                            "additional_discount": false,
+                            "purchased": "0",
+                            "selected": 100,
+                            "max_limit": "260",
+                            "sku": "AUGMENTIN",
+                            "on_invoice_range": [
+                                {
+                                    "discount": "0.0",
+                                    "label": 17
+                                },
+                                {
+                                    "discount": "20.0",
+                                    "label": 25
+                                },
+                                {
+                                    "discount": "27.0",
+                                    "label": 33
+                                },
+                                {
+                                    "discount": "35.0",
+                                    "label": 41
+                                },
+                                {
+                                    "discount": "36.0",
+                                    "label": 49
+                                },
+                                {
+                                    "discount": "37.0",
+                                    "label": 260
+                                }
+                            ],
+                            "onInvoice_discount_execution": "FINANCIAL",
+                            "eligible_discount": "37.0"
+                        },
+                        {
+                            "name": "Novo 1",
+                            "isSku": false,
+                            "additional_discount": false,
+                            "purchased": "0",
+                            "selected": "0",
+                            "max_limit": "1500",
+                            "sku": "P_BRD_001",
+                            "on_invoice_range": [
+                                {
+                                    "discount": "0.0",
+                                    "label": 150
+                                },
+                                {
+                                    "discount": "3.0",
+                                    "label": 300
+                                },
+                                {
+                                    "discount": "4.0",
+                                    "label": 450
+                                },
+                                {
+                                    "discount": "5.0",
+                                    "label": 600
+                                },
+                                {
+                                    "discount": "6.0",
+                                    "label": 900
+                                },
+                                {
+                                    "discount": "7.0",
+                                    "label": 1500
+                                }
+                            ],
+                            "onInvoice_discount_execution": "FINANCIAL"
+                        },
+                        {
+                            "name": "Marca 2 fora da fatura",
+                            "isSku": false,
+                            "additional_discount": false,
+                            "purchased": "0",
+                            "selected": "0",
+                            "max_limit": "400",
+                            "sku": "P_BRD_002",
+                            "off_invoice_range": [
+                                {
+                                    "discount": "2.0",
+                                    "label": 200
+                                },
+                                {
+                                    "discount": "3.0",
+                                    "label": 220
+                                },
+                                {
+                                    "discount": "4.0",
+                                    "label": 240
+                                },
+                                {
+                                    "discount": "5.0",
+                                    "label": 260
+                                },
+                                {
+                                    "discount": "6.0",
+                                    "label": 280
+                                },
+                                {
+                                    "discount": "7.0",
+                                    "label": 400
+                                }
+                            ],
+                            "offInvoice_discount_execution": "FINANCIAL"
+                        },
+                        {
+                            "name": "Marca 3 ambos",
+                            "isSku": false,
+                            "additional_discount": false,
+                            "purchased": "0",
+                            "selected": "0",
+                            "max_limit": "1050",
+                            "sku": "P_BRD_003",
+                            "on_invoice_range": [
+                                {
+                                    "discount": "0.0",
+                                    "label": 300
+                                },
+                                {
+                                    "discount": "5.0",
+                                    "label": 450
+                                },
+                                {
+                                    "discount": "7.0",
+                                    "label": 600
+                                },
+                                {
+                                    "discount": "8.0",
+                                    "label": 750
+                                },
+                                {
+                                    "discount": "9.0",
+                                    "label": 900
+                                },
+                                {
+                                    "discount": "10.0",
+                                    "label": 1050
+                                }
+                            ],
+                            "off_invoice_range": [
+                                {
+                                    "discount": "0.0",
+                                    "label": 300
+                                },
+                                {
+                                    "discount": "5.0",
+                                    "label": 450
+                                },
+                                {
+                                    "discount": "10.0",
+                                    "label": 600
+                                },
+                                {
+                                    "discount": "15.0",
+                                    "label": 750
+                                },
+                                {
+                                    "discount": "20.0",
+                                    "label": 900
+                                },
+                                {
+                                    "discount": "30.0",
+                                    "label": 1050
+                                }
+                            ],
+                            "offInvoice_discount_execution": "FINANCIAL",
+                            "onInvoice_discount_execution": "FINANCIAL"
+                        },
+                        {
+                            "name": "AVODART",
+                            "isSku": true,
+                            "onInvoice_discount_execution": "FINANCIAL",
+                            "additional_discount": false,
+                            "purchased": "0",
+                            "selected": "0",
+                            "sku": "AVODART",
+                            "max_limit": "25",
+                            "on_invoice_range": [
+                                {
+                                    "discount": "0.0",
+                                    "label": 4.166666666666667
+                                },
+                                {
+                                    "discount": "3.0",
+                                    "label": 8.333333333333334
+                                },
+                                {
+                                    "discount": "4.0",
+                                    "label": 12.5
+                                },
+                                {
+                                    "discount": "5.0",
+                                    "label": 16.666666666666668
+                                },
+                                {
+                                    "discount": "6.0",
+                                    "label": 20.833333333333336
+                                },
+                                {
+                                    "discount": "7.0",
+                                    "label": 25
+                                }
+                            ],
+                            "off_invoice_range": [
+                                {
+                                    "discount": "0.0",
+                                    "label": 4.166666666666667
+                                },
+                                {
+                                    "discount": "3.0",
+                                    "label": 8.333333333333334
+                                },
+                                {
+                                    "discount": "4.0",
+                                    "label": 12.5
+                                },
+                                {
+                                    "discount": "5.0",
+                                    "label": 16.666666666666668
+                                },
+                                {
+                                    "discount": "6.0",
+                                    "label": 20.833333333333336
+                                },
+                                {
+                                    "discount": "7.0",
+                                    "label": 25
+                                }
+                            ]
+                        },
+                        {
+                            "name": "SKU MARCA 1",
+                            "isSku": true,
+                            "onInvoice_discount_execution": "FINANCIAL",
+                            "additional_discount": false,
+                            "purchased": "0",
+                            "selected": "0",
+                            "sku": "P_BRD_004",
+                            "max_limit": "250",
+                            "on_invoice_range": [
+                                {
+                                    "discount": "0.0",
+                                    "label": 41.666666666666664
+                                },
+                                {
+                                    "discount": "3.0",
+                                    "label": 83.33333333333333
+                                },
+                                {
+                                    "discount": "4.0",
+                                    "label": 125
+                                },
+                                {
+                                    "discount": "5.0",
+                                    "label": 166.66666666666666
+                                },
+                                {
+                                    "discount": "6.0",
+                                    "label": 208.33333333333331
+                                },
+                                {
+                                    "discount": "7.0",
+                                    "label": 250
+                                }
+                            ],
+                            "off_invoice_range": [
+                                {
+                                    "discount": "0.0",
+                                    "label": 41.666666666666664
+                                },
+                                {
+                                    "discount": "3.0",
+                                    "label": 83.33333333333333
+                                },
+                                {
+                                    "discount": "4.0",
+                                    "label": 125
+                                },
+                                {
+                                    "discount": "5.0",
+                                    "label": 166.66666666666666
+                                },
+                                {
+                                    "discount": "6.0",
+                                    "label": 208.33333333333331
+                                },
+                                {
+                                    "discount": "7.0",
+                                    "label": 250
+                                }
+                            ]
+                        },
+                        {
+                            "name": "SKU MARCA 2",
+                            "isSku": true,
+                            "onInvoice_discount_execution": null,
+                            "additional_discount": false,
+                            "purchased": "0",
+                            "selected": "0",
+                            "sku": "P_BRD_005",
+                            "max_limit": "700",
+                            "on_invoice_range": [
+                                {
+                                    "discount": "0.0",
+                                    "label": 116.66666666666667
+                                },
+                                {
+                                    "discount": "3.0",
+                                    "label": 233.33333333333334
+                                },
+                                {
+                                    "discount": "4.0",
+                                    "label": 350
+                                },
+                                {
+                                    "discount": "5.0",
+                                    "label": 466.6666666666667
+                                },
+                                {
+                                    "discount": "6.0",
+                                    "label": 583.3333333333334
+                                },
+                                {
+                                    "discount": "7.0",
+                                    "label": 700
+                                }
+                            ],
+                            "off_invoice_range": [
+                                {
+                                    "discount": "0.0",
+                                    "label": 116.66666666666667
+                                },
+                                {
+                                    "discount": "3.0",
+                                    "label": 233.33333333333334
+                                },
+                                {
+                                    "discount": "4.0",
+                                    "label": 350
+                                },
+                                {
+                                    "discount": "5.0",
+                                    "label": 466.6666666666667
+                                },
+                                {
+                                    "discount": "6.0",
+                                    "label": 583.3333333333334
+                                },
+                                {
+                                    "discount": "7.0",
+                                    "label": 700
+                                }
+                            ]
+                        },
+                        {
+                            "name": "SKU MARCA 3",
+                            "isSku": true,
+                            "onInvoice_discount_execution": "FINANCIAL",
+                            "additional_discount": false,
+                            "purchased": "0",
+                            "selected": "0",
+                            "sku": "P_BRD_006",
+                            "max_limit": "2000",
+                            "on_invoice_range": [
+                                {
+                                    "discount": "0.0",
+                                    "label": 333.3333333333333
+                                },
+                                {
+                                    "discount": "3.0",
+                                    "label": 666.6666666666666
+                                },
+                                {
+                                    "discount": "4.0",
+                                    "label": 1000
+                                },
+                                {
+                                    "discount": "5.0",
+                                    "label": 1333.3333333333333
+                                },
+                                {
+                                    "discount": "6.0",
+                                    "label": 1666.6666666666665
+                                },
+                                {
+                                    "discount": "7.0",
+                                    "label": 2000
+                                }
+                            ],
+                            "off_invoice_range": [
+                                {
+                                    "discount": "0.0",
+                                    "label": 333.3333333333333
+                                },
+                                {
+                                    "discount": "3.0",
+                                    "label": 666.6666666666666
+                                },
+                                {
+                                    "discount": "4.0",
+                                    "label": 1000
+                                },
+                                {
+                                    "discount": "5.0",
+                                    "label": 1333.3333333333333
+                                },
+                                {
+                                    "discount": "6.0",
+                                    "label": 1666.6666666666665
+                                },
+                                {
+                                    "discount": "7.0",
+                                    "label": 2000
+                                }
+                            ]
+                        },
+                        {
+                            "name": "SKU MARCA 4",
+                            "isSku": true,
+                            "onInvoice_discount_execution": "FREE_GOODS",
+                            "additional_discount": false,
+                            "purchased": "0",
+                            "selected": "0",
+                            "sku": "P_BRD_007",
+                            "max_limit": "250",
+                            "on_invoice_range": [
+                                {
+                                    "discount": "0.0",
+                                    "label": 41.666666666666664
+                                },
+                                {
+                                    "discount": "3.0",
+                                    "label": 83.33333333333333
+                                },
+                                {
+                                    "discount": "4.0",
+                                    "label": 125
+                                },
+                                {
+                                    "discount": "5.0",
+                                    "label": 166.66666666666666
+                                },
+                                {
+                                    "discount": "6.0",
+                                    "label": 208.33333333333331
+                                },
+                                {
+                                    "discount": "7.0",
+                                    "label": 250
+                                }
+                            ],
+                            "off_invoice_range": [
+                                {
+                                    "discount": "0.0",
+                                    "label": 41.666666666666664
+                                },
+                                {
+                                    "discount": "3.0",
+                                    "label": 83.33333333333333
+                                },
+                                {
+                                    "discount": "4.0",
+                                    "label": 125
+                                },
+                                {
+                                    "discount": "5.0",
+                                    "label": 166.66666666666666
+                                },
+                                {
+                                    "discount": "6.0",
+                                    "label": 208.33333333333331
+                                },
+                                {
+                                    "discount": "7.0",
+                                    "label": 250
+                                }
+                            ]
+                        },
+                        {
+                            "name": "SKU MARCA 5",
+                            "isSku": true,
+                            "onInvoice_discount_execution": null,
+                            "additional_discount": false,
+                            "purchased": "0",
+                            "selected": "0",
+                            "sku": "P_BRD_008",
+                            "max_limit": "700",
+                            "on_invoice_range": [
+                                {
+                                    "discount": "0.0",
+                                    "label": 116.66666666666667
+                                },
+                                {
+                                    "discount": "3.0",
+                                    "label": 233.33333333333334
+                                },
+                                {
+                                    "discount": "4.0",
+                                    "label": 350
+                                },
+                                {
+                                    "discount": "5.0",
+                                    "label": 466.6666666666667
+                                },
+                                {
+                                    "discount": "6.0",
+                                    "label": 583.3333333333334
+                                },
+                                {
+                                    "discount": "7.0",
+                                    "label": 700
+                                }
+                            ],
+                            "off_invoice_range": [
+                                {
+                                    "discount": "0.0",
+                                    "label": 116.66666666666667
+                                },
+                                {
+                                    "discount": "3.0",
+                                    "label": 233.33333333333334
+                                },
+                                {
+                                    "discount": "4.0",
+                                    "label": 350
+                                },
+                                {
+                                    "discount": "5.0",
+                                    "label": 466.6666666666667
+                                },
+                                {
+                                    "discount": "6.0",
+                                    "label": 583.3333333333334
+                                },
+                                {
+                                    "discount": "7.0",
+                                    "label": 700
+                                }
+                            ]
+                        },
+                        {
+                            "name": "SKU MARCA 6",
+                            "isSku": true,
+                            "onInvoice_discount_execution": "FREE_GOODS",
+                            "additional_discount": false,
+                            "purchased": "0",
+                            "selected": "0",
+                            "sku": "P_BRD_009",
+                            "max_limit": "2000",
+                            "on_invoice_range": [
+                                {
+                                    "discount": "0.0",
+                                    "label": 333.3333333333333
+                                },
+                                {
+                                    "discount": "3.0",
+                                    "label": 666.6666666666666
+                                },
+                                {
+                                    "discount": "4.0",
+                                    "label": 1000
+                                },
+                                {
+                                    "discount": "5.0",
+                                    "label": 1333.3333333333333
+                                },
+                                {
+                                    "discount": "6.0",
+                                    "label": 1666.6666666666665
+                                },
+                                {
+                                    "discount": "7.0",
+                                    "label": 2000
+                                }
+                            ],
+                            "off_invoice_range": [
+                                {
+                                    "discount": "0.0",
+                                    "label": 333.3333333333333
+                                },
+                                {
+                                    "discount": "3.0",
+                                    "label": 666.6666666666666
+                                },
+                                {
+                                    "discount": "4.0",
+                                    "label": 1000
+                                },
+                                {
+                                    "discount": "5.0",
+                                    "label": 1333.3333333333333
+                                },
+                                {
+                                    "discount": "6.0",
+                                    "label": 1666.6666666666665
+                                },
+                                {
+                                    "discount": "7.0",
+                                    "label": 2000
+                                }
+                            ]
+                        },
+                        {
+                            "name": "SKU MARCA 7",
+                            "isSku": true,
+                            "onInvoice_discount_execution": "FINANCIAL",
+                            "additional_discount": false,
+                            "purchased": "0",
+                            "selected": "0",
+                            "sku": "P_BRD_010",
+                            "max_limit": "4000",
+                            "on_invoice_range": [
+                                {
+                                    "discount": "0.0",
+                                    "label": 666.6666666666666
+                                },
+                                {
+                                    "discount": "3.0",
+                                    "label": 1333.3333333333333
+                                },
+                                {
+                                    "discount": "4.0",
+                                    "label": 2000
+                                },
+                                {
+                                    "discount": "5.0",
+                                    "label": 2666.6666666666665
+                                },
+                                {
+                                    "discount": "6.0",
+                                    "label": 3333.333333333333
+                                },
+                                {
+                                    "discount": "7.0",
+                                    "label": 4000
+                                }
+                            ],
+                            "off_invoice_range": [
+                                {
+                                    "discount": "0.0",
+                                    "label": 666.6666666666666
+                                },
+                                {
+                                    "discount": "3.0",
+                                    "label": 1333.3333333333333
+                                },
+                                {
+                                    "discount": "4.0",
+                                    "label": 2000
+                                },
+                                {
+                                    "discount": "5.0",
+                                    "label": 2666.6666666666665
+                                },
+                                {
+                                    "discount": "6.0",
+                                    "label": 3333.333333333333
+                                },
+                                {
+                                    "discount": "7.0",
+                                    "label": 4000
+                                }
+                            ]
+                        }
+                    ]
+                },
+                "available_orders": {
+                    "orders": [
+                        {
+                            "account_no": "Proforma   -  F4444",
+                            "order_no": null,
+                            "sku": "F4444",
+                            "product_details": [
+                                {
+                                    "name": "Novassimo 250mg",
+                                    "price": "20",
+                                    "units": "0",
+                                    "free_goods": "",
+                                    "discount": "",
+                                    "payterm": "30",
+                                    "sku": "P_BRD_001_SKU_001",
+                                    "brand": "P_BRD_001",
+                                    "brandName": "Novo 1",
+                                    "offerType": "SEGMENT",
+                                    "additional_discount": false,
+                                    "free_goods_range": {
+                                        "limit": null,
+                                        "eligible_goods": null
+                                    },
+                                    "discounts": {
+                                        "name": "Novo 1",
+                                        "isSku": false,
+                                        "onInvoice_discount_execution": "FINANCIAL",
+                                        "offInvoice_discount_execution": null,
+                                        "additional_discount": false,
+                                        "selected": "0",
+                                        "max_limit": "500",
+                                        "sku": "P_BRD_001"
+                                    }
+                                },
+                                {
+                                    "name": "AUGMENTIN DUO 457 mg/5 ml 70 ml",
+                                    "price": "3.61",
+                                    "units": "0",
+                                    "free_goods": "",
+                                    "discount": "",
+                                    "payterm": "30",
+                                    "sku": "60000000116507",
+                                    "brand": "AUGMENTIN",
+                                    "brandName": "AUGMENTIN",
+                                    "offerType": "SEGMENT",
+                                    "additional_discount": false,
+                                    "free_goods_range": {
+                                        "limit": null,
+                                        "eligible_goods": null
+                                    },
+                                    "discounts": {
+                                        "name": "AUGMENTIN",
+                                        "isSku": false,
+                                        "onInvoice_discount_execution": "FINANCIAL",
+                                        "offInvoice_discount_execution": null,
+                                        "additional_discount": false,
+                                        "selected": "0",
+                                        "max_limit": "60",
+                                        "sku": "AUGMENTIN"
+                                    }
+                                },
+                                {
+                                    "name": "Novassimo 450mg",
+                                    "price": "20",
+                                    "units": "0",
+                                    "free_goods": "",
+                                    "discount": "",
+                                    "payterm": "30",
+                                    "sku": "P_BRD_001_SKU_002",
+                                    "brand": "P_BRD_001",
+                                    "brandName": "Novo 1",
+                                    "offerType": "SEGMENT",
+                                    "additional_discount": false,
+                                    "free_goods_range": {
+                                        "limit": null,
+                                        "eligible_goods": null
+                                    },
+                                    "discounts": {
+                                        "name": "Novo 1",
+                                        "isSku": false,
+                                        "onInvoice_discount_execution": "FINANCIAL",
+                                        "offInvoice_discount_execution": null,
+                                        "additional_discount": false,
+                                        "selected": "0",
+                                        "max_limit": "500",
+                                        "sku": "P_BRD_001"
+                                    }
+                                },
+                                {
+                                    "name": "AUGMENTIN DUO 1g",
+                                    "price": "5.01",
+                                    "units": "0",
+                                    "free_goods": "",
+                                    "discount": "",
+                                    "payterm": "30",
+                                    "sku": "5168640351",
+                                    "brand": "AUGMENTIN",
+                                    "brandName": "AUGMENTIN",
+                                    "offerType": "SEGMENT",
+                                    "additional_discount": false,
+                                    "free_goods_range": {
+                                        "limit": null,
+                                        "eligible_goods": null
+                                    },
+                                    "discounts": {
+                                        "name": "AUGMENTIN",
+                                        "isSku": false,
+                                        "onInvoice_discount_execution": "FINANCIAL",
+                                        "offInvoice_discount_execution": null,
+                                        "additional_discount": false,
+                                        "selected": "0",
+                                        "max_limit": "100",
+                                        "sku": "AUGMENTIN"
+                                    }
+                                },
+                                {
+                                    "name": "Novassimo 5000mg",
+                                    "price": "20",
+                                    "units": "0",
+                                    "free_goods": "",
+                                    "discount": "",
+                                    "payterm": "30",
+                                    "sku": "P_BRD_001_SKU_003",
+                                    "brand": "P_BRD_001",
+                                    "brandName": "Novo 1",
+                                    "offerType": "SEGMENT",
+                                    "additional_discount": false,
+                                    "free_goods_range": {
+                                        "limit": null,
+                                        "eligible_goods": null
+                                    },
+                                    "discounts": {
+                                        "name": "Novo 1",
+                                        "isSku": false,
+                                        "onInvoice_discount_execution": "FINANCIAL",
+                                        "offInvoice_discount_execution": null,
+                                        "additional_discount": false,
+                                        "selected": "0",
+                                        "max_limit": "500",
+                                        "sku": "P_BRD_001"
+                                    }
+                                },
+                                {
+                                    "name": "AUGMENTIN ES",
+                                    "price": "10.59",
+                                    "units": "0",
+                                    "free_goods": "",
+                                    "discount": "",
+                                    "payterm": "30",
+                                    "sku": "5168640341",
+                                    "brand": "AUGMENTIN",
+                                    "brandName": "AUGMENTIN",
+                                    "offerType": "SEGMENT",
+                                    "additional_discount": false,
+                                    "free_goods_range": {
+                                        "limit": null,
+                                        "eligible_goods": null
+                                    },
+                                    "discounts": {
+                                        "name": "AUGMENTIN",
+                                        "isSku": false,
+                                        "onInvoice_discount_execution": "FINANCIAL",
+                                        "offInvoice_discount_execution": null,
+                                        "additional_discount": false,
+                                        "selected": "0",
+                                        "max_limit": "100",
+                                        "sku": "AUGMENTIN"
+                                    }
+                                },
+                                {
+                                    "name": "sku 1 marca 2 fora da fatura",
+                                    "price": "40",
+                                    "units": "0",
+                                    "free_goods": "",
+                                    "discount": "",
+                                    "payterm": "30",
+                                    "sku": "P_BRD_002_SKU_001",
+                                    "brand": "P_BRD_002",
+                                    "brandName": "Marca 2 fora da fatura",
+                                    "offerType": "SEGMENT",
+                                    "additional_discount": false,
+                                    "free_goods_range": {
+                                        "limit": null,
+                                        "eligible_goods": null
+                                    },
+                                    "discounts": {
+                                        "name": "Marca 2 fora da fatura",
+                                        "isSku": false,
+                                        "onInvoice_discount_execution": null,
+                                        "offInvoice_discount_execution": "FINANCIAL",
+                                        "additional_discount": false,
+                                        "selected": "0",
+                                        "max_limit": "200",
+                                        "sku": "P_BRD_002"
+                                    }
+                                },
+                                {
+                                    "name": "sku 2 marca 2 fora da fatura",
+                                    "price": "40",
+                                    "units": "0",
+                                    "free_goods": "",
+                                    "discount": "",
+                                    "payterm": "30",
+                                    "sku": "P_BRD_002_SKU_002",
+                                    "brand": "P_BRD_002",
+                                    "brandName": "Marca 2 fora da fatura",
+                                    "offerType": "SEGMENT",
+                                    "additional_discount": false,
+                                    "free_goods_range": {
+                                        "limit": null,
+                                        "eligible_goods": null
+                                    },
+                                    "discounts": {
+                                        "name": "Marca 2 fora da fatura",
+                                        "isSku": false,
+                                        "onInvoice_discount_execution": null,
+                                        "offInvoice_discount_execution": "FINANCIAL",
+                                        "additional_discount": false,
+                                        "selected": "0",
+                                        "max_limit": "200",
+                                        "sku": "P_BRD_002"
+                                    }
+                                },
+                                {
+                                    "name": "sku 1 marca 3 ambos",
+                                    "price": "40",
+                                    "units": "0",
+                                    "free_goods": "",
+                                    "discount": "",
+                                    "payterm": "30",
+                                    "sku": "P_BRD_003_SKU_001",
+                                    "brand": "P_BRD_003",
+                                    "brandName": "Marca 3 ambos",
+                                    "offerType": "SEGMENT",
+                                    "additional_discount": false,
+                                    "free_goods_range": {
+                                        "limit": null,
+                                        "eligible_goods": null
+                                    },
+                                    "discounts": {
+                                        "name": "Marca 3 ambos",
+                                        "isSku": false,
+                                        "onInvoice_discount_execution": "FINANCIAL",
+                                        "offInvoice_discount_execution": "FINANCIAL",
+                                        "additional_discount": false,
+                                        "selected": "0",
+                                        "max_limit": "350",
+                                        "sku": "P_BRD_003"
+                                    }
+                                },
+                                {
+                                    "name": "AVODART c?psulas moles 0.5mg x 60",
+                                    "price": "21.84",
+                                    "units": "0",
+                                    "free_goods": "",
+                                    "discount": "",
+                                    "payterm": "30",
+                                    "sku": "283062",
+                                    "brand": "AVODART",
+                                    "brandName": "AVODART",
+                                    "offerType": "SEGMENT",
+                                    "additional_discount": false,
+                                    "free_goods_range": {
+                                        "limit": null,
+                                        "eligible_goods": null
+                                    },
+                                    "discounts": {
+                                        "name": "AVODART",
+                                        "isSku": true,
+                                        "onInvoice_discount_execution": "FINANCIAL",
+                                        "offInvoice_discount_execution": null,
+                                        "additional_discount": false,
+                                        "selected": "0",
+                                        "max_limit": "25",
+                                        "sku": "AVODART",
+                                        "on_invoice_range": [
+                                            {
+                                                "discount": "0.0",
+                                                "label": 2
+                                            },
+                                            {
+                                                "discount": "14.0",
+                                                "label": 3
+                                            },
+                                            {
+                                                "discount": "20.0",
+                                                "label": 4
+                                            },
+                                            {
+                                                "discount": "29.0",
+                                                "label": 5
+                                            },
+                                            {
+                                                "discount": "30.0",
+                                                "label": 6
+                                            },
+                                            {
+                                                "discount": "31.0",
+                                                "label": 25
+                                            }
+                                        ]
+                                    }
+                                },
+                                {
+                                    "name": "sku 2 marca 3 ambos",
+                                    "price": "40",
+                                    "units": "0",
+                                    "free_goods": "",
+                                    "discount": "",
+                                    "payterm": "30",
+                                    "sku": "P_BRD_003_SKU_002",
+                                    "brand": "P_BRD_003",
+                                    "brandName": "Marca 3 ambos",
+                                    "offerType": "SEGMENT",
+                                    "additional_discount": false,
+                                    "free_goods_range": {
+                                        "limit": null,
+                                        "eligible_goods": null
+                                    },
+                                    "discounts": {
+                                        "name": "Marca 3 ambos",
+                                        "isSku": false,
+                                        "onInvoice_discount_execution": "FINANCIAL",
+                                        "offInvoice_discount_execution": "FINANCIAL",
+                                        "additional_discount": false,
+                                        "selected": "0",
+                                        "max_limit": "350",
+                                        "sku": "P_BRD_003"
+                                    }
+                                },
+                                {
+                                    "name": "sku 3 marca 3 ambos",
+                                    "price": "40",
+                                    "units": "0",
+                                    "free_goods": "",
+                                    "discount": "",
+                                    "payterm": "30",
+                                    "sku": "P_BRD_003_SKU_003",
+                                    "brand": "P_BRD_003",
+                                    "brandName": "Marca 3 ambos",
+                                    "offerType": "SEGMENT",
+                                    "additional_discount": false,
+                                    "free_goods_range": {
+                                        "limit": null,
+                                        "eligible_goods": null
+                                    },
+                                    "discounts": {
+                                        "name": "Marca 3 ambos",
+                                        "isSku": false,
+                                        "onInvoice_discount_execution": "FINANCIAL",
+                                        "offInvoice_discount_execution": "FINANCIAL",
+                                        "additional_discount": false,
+                                        "selected": "0",
+                                        "max_limit": "350",
+                                        "sku": "P_BRD_003"
+                                    }
+                                },
+                                {
+                                    "name": "marca 1 sku 1 na fatura financeira",
+                                    "price": "40",
+                                    "units": "0",
+                                    "free_goods": "",
+                                    "discount": "",
+                                    "payterm": "30",
+                                    "sku": "P_BRD_004_SKU_001",
+                                    "brand": "P_BRD_004",
+                                    "brandName": "SKU MARCA 1",
+                                    "offerType": "SEGMENT",
+                                    "additional_discount": false,
+                                    "free_goods_range": {
+                                        "limit": null,
+                                        "eligible_goods": null
+                                    },
+                                    "discounts": {
+                                        "name": "SKU MARCA 1",
+                                        "isSku": true,
+                                        "onInvoice_discount_execution": "FINANCIAL",
+                                        "offInvoice_discount_execution": null,
+                                        "additional_discount": false,
+                                        "selected": "0",
+                                        "max_limit": "100",
+                                        "sku": "P_BRD_004",
+                                        "on_invoice_range": [
+                                            {
+                                                "discount": "0.0",
+                                                "label": 10
+                                            },
+                                            {
+                                                "discount": "5.0",
+                                                "label": 20
+                                            },
+                                            {
+                                                "discount": "6.0",
+                                                "label": 30
+                                            },
+                                            {
+                                                "discount": "7.0",
+                                                "label": 40
+                                            },
+                                            {
+                                                "discount": "8.0",
+                                                "label": 50
+                                            },
+                                            {
+                                                "discount": "9.0",
+                                                "label": 100
+                                            }
+                                        ]
+                                    }
+                                },
+                                {
+                                    "name": "marca 1 sku 2 na fatura financeira",
+                                    "price": "40",
+                                    "units": "0",
+                                    "free_goods": "",
+                                    "discount": "",
+                                    "payterm": "30",
+                                    "sku": "P_BRD_004_SKU_002",
+                                    "brand": "P_BRD_004",
+                                    "brandName": "SKU MARCA 1",
+                                    "offerType": "SEGMENT",
+                                    "additional_discount": false,
+                                    "free_goods_range": {
+                                        "limit": null,
+                                        "eligible_goods": null
+                                    },
+                                    "discounts": {
+                                        "name": "SKU MARCA 1",
+                                        "isSku": true,
+                                        "onInvoice_discount_execution": "FINANCIAL",
+                                        "offInvoice_discount_execution": null,
+                                        "additional_discount": false,
+                                        "selected": "0",
+                                        "max_limit": "150",
+                                        "sku": "P_BRD_004",
+                                        "on_invoice_range": [
+                                            {
+                                                "discount": "0.0",
+                                                "label": 20
+                                            },
+                                            {
+                                                "discount": "5.0",
+                                                "label": 40
+                                            },
+                                            {
+                                                "discount": "6.0",
+                                                "label": 60
+                                            },
+                                            {
+                                                "discount": "7.0",
+                                                "label": 80
+                                            },
+                                            {
+                                                "discount": "8.0",
+                                                "label": 100
+                                            },
+                                            {
+                                                "discount": "9.0",
+                                                "label": 150
+                                            }
+                                        ]
+                                    }
+                                },
+                                {
+                                    "name": "marca 2 sku 1 desconto na fatura financeira",
+                                    "price": "40",
+                                    "units": "0",
+                                    "free_goods": "",
+                                    "discount": "",
+                                    "payterm": "30",
+                                    "sku": "P_BRD_005_SKU_001",
+                                    "brand": "P_BRD_005",
+                                    "brandName": "SKU MARCA 2",
+                                    "offerType": "SEGMENT",
+                                    "additional_discount": false,
+                                    "free_goods_range": {
+                                        "limit": null,
+                                        "eligible_goods": null
+                                    },
+                                    "discounts": {
+                                        "name": "SKU MARCA 2",
+                                        "isSku": true,
+                                        "onInvoice_discount_execution": null,
+                                        "offInvoice_discount_execution": "FINANCIAL",
+                                        "additional_discount": false,
+                                        "selected": "0",
+                                        "max_limit": "350",
+                                        "sku": "P_BRD_005",
+                                        "off_invoice_range": [
+                                            {
+                                                "discount": "5.0",
+                                                "label": 100
+                                            },
+                                            {
+                                                "discount": "6.0",
+                                                "label": 150
+                                            },
+                                            {
+                                                "discount": "7.0",
+                                                "label": 200
+                                            },
+                                            {
+                                                "discount": "8.0",
+                                                "label": 250
+                                            },
+                                            {
+                                                "discount": "9.0",
+                                                "label": 300
+                                            },
+                                            {
+                                                "discount": "10.0",
+                                                "label": 350
+                                            }
+                                        ]
+                                    }
+                                },
+                                {
+                                    "name": "marca 2 sku 2 desconto na fatura financeira",
+                                    "price": "40",
+                                    "units": "0",
+                                    "free_goods": "",
+                                    "discount": "",
+                                    "payterm": "30",
+                                    "sku": "P_BRD_005_SKU_002",
+                                    "brand": "P_BRD_005",
+                                    "brandName": "SKU MARCA 2",
+                                    "offerType": "SEGMENT",
+                                    "additional_discount": false,
+                                    "free_goods_range": {
+                                        "limit": null,
+                                        "eligible_goods": null
+                                    },
+                                    "discounts": {
+                                        "name": "SKU MARCA 2",
+                                        "isSku": true,
+                                        "onInvoice_discount_execution": null,
+                                        "offInvoice_discount_execution": "FINANCIAL",
+                                        "additional_discount": false,
+                                        "selected": "0",
+                                        "max_limit": "350",
+                                        "sku": "P_BRD_005",
+                                        "off_invoice_range": [
+                                            {
+                                                "discount": "5.0",
+                                                "label": 100
+                                            },
+                                            {
+                                                "discount": "6.0",
+                                                "label": 150
+                                            },
+                                            {
+                                                "discount": "7.0",
+                                                "label": 200
+                                            },
+                                            {
+                                                "discount": "8.0",
+                                                "label": 250
+                                            },
+                                            {
+                                                "discount": "9.0",
+                                                "label": 300
+                                            },
+                                            {
+                                                "discount": "10.0",
+                                                "label": 350
+                                            }
+                                        ]
+                                    }
+                                },
+                                {
+                                    "name": "marca 3 sku 1 ambos financeiros",
+                                    "price": "10",
+                                    "units": "0",
+                                    "free_goods": "",
+                                    "discount": "",
+                                    "payterm": "30",
+                                    "sku": "P_BRD_006_SKU_001",
+                                    "brand": "P_BRD_006",
+                                    "brandName": "SKU MARCA 3",
+                                    "offerType": "SEGMENT",
+                                    "additional_discount": false,
+                                    "free_goods_range": {
+                                        "limit": null,
+                                        "eligible_goods": null
+                                    },
+                                    "discounts": {
+                                        "name": "SKU MARCA 3",
+                                        "isSku": true,
+                                        "onInvoice_discount_execution": "FINANCIAL",
+                                        "offInvoice_discount_execution": "FINANCIAL",
+                                        "additional_discount": false,
+                                        "selected": "0",
+                                        "max_limit": "2000",
+                                        "sku": "P_BRD_006",
+                                        "on_invoice_range": [
+                                            {
+                                                "discount": "0.0",
+                                                "label": 250
+                                            },
+                                            {
+                                                "discount": "2.0",
+                                                "label": 500
+                                            },
+                                            {
+                                                "discount": "4.0",
+                                                "label": 750
+                                            },
+                                            {
+                                                "discount": "6.0",
+                                                "label": 1000
+                                            },
+                                            {
+                                                "discount": "8.0",
+                                                "label": 1250
+                                            },
+                                            {
+                                                "discount": "10.0",
+                                                "label": 2000
+                                            }
+                                        ],
+                                        "off_invoice_range": [
+                                            {
+                                                "discount": "0.0",
+                                                "label": 250
+                                            },
+                                            {
+                                                "discount": "3.0",
+                                                "label": 500
+                                            },
+                                            {
+                                                "discount": "6.0",
+                                                "label": 750
+                                            },
+                                            {
+                                                "discount": "9.0",
+                                                "label": 1000
+                                            },
+                                            {
+                                                "discount": "12.0",
+                                                "label": 1250
+                                            },
+                                            {
+                                                "discount": "15.0",
+                                                "label": 2000
+                                            }
+                                        ]
+                                    }
+                                },
+                                {
+                                    "name": "marca 4 sku 1 na fatura mercadorias gratuitas",
+                                    "price": "40",
+                                    "units": "0",
+                                    "free_goods": "",
+                                    "discount": "",
+                                    "payterm": "30",
+                                    "sku": "P_BRD_007_SKU_001",
+                                    "brand": "P_BRD_007",
+                                    "brandName": "SKU MARCA 4",
+                                    "offerType": "SEGMENT",
+                                    "additional_discount": false,
+                                    "free_goods_range": {
+                                        "limit": null,
+                                        "eligible_goods": null
+                                    },
+                                    "discounts": {
+                                        "name": "SKU MARCA 4",
+                                        "isSku": true,
+                                        "onInvoice_discount_execution": "FREE_GOODS",
+                                        "offInvoice_discount_execution": null,
+                                        "additional_discount": false,
+                                        "selected": "0",
+                                        "max_limit": "100",
+                                        "sku": "P_BRD_007",
+                                        "on_invoice_range": [
+                                            {
+                                                "discount": "0",
+                                                "label": 10
+                                            },
+                                            {
+                                                "discount": "1",
+                                                "label": 20
+                                            },
+                                            {
+                                                "discount": "1",
+                                                "label": 30
+                                            },
+                                            {
+                                                "discount": "2",
+                                                "label": 40
+                                            },
+                                            {
+                                                "discount": "3",
+                                                "label": 50
+                                            },
+                                            {
+                                                "discount": "5",
+                                                "label": 100
+                                            }
+                                        ]
+                                    }
+                                },
+                                {
+                                    "name": "marca 4 sku 2 na fatura mercadorias gratuitas",
+                                    "price": "40",
+                                    "units": "0",
+                                    "free_goods": "",
+                                    "discount": "",
+                                    "payterm": "30",
+                                    "sku": "P_BRD_007_SKU_002",
+                                    "brand": "P_BRD_007",
+                                    "brandName": "SKU MARCA 4",
+                                    "offerType": "SEGMENT",
+                                    "additional_discount": false,
+                                    "free_goods_range": {
+                                        "limit": null,
+                                        "eligible_goods": null
+                                    },
+                                    "discounts": {
+                                        "name": "SKU MARCA 4",
+                                        "isSku": true,
+                                        "onInvoice_discount_execution": "FREE_GOODS",
+                                        "offInvoice_discount_execution": null,
+                                        "additional_discount": false,
+                                        "selected": "0",
+                                        "max_limit": "150",
+                                        "sku": "P_BRD_007",
+                                        "on_invoice_range": [
+                                            {
+                                                "discount": "0",
+                                                "label": 20
+                                            },
+                                            {
+                                                "discount": "1",
+                                                "label": 40
+                                            },
+                                            {
+                                                "discount": "2",
+                                                "label": 60
+                                            },
+                                            {
+                                                "discount": "4",
+                                                "label": 80
+                                            },
+                                            {
+                                                "discount": "6",
+                                                "label": 100
+                                            },
+                                            {
+                                                "discount": "9",
+                                                "label": 150
+                                            }
+                                        ]
+                                    }
+                                },
+                                {
+                                    "name": "marca 5 sku 1 desconto na fatura mercadorias gra?tis",
+                                    "price": "40",
+                                    "units": "0",
+                                    "free_goods": "",
+                                    "discount": "",
+                                    "payterm": "30",
+                                    "sku": "P_BRD_008_SKU_001",
+                                    "brand": "P_BRD_008",
+                                    "brandName": "SKU MARCA 5",
+                                    "offerType": "SEGMENT",
+                                    "additional_discount": false,
+                                    "free_goods_range": {
+                                        "limit": null,
+                                        "eligible_goods": null
+                                    },
+                                    "discounts": {
+                                        "name": "SKU MARCA 5",
+                                        "isSku": true,
+                                        "onInvoice_discount_execution": null,
+                                        "offInvoice_discount_execution": "FREE_GOODS",
+                                        "additional_discount": false,
+                                        "selected": "0",
+                                        "max_limit": "350",
+                                        "sku": "P_BRD_008",
+                                        "off_invoice_range": [
+                                            {
+                                                "discount": "0",
+                                                "label": 100
+                                            },
+                                            {
+                                                "discount": "6",
+                                                "label": 150
+                                            },
+                                            {
+                                                "discount": "11",
+                                                "label": 200
+                                            },
+                                            {
+                                                "discount": "16",
+                                                "label": 250
+                                            },
+                                            {
+                                                "discount": "23",
+                                                "label": 300
+                                            },
+                                            {
+                                                "discount": "30",
+                                                "label": 350
+                                            }
+                                        ]
+                                    }
+                                },
+                                {
+                                    "name": "marca 5 sku 2 desconto na fatura mercadorias gra?tis",
+                                    "price": "40",
+                                    "units": "0",
+                                    "free_goods": "",
+                                    "discount": "",
+                                    "payterm": "30",
+                                    "sku": "P_BRD_008_SKU_002",
+                                    "brand": "P_BRD_008",
+                                    "brandName": "SKU MARCA 5",
+                                    "offerType": "SEGMENT",
+                                    "additional_discount": false,
+                                    "free_goods_range": {
+                                        "limit": null,
+                                        "eligible_goods": null
+                                    },
+                                    "discounts": {
+                                        "name": "SKU MARCA 5",
+                                        "isSku": true,
+                                        "onInvoice_discount_execution": null,
+                                        "offInvoice_discount_execution": "FREE_GOODS",
+                                        "additional_discount": false,
+                                        "selected": "0",
+                                        "max_limit": "350",
+                                        "sku": "P_BRD_008",
+                                        "off_invoice_range": [
+                                            {
+                                                "discount": "0",
+                                                "label": 100
+                                            },
+                                            {
+                                                "discount": "6",
+                                                "label": 150
+                                            },
+                                            {
+                                                "discount": "11",
+                                                "label": 200
+                                            },
+                                            {
+                                                "discount": "16",
+                                                "label": 250
+                                            },
+                                            {
+                                                "discount": "23",
+                                                "label": 300
+                                            },
+                                            {
+                                                "discount": "30",
+                                                "label": 350
+                                            }
+                                        ]
+                                    }
+                                },
+                                {
+                                    "name": "marca 6 sku 1 ambos produtos gratuitos",
+                                    "price": "10",
+                                    "units": "0",
+                                    "free_goods": "",
+                                    "discount": "",
+                                    "payterm": "30",
+                                    "sku": "P_BRD_009_SKU_001",
+                                    "brand": "P_BRD_009",
+                                    "brandName": "SKU MARCA 6",
+                                    "offerType": "SEGMENT",
+                                    "additional_discount": false,
+                                    "free_goods_range": {
+                                        "limit": null,
+                                        "eligible_goods": null
+                                    },
+                                    "discounts": {
+                                        "name": "SKU MARCA 6",
+                                        "isSku": true,
+                                        "onInvoice_discount_execution": "FREE_GOODS",
+                                        "offInvoice_discount_execution": "FREE_GOODS",
+                                        "additional_discount": false,
+                                        "selected": "0",
+                                        "max_limit": "2000",
+                                        "sku": "P_BRD_009",
+                                        "on_invoice_range": [
+                                            {
+                                                "discount": "0",
+                                                "label": 250
+                                            },
+                                            {
+                                                "discount": "5",
+                                                "label": 500
+                                            },
+                                            {
+                                                "discount": "20",
+                                                "label": 750
+                                            },
+                                            {
+                                                "discount": "45",
+                                                "label": 1000
+                                            },
+                                            {
+                                                "discount": "80",
+                                                "label": 1250
+                                            },
+                                            {
+                                                "discount": "125",
+                                                "label": 2000
+                                            }
+                                        ],
+                                        "off_invoice_range": [
+                                            {
+                                                "discount": "0",
+                                                "label": 250
+                                            },
+                                            {
+                                                "discount": "8",
+                                                "label": 500
+                                            },
+                                            {
+                                                "discount": "30",
+                                                "label": 750
+                                            },
+                                            {
+                                                "discount": "68",
+                                                "label": 1000
+                                            },
+                                            {
+                                                "discount": "120",
+                                                "label": 1250
+                                            },
+                                            {
+                                                "discount": "188",
+                                                "label": 2000
+                                            }
+                                        ]
+                                    }
+                                },
+                                {
+                                    "name": "marca 7 sku 1 ambos produtos gratuitos financeiros",
+                                    "price": "10",
+                                    "units": "0",
+                                    "free_goods": "",
+                                    "discount": "",
+                                    "payterm": "30",
+                                    "sku": "P_BRD_010_SKU_001",
+                                    "brand": "P_BRD_010",
+                                    "brandName": "SKU MARCA 7",
+                                    "offerType": "SEGMENT",
+                                    "additional_discount": false,
+                                    "free_goods_range": {
+                                        "limit": null,
+                                        "eligible_goods": null
+                                    },
+                                    "discounts": {
+                                        "name": "SKU MARCA 7",
+                                        "isSku": true,
+                                        "onInvoice_discount_execution": "FINANCIAL",
+                                        "offInvoice_discount_execution": "FREE_GOODS",
+                                        "additional_discount": false,
+                                        "selected": "0",
+                                        "max_limit": "2000",
+                                        "sku": "P_BRD_010",
+                                        "on_invoice_range": [
+                                            {
+                                                "discount": "0",
+                                                "label": 250
+                                            },
+                                            {
+                                                "discount": "5",
+                                                "label": 500
+                                            },
+                                            {
+                                                "discount": "20",
+                                                "label": 750
+                                            },
+                                            {
+                                                "discount": "45",
+                                                "label": 1000
+                                            },
+                                            {
+                                                "discount": "80",
+                                                "label": 1250
+                                            },
+                                            {
+                                                "discount": "125",
+                                                "label": 2000
+                                            }
+                                        ],
+                                        "off_invoice_range": [
+                                            {
+                                                "discount": "0",
+                                                "label": 250
+                                            },
+                                            {
+                                                "discount": "8",
+                                                "label": 500
+                                            },
+                                            {
+                                                "discount": "30",
+                                                "label": 750
+                                            },
+                                            {
+                                                "discount": "68",
+                                                "label": 1000
+                                            },
+                                            {
+                                                "discount": "120",
+                                                "label": 1250
+                                            },
+                                            {
+                                                "discount": "188",
+                                                "label": 2000
+                                            }
+                                        ]
+                                    }
+                                },
+                                {
+                                    "name": "marca 7 sku 2 ambos produtos gratuitos financeiros",
+                                    "price": "10",
+                                    "units": "0",
+                                    "free_goods": "",
+                                    "discount": "",
+                                    "payterm": "30",
+                                    "sku": "P_BRD_010_SKU_002",
+                                    "brand": "P_BRD_010",
+                                    "brandName": "SKU MARCA 7",
+                                    "offerType": "SEGMENT",
+                                    "additional_discount": false,
+                                    "free_goods_range": {
+                                        "limit": null,
+                                        "eligible_goods": null
+                                    },
+                                    "discounts": {
+                                        "name": "SKU MARCA 7",
+                                        "isSku": true,
+                                        "onInvoice_discount_execution": "FINANCIAL",
+                                        "offInvoice_discount_execution": "FREE_GOODS",
+                                        "additional_discount": false,
+                                        "selected": "0",
+                                        "max_limit": "2000",
+                                        "sku": "P_BRD_010",
+                                        "on_invoice_range": [
+                                            {
+                                                "discount": "0",
+                                                "label": 250
+                                            },
+                                            {
+                                                "discount": "5",
+                                                "label": 500
+                                            },
+                                            {
+                                                "discount": "20",
+                                                "label": 750
+                                            },
+                                            {
+                                                "discount": "45",
+                                                "label": 1000
+                                            },
+                                            {
+                                                "discount": "80",
+                                                "label": 1250
+                                            },
+                                            {
+                                                "discount": "125",
+                                                "label": 2000
+                                            }
+                                        ],
+                                        "off_invoice_range": [
+                                            {
+                                                "discount": "0",
+                                                "label": 250
+                                            },
+                                            {
+                                                "discount": "8",
+                                                "label": 500
+                                            },
+                                            {
+                                                "discount": "30",
+                                                "label": 750
+                                            },
+                                            {
+                                                "discount": "68",
+                                                "label": 1000
+                                            },
+                                            {
+                                                "discount": "120",
+                                                "label": 1250
+                                            },
+                                            {
+                                                "discount": "188",
+                                                "label": 2000
+                                            }
+                                        ]
+                                    }
+                                }
+                            ]
+                        },
+                        {
+                            "account_no": "ABC Pharmacy   -  TR5566",
+                            "order_no": null,
+                            "sku": "TR5566",
+                            "product_details": [
+                                {
+                                    "name": "Novassimo 250mg",
+                                    "price": "20",
+                                    "units": "0",
+                                    "free_goods": "",
+                                    "discount": "",
+                                    "payterm": "30",
+                                    "sku": "P_BRD_001_SKU_001",
+                                    "brand": "P_BRD_001",
+                                    "brandName": "Novo 1",
+                                    "offerType": "SEGMENT",
+                                    "additional_discount": false,
+                                    "free_goods_range": {
+                                        "limit": null,
+                                        "eligible_goods": null
+                                    },
+                                    "discounts": {
+                                        "name": "Novo 1",
+                                        "isSku": false,
+                                        "onInvoice_discount_execution": "FINANCIAL",
+                                        "offInvoice_discount_execution": null,
+                                        "additional_discount": false,
+                                        "selected": "0",
+                                        "max_limit": "500",
+                                        "sku": "P_BRD_001"
+                                    }
+                                },
+                                {
+                                    "name": "AUGMENTIN DUO 457 mg/5 ml 70 ml",
+                                    "price": "3.61",
+                                    "units": "0",
+                                    "free_goods": "",
+                                    "discount": "",
+                                    "payterm": "30",
+                                    "sku": "60000000116507",
+                                    "brand": "AUGMENTIN",
+                                    "brandName": "AUGMENTIN",
+                                    "offerType": "SEGMENT",
+                                    "additional_discount": false,
+                                    "free_goods_range": {
+                                        "limit": null,
+                                        "eligible_goods": null
+                                    },
+                                    "discounts": {
+                                        "name": "AUGMENTIN",
+                                        "isSku": false,
+                                        "onInvoice_discount_execution": "FINANCIAL",
+                                        "offInvoice_discount_execution": null,
+                                        "additional_discount": false,
+                                        "selected": "0",
+                                        "max_limit": "60",
+                                        "sku": "AUGMENTIN"
+                                    }
+                                },
+                                {
+                                    "name": "Novassimo 450mg",
+                                    "price": "20",
+                                    "units": "0",
+                                    "free_goods": "",
+                                    "discount": "",
+                                    "payterm": "30",
+                                    "sku": "P_BRD_001_SKU_002",
+                                    "brand": "P_BRD_001",
+                                    "brandName": "Novo 1",
+                                    "offerType": "SEGMENT",
+                                    "additional_discount": false,
+                                    "free_goods_range": {
+                                        "limit": null,
+                                        "eligible_goods": null
+                                    },
+                                    "discounts": {
+                                        "name": "Novo 1",
+                                        "isSku": false,
+                                        "onInvoice_discount_execution": "FINANCIAL",
+                                        "offInvoice_discount_execution": null,
+                                        "additional_discount": false,
+                                        "selected": "0",
+                                        "max_limit": "500",
+                                        "sku": "P_BRD_001"
+                                    }
+                                },
+                                {
+                                    "name": "AUGMENTIN DUO 1g",
+                                    "price": "5.01",
+                                    "units": "0",
+                                    "free_goods": "",
+                                    "discount": "",
+                                    "payterm": "30",
+                                    "sku": "5168640351",
+                                    "brand": "AUGMENTIN",
+                                    "brandName": "AUGMENTIN",
+                                    "offerType": "SEGMENT",
+                                    "additional_discount": false,
+                                    "free_goods_range": {
+                                        "limit": null,
+                                        "eligible_goods": null
+                                    },
+                                    "discounts": {
+                                        "name": "AUGMENTIN",
+                                        "isSku": false,
+                                        "onInvoice_discount_execution": "FINANCIAL",
+                                        "offInvoice_discount_execution": null,
+                                        "additional_discount": false,
+                                        "selected": "0",
+                                        "max_limit": "100",
+                                        "sku": "AUGMENTIN"
+                                    }
+                                },
+                                {
+                                    "name": "Novassimo 5000mg",
+                                    "price": "20",
+                                    "units": "0",
+                                    "free_goods": "",
+                                    "discount": "",
+                                    "payterm": "30",
+                                    "sku": "P_BRD_001_SKU_003",
+                                    "brand": "P_BRD_001",
+                                    "brandName": "Novo 1",
+                                    "offerType": "SEGMENT",
+                                    "additional_discount": false,
+                                    "free_goods_range": {
+                                        "limit": null,
+                                        "eligible_goods": null
+                                    },
+                                    "discounts": {
+                                        "name": "Novo 1",
+                                        "isSku": false,
+                                        "onInvoice_discount_execution": "FINANCIAL",
+                                        "offInvoice_discount_execution": null,
+                                        "additional_discount": false,
+                                        "selected": "0",
+                                        "max_limit": "500",
+                                        "sku": "P_BRD_001"
+                                    }
+                                },
+                                {
+                                    "name": "AUGMENTIN ES",
+                                    "price": "10.59",
+                                    "units": "0",
+                                    "free_goods": "",
+                                    "discount": "",
+                                    "payterm": "30",
+                                    "sku": "5168640341",
+                                    "brand": "AUGMENTIN",
+                                    "brandName": "AUGMENTIN",
+                                    "offerType": "SEGMENT",
+                                    "additional_discount": false,
+                                    "free_goods_range": {
+                                        "limit": null,
+                                        "eligible_goods": null
+                                    },
+                                    "discounts": {
+                                        "name": "AUGMENTIN",
+                                        "isSku": false,
+                                        "onInvoice_discount_execution": "FINANCIAL",
+                                        "offInvoice_discount_execution": null,
+                                        "additional_discount": false,
+                                        "selected": "0",
+                                        "max_limit": "100",
+                                        "sku": "AUGMENTIN"
+                                    }
+                                },
+                                {
+                                    "name": "sku 1 marca 2 fora da fatura",
+                                    "price": "40",
+                                    "units": "0",
+                                    "free_goods": "",
+                                    "discount": "",
+                                    "payterm": "30",
+                                    "sku": "P_BRD_002_SKU_001",
+                                    "brand": "P_BRD_002",
+                                    "brandName": "Marca 2 fora da fatura",
+                                    "offerType": "SEGMENT",
+                                    "additional_discount": false,
+                                    "free_goods_range": {
+                                        "limit": null,
+                                        "eligible_goods": null
+                                    },
+                                    "discounts": {
+                                        "name": "Marca 2 fora da fatura",
+                                        "isSku": false,
+                                        "onInvoice_discount_execution": null,
+                                        "offInvoice_discount_execution": "FINANCIAL",
+                                        "additional_discount": false,
+                                        "selected": "0",
+                                        "max_limit": "200",
+                                        "sku": "P_BRD_002"
+                                    }
+                                },
+                                {
+                                    "name": "sku 2 marca 2 fora da fatura",
+                                    "price": "40",
+                                    "units": "0",
+                                    "free_goods": "",
+                                    "discount": "",
+                                    "payterm": "30",
+                                    "sku": "P_BRD_002_SKU_002",
+                                    "brand": "P_BRD_002",
+                                    "brandName": "Marca 2 fora da fatura",
+                                    "offerType": "SEGMENT",
+                                    "additional_discount": false,
+                                    "free_goods_range": {
+                                        "limit": null,
+                                        "eligible_goods": null
+                                    },
+                                    "discounts": {
+                                        "name": "Marca 2 fora da fatura",
+                                        "isSku": false,
+                                        "onInvoice_discount_execution": null,
+                                        "offInvoice_discount_execution": "FINANCIAL",
+                                        "additional_discount": false,
+                                        "selected": "0",
+                                        "max_limit": "200",
+                                        "sku": "P_BRD_002"
+                                    }
+                                },
+                                {
+                                    "name": "sku 1 marca 3 ambos",
+                                    "price": "40",
+                                    "units": "0",
+                                    "free_goods": "",
+                                    "discount": "",
+                                    "payterm": "30",
+                                    "sku": "P_BRD_003_SKU_001",
+                                    "brand": "P_BRD_003",
+                                    "brandName": "Marca 3 ambos",
+                                    "offerType": "SEGMENT",
+                                    "additional_discount": false,
+                                    "free_goods_range": {
+                                        "limit": null,
+                                        "eligible_goods": null
+                                    },
+                                    "discounts": {
+                                        "name": "Marca 3 ambos",
+                                        "isSku": false,
+                                        "onInvoice_discount_execution": "FINANCIAL",
+                                        "offInvoice_discount_execution": "FINANCIAL",
+                                        "additional_discount": false,
+                                        "selected": "0",
+                                        "max_limit": "350",
+                                        "sku": "P_BRD_003"
+                                    }
+                                },
+                                {
+                                    "name": "AVODART c?psulas moles 0.5mg x 60",
+                                    "price": "21.84",
+                                    "units": "0",
+                                    "free_goods": "",
+                                    "discount": "",
+                                    "payterm": "30",
+                                    "sku": "283062",
+                                    "brand": "AVODART",
+                                    "brandName": "AVODART",
+                                    "offerType": "SEGMENT",
+                                    "additional_discount": false,
+                                    "free_goods_range": {
+                                        "limit": null,
+                                        "eligible_goods": null
+                                    },
+                                    "discounts": {
+                                        "name": "AVODART",
+                                        "isSku": true,
+                                        "onInvoice_discount_execution": "FINANCIAL",
+                                        "offInvoice_discount_execution": null,
+                                        "additional_discount": false,
+                                        "selected": "0",
+                                        "max_limit": "25",
+                                        "sku": "AVODART",
+                                        "on_invoice_range": [
+                                            {
+                                                "discount": "0.0",
+                                                "label": 2
+                                            },
+                                            {
+                                                "discount": "14.0",
+                                                "label": 3
+                                            },
+                                            {
+                                                "discount": "20.0",
+                                                "label": 4
+                                            },
+                                            {
+                                                "discount": "29.0",
+                                                "label": 5
+                                            },
+                                            {
+                                                "discount": "30.0",
+                                                "label": 6
+                                            },
+                                            {
+                                                "discount": "31.0",
+                                                "label": 25
+                                            }
+                                        ]
+                                    }
+                                },
+                                {
+                                    "name": "sku 2 marca 3 ambos",
+                                    "price": "40",
+                                    "units": "0",
+                                    "free_goods": "",
+                                    "discount": "",
+                                    "payterm": "30",
+                                    "sku": "P_BRD_003_SKU_002",
+                                    "brand": "P_BRD_003",
+                                    "brandName": "Marca 3 ambos",
+                                    "offerType": "SEGMENT",
+                                    "additional_discount": false,
+                                    "free_goods_range": {
+                                        "limit": null,
+                                        "eligible_goods": null
+                                    },
+                                    "discounts": {
+                                        "name": "Marca 3 ambos",
+                                        "isSku": false,
+                                        "onInvoice_discount_execution": "FINANCIAL",
+                                        "offInvoice_discount_execution": "FINANCIAL",
+                                        "additional_discount": false,
+                                        "selected": "0",
+                                        "max_limit": "350",
+                                        "sku": "P_BRD_003"
+                                    }
+                                },
+                                {
+                                    "name": "sku 3 marca 3 ambos",
+                                    "price": "40",
+                                    "units": "0",
+                                    "free_goods": "",
+                                    "discount": "",
+                                    "payterm": "30",
+                                    "sku": "P_BRD_003_SKU_003",
+                                    "brand": "P_BRD_003",
+                                    "brandName": "Marca 3 ambos",
+                                    "offerType": "SEGMENT",
+                                    "additional_discount": false,
+                                    "free_goods_range": {
+                                        "limit": null,
+                                        "eligible_goods": null
+                                    },
+                                    "discounts": {
+                                        "name": "Marca 3 ambos",
+                                        "isSku": false,
+                                        "onInvoice_discount_execution": "FINANCIAL",
+                                        "offInvoice_discount_execution": "FINANCIAL",
+                                        "additional_discount": false,
+                                        "selected": "0",
+                                        "max_limit": "350",
+                                        "sku": "P_BRD_003"
+                                    }
+                                },
+                                {
+                                    "name": "marca 1 sku 1 na fatura financeira",
+                                    "price": "40",
+                                    "units": "0",
+                                    "free_goods": "",
+                                    "discount": "",
+                                    "payterm": "30",
+                                    "sku": "P_BRD_004_SKU_001",
+                                    "brand": "P_BRD_004",
+                                    "brandName": "SKU MARCA 1",
+                                    "offerType": "SEGMENT",
+                                    "additional_discount": false,
+                                    "free_goods_range": {
+                                        "limit": null,
+                                        "eligible_goods": null
+                                    },
+                                    "discounts": {
+                                        "name": "SKU MARCA 1",
+                                        "isSku": true,
+                                        "onInvoice_discount_execution": "FINANCIAL",
+                                        "offInvoice_discount_execution": null,
+                                        "additional_discount": false,
+                                        "selected": "0",
+                                        "max_limit": "100",
+                                        "sku": "P_BRD_004",
+                                        "on_invoice_range": [
+                                            {
+                                                "discount": "0.0",
+                                                "label": 10
+                                            },
+                                            {
+                                                "discount": "5.0",
+                                                "label": 20
+                                            },
+                                            {
+                                                "discount": "6.0",
+                                                "label": 30
+                                            },
+                                            {
+                                                "discount": "7.0",
+                                                "label": 40
+                                            },
+                                            {
+                                                "discount": "8.0",
+                                                "label": 50
+                                            },
+                                            {
+                                                "discount": "9.0",
+                                                "label": 100
+                                            }
+                                        ]
+                                    }
+                                },
+                                {
+                                    "name": "marca 1 sku 2 na fatura financeira",
+                                    "price": "40",
+                                    "units": "0",
+                                    "free_goods": "",
+                                    "discount": "",
+                                    "payterm": "30",
+                                    "sku": "P_BRD_004_SKU_002",
+                                    "brand": "P_BRD_004",
+                                    "brandName": "SKU MARCA 1",
+                                    "offerType": "SEGMENT",
+                                    "additional_discount": false,
+                                    "free_goods_range": {
+                                        "limit": null,
+                                        "eligible_goods": null
+                                    },
+                                    "discounts": {
+                                        "name": "SKU MARCA 1",
+                                        "isSku": true,
+                                        "onInvoice_discount_execution": "FINANCIAL",
+                                        "offInvoice_discount_execution": null,
+                                        "additional_discount": false,
+                                        "selected": "0",
+                                        "max_limit": "150",
+                                        "sku": "P_BRD_004",
+                                        "on_invoice_range": [
+                                            {
+                                                "discount": "0.0",
+                                                "label": 20
+                                            },
+                                            {
+                                                "discount": "5.0",
+                                                "label": 40
+                                            },
+                                            {
+                                                "discount": "6.0",
+                                                "label": 60
+                                            },
+                                            {
+                                                "discount": "7.0",
+                                                "label": 80
+                                            },
+                                            {
+                                                "discount": "8.0",
+                                                "label": 100
+                                            },
+                                            {
+                                                "discount": "9.0",
+                                                "label": 150
+                                            }
+                                        ]
+                                    }
+                                },
+                                {
+                                    "name": "marca 2 sku 1 desconto na fatura financeira",
+                                    "price": "40",
+                                    "units": "0",
+                                    "free_goods": "",
+                                    "discount": "",
+                                    "payterm": "30",
+                                    "sku": "P_BRD_005_SKU_001",
+                                    "brand": "P_BRD_005",
+                                    "brandName": "SKU MARCA 2",
+                                    "offerType": "SEGMENT",
+                                    "additional_discount": false,
+                                    "free_goods_range": {
+                                        "limit": null,
+                                        "eligible_goods": null
+                                    },
+                                    "discounts": {
+                                        "name": "SKU MARCA 2",
+                                        "isSku": true,
+                                        "onInvoice_discount_execution": null,
+                                        "offInvoice_discount_execution": "FINANCIAL",
+                                        "additional_discount": false,
+                                        "selected": "0",
+                                        "max_limit": "350",
+                                        "sku": "P_BRD_005",
+                                        "off_invoice_range": [
+                                            {
+                                                "discount": "5.0",
+                                                "label": 100
+                                            },
+                                            {
+                                                "discount": "6.0",
+                                                "label": 150
+                                            },
+                                            {
+                                                "discount": "7.0",
+                                                "label": 200
+                                            },
+                                            {
+                                                "discount": "8.0",
+                                                "label": 250
+                                            },
+                                            {
+                                                "discount": "9.0",
+                                                "label": 300
+                                            },
+                                            {
+                                                "discount": "10.0",
+                                                "label": 350
+                                            }
+                                        ]
+                                    }
+                                },
+                                {
+                                    "name": "marca 2 sku 2 desconto na fatura financeira",
+                                    "price": "40",
+                                    "units": "0",
+                                    "free_goods": "",
+                                    "discount": "",
+                                    "payterm": "30",
+                                    "sku": "P_BRD_005_SKU_002",
+                                    "brand": "P_BRD_005",
+                                    "brandName": "SKU MARCA 2",
+                                    "offerType": "SEGMENT",
+                                    "additional_discount": false,
+                                    "free_goods_range": {
+                                        "limit": null,
+                                        "eligible_goods": null
+                                    },
+                                    "discounts": {
+                                        "name": "SKU MARCA 2",
+                                        "isSku": true,
+                                        "onInvoice_discount_execution": null,
+                                        "offInvoice_discount_execution": "FINANCIAL",
+                                        "additional_discount": false,
+                                        "selected": "0",
+                                        "max_limit": "350",
+                                        "sku": "P_BRD_005",
+                                        "off_invoice_range": [
+                                            {
+                                                "discount": "5.0",
+                                                "label": 100
+                                            },
+                                            {
+                                                "discount": "6.0",
+                                                "label": 150
+                                            },
+                                            {
+                                                "discount": "7.0",
+                                                "label": 200
+                                            },
+                                            {
+                                                "discount": "8.0",
+                                                "label": 250
+                                            },
+                                            {
+                                                "discount": "9.0",
+                                                "label": 300
+                                            },
+                                            {
+                                                "discount": "10.0",
+                                                "label": 350
+                                            }
+                                        ]
+                                    }
+                                },
+                                {
+                                    "name": "marca 3 sku 1 ambos financeiros",
+                                    "price": "10",
+                                    "units": "0",
+                                    "free_goods": "",
+                                    "discount": "",
+                                    "payterm": "30",
+                                    "sku": "P_BRD_006_SKU_001",
+                                    "brand": "P_BRD_006",
+                                    "brandName": "SKU MARCA 3",
+                                    "offerType": "SEGMENT",
+                                    "additional_discount": false,
+                                    "free_goods_range": {
+                                        "limit": null,
+                                        "eligible_goods": null
+                                    },
+                                    "discounts": {
+                                        "name": "SKU MARCA 3",
+                                        "isSku": true,
+                                        "onInvoice_discount_execution": "FINANCIAL",
+                                        "offInvoice_discount_execution": "FINANCIAL",
+                                        "additional_discount": false,
+                                        "selected": "0",
+                                        "max_limit": "2000",
+                                        "sku": "P_BRD_006",
+                                        "on_invoice_range": [
+                                            {
+                                                "discount": "0.0",
+                                                "label": 250
+                                            },
+                                            {
+                                                "discount": "2.0",
+                                                "label": 500
+                                            },
+                                            {
+                                                "discount": "4.0",
+                                                "label": 750
+                                            },
+                                            {
+                                                "discount": "6.0",
+                                                "label": 1000
+                                            },
+                                            {
+                                                "discount": "8.0",
+                                                "label": 1250
+                                            },
+                                            {
+                                                "discount": "10.0",
+                                                "label": 2000
+                                            }
+                                        ],
+                                        "off_invoice_range": [
+                                            {
+                                                "discount": "0.0",
+                                                "label": 250
+                                            },
+                                            {
+                                                "discount": "3.0",
+                                                "label": 500
+                                            },
+                                            {
+                                                "discount": "6.0",
+                                                "label": 750
+                                            },
+                                            {
+                                                "discount": "9.0",
+                                                "label": 1000
+                                            },
+                                            {
+                                                "discount": "12.0",
+                                                "label": 1250
+                                            },
+                                            {
+                                                "discount": "15.0",
+                                                "label": 2000
+                                            }
+                                        ]
+                                    }
+                                },
+                                {
+                                    "name": "marca 4 sku 1 na fatura mercadorias gratuitas",
+                                    "price": "40",
+                                    "units": "0",
+                                    "free_goods": "",
+                                    "discount": "",
+                                    "payterm": "30",
+                                    "sku": "P_BRD_007_SKU_001",
+                                    "brand": "P_BRD_007",
+                                    "brandName": "SKU MARCA 4",
+                                    "offerType": "SEGMENT",
+                                    "additional_discount": false,
+                                    "free_goods_range": {
+                                        "limit": null,
+                                        "eligible_goods": null
+                                    },
+                                    "discounts": {
+                                        "name": "SKU MARCA 4",
+                                        "isSku": true,
+                                        "onInvoice_discount_execution": "FREE_GOODS",
+                                        "offInvoice_discount_execution": null,
+                                        "additional_discount": false,
+                                        "selected": "0",
+                                        "max_limit": "100",
+                                        "sku": "P_BRD_007",
+                                        "on_invoice_range": [
+                                            {
+                                                "discount": "0",
+                                                "label": 10
+                                            },
+                                            {
+                                                "discount": "1",
+                                                "label": 20
+                                            },
+                                            {
+                                                "discount": "1",
+                                                "label": 30
+                                            },
+                                            {
+                                                "discount": "2",
+                                                "label": 40
+                                            },
+                                            {
+                                                "discount": "3",
+                                                "label": 50
+                                            },
+                                            {
+                                                "discount": "5",
+                                                "label": 100
+                                            }
+                                        ]
+                                    }
+                                },
+                                {
+                                    "name": "marca 4 sku 2 na fatura mercadorias gratuitas",
+                                    "price": "40",
+                                    "units": "0",
+                                    "free_goods": "",
+                                    "discount": "",
+                                    "payterm": "30",
+                                    "sku": "P_BRD_007_SKU_002",
+                                    "brand": "P_BRD_007",
+                                    "brandName": "SKU MARCA 4",
+                                    "offerType": "SEGMENT",
+                                    "additional_discount": false,
+                                    "free_goods_range": {
+                                        "limit": null,
+                                        "eligible_goods": null
+                                    },
+                                    "discounts": {
+                                        "name": "SKU MARCA 4",
+                                        "isSku": true,
+                                        "onInvoice_discount_execution": "FREE_GOODS",
+                                        "offInvoice_discount_execution": null,
+                                        "additional_discount": false,
+                                        "selected": "0",
+                                        "max_limit": "150",
+                                        "sku": "P_BRD_007",
+                                        "on_invoice_range": [
+                                            {
+                                                "discount": "0",
+                                                "label": 20
+                                            },
+                                            {
+                                                "discount": "1",
+                                                "label": 40
+                                            },
+                                            {
+                                                "discount": "2",
+                                                "label": 60
+                                            },
+                                            {
+                                                "discount": "4",
+                                                "label": 80
+                                            },
+                                            {
+                                                "discount": "6",
+                                                "label": 100
+                                            },
+                                            {
+                                                "discount": "9",
+                                                "label": 150
+                                            }
+                                        ]
+                                    }
+                                },
+                                {
+                                    "name": "marca 5 sku 1 desconto na fatura mercadorias gra?tis",
+                                    "price": "40",
+                                    "units": "0",
+                                    "free_goods": "",
+                                    "discount": "",
+                                    "payterm": "30",
+                                    "sku": "P_BRD_008_SKU_001",
+                                    "brand": "P_BRD_008",
+                                    "brandName": "SKU MARCA 5",
+                                    "offerType": "SEGMENT",
+                                    "additional_discount": false,
+                                    "free_goods_range": {
+                                        "limit": null,
+                                        "eligible_goods": null
+                                    },
+                                    "discounts": {
+                                        "name": "SKU MARCA 5",
+                                        "isSku": true,
+                                        "onInvoice_discount_execution": null,
+                                        "offInvoice_discount_execution": "FREE_GOODS",
+                                        "additional_discount": false,
+                                        "selected": "0",
+                                        "max_limit": "350",
+                                        "sku": "P_BRD_008",
+                                        "off_invoice_range": [
+                                            {
+                                                "discount": "0",
+                                                "label": 100
+                                            },
+                                            {
+                                                "discount": "6",
+                                                "label": 150
+                                            },
+                                            {
+                                                "discount": "11",
+                                                "label": 200
+                                            },
+                                            {
+                                                "discount": "16",
+                                                "label": 250
+                                            },
+                                            {
+                                                "discount": "23",
+                                                "label": 300
+                                            },
+                                            {
+                                                "discount": "30",
+                                                "label": 350
+                                            }
+                                        ]
+                                    }
+                                },
+                                {
+                                    "name": "marca 5 sku 2 desconto na fatura mercadorias gra?tis",
+                                    "price": "40",
+                                    "units": "0",
+                                    "free_goods": "",
+                                    "discount": "",
+                                    "payterm": "30",
+                                    "sku": "P_BRD_008_SKU_002",
+                                    "brand": "P_BRD_008",
+                                    "brandName": "SKU MARCA 5",
+                                    "offerType": "SEGMENT",
+                                    "additional_discount": false,
+                                    "free_goods_range": {
+                                        "limit": null,
+                                        "eligible_goods": null
+                                    },
+                                    "discounts": {
+                                        "name": "SKU MARCA 5",
+                                        "isSku": true,
+                                        "onInvoice_discount_execution": null,
+                                        "offInvoice_discount_execution": "FREE_GOODS",
+                                        "additional_discount": false,
+                                        "selected": "0",
+                                        "max_limit": "350",
+                                        "sku": "P_BRD_008",
+                                        "off_invoice_range": [
+                                            {
+                                                "discount": "0",
+                                                "label": 100
+                                            },
+                                            {
+                                                "discount": "6",
+                                                "label": 150
+                                            },
+                                            {
+                                                "discount": "11",
+                                                "label": 200
+                                            },
+                                            {
+                                                "discount": "16",
+                                                "label": 250
+                                            },
+                                            {
+                                                "discount": "23",
+                                                "label": 300
+                                            },
+                                            {
+                                                "discount": "30",
+                                                "label": 350
+                                            }
+                                        ]
+                                    }
+                                },
+                                {
+                                    "name": "marca 6 sku 1 ambos produtos gratuitos",
+                                    "price": "10",
+                                    "units": "0",
+                                    "free_goods": "",
+                                    "discount": "",
+                                    "payterm": "30",
+                                    "sku": "P_BRD_009_SKU_001",
+                                    "brand": "P_BRD_009",
+                                    "brandName": "SKU MARCA 6",
+                                    "offerType": "SEGMENT",
+                                    "additional_discount": false,
+                                    "free_goods_range": {
+                                        "limit": null,
+                                        "eligible_goods": null
+                                    },
+                                    "discounts": {
+                                        "name": "SKU MARCA 6",
+                                        "isSku": true,
+                                        "onInvoice_discount_execution": "FREE_GOODS",
+                                        "offInvoice_discount_execution": "FREE_GOODS",
+                                        "additional_discount": false,
+                                        "selected": "0",
+                                        "max_limit": "2000",
+                                        "sku": "P_BRD_009",
+                                        "on_invoice_range": [
+                                            {
+                                                "discount": "0",
+                                                "label": 250
+                                            },
+                                            {
+                                                "discount": "5",
+                                                "label": 500
+                                            },
+                                            {
+                                                "discount": "20",
+                                                "label": 750
+                                            },
+                                            {
+                                                "discount": "45",
+                                                "label": 1000
+                                            },
+                                            {
+                                                "discount": "80",
+                                                "label": 1250
+                                            },
+                                            {
+                                                "discount": "125",
+                                                "label": 2000
+                                            }
+                                        ],
+                                        "off_invoice_range": [
+                                            {
+                                                "discount": "0",
+                                                "label": 250
+                                            },
+                                            {
+                                                "discount": "8",
+                                                "label": 500
+                                            },
+                                            {
+                                                "discount": "30",
+                                                "label": 750
+                                            },
+                                            {
+                                                "discount": "68",
+                                                "label": 1000
+                                            },
+                                            {
+                                                "discount": "120",
+                                                "label": 1250
+                                            },
+                                            {
+                                                "discount": "188",
+                                                "label": 2000
+                                            }
+                                        ]
+                                    }
+                                },
+                                {
+                                    "name": "marca 7 sku 1 ambos produtos gratuitos financeiros",
+                                    "price": "10",
+                                    "units": "0",
+                                    "free_goods": "",
+                                    "discount": "",
+                                    "payterm": "30",
+                                    "sku": "P_BRD_010_SKU_001",
+                                    "brand": "P_BRD_010",
+                                    "brandName": "SKU MARCA 7",
+                                    "offerType": "SEGMENT",
+                                    "additional_discount": false,
+                                    "free_goods_range": {
+                                        "limit": null,
+                                        "eligible_goods": null
+                                    },
+                                    "discounts": {
+                                        "name": "SKU MARCA 7",
+                                        "isSku": true,
+                                        "onInvoice_discount_execution": "FINANCIAL",
+                                        "offInvoice_discount_execution": "FREE_GOODS",
+                                        "additional_discount": false,
+                                        "selected": "0",
+                                        "max_limit": "2000",
+                                        "sku": "P_BRD_010",
+                                        "on_invoice_range": [
+                                            {
+                                                "discount": "0",
+                                                "label": 250
+                                            },
+                                            {
+                                                "discount": "5",
+                                                "label": 500
+                                            },
+                                            {
+                                                "discount": "20",
+                                                "label": 750
+                                            },
+                                            {
+                                                "discount": "45",
+                                                "label": 1000
+                                            },
+                                            {
+                                                "discount": "80",
+                                                "label": 1250
+                                            },
+                                            {
+                                                "discount": "125",
+                                                "label": 2000
+                                            }
+                                        ],
+                                        "off_invoice_range": [
+                                            {
+                                                "discount": "0",
+                                                "label": 250
+                                            },
+                                            {
+                                                "discount": "8",
+                                                "label": 500
+                                            },
+                                            {
+                                                "discount": "30",
+                                                "label": 750
+                                            },
+                                            {
+                                                "discount": "68",
+                                                "label": 1000
+                                            },
+                                            {
+                                                "discount": "120",
+                                                "label": 1250
+                                            },
+                                            {
+                                                "discount": "188",
+                                                "label": 2000
+                                            }
+                                        ]
+                                    }
+                                },
+                                {
+                                    "name": "marca 7 sku 2 ambos produtos gratuitos financeiros",
+                                    "price": "10",
+                                    "units": "0",
+                                    "free_goods": "",
+                                    "discount": "",
+                                    "payterm": "30",
+                                    "sku": "P_BRD_010_SKU_002",
+                                    "brand": "P_BRD_010",
+                                    "brandName": "SKU MARCA 7",
+                                    "offerType": "SEGMENT",
+                                    "additional_discount": false,
+                                    "free_goods_range": {
+                                        "limit": null,
+                                        "eligible_goods": null
+                                    },
+                                    "discounts": {
+                                        "name": "SKU MARCA 7",
+                                        "isSku": true,
+                                        "onInvoice_discount_execution": "FINANCIAL",
+                                        "offInvoice_discount_execution": "FREE_GOODS",
+                                        "additional_discount": false,
+                                        "selected": "0",
+                                        "max_limit": "2000",
+                                        "sku": "P_BRD_010",
+                                        "on_invoice_range": [
+                                            {
+                                                "discount": "0",
+                                                "label": 250
+                                            },
+                                            {
+                                                "discount": "5",
+                                                "label": 500
+                                            },
+                                            {
+                                                "discount": "20",
+                                                "label": 750
+                                            },
+                                            {
+                                                "discount": "45",
+                                                "label": 1000
+                                            },
+                                            {
+                                                "discount": "80",
+                                                "label": 1250
+                                            },
+                                            {
+                                                "discount": "125",
+                                                "label": 2000
+                                            }
+                                        ],
+                                        "off_invoice_range": [
+                                            {
+                                                "discount": "0",
+                                                "label": 250
+                                            },
+                                            {
+                                                "discount": "8",
+                                                "label": 500
+                                            },
+                                            {
+                                                "discount": "30",
+                                                "label": 750
+                                            },
+                                            {
+                                                "discount": "68",
+                                                "label": 1000
+                                            },
+                                            {
+                                                "discount": "120",
+                                                "label": 1250
+                                            },
+                                            {
+                                                "discount": "188",
+                                                "label": 2000
+                                            }
+                                        ]
+                                    }
+                                }
+                            ]
+                        }
+                    ]
+                },
+                "previous_orders": {
+                    "orders": []
+                },
+                "rebates_orders": {
+                    "orders": []
+                },
+                "source": "Desktop",
+                "profileDetails": {
+                    "firstName": "Saravanan",
+                    "lastName": "Ravi",
+                    "phoneNumber": "+918122977781",
+                    "email": "nuvento-saravanan.r@yellow.ai"
+                },
+                "notifications": "yes",
+                "associatedAccounts": [
+                    {
+                        "wholeSalerCode": "ABC001",
+                        "wholeSalerName": "ABC Pharmacy",
+                        "wholeSalerStatus": "ACTIVE",
+                        "accounts": [
+                            {
+                                "accountNumber": "TR5566",
+                                "legalIdCode": "YU6655",
+                                "invoice": "https://cdn.yellowmessenger.com/b9af395c7bfabbff5fa070e659b914df/575597720949586.jpg",
+                                "accountStatus": "PENDING_VERIFICATION"
+                            }
+                        ]
+                    },
+                    {
+                        "wholeSalerCode": "PRO123",
+                        "wholeSalerName": "Proforma",
+                        "wholeSalerStatus": "ACTIVE",
+                        "accounts": [
+                            {
+                                "accountNumber": "F4444",
+                                "legalIdCode": "L4444",
+                                "invoice": "https://cdn.yellowmessenger.com/08c2076c7c447b68cb64e9e90093e3e3/958295118410844.jpg",
+                                "accountStatus": "PENDING_VERIFICATION"
+                            }
+                        ]
+                    }
+                ],
+                "selected_brand": "AUGMENTIN",
+                "new_orders": {
+                    "orders": [
+                        {
+                            "account_no": "Proforma   -  F4444",
+                            "order_no": null,
+                            "sku": "F4444",
+                            "product_details": [
+                                {
+                                    "name": "Novassimo 250mg",
+                                    "price": "20",
+                                    "units": "0",
+                                    "free_goods": "",
+                                    "discount": "",
+                                    "payterm": "30",
+                                    "sku": "P_BRD_001_SKU_001",
+                                    "brand": "P_BRD_001",
+                                    "brandName": "Novo 1",
+                                    "offerType": "SEGMENT",
+                                    "additional_discount": false,
+                                    "free_goods_range": {
+                                        "limit": null,
+                                        "eligible_goods": null
+                                    },
+                                    "discounts": {
+                                        "name": "Novo 1",
+                                        "isSku": false,
+                                        "onInvoice_discount_execution": "FINANCIAL",
+                                        "offInvoice_discount_execution": null,
+                                        "additional_discount": false,
+                                        "selected": "0",
+                                        "max_limit": "500",
+                                        "sku": "P_BRD_001"
+                                    }
+                                },
+                                {
+                                    "name": "AUGMENTIN DUO 457 mg/5 ml 70 ml",
+                                    "price": "3.61",
+                                    "units": "100",
+                                    "free_goods": "",
+                                    "discount": "",
+                                    "payterm": "30",
+                                    "sku": "60000000116507",
+                                    "brand": "AUGMENTIN",
+                                    "brandName": "AUGMENTIN",
+                                    "offerType": "SEGMENT",
+                                    "additional_discount": false,
+                                    "free_goods_range": {
+                                        "limit": null,
+                                        "eligible_goods": null
+                                    },
+                                    "discounts": {
+                                        "name": "AUGMENTIN",
+                                        "isSku": false,
+                                        "onInvoice_discount_execution": "FINANCIAL",
+                                        "offInvoice_discount_execution": null,
+                                        "additional_discount": false,
+                                        "selected": "100",
+                                        "max_limit": "60",
+                                        "sku": "AUGMENTIN"
+                                    },
+                                    "quantity": "100"
+                                },
+                                {
+                                    "name": "Novassimo 450mg",
+                                    "price": "20",
+                                    "units": "0",
+                                    "free_goods": "",
+                                    "discount": "",
+                                    "payterm": "30",
+                                    "sku": "P_BRD_001_SKU_002",
+                                    "brand": "P_BRD_001",
+                                    "brandName": "Novo 1",
+                                    "offerType": "SEGMENT",
+                                    "additional_discount": false,
+                                    "free_goods_range": {
+                                        "limit": null,
+                                        "eligible_goods": null
+                                    },
+                                    "discounts": {
+                                        "name": "Novo 1",
+                                        "isSku": false,
+                                        "onInvoice_discount_execution": "FINANCIAL",
+                                        "offInvoice_discount_execution": null,
+                                        "additional_discount": false,
+                                        "selected": "0",
+                                        "max_limit": "500",
+                                        "sku": "P_BRD_001"
+                                    }
+                                },
+                                {
+                                    "name": "AUGMENTIN DUO 1g",
+                                    "price": "5.01",
+                                    "units": "0",
+                                    "free_goods": "",
+                                    "discount": "",
+                                    "payterm": "30",
+                                    "sku": "5168640351",
+                                    "brand": "AUGMENTIN",
+                                    "brandName": "AUGMENTIN",
+                                    "offerType": "SEGMENT",
+                                    "additional_discount": false,
+                                    "free_goods_range": {
+                                        "limit": null,
+                                        "eligible_goods": null
+                                    },
+                                    "discounts": {
+                                        "name": "AUGMENTIN",
+                                        "isSku": false,
+                                        "onInvoice_discount_execution": "FINANCIAL",
+                                        "offInvoice_discount_execution": null,
+                                        "additional_discount": false,
+                                        "selected": "0",
+                                        "max_limit": "100",
+                                        "sku": "AUGMENTIN"
+                                    }
+                                },
+                                {
+                                    "name": "Novassimo 5000mg",
+                                    "price": "20",
+                                    "units": "0",
+                                    "free_goods": "",
+                                    "discount": "",
+                                    "payterm": "30",
+                                    "sku": "P_BRD_001_SKU_003",
+                                    "brand": "P_BRD_001",
+                                    "brandName": "Novo 1",
+                                    "offerType": "SEGMENT",
+                                    "additional_discount": false,
+                                    "free_goods_range": {
+                                        "limit": null,
+                                        "eligible_goods": null
+                                    },
+                                    "discounts": {
+                                        "name": "Novo 1",
+                                        "isSku": false,
+                                        "onInvoice_discount_execution": "FINANCIAL",
+                                        "offInvoice_discount_execution": null,
+                                        "additional_discount": false,
+                                        "selected": "0",
+                                        "max_limit": "500",
+                                        "sku": "P_BRD_001"
+                                    }
+                                },
+                                {
+                                    "name": "AUGMENTIN ES",
+                                    "price": "10.59",
+                                    "units": "0",
+                                    "free_goods": "",
+                                    "discount": "",
+                                    "payterm": "30",
+                                    "sku": "5168640341",
+                                    "brand": "AUGMENTIN",
+                                    "brandName": "AUGMENTIN",
+                                    "offerType": "SEGMENT",
+                                    "additional_discount": false,
+                                    "free_goods_range": {
+                                        "limit": null,
+                                        "eligible_goods": null
+                                    },
+                                    "discounts": {
+                                        "name": "AUGMENTIN",
+                                        "isSku": false,
+                                        "onInvoice_discount_execution": "FINANCIAL",
+                                        "offInvoice_discount_execution": null,
+                                        "additional_discount": false,
+                                        "selected": "0",
+                                        "max_limit": "100",
+                                        "sku": "AUGMENTIN"
+                                    }
+                                },
+                                {
+                                    "name": "sku 1 marca 2 fora da fatura",
+                                    "price": "40",
+                                    "units": "0",
+                                    "free_goods": "",
+                                    "discount": "",
+                                    "payterm": "30",
+                                    "sku": "P_BRD_002_SKU_001",
+                                    "brand": "P_BRD_002",
+                                    "brandName": "Marca 2 fora da fatura",
+                                    "offerType": "SEGMENT",
+                                    "additional_discount": false,
+                                    "free_goods_range": {
+                                        "limit": null,
+                                        "eligible_goods": null
+                                    },
+                                    "discounts": {
+                                        "name": "Marca 2 fora da fatura",
+                                        "isSku": false,
+                                        "onInvoice_discount_execution": null,
+                                        "offInvoice_discount_execution": "FINANCIAL",
+                                        "additional_discount": false,
+                                        "selected": "0",
+                                        "max_limit": "200",
+                                        "sku": "P_BRD_002"
+                                    }
+                                },
+                                {
+                                    "name": "sku 2 marca 2 fora da fatura",
+                                    "price": "40",
+                                    "units": "0",
+                                    "free_goods": "",
+                                    "discount": "",
+                                    "payterm": "30",
+                                    "sku": "P_BRD_002_SKU_002",
+                                    "brand": "P_BRD_002",
+                                    "brandName": "Marca 2 fora da fatura",
+                                    "offerType": "SEGMENT",
+                                    "additional_discount": false,
+                                    "free_goods_range": {
+                                        "limit": null,
+                                        "eligible_goods": null
+                                    },
+                                    "discounts": {
+                                        "name": "Marca 2 fora da fatura",
+                                        "isSku": false,
+                                        "onInvoice_discount_execution": null,
+                                        "offInvoice_discount_execution": "FINANCIAL",
+                                        "additional_discount": false,
+                                        "selected": "0",
+                                        "max_limit": "200",
+                                        "sku": "P_BRD_002"
+                                    }
+                                },
+                                {
+                                    "name": "sku 1 marca 3 ambos",
+                                    "price": "40",
+                                    "units": "0",
+                                    "free_goods": "",
+                                    "discount": "",
+                                    "payterm": "30",
+                                    "sku": "P_BRD_003_SKU_001",
+                                    "brand": "P_BRD_003",
+                                    "brandName": "Marca 3 ambos",
+                                    "offerType": "SEGMENT",
+                                    "additional_discount": false,
+                                    "free_goods_range": {
+                                        "limit": null,
+                                        "eligible_goods": null
+                                    },
+                                    "discounts": {
+                                        "name": "Marca 3 ambos",
+                                        "isSku": false,
+                                        "onInvoice_discount_execution": "FINANCIAL",
+                                        "offInvoice_discount_execution": "FINANCIAL",
+                                        "additional_discount": false,
+                                        "selected": "0",
+                                        "max_limit": "350",
+                                        "sku": "P_BRD_003"
+                                    }
+                                },
+                                {
+                                    "name": "AVODART c?psulas moles 0.5mg x 60",
+                                    "price": "21.84",
+                                    "units": "0",
+                                    "free_goods": "",
+                                    "discount": "",
+                                    "payterm": "30",
+                                    "sku": "283062",
+                                    "brand": "AVODART",
+                                    "brandName": "AVODART",
+                                    "offerType": "SEGMENT",
+                                    "additional_discount": false,
+                                    "free_goods_range": {
+                                        "limit": null,
+                                        "eligible_goods": null
+                                    },
+                                    "discounts": {
+                                        "name": "AVODART",
+                                        "isSku": true,
+                                        "onInvoice_discount_execution": "FINANCIAL",
+                                        "offInvoice_discount_execution": null,
+                                        "additional_discount": false,
+                                        "selected": "0",
+                                        "max_limit": "25",
+                                        "sku": "AVODART",
+                                        "on_invoice_range": [
+                                            {
+                                                "discount": "0.0",
+                                                "label": 2
+                                            },
+                                            {
+                                                "discount": "14.0",
+                                                "label": 3
+                                            },
+                                            {
+                                                "discount": "20.0",
+                                                "label": 4
+                                            },
+                                            {
+                                                "discount": "29.0",
+                                                "label": 5
+                                            },
+                                            {
+                                                "discount": "30.0",
+                                                "label": 6
+                                            },
+                                            {
+                                                "discount": "31.0",
+                                                "label": 25
+                                            }
+                                        ]
+                                    }
+                                },
+                                {
+                                    "name": "sku 2 marca 3 ambos",
+                                    "price": "40",
+                                    "units": "0",
+                                    "free_goods": "",
+                                    "discount": "",
+                                    "payterm": "30",
+                                    "sku": "P_BRD_003_SKU_002",
+                                    "brand": "P_BRD_003",
+                                    "brandName": "Marca 3 ambos",
+                                    "offerType": "SEGMENT",
+                                    "additional_discount": false,
+                                    "free_goods_range": {
+                                        "limit": null,
+                                        "eligible_goods": null
+                                    },
+                                    "discounts": {
+                                        "name": "Marca 3 ambos",
+                                        "isSku": false,
+                                        "onInvoice_discount_execution": "FINANCIAL",
+                                        "offInvoice_discount_execution": "FINANCIAL",
+                                        "additional_discount": false,
+                                        "selected": "0",
+                                        "max_limit": "350",
+                                        "sku": "P_BRD_003"
+                                    }
+                                },
+                                {
+                                    "name": "sku 3 marca 3 ambos",
+                                    "price": "40",
+                                    "units": "0",
+                                    "free_goods": "",
+                                    "discount": "",
+                                    "payterm": "30",
+                                    "sku": "P_BRD_003_SKU_003",
+                                    "brand": "P_BRD_003",
+                                    "brandName": "Marca 3 ambos",
+                                    "offerType": "SEGMENT",
+                                    "additional_discount": false,
+                                    "free_goods_range": {
+                                        "limit": null,
+                                        "eligible_goods": null
+                                    },
+                                    "discounts": {
+                                        "name": "Marca 3 ambos",
+                                        "isSku": false,
+                                        "onInvoice_discount_execution": "FINANCIAL",
+                                        "offInvoice_discount_execution": "FINANCIAL",
+                                        "additional_discount": false,
+                                        "selected": "0",
+                                        "max_limit": "350",
+                                        "sku": "P_BRD_003"
+                                    }
+                                },
+                                {
+                                    "name": "marca 1 sku 1 na fatura financeira",
+                                    "price": "40",
+                                    "units": "0",
+                                    "free_goods": "",
+                                    "discount": "",
+                                    "payterm": "30",
+                                    "sku": "P_BRD_004_SKU_001",
+                                    "brand": "P_BRD_004",
+                                    "brandName": "SKU MARCA 1",
+                                    "offerType": "SEGMENT",
+                                    "additional_discount": false,
+                                    "free_goods_range": {
+                                        "limit": null,
+                                        "eligible_goods": null
+                                    },
+                                    "discounts": {
+                                        "name": "SKU MARCA 1",
+                                        "isSku": true,
+                                        "onInvoice_discount_execution": "FINANCIAL",
+                                        "offInvoice_discount_execution": null,
+                                        "additional_discount": false,
+                                        "selected": "0",
+                                        "max_limit": "100",
+                                        "sku": "P_BRD_004",
+                                        "on_invoice_range": [
+                                            {
+                                                "discount": "0.0",
+                                                "label": 10
+                                            },
+                                            {
+                                                "discount": "5.0",
+                                                "label": 20
+                                            },
+                                            {
+                                                "discount": "6.0",
+                                                "label": 30
+                                            },
+                                            {
+                                                "discount": "7.0",
+                                                "label": 40
+                                            },
+                                            {
+                                                "discount": "8.0",
+                                                "label": 50
+                                            },
+                                            {
+                                                "discount": "9.0",
+                                                "label": 100
+                                            }
+                                        ]
+                                    }
+                                },
+                                {
+                                    "name": "marca 1 sku 2 na fatura financeira",
+                                    "price": "40",
+                                    "units": "0",
+                                    "free_goods": "",
+                                    "discount": "",
+                                    "payterm": "30",
+                                    "sku": "P_BRD_004_SKU_002",
+                                    "brand": "P_BRD_004",
+                                    "brandName": "SKU MARCA 1",
+                                    "offerType": "SEGMENT",
+                                    "additional_discount": false,
+                                    "free_goods_range": {
+                                        "limit": null,
+                                        "eligible_goods": null
+                                    },
+                                    "discounts": {
+                                        "name": "SKU MARCA 1",
+                                        "isSku": true,
+                                        "onInvoice_discount_execution": "FINANCIAL",
+                                        "offInvoice_discount_execution": null,
+                                        "additional_discount": false,
+                                        "selected": "0",
+                                        "max_limit": "150",
+                                        "sku": "P_BRD_004",
+                                        "on_invoice_range": [
+                                            {
+                                                "discount": "0.0",
+                                                "label": 20
+                                            },
+                                            {
+                                                "discount": "5.0",
+                                                "label": 40
+                                            },
+                                            {
+                                                "discount": "6.0",
+                                                "label": 60
+                                            },
+                                            {
+                                                "discount": "7.0",
+                                                "label": 80
+                                            },
+                                            {
+                                                "discount": "8.0",
+                                                "label": 100
+                                            },
+                                            {
+                                                "discount": "9.0",
+                                                "label": 150
+                                            }
+                                        ]
+                                    }
+                                },
+                                {
+                                    "name": "marca 2 sku 1 desconto na fatura financeira",
+                                    "price": "40",
+                                    "units": "0",
+                                    "free_goods": "",
+                                    "discount": "",
+                                    "payterm": "30",
+                                    "sku": "P_BRD_005_SKU_001",
+                                    "brand": "P_BRD_005",
+                                    "brandName": "SKU MARCA 2",
+                                    "offerType": "SEGMENT",
+                                    "additional_discount": false,
+                                    "free_goods_range": {
+                                        "limit": null,
+                                        "eligible_goods": null
+                                    },
+                                    "discounts": {
+                                        "name": "SKU MARCA 2",
+                                        "isSku": true,
+                                        "onInvoice_discount_execution": null,
+                                        "offInvoice_discount_execution": "FINANCIAL",
+                                        "additional_discount": false,
+                                        "selected": "0",
+                                        "max_limit": "350",
+                                        "sku": "P_BRD_005",
+                                        "off_invoice_range": [
+                                            {
+                                                "discount": "5.0",
+                                                "label": 100
+                                            },
+                                            {
+                                                "discount": "6.0",
+                                                "label": 150
+                                            },
+                                            {
+                                                "discount": "7.0",
+                                                "label": 200
+                                            },
+                                            {
+                                                "discount": "8.0",
+                                                "label": 250
+                                            },
+                                            {
+                                                "discount": "9.0",
+                                                "label": 300
+                                            },
+                                            {
+                                                "discount": "10.0",
+                                                "label": 350
+                                            }
+                                        ]
+                                    }
+                                },
+                                {
+                                    "name": "marca 2 sku 2 desconto na fatura financeira",
+                                    "price": "40",
+                                    "units": "0",
+                                    "free_goods": "",
+                                    "discount": "",
+                                    "payterm": "30",
+                                    "sku": "P_BRD_005_SKU_002",
+                                    "brand": "P_BRD_005",
+                                    "brandName": "SKU MARCA 2",
+                                    "offerType": "SEGMENT",
+                                    "additional_discount": false,
+                                    "free_goods_range": {
+                                        "limit": null,
+                                        "eligible_goods": null
+                                    },
+                                    "discounts": {
+                                        "name": "SKU MARCA 2",
+                                        "isSku": true,
+                                        "onInvoice_discount_execution": null,
+                                        "offInvoice_discount_execution": "FINANCIAL",
+                                        "additional_discount": false,
+                                        "selected": "0",
+                                        "max_limit": "350",
+                                        "sku": "P_BRD_005",
+                                        "off_invoice_range": [
+                                            {
+                                                "discount": "5.0",
+                                                "label": 100
+                                            },
+                                            {
+                                                "discount": "6.0",
+                                                "label": 150
+                                            },
+                                            {
+                                                "discount": "7.0",
+                                                "label": 200
+                                            },
+                                            {
+                                                "discount": "8.0",
+                                                "label": 250
+                                            },
+                                            {
+                                                "discount": "9.0",
+                                                "label": 300
+                                            },
+                                            {
+                                                "discount": "10.0",
+                                                "label": 350
+                                            }
+                                        ]
+                                    }
+                                },
+                                {
+                                    "name": "marca 3 sku 1 ambos financeiros",
+                                    "price": "10",
+                                    "units": "0",
+                                    "free_goods": "",
+                                    "discount": "",
+                                    "payterm": "30",
+                                    "sku": "P_BRD_006_SKU_001",
+                                    "brand": "P_BRD_006",
+                                    "brandName": "SKU MARCA 3",
+                                    "offerType": "SEGMENT",
+                                    "additional_discount": false,
+                                    "free_goods_range": {
+                                        "limit": null,
+                                        "eligible_goods": null
+                                    },
+                                    "discounts": {
+                                        "name": "SKU MARCA 3",
+                                        "isSku": true,
+                                        "onInvoice_discount_execution": "FINANCIAL",
+                                        "offInvoice_discount_execution": "FINANCIAL",
+                                        "additional_discount": false,
+                                        "selected": "0",
+                                        "max_limit": "2000",
+                                        "sku": "P_BRD_006",
+                                        "on_invoice_range": [
+                                            {
+                                                "discount": "0.0",
+                                                "label": 250
+                                            },
+                                            {
+                                                "discount": "2.0",
+                                                "label": 500
+                                            },
+                                            {
+                                                "discount": "4.0",
+                                                "label": 750
+                                            },
+                                            {
+                                                "discount": "6.0",
+                                                "label": 1000
+                                            },
+                                            {
+                                                "discount": "8.0",
+                                                "label": 1250
+                                            },
+                                            {
+                                                "discount": "10.0",
+                                                "label": 2000
+                                            }
+                                        ],
+                                        "off_invoice_range": [
+                                            {
+                                                "discount": "0.0",
+                                                "label": 250
+                                            },
+                                            {
+                                                "discount": "3.0",
+                                                "label": 500
+                                            },
+                                            {
+                                                "discount": "6.0",
+                                                "label": 750
+                                            },
+                                            {
+                                                "discount": "9.0",
+                                                "label": 1000
+                                            },
+                                            {
+                                                "discount": "12.0",
+                                                "label": 1250
+                                            },
+                                            {
+                                                "discount": "15.0",
+                                                "label": 2000
+                                            }
+                                        ]
+                                    }
+                                },
+                                {
+                                    "name": "marca 4 sku 1 na fatura mercadorias gratuitas",
+                                    "price": "40",
+                                    "units": "0",
+                                    "free_goods": "",
+                                    "discount": "",
+                                    "payterm": "30",
+                                    "sku": "P_BRD_007_SKU_001",
+                                    "brand": "P_BRD_007",
+                                    "brandName": "SKU MARCA 4",
+                                    "offerType": "SEGMENT",
+                                    "additional_discount": false,
+                                    "free_goods_range": {
+                                        "limit": null,
+                                        "eligible_goods": null
+                                    },
+                                    "discounts": {
+                                        "name": "SKU MARCA 4",
+                                        "isSku": true,
+                                        "onInvoice_discount_execution": "FREE_GOODS",
+                                        "offInvoice_discount_execution": null,
+                                        "additional_discount": false,
+                                        "selected": "0",
+                                        "max_limit": "100",
+                                        "sku": "P_BRD_007",
+                                        "on_invoice_range": [
+                                            {
+                                                "discount": "0",
+                                                "label": 10
+                                            },
+                                            {
+                                                "discount": "1",
+                                                "label": 20
+                                            },
+                                            {
+                                                "discount": "1",
+                                                "label": 30
+                                            },
+                                            {
+                                                "discount": "2",
+                                                "label": 40
+                                            },
+                                            {
+                                                "discount": "3",
+                                                "label": 50
+                                            },
+                                            {
+                                                "discount": "5",
+                                                "label": 100
+                                            }
+                                        ]
+                                    }
+                                },
+                                {
+                                    "name": "marca 4 sku 2 na fatura mercadorias gratuitas",
+                                    "price": "40",
+                                    "units": "0",
+                                    "free_goods": "",
+                                    "discount": "",
+                                    "payterm": "30",
+                                    "sku": "P_BRD_007_SKU_002",
+                                    "brand": "P_BRD_007",
+                                    "brandName": "SKU MARCA 4",
+                                    "offerType": "SEGMENT",
+                                    "additional_discount": false,
+                                    "free_goods_range": {
+                                        "limit": null,
+                                        "eligible_goods": null
+                                    },
+                                    "discounts": {
+                                        "name": "SKU MARCA 4",
+                                        "isSku": true,
+                                        "onInvoice_discount_execution": "FREE_GOODS",
+                                        "offInvoice_discount_execution": null,
+                                        "additional_discount": false,
+                                        "selected": "0",
+                                        "max_limit": "150",
+                                        "sku": "P_BRD_007",
+                                        "on_invoice_range": [
+                                            {
+                                                "discount": "0",
+                                                "label": 20
+                                            },
+                                            {
+                                                "discount": "1",
+                                                "label": 40
+                                            },
+                                            {
+                                                "discount": "2",
+                                                "label": 60
+                                            },
+                                            {
+                                                "discount": "4",
+                                                "label": 80
+                                            },
+                                            {
+                                                "discount": "6",
+                                                "label": 100
+                                            },
+                                            {
+                                                "discount": "9",
+                                                "label": 150
+                                            }
+                                        ]
+                                    }
+                                },
+                                {
+                                    "name": "marca 5 sku 1 desconto na fatura mercadorias gra?tis",
+                                    "price": "40",
+                                    "units": "0",
+                                    "free_goods": "",
+                                    "discount": "",
+                                    "payterm": "30",
+                                    "sku": "P_BRD_008_SKU_001",
+                                    "brand": "P_BRD_008",
+                                    "brandName": "SKU MARCA 5",
+                                    "offerType": "SEGMENT",
+                                    "additional_discount": false,
+                                    "free_goods_range": {
+                                        "limit": null,
+                                        "eligible_goods": null
+                                    },
+                                    "discounts": {
+                                        "name": "SKU MARCA 5",
+                                        "isSku": true,
+                                        "onInvoice_discount_execution": null,
+                                        "offInvoice_discount_execution": "FREE_GOODS",
+                                        "additional_discount": false,
+                                        "selected": "0",
+                                        "max_limit": "350",
+                                        "sku": "P_BRD_008",
+                                        "off_invoice_range": [
+                                            {
+                                                "discount": "0",
+                                                "label": 100
+                                            },
+                                            {
+                                                "discount": "6",
+                                                "label": 150
+                                            },
+                                            {
+                                                "discount": "11",
+                                                "label": 200
+                                            },
+                                            {
+                                                "discount": "16",
+                                                "label": 250
+                                            },
+                                            {
+                                                "discount": "23",
+                                                "label": 300
+                                            },
+                                            {
+                                                "discount": "30",
+                                                "label": 350
+                                            }
+                                        ]
+                                    }
+                                },
+                                {
+                                    "name": "marca 5 sku 2 desconto na fatura mercadorias gra?tis",
+                                    "price": "40",
+                                    "units": "0",
+                                    "free_goods": "",
+                                    "discount": "",
+                                    "payterm": "30",
+                                    "sku": "P_BRD_008_SKU_002",
+                                    "brand": "P_BRD_008",
+                                    "brandName": "SKU MARCA 5",
+                                    "offerType": "SEGMENT",
+                                    "additional_discount": false,
+                                    "free_goods_range": {
+                                        "limit": null,
+                                        "eligible_goods": null
+                                    },
+                                    "discounts": {
+                                        "name": "SKU MARCA 5",
+                                        "isSku": true,
+                                        "onInvoice_discount_execution": null,
+                                        "offInvoice_discount_execution": "FREE_GOODS",
+                                        "additional_discount": false,
+                                        "selected": "0",
+                                        "max_limit": "350",
+                                        "sku": "P_BRD_008",
+                                        "off_invoice_range": [
+                                            {
+                                                "discount": "0",
+                                                "label": 100
+                                            },
+                                            {
+                                                "discount": "6",
+                                                "label": 150
+                                            },
+                                            {
+                                                "discount": "11",
+                                                "label": 200
+                                            },
+                                            {
+                                                "discount": "16",
+                                                "label": 250
+                                            },
+                                            {
+                                                "discount": "23",
+                                                "label": 300
+                                            },
+                                            {
+                                                "discount": "30",
+                                                "label": 350
+                                            }
+                                        ]
+                                    }
+                                },
+                                {
+                                    "name": "marca 6 sku 1 ambos produtos gratuitos",
+                                    "price": "10",
+                                    "units": "0",
+                                    "free_goods": "",
+                                    "discount": "",
+                                    "payterm": "30",
+                                    "sku": "P_BRD_009_SKU_001",
+                                    "brand": "P_BRD_009",
+                                    "brandName": "SKU MARCA 6",
+                                    "offerType": "SEGMENT",
+                                    "additional_discount": false,
+                                    "free_goods_range": {
+                                        "limit": null,
+                                        "eligible_goods": null
+                                    },
+                                    "discounts": {
+                                        "name": "SKU MARCA 6",
+                                        "isSku": true,
+                                        "onInvoice_discount_execution": "FREE_GOODS",
+                                        "offInvoice_discount_execution": "FREE_GOODS",
+                                        "additional_discount": false,
+                                        "selected": "0",
+                                        "max_limit": "2000",
+                                        "sku": "P_BRD_009",
+                                        "on_invoice_range": [
+                                            {
+                                                "discount": "0",
+                                                "label": 250
+                                            },
+                                            {
+                                                "discount": "5",
+                                                "label": 500
+                                            },
+                                            {
+                                                "discount": "20",
+                                                "label": 750
+                                            },
+                                            {
+                                                "discount": "45",
+                                                "label": 1000
+                                            },
+                                            {
+                                                "discount": "80",
+                                                "label": 1250
+                                            },
+                                            {
+                                                "discount": "125",
+                                                "label": 2000
+                                            }
+                                        ],
+                                        "off_invoice_range": [
+                                            {
+                                                "discount": "0",
+                                                "label": 250
+                                            },
+                                            {
+                                                "discount": "8",
+                                                "label": 500
+                                            },
+                                            {
+                                                "discount": "30",
+                                                "label": 750
+                                            },
+                                            {
+                                                "discount": "68",
+                                                "label": 1000
+                                            },
+                                            {
+                                                "discount": "120",
+                                                "label": 1250
+                                            },
+                                            {
+                                                "discount": "188",
+                                                "label": 2000
+                                            }
+                                        ]
+                                    }
+                                },
+                                {
+                                    "name": "marca 7 sku 1 ambos produtos gratuitos financeiros",
+                                    "price": "10",
+                                    "units": "0",
+                                    "free_goods": "",
+                                    "discount": "",
+                                    "payterm": "30",
+                                    "sku": "P_BRD_010_SKU_001",
+                                    "brand": "P_BRD_010",
+                                    "brandName": "SKU MARCA 7",
+                                    "offerType": "SEGMENT",
+                                    "additional_discount": false,
+                                    "free_goods_range": {
+                                        "limit": null,
+                                        "eligible_goods": null
+                                    },
+                                    "discounts": {
+                                        "name": "SKU MARCA 7",
+                                        "isSku": true,
+                                        "onInvoice_discount_execution": "FINANCIAL",
+                                        "offInvoice_discount_execution": "FREE_GOODS",
+                                        "additional_discount": false,
+                                        "selected": "0",
+                                        "max_limit": "2000",
+                                        "sku": "P_BRD_010",
+                                        "on_invoice_range": [
+                                            {
+                                                "discount": "0",
+                                                "label": 250
+                                            },
+                                            {
+                                                "discount": "5",
+                                                "label": 500
+                                            },
+                                            {
+                                                "discount": "20",
+                                                "label": 750
+                                            },
+                                            {
+                                                "discount": "45",
+                                                "label": 1000
+                                            },
+                                            {
+                                                "discount": "80",
+                                                "label": 1250
+                                            },
+                                            {
+                                                "discount": "125",
+                                                "label": 2000
+                                            }
+                                        ],
+                                        "off_invoice_range": [
+                                            {
+                                                "discount": "0",
+                                                "label": 250
+                                            },
+                                            {
+                                                "discount": "8",
+                                                "label": 500
+                                            },
+                                            {
+                                                "discount": "30",
+                                                "label": 750
+                                            },
+                                            {
+                                                "discount": "68",
+                                                "label": 1000
+                                            },
+                                            {
+                                                "discount": "120",
+                                                "label": 1250
+                                            },
+                                            {
+                                                "discount": "188",
+                                                "label": 2000
+                                            }
+                                        ]
+                                    }
+                                },
+                                {
+                                    "name": "marca 7 sku 2 ambos produtos gratuitos financeiros",
+                                    "price": "10",
+                                    "units": "0",
+                                    "free_goods": "",
+                                    "discount": "",
+                                    "payterm": "30",
+                                    "sku": "P_BRD_010_SKU_002",
+                                    "brand": "P_BRD_010",
+                                    "brandName": "SKU MARCA 7",
+                                    "offerType": "SEGMENT",
+                                    "additional_discount": false,
+                                    "free_goods_range": {
+                                        "limit": null,
+                                        "eligible_goods": null
+                                    },
+                                    "discounts": {
+                                        "name": "SKU MARCA 7",
+                                        "isSku": true,
+                                        "onInvoice_discount_execution": "FINANCIAL",
+                                        "offInvoice_discount_execution": "FREE_GOODS",
+                                        "additional_discount": false,
+                                        "selected": "0",
+                                        "max_limit": "2000",
+                                        "sku": "P_BRD_010",
+                                        "on_invoice_range": [
+                                            {
+                                                "discount": "0",
+                                                "label": 250
+                                            },
+                                            {
+                                                "discount": "5",
+                                                "label": 500
+                                            },
+                                            {
+                                                "discount": "20",
+                                                "label": 750
+                                            },
+                                            {
+                                                "discount": "45",
+                                                "label": 1000
+                                            },
+                                            {
+                                                "discount": "80",
+                                                "label": 1250
+                                            },
+                                            {
+                                                "discount": "125",
+                                                "label": 2000
+                                            }
+                                        ],
+                                        "off_invoice_range": [
+                                            {
+                                                "discount": "0",
+                                                "label": 250
+                                            },
+                                            {
+                                                "discount": "8",
+                                                "label": 500
+                                            },
+                                            {
+                                                "discount": "30",
+                                                "label": 750
+                                            },
+                                            {
+                                                "discount": "68",
+                                                "label": 1000
+                                            },
+                                            {
+                                                "discount": "120",
+                                                "label": 1250
+                                            },
+                                            {
+                                                "discount": "188",
+                                                "label": 2000
+                                            }
+                                        ]
+                                    }
+                                }
+                            ],
+                            "_id": "034eb239-1925-4a49-8be0-41924e75562d",
+                            "brandsku": "F4444-AUGMENTIN",
+                            "ordered_date": "Feb 26, 23"
+                        }
+                    ]
+                },
+                "appstate": {
+                    "orderCartData": [
+                        "AUGMENTIN"
+                    ],
+                    "updateCartData": {},
+                    "cartData": {
+                        "F4444_034eb239-1925-4a49-8be0-41924e75562d": {
+                            "60000000116507": "100"
+                        }
+                    },
+                    "wholesalerAccountData": [
+                        {
+                            "account_no": "Proforma   -  F4444",
+                            "order_no": null,
+                            "sku": "F4444",
+                            "product_details": [
+                                {
+                                    "name": "Novassimo 250mg",
+                                    "price": "20",
+                                    "units": "0",
+                                    "free_goods": "",
+                                    "discount": "",
+                                    "payterm": "30",
+                                    "sku": "P_BRD_001_SKU_001",
+                                    "brand": "P_BRD_001",
+                                    "brandName": "Novo 1",
+                                    "offerType": "SEGMENT",
+                                    "additional_discount": false,
+                                    "free_goods_range": {
+                                        "limit": null,
+                                        "eligible_goods": null
+                                    },
+                                    "discounts": {
+                                        "name": "Novo 1",
+                                        "isSku": false,
+                                        "onInvoice_discount_execution": "FINANCIAL",
+                                        "offInvoice_discount_execution": null,
+                                        "additional_discount": false,
+                                        "selected": "0",
+                                        "max_limit": "500",
+                                        "sku": "P_BRD_001"
+                                    }
+                                },
+                                {
+                                    "name": "AUGMENTIN DUO 457 mg/5 ml 70 ml",
+                                    "price": "3.61",
+                                    "units": "100",
+                                    "free_goods": "",
+                                    "discount": "",
+                                    "payterm": "30",
+                                    "sku": "60000000116507",
+                                    "brand": "AUGMENTIN",
+                                    "brandName": "AUGMENTIN",
+                                    "offerType": "SEGMENT",
+                                    "additional_discount": false,
+                                    "free_goods_range": {
+                                        "limit": null,
+                                        "eligible_goods": null
+                                    },
+                                    "discounts": {
+                                        "name": "AUGMENTIN",
+                                        "isSku": false,
+                                        "onInvoice_discount_execution": "FINANCIAL",
+                                        "offInvoice_discount_execution": null,
+                                        "additional_discount": false,
+                                        "selected": "100",
+                                        "max_limit": "60",
+                                        "sku": "AUGMENTIN"
+                                    },
+                                    "quantity": "100"
+                                },
+                                {
+                                    "name": "Novassimo 450mg",
+                                    "price": "20",
+                                    "units": "0",
+                                    "free_goods": "",
+                                    "discount": "",
+                                    "payterm": "30",
+                                    "sku": "P_BRD_001_SKU_002",
+                                    "brand": "P_BRD_001",
+                                    "brandName": "Novo 1",
+                                    "offerType": "SEGMENT",
+                                    "additional_discount": false,
+                                    "free_goods_range": {
+                                        "limit": null,
+                                        "eligible_goods": null
+                                    },
+                                    "discounts": {
+                                        "name": "Novo 1",
+                                        "isSku": false,
+                                        "onInvoice_discount_execution": "FINANCIAL",
+                                        "offInvoice_discount_execution": null,
+                                        "additional_discount": false,
+                                        "selected": "0",
+                                        "max_limit": "500",
+                                        "sku": "P_BRD_001"
+                                    }
+                                },
+                                {
+                                    "name": "AUGMENTIN DUO 1g",
+                                    "price": "5.01",
+                                    "units": "0",
+                                    "free_goods": "",
+                                    "discount": "",
+                                    "payterm": "30",
+                                    "sku": "5168640351",
+                                    "brand": "AUGMENTIN",
+                                    "brandName": "AUGMENTIN",
+                                    "offerType": "SEGMENT",
+                                    "additional_discount": false,
+                                    "free_goods_range": {
+                                        "limit": null,
+                                        "eligible_goods": null
+                                    },
+                                    "discounts": {
+                                        "name": "AUGMENTIN",
+                                        "isSku": false,
+                                        "onInvoice_discount_execution": "FINANCIAL",
+                                        "offInvoice_discount_execution": null,
+                                        "additional_discount": false,
+                                        "selected": "0",
+                                        "max_limit": "100",
+                                        "sku": "AUGMENTIN"
+                                    }
+                                },
+                                {
+                                    "name": "Novassimo 5000mg",
+                                    "price": "20",
+                                    "units": "0",
+                                    "free_goods": "",
+                                    "discount": "",
+                                    "payterm": "30",
+                                    "sku": "P_BRD_001_SKU_003",
+                                    "brand": "P_BRD_001",
+                                    "brandName": "Novo 1",
+                                    "offerType": "SEGMENT",
+                                    "additional_discount": false,
+                                    "free_goods_range": {
+                                        "limit": null,
+                                        "eligible_goods": null
+                                    },
+                                    "discounts": {
+                                        "name": "Novo 1",
+                                        "isSku": false,
+                                        "onInvoice_discount_execution": "FINANCIAL",
+                                        "offInvoice_discount_execution": null,
+                                        "additional_discount": false,
+                                        "selected": "0",
+                                        "max_limit": "500",
+                                        "sku": "P_BRD_001"
+                                    }
+                                },
+                                {
+                                    "name": "AUGMENTIN ES",
+                                    "price": "10.59",
+                                    "units": "0",
+                                    "free_goods": "",
+                                    "discount": "",
+                                    "payterm": "30",
+                                    "sku": "5168640341",
+                                    "brand": "AUGMENTIN",
+                                    "brandName": "AUGMENTIN",
+                                    "offerType": "SEGMENT",
+                                    "additional_discount": false,
+                                    "free_goods_range": {
+                                        "limit": null,
+                                        "eligible_goods": null
+                                    },
+                                    "discounts": {
+                                        "name": "AUGMENTIN",
+                                        "isSku": false,
+                                        "onInvoice_discount_execution": "FINANCIAL",
+                                        "offInvoice_discount_execution": null,
+                                        "additional_discount": false,
+                                        "selected": "0",
+                                        "max_limit": "100",
+                                        "sku": "AUGMENTIN"
+                                    }
+                                },
+                                {
+                                    "name": "sku 1 marca 2 fora da fatura",
+                                    "price": "40",
+                                    "units": "0",
+                                    "free_goods": "",
+                                    "discount": "",
+                                    "payterm": "30",
+                                    "sku": "P_BRD_002_SKU_001",
+                                    "brand": "P_BRD_002",
+                                    "brandName": "Marca 2 fora da fatura",
+                                    "offerType": "SEGMENT",
+                                    "additional_discount": false,
+                                    "free_goods_range": {
+                                        "limit": null,
+                                        "eligible_goods": null
+                                    },
+                                    "discounts": {
+                                        "name": "Marca 2 fora da fatura",
+                                        "isSku": false,
+                                        "onInvoice_discount_execution": null,
+                                        "offInvoice_discount_execution": "FINANCIAL",
+                                        "additional_discount": false,
+                                        "selected": "0",
+                                        "max_limit": "200",
+                                        "sku": "P_BRD_002"
+                                    }
+                                },
+                                {
+                                    "name": "sku 2 marca 2 fora da fatura",
+                                    "price": "40",
+                                    "units": "0",
+                                    "free_goods": "",
+                                    "discount": "",
+                                    "payterm": "30",
+                                    "sku": "P_BRD_002_SKU_002",
+                                    "brand": "P_BRD_002",
+                                    "brandName": "Marca 2 fora da fatura",
+                                    "offerType": "SEGMENT",
+                                    "additional_discount": false,
+                                    "free_goods_range": {
+                                        "limit": null,
+                                        "eligible_goods": null
+                                    },
+                                    "discounts": {
+                                        "name": "Marca 2 fora da fatura",
+                                        "isSku": false,
+                                        "onInvoice_discount_execution": null,
+                                        "offInvoice_discount_execution": "FINANCIAL",
+                                        "additional_discount": false,
+                                        "selected": "0",
+                                        "max_limit": "200",
+                                        "sku": "P_BRD_002"
+                                    }
+                                },
+                                {
+                                    "name": "sku 1 marca 3 ambos",
+                                    "price": "40",
+                                    "units": "0",
+                                    "free_goods": "",
+                                    "discount": "",
+                                    "payterm": "30",
+                                    "sku": "P_BRD_003_SKU_001",
+                                    "brand": "P_BRD_003",
+                                    "brandName": "Marca 3 ambos",
+                                    "offerType": "SEGMENT",
+                                    "additional_discount": false,
+                                    "free_goods_range": {
+                                        "limit": null,
+                                        "eligible_goods": null
+                                    },
+                                    "discounts": {
+                                        "name": "Marca 3 ambos",
+                                        "isSku": false,
+                                        "onInvoice_discount_execution": "FINANCIAL",
+                                        "offInvoice_discount_execution": "FINANCIAL",
+                                        "additional_discount": false,
+                                        "selected": "0",
+                                        "max_limit": "350",
+                                        "sku": "P_BRD_003"
+                                    }
+                                },
+                                {
+                                    "name": "AVODART c?psulas moles 0.5mg x 60",
+                                    "price": "21.84",
+                                    "units": "0",
+                                    "free_goods": "",
+                                    "discount": "",
+                                    "payterm": "30",
+                                    "sku": "283062",
+                                    "brand": "AVODART",
+                                    "brandName": "AVODART",
+                                    "offerType": "SEGMENT",
+                                    "additional_discount": false,
+                                    "free_goods_range": {
+                                        "limit": null,
+                                        "eligible_goods": null
+                                    },
+                                    "discounts": {
+                                        "name": "AVODART",
+                                        "isSku": true,
+                                        "onInvoice_discount_execution": "FINANCIAL",
+                                        "offInvoice_discount_execution": null,
+                                        "additional_discount": false,
+                                        "selected": "0",
+                                        "max_limit": "25",
+                                        "sku": "AVODART",
+                                        "on_invoice_range": [
+                                            {
+                                                "discount": "0.0",
+                                                "label": 2
+                                            },
+                                            {
+                                                "discount": "14.0",
+                                                "label": 3
+                                            },
+                                            {
+                                                "discount": "20.0",
+                                                "label": 4
+                                            },
+                                            {
+                                                "discount": "29.0",
+                                                "label": 5
+                                            },
+                                            {
+                                                "discount": "30.0",
+                                                "label": 6
+                                            },
+                                            {
+                                                "discount": "31.0",
+                                                "label": 25
+                                            }
+                                        ]
+                                    }
+                                },
+                                {
+                                    "name": "sku 2 marca 3 ambos",
+                                    "price": "40",
+                                    "units": "0",
+                                    "free_goods": "",
+                                    "discount": "",
+                                    "payterm": "30",
+                                    "sku": "P_BRD_003_SKU_002",
+                                    "brand": "P_BRD_003",
+                                    "brandName": "Marca 3 ambos",
+                                    "offerType": "SEGMENT",
+                                    "additional_discount": false,
+                                    "free_goods_range": {
+                                        "limit": null,
+                                        "eligible_goods": null
+                                    },
+                                    "discounts": {
+                                        "name": "Marca 3 ambos",
+                                        "isSku": false,
+                                        "onInvoice_discount_execution": "FINANCIAL",
+                                        "offInvoice_discount_execution": "FINANCIAL",
+                                        "additional_discount": false,
+                                        "selected": "0",
+                                        "max_limit": "350",
+                                        "sku": "P_BRD_003"
+                                    }
+                                },
+                                {
+                                    "name": "sku 3 marca 3 ambos",
+                                    "price": "40",
+                                    "units": "0",
+                                    "free_goods": "",
+                                    "discount": "",
+                                    "payterm": "30",
+                                    "sku": "P_BRD_003_SKU_003",
+                                    "brand": "P_BRD_003",
+                                    "brandName": "Marca 3 ambos",
+                                    "offerType": "SEGMENT",
+                                    "additional_discount": false,
+                                    "free_goods_range": {
+                                        "limit": null,
+                                        "eligible_goods": null
+                                    },
+                                    "discounts": {
+                                        "name": "Marca 3 ambos",
+                                        "isSku": false,
+                                        "onInvoice_discount_execution": "FINANCIAL",
+                                        "offInvoice_discount_execution": "FINANCIAL",
+                                        "additional_discount": false,
+                                        "selected": "0",
+                                        "max_limit": "350",
+                                        "sku": "P_BRD_003"
+                                    }
+                                },
+                                {
+                                    "name": "marca 1 sku 1 na fatura financeira",
+                                    "price": "40",
+                                    "units": "0",
+                                    "free_goods": "",
+                                    "discount": "",
+                                    "payterm": "30",
+                                    "sku": "P_BRD_004_SKU_001",
+                                    "brand": "P_BRD_004",
+                                    "brandName": "SKU MARCA 1",
+                                    "offerType": "SEGMENT",
+                                    "additional_discount": false,
+                                    "free_goods_range": {
+                                        "limit": null,
+                                        "eligible_goods": null
+                                    },
+                                    "discounts": {
+                                        "name": "SKU MARCA 1",
+                                        "isSku": true,
+                                        "onInvoice_discount_execution": "FINANCIAL",
+                                        "offInvoice_discount_execution": null,
+                                        "additional_discount": false,
+                                        "selected": "0",
+                                        "max_limit": "100",
+                                        "sku": "P_BRD_004",
+                                        "on_invoice_range": [
+                                            {
+                                                "discount": "0.0",
+                                                "label": 10
+                                            },
+                                            {
+                                                "discount": "5.0",
+                                                "label": 20
+                                            },
+                                            {
+                                                "discount": "6.0",
+                                                "label": 30
+                                            },
+                                            {
+                                                "discount": "7.0",
+                                                "label": 40
+                                            },
+                                            {
+                                                "discount": "8.0",
+                                                "label": 50
+                                            },
+                                            {
+                                                "discount": "9.0",
+                                                "label": 100
+                                            }
+                                        ]
+                                    }
+                                },
+                                {
+                                    "name": "marca 1 sku 2 na fatura financeira",
+                                    "price": "40",
+                                    "units": "0",
+                                    "free_goods": "",
+                                    "discount": "",
+                                    "payterm": "30",
+                                    "sku": "P_BRD_004_SKU_002",
+                                    "brand": "P_BRD_004",
+                                    "brandName": "SKU MARCA 1",
+                                    "offerType": "SEGMENT",
+                                    "additional_discount": false,
+                                    "free_goods_range": {
+                                        "limit": null,
+                                        "eligible_goods": null
+                                    },
+                                    "discounts": {
+                                        "name": "SKU MARCA 1",
+                                        "isSku": true,
+                                        "onInvoice_discount_execution": "FINANCIAL",
+                                        "offInvoice_discount_execution": null,
+                                        "additional_discount": false,
+                                        "selected": "0",
+                                        "max_limit": "150",
+                                        "sku": "P_BRD_004",
+                                        "on_invoice_range": [
+                                            {
+                                                "discount": "0.0",
+                                                "label": 20
+                                            },
+                                            {
+                                                "discount": "5.0",
+                                                "label": 40
+                                            },
+                                            {
+                                                "discount": "6.0",
+                                                "label": 60
+                                            },
+                                            {
+                                                "discount": "7.0",
+                                                "label": 80
+                                            },
+                                            {
+                                                "discount": "8.0",
+                                                "label": 100
+                                            },
+                                            {
+                                                "discount": "9.0",
+                                                "label": 150
+                                            }
+                                        ]
+                                    }
+                                },
+                                {
+                                    "name": "marca 2 sku 1 desconto na fatura financeira",
+                                    "price": "40",
+                                    "units": "0",
+                                    "free_goods": "",
+                                    "discount": "",
+                                    "payterm": "30",
+                                    "sku": "P_BRD_005_SKU_001",
+                                    "brand": "P_BRD_005",
+                                    "brandName": "SKU MARCA 2",
+                                    "offerType": "SEGMENT",
+                                    "additional_discount": false,
+                                    "free_goods_range": {
+                                        "limit": null,
+                                        "eligible_goods": null
+                                    },
+                                    "discounts": {
+                                        "name": "SKU MARCA 2",
+                                        "isSku": true,
+                                        "onInvoice_discount_execution": null,
+                                        "offInvoice_discount_execution": "FINANCIAL",
+                                        "additional_discount": false,
+                                        "selected": "0",
+                                        "max_limit": "350",
+                                        "sku": "P_BRD_005",
+                                        "off_invoice_range": [
+                                            {
+                                                "discount": "5.0",
+                                                "label": 100
+                                            },
+                                            {
+                                                "discount": "6.0",
+                                                "label": 150
+                                            },
+                                            {
+                                                "discount": "7.0",
+                                                "label": 200
+                                            },
+                                            {
+                                                "discount": "8.0",
+                                                "label": 250
+                                            },
+                                            {
+                                                "discount": "9.0",
+                                                "label": 300
+                                            },
+                                            {
+                                                "discount": "10.0",
+                                                "label": 350
+                                            }
+                                        ]
+                                    }
+                                },
+                                {
+                                    "name": "marca 2 sku 2 desconto na fatura financeira",
+                                    "price": "40",
+                                    "units": "0",
+                                    "free_goods": "",
+                                    "discount": "",
+                                    "payterm": "30",
+                                    "sku": "P_BRD_005_SKU_002",
+                                    "brand": "P_BRD_005",
+                                    "brandName": "SKU MARCA 2",
+                                    "offerType": "SEGMENT",
+                                    "additional_discount": false,
+                                    "free_goods_range": {
+                                        "limit": null,
+                                        "eligible_goods": null
+                                    },
+                                    "discounts": {
+                                        "name": "SKU MARCA 2",
+                                        "isSku": true,
+                                        "onInvoice_discount_execution": null,
+                                        "offInvoice_discount_execution": "FINANCIAL",
+                                        "additional_discount": false,
+                                        "selected": "0",
+                                        "max_limit": "350",
+                                        "sku": "P_BRD_005",
+                                        "off_invoice_range": [
+                                            {
+                                                "discount": "5.0",
+                                                "label": 100
+                                            },
+                                            {
+                                                "discount": "6.0",
+                                                "label": 150
+                                            },
+                                            {
+                                                "discount": "7.0",
+                                                "label": 200
+                                            },
+                                            {
+                                                "discount": "8.0",
+                                                "label": 250
+                                            },
+                                            {
+                                                "discount": "9.0",
+                                                "label": 300
+                                            },
+                                            {
+                                                "discount": "10.0",
+                                                "label": 350
+                                            }
+                                        ]
+                                    }
+                                },
+                                {
+                                    "name": "marca 3 sku 1 ambos financeiros",
+                                    "price": "10",
+                                    "units": "0",
+                                    "free_goods": "",
+                                    "discount": "",
+                                    "payterm": "30",
+                                    "sku": "P_BRD_006_SKU_001",
+                                    "brand": "P_BRD_006",
+                                    "brandName": "SKU MARCA 3",
+                                    "offerType": "SEGMENT",
+                                    "additional_discount": false,
+                                    "free_goods_range": {
+                                        "limit": null,
+                                        "eligible_goods": null
+                                    },
+                                    "discounts": {
+                                        "name": "SKU MARCA 3",
+                                        "isSku": true,
+                                        "onInvoice_discount_execution": "FINANCIAL",
+                                        "offInvoice_discount_execution": "FINANCIAL",
+                                        "additional_discount": false,
+                                        "selected": "0",
+                                        "max_limit": "2000",
+                                        "sku": "P_BRD_006",
+                                        "on_invoice_range": [
+                                            {
+                                                "discount": "0.0",
+                                                "label": 250
+                                            },
+                                            {
+                                                "discount": "2.0",
+                                                "label": 500
+                                            },
+                                            {
+                                                "discount": "4.0",
+                                                "label": 750
+                                            },
+                                            {
+                                                "discount": "6.0",
+                                                "label": 1000
+                                            },
+                                            {
+                                                "discount": "8.0",
+                                                "label": 1250
+                                            },
+                                            {
+                                                "discount": "10.0",
+                                                "label": 2000
+                                            }
+                                        ],
+                                        "off_invoice_range": [
+                                            {
+                                                "discount": "0.0",
+                                                "label": 250
+                                            },
+                                            {
+                                                "discount": "3.0",
+                                                "label": 500
+                                            },
+                                            {
+                                                "discount": "6.0",
+                                                "label": 750
+                                            },
+                                            {
+                                                "discount": "9.0",
+                                                "label": 1000
+                                            },
+                                            {
+                                                "discount": "12.0",
+                                                "label": 1250
+                                            },
+                                            {
+                                                "discount": "15.0",
+                                                "label": 2000
+                                            }
+                                        ]
+                                    }
+                                },
+                                {
+                                    "name": "marca 4 sku 1 na fatura mercadorias gratuitas",
+                                    "price": "40",
+                                    "units": "0",
+                                    "free_goods": "",
+                                    "discount": "",
+                                    "payterm": "30",
+                                    "sku": "P_BRD_007_SKU_001",
+                                    "brand": "P_BRD_007",
+                                    "brandName": "SKU MARCA 4",
+                                    "offerType": "SEGMENT",
+                                    "additional_discount": false,
+                                    "free_goods_range": {
+                                        "limit": null,
+                                        "eligible_goods": null
+                                    },
+                                    "discounts": {
+                                        "name": "SKU MARCA 4",
+                                        "isSku": true,
+                                        "onInvoice_discount_execution": "FREE_GOODS",
+                                        "offInvoice_discount_execution": null,
+                                        "additional_discount": false,
+                                        "selected": "0",
+                                        "max_limit": "100",
+                                        "sku": "P_BRD_007",
+                                        "on_invoice_range": [
+                                            {
+                                                "discount": "0",
+                                                "label": 10
+                                            },
+                                            {
+                                                "discount": "1",
+                                                "label": 20
+                                            },
+                                            {
+                                                "discount": "1",
+                                                "label": 30
+                                            },
+                                            {
+                                                "discount": "2",
+                                                "label": 40
+                                            },
+                                            {
+                                                "discount": "3",
+                                                "label": 50
+                                            },
+                                            {
+                                                "discount": "5",
+                                                "label": 100
+                                            }
+                                        ]
+                                    }
+                                },
+                                {
+                                    "name": "marca 4 sku 2 na fatura mercadorias gratuitas",
+                                    "price": "40",
+                                    "units": "0",
+                                    "free_goods": "",
+                                    "discount": "",
+                                    "payterm": "30",
+                                    "sku": "P_BRD_007_SKU_002",
+                                    "brand": "P_BRD_007",
+                                    "brandName": "SKU MARCA 4",
+                                    "offerType": "SEGMENT",
+                                    "additional_discount": false,
+                                    "free_goods_range": {
+                                        "limit": null,
+                                        "eligible_goods": null
+                                    },
+                                    "discounts": {
+                                        "name": "SKU MARCA 4",
+                                        "isSku": true,
+                                        "onInvoice_discount_execution": "FREE_GOODS",
+                                        "offInvoice_discount_execution": null,
+                                        "additional_discount": false,
+                                        "selected": "0",
+                                        "max_limit": "150",
+                                        "sku": "P_BRD_007",
+                                        "on_invoice_range": [
+                                            {
+                                                "discount": "0",
+                                                "label": 20
+                                            },
+                                            {
+                                                "discount": "1",
+                                                "label": 40
+                                            },
+                                            {
+                                                "discount": "2",
+                                                "label": 60
+                                            },
+                                            {
+                                                "discount": "4",
+                                                "label": 80
+                                            },
+                                            {
+                                                "discount": "6",
+                                                "label": 100
+                                            },
+                                            {
+                                                "discount": "9",
+                                                "label": 150
+                                            }
+                                        ]
+                                    }
+                                },
+                                {
+                                    "name": "marca 5 sku 1 desconto na fatura mercadorias gra?tis",
+                                    "price": "40",
+                                    "units": "0",
+                                    "free_goods": "",
+                                    "discount": "",
+                                    "payterm": "30",
+                                    "sku": "P_BRD_008_SKU_001",
+                                    "brand": "P_BRD_008",
+                                    "brandName": "SKU MARCA 5",
+                                    "offerType": "SEGMENT",
+                                    "additional_discount": false,
+                                    "free_goods_range": {
+                                        "limit": null,
+                                        "eligible_goods": null
+                                    },
+                                    "discounts": {
+                                        "name": "SKU MARCA 5",
+                                        "isSku": true,
+                                        "onInvoice_discount_execution": null,
+                                        "offInvoice_discount_execution": "FREE_GOODS",
+                                        "additional_discount": false,
+                                        "selected": "0",
+                                        "max_limit": "350",
+                                        "sku": "P_BRD_008",
+                                        "off_invoice_range": [
+                                            {
+                                                "discount": "0",
+                                                "label": 100
+                                            },
+                                            {
+                                                "discount": "6",
+                                                "label": 150
+                                            },
+                                            {
+                                                "discount": "11",
+                                                "label": 200
+                                            },
+                                            {
+                                                "discount": "16",
+                                                "label": 250
+                                            },
+                                            {
+                                                "discount": "23",
+                                                "label": 300
+                                            },
+                                            {
+                                                "discount": "30",
+                                                "label": 350
+                                            }
+                                        ]
+                                    }
+                                },
+                                {
+                                    "name": "marca 5 sku 2 desconto na fatura mercadorias gra?tis",
+                                    "price": "40",
+                                    "units": "0",
+                                    "free_goods": "",
+                                    "discount": "",
+                                    "payterm": "30",
+                                    "sku": "P_BRD_008_SKU_002",
+                                    "brand": "P_BRD_008",
+                                    "brandName": "SKU MARCA 5",
+                                    "offerType": "SEGMENT",
+                                    "additional_discount": false,
+                                    "free_goods_range": {
+                                        "limit": null,
+                                        "eligible_goods": null
+                                    },
+                                    "discounts": {
+                                        "name": "SKU MARCA 5",
+                                        "isSku": true,
+                                        "onInvoice_discount_execution": null,
+                                        "offInvoice_discount_execution": "FREE_GOODS",
+                                        "additional_discount": false,
+                                        "selected": "0",
+                                        "max_limit": "350",
+                                        "sku": "P_BRD_008",
+                                        "off_invoice_range": [
+                                            {
+                                                "discount": "0",
+                                                "label": 100
+                                            },
+                                            {
+                                                "discount": "6",
+                                                "label": 150
+                                            },
+                                            {
+                                                "discount": "11",
+                                                "label": 200
+                                            },
+                                            {
+                                                "discount": "16",
+                                                "label": 250
+                                            },
+                                            {
+                                                "discount": "23",
+                                                "label": 300
+                                            },
+                                            {
+                                                "discount": "30",
+                                                "label": 350
+                                            }
+                                        ]
+                                    }
+                                },
+                                {
+                                    "name": "marca 6 sku 1 ambos produtos gratuitos",
+                                    "price": "10",
+                                    "units": "0",
+                                    "free_goods": "",
+                                    "discount": "",
+                                    "payterm": "30",
+                                    "sku": "P_BRD_009_SKU_001",
+                                    "brand": "P_BRD_009",
+                                    "brandName": "SKU MARCA 6",
+                                    "offerType": "SEGMENT",
+                                    "additional_discount": false,
+                                    "free_goods_range": {
+                                        "limit": null,
+                                        "eligible_goods": null
+                                    },
+                                    "discounts": {
+                                        "name": "SKU MARCA 6",
+                                        "isSku": true,
+                                        "onInvoice_discount_execution": "FREE_GOODS",
+                                        "offInvoice_discount_execution": "FREE_GOODS",
+                                        "additional_discount": false,
+                                        "selected": "0",
+                                        "max_limit": "2000",
+                                        "sku": "P_BRD_009",
+                                        "on_invoice_range": [
+                                            {
+                                                "discount": "0",
+                                                "label": 250
+                                            },
+                                            {
+                                                "discount": "5",
+                                                "label": 500
+                                            },
+                                            {
+                                                "discount": "20",
+                                                "label": 750
+                                            },
+                                            {
+                                                "discount": "45",
+                                                "label": 1000
+                                            },
+                                            {
+                                                "discount": "80",
+                                                "label": 1250
+                                            },
+                                            {
+                                                "discount": "125",
+                                                "label": 2000
+                                            }
+                                        ],
+                                        "off_invoice_range": [
+                                            {
+                                                "discount": "0",
+                                                "label": 250
+                                            },
+                                            {
+                                                "discount": "8",
+                                                "label": 500
+                                            },
+                                            {
+                                                "discount": "30",
+                                                "label": 750
+                                            },
+                                            {
+                                                "discount": "68",
+                                                "label": 1000
+                                            },
+                                            {
+                                                "discount": "120",
+                                                "label": 1250
+                                            },
+                                            {
+                                                "discount": "188",
+                                                "label": 2000
+                                            }
+                                        ]
+                                    }
+                                },
+                                {
+                                    "name": "marca 7 sku 1 ambos produtos gratuitos financeiros",
+                                    "price": "10",
+                                    "units": "0",
+                                    "free_goods": "",
+                                    "discount": "",
+                                    "payterm": "30",
+                                    "sku": "P_BRD_010_SKU_001",
+                                    "brand": "P_BRD_010",
+                                    "brandName": "SKU MARCA 7",
+                                    "offerType": "SEGMENT",
+                                    "additional_discount": false,
+                                    "free_goods_range": {
+                                        "limit": null,
+                                        "eligible_goods": null
+                                    },
+                                    "discounts": {
+                                        "name": "SKU MARCA 7",
+                                        "isSku": true,
+                                        "onInvoice_discount_execution": "FINANCIAL",
+                                        "offInvoice_discount_execution": "FREE_GOODS",
+                                        "additional_discount": false,
+                                        "selected": "0",
+                                        "max_limit": "2000",
+                                        "sku": "P_BRD_010",
+                                        "on_invoice_range": [
+                                            {
+                                                "discount": "0",
+                                                "label": 250
+                                            },
+                                            {
+                                                "discount": "5",
+                                                "label": 500
+                                            },
+                                            {
+                                                "discount": "20",
+                                                "label": 750
+                                            },
+                                            {
+                                                "discount": "45",
+                                                "label": 1000
+                                            },
+                                            {
+                                                "discount": "80",
+                                                "label": 1250
+                                            },
+                                            {
+                                                "discount": "125",
+                                                "label": 2000
+                                            }
+                                        ],
+                                        "off_invoice_range": [
+                                            {
+                                                "discount": "0",
+                                                "label": 250
+                                            },
+                                            {
+                                                "discount": "8",
+                                                "label": 500
+                                            },
+                                            {
+                                                "discount": "30",
+                                                "label": 750
+                                            },
+                                            {
+                                                "discount": "68",
+                                                "label": 1000
+                                            },
+                                            {
+                                                "discount": "120",
+                                                "label": 1250
+                                            },
+                                            {
+                                                "discount": "188",
+                                                "label": 2000
+                                            }
+                                        ]
+                                    }
+                                },
+                                {
+                                    "name": "marca 7 sku 2 ambos produtos gratuitos financeiros",
+                                    "price": "10",
+                                    "units": "0",
+                                    "free_goods": "",
+                                    "discount": "",
+                                    "payterm": "30",
+                                    "sku": "P_BRD_010_SKU_002",
+                                    "brand": "P_BRD_010",
+                                    "brandName": "SKU MARCA 7",
+                                    "offerType": "SEGMENT",
+                                    "additional_discount": false,
+                                    "free_goods_range": {
+                                        "limit": null,
+                                        "eligible_goods": null
+                                    },
+                                    "discounts": {
+                                        "name": "SKU MARCA 7",
+                                        "isSku": true,
+                                        "onInvoice_discount_execution": "FINANCIAL",
+                                        "offInvoice_discount_execution": "FREE_GOODS",
+                                        "additional_discount": false,
+                                        "selected": "0",
+                                        "max_limit": "2000",
+                                        "sku": "P_BRD_010",
+                                        "on_invoice_range": [
+                                            {
+                                                "discount": "0",
+                                                "label": 250
+                                            },
+                                            {
+                                                "discount": "5",
+                                                "label": 500
+                                            },
+                                            {
+                                                "discount": "20",
+                                                "label": 750
+                                            },
+                                            {
+                                                "discount": "45",
+                                                "label": 1000
+                                            },
+                                            {
+                                                "discount": "80",
+                                                "label": 1250
+                                            },
+                                            {
+                                                "discount": "125",
+                                                "label": 2000
+                                            }
+                                        ],
+                                        "off_invoice_range": [
+                                            {
+                                                "discount": "0",
+                                                "label": 250
+                                            },
+                                            {
+                                                "discount": "8",
+                                                "label": 500
+                                            },
+                                            {
+                                                "discount": "30",
+                                                "label": 750
+                                            },
+                                            {
+                                                "discount": "68",
+                                                "label": 1000
+                                            },
+                                            {
+                                                "discount": "120",
+                                                "label": 1250
+                                            },
+                                            {
+                                                "discount": "188",
+                                                "label": 2000
+                                            }
+                                        ]
+                                    }
+                                }
+                            ],
+                            "_id": "034eb239-1925-4a49-8be0-41924e75562d",
+                            "brandsku": "F4444-AUGMENTIN",
+                            "ordered_date": "Feb 26, 23"
+                        }
+                    ],
+                    "discountData": {},
+                    "brandArr": {
+                        "AUGMENTIN": [
+                            "F4444"
+                        ]
+                    }
+                }
+            });
+            break;
         default:
             break;
     }

@@ -1,4 +1,5 @@
 function loadConfetti() {
+    if(!isConfetiEnabled) return;
     document.getElementsByClassName("confetti") && document.getElementsByClassName("confetti").length ? document.getElementsByClassName("confetti")[0].style.display = "block" : "";
     document.getElementsByClassName("confetti") && document.getElementsByClassName("confetti").length ? document.getElementsByClassName("confetti")[1].style.display = "block" : "";
     document.getElementsByClassName("reward_snackbar") && document.getElementsByClassName("confetti").length ? document.getElementsByClassName("reward_snackbar")[0].classList.add("active") : "";
@@ -209,7 +210,7 @@ function getProductsProgress(item, detailed, hideAdd, basicProgress, colorscheme
                         <img src="/gskPortugalPhase2/assets/images/svg/plus.svg" class="icon_add"/>
                     </div>-->
                     <div class="main reset rounded_btn">
-                        <div class="inner">
+                        <div class="inner hint--left hint--rounded hint--bounce" aria-label="Edit">
                             <img src="/gskPortugalPhase2/assets/images/svg/edit.svg" />
                         </div>
                     </div>

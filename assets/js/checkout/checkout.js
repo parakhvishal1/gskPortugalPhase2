@@ -8,7 +8,7 @@ function loadOrderCart(data) {
         <div class="order_details_container checkoutpage">
             <div class="menu_header heading_block">
                 <div class="label">${locale["labels"]["orderDetails"]}</div>
-                <div class="icon goToBrandLevel cursor"  data-tooltip="Add More" data-tooltip-pos="right"><img src="/gskPortugalPhase2/assets/images/svg/plus.svg" /></div>
+                <div class="icon goToBrandLevel cursor hint--left hint--rounded hint--bounce" aria-label="Add more"><img src="/gskPortugalPhase2/assets/images/svg/plus.svg" /></div>
             </div>
             ${getAccordianAccounts(data["new_orders"]["orders"])}
             <div>
@@ -150,7 +150,7 @@ function getAccordianAccounts(data, rebates) {
     const getRebatesSwitchOption = (rebates) => {
         if(rebates) {
             return `
-                <div class="edit switchWholesalerAccount" style="height: auto; width: 16px; margin-right: 10px;" skudata=${data["sku"]}>
+                <div class="edit switchWholesalerAccount hint--right hint--rounded hint--bounce" aria-label="Swap" style="height: auto; width: 16px; margin-right: 10px;" skudata=${data["sku"]}>
                     <img src="/gskPortugalPhase2/assets/images/svg/edit.svg" />
                 </div>
             `
@@ -230,7 +230,7 @@ function getAccordianAccountsData(data, rebates) {
                                     ${item["name"]}
                                 </div>
                                 <div class="checkout_edit_icon">
-                                    <div class="arrow edit quantityEditBackToSelection" brand="${item['brand']}">
+                                    <div class="arrow edit quantityEditBackToSelection hint--left hint--rounded hint--bounce" aria-label="Select" brand="${item['brand']}">
                                         ${rebates ? "" : '<img src="/gskPortugalPhase2/assets/images/svg/edit.svg" key=${index} />'}
                                     </div>
                                 </div>
@@ -243,7 +243,7 @@ function getAccordianAccountsData(data, rebates) {
                                     ${item["payterm"] ? `<div class="item_data">${item["payterm"] && item["payterm"] !== "null" ? (item["payterm"] + 'D') : "-"}</div>` : ''}
                                 </div>
                                 <div class="checkout_edit_icon">
-                                    <div class="arrow edit quantityEditBackToSelection" brand="${item['brand']}">
+                                    <div class="arrow edit quantityEditBackToSelection hint--left hint--rounded hint--bounce" aria-label="Select" brand="${item['brand']}">
                                         ${rebates ? "" : '<img src="/gskPortugalPhase2/assets/images/svg/edit.svg" key=${index} />'}
                                     </div>
                                 </div>

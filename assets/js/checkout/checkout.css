@@ -155,6 +155,8 @@
     color: #151515;
     white-space: nowrap;
     word-break: keep-all;
+    overflow: hidden;
+    text-overflow: ellipsis;
     animation: textfocus 0.8s cubic-bezier(0.55, 0.085, 0.68, 0.53) both;
 }
 

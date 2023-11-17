@@ -18,9 +18,6 @@ function loadUserWelcomeUI(data) {
                         <img src="/gskPortugalPhase2/assets/images/svg/right.svg" style="transform: rotate(180deg);" />
                         <span style="margin-left: 5px;">${locale["buttons"]["back"]}</span>
                     </div>
-                    <div class="arrow hide">
-                        <img src="/gskPortugalPhase2/assets/images/svg/edit.svg" style="height: 20px; width: 20px;"/>
-                    </div>
                 </div>
                 <div class="card_click" data=${encodeURIComponent(JSON.stringify(lastOrder))} skudata="${lastOrder['sku']}" date="${lastOrder['ordered_date']}" orderid=${lastOrder["order_no"]}>
                     <div class="title outer">
@@ -31,13 +28,12 @@ function loadUserWelcomeUI(data) {
                     </div>
                     <div class="flex">
                         <div class="order_status">
-                        <div class="info highlight">${lastOrder["account_no"]}</div>
+                            <div class="info highlight outer">${lastOrder["account_no"]}</div>
                             <div class="info"><span class="light-colored">${locale["labels"]["orderNo"]}:</span> <span class="bold">${lastOrder["order_no"]}</span></div>
                         </div>
                         <div class="order_status">
-                            <div class="info"><span class="light-colored">${locale["labels"]["orderDate"]}:</span> <span class="bold">${lastOrder["ordered_date"]}</span></div>
+                        <div class="info"><span class="light-colored">${locale["labels"]["orderNo"]}:</span> <span class="bold">${lastOrder["order_no"]}</span></div>
                             <div class="info"><span class="light-colored">${locale["labels"]["status"]}:</span> <span class="bold">${lastOrder["status"]}</span></div>
-                            <!-- <div class="info"><span class="light-colored">${locale["labels"]["statusDate"]}:</span> <span class="bold">${lastOrder["delivery_date"]}</span></div> -->
                         </div>
                         <div class="order_on_date">
                             <div class="info"><span class="light-colored">${locale["labels"]["orderedOn"]}:</span></div>
@@ -144,6 +140,9 @@ function loadUserWelcomeUI(data) {
                     $("#progress_plan_main").addClass("hide");
                     $(this).children(".title.outer").addClass("hide");
                     $(this).siblings(".title.backbtn").removeClass("hide");
+                    $(this).siblings(".title.backbtn").siblings(".card_click").children().children(".order_status:first-child").addClass("hide");
+                    $(this).siblings(".title.backbtn").siblings(".card_click").children().children(".order_status:first-child").children(".info.highlight.outer").addClass("hide");
+                    $(this).siblings(".title.backbtn").siblings(".card_click").children().children(".order_status:first-child").children(".info.highlight.outer").siblings().addClass("hide");
                     getTableBodyChildElement.empty();
                     additionalDetails && additionalDetails.map((item, index) => {
                         getTableBodyChildElement.append(`
@@ -152,10 +151,10 @@ function loadUserWelcomeUI(data) {
                                     <div class="title">
                                         <div class="name" skudata=${item["sku"]} date="${orderData["ordered_date"]}" orderid=${orderData["order_no"]}>${item["name"]}</div>
                                         ${item["internalOrderStatus"] === "OPEN" ? `
-                                            <div class="arrow edit quantityEdit">
+                                            <div class="arrow edit quantityEdit hint--left hint--rounded hint--bounce" aria-label="Edit">
                                                 <img src="/gskPortugalPhase2/assets/images/svg/edit.svg" key=${index} />
                                             </div>
-                                            <div class="arrow edit quantitySave hide">
+                                            <div class="arrow edit quantitySave hide hint--left hint--rounded hint--bounce" aria-label="Save">
                                                 <img src="/gskPortugalPhase2/assets/images/svg/save.svg" key=${index} />
                                             </div>
                                         ` : ""}
@@ -272,10 +271,10 @@ function loadUserWelcomeUI(data) {
                                 <td colspan="5">
                                     <div class="title">
                                         <div class="name" skudata=${item["sku"]} date="${orderData["ordered_date"]}" orderid=${orderData["order_no"]}>${item["name"]}</div>
-                                        <div class="arrow edit quantityEdit">
+                                        <div class="arrow edit quantityEdit hint--left hint--rounded hint--bounce" aria-label="Edit">
                                             <img src="/gskPortugalPhase2/assets/images/svg/edit.svg" key=${index} />
                                         </div>
-                                        <div class="arrow edit quantitySave hide">
+                                        <div class="arrow edit quantitySave hide hint--left hint--rounded hint--bounce" aria-label="Save">
                                             <img src="/gskPortugalPhase2/assets/images/svg/save.svg" key=${index} />
                                         </div>
                                     </div>
@@ -378,10 +377,13 @@ function loadUserWelcomeUI(data) {
             siblingElement.siblings(".card_click")
             $("#progress_plan_main").removeClass("hide");
             siblingElement.siblings(".card_click").children(".title.outer").removeClass("hide");
+            $(this).parent().siblings(".card_click").children(".title.outer").siblings(".flex").children(".order_status:first-child").removeClass("hide");
+            $(this).parent().siblings(".card_click").children(".title.outer").siblings(".flex").children(".order_status:first-child").children(".info.highlight.outer").removeClass("hide");
+            $(this).parent().siblings(".card_click").children(".title.outer").siblings(".flex").children(".order_status:first-child").children(".info.highlight.outer").siblings().removeClass("hide");
             siblingElement.siblings(".card_click").css("pointer-events", "unset");
         });
     } else {
-        $("#content_box").append(`<div class='empty_screen_msg'>${locale["labels"]["emptyOrder"]}`);
+        $("#content_box").prepend(`<div class='empty_screen_msg'>${locale["labels"]["emptyOrder"]}`);
         $("#last_order_history").append(`<div class="progress_plan" id="progress_plan_main"></div>`);
     }
 }
@@ -395,10 +397,12 @@ function loadBrandSelectionUI(data) {
         <div class="choosebrands" id="loadBrandSelectionUI">
             <div class="menu_header">
                 <div class="label">
-                    <img class="back-arrow" src="/gskPortugalPhase2/assets/images/svg/right.svg"/>
+                    <div class="hint--right hint--rounded hint--bounce" aria-label="Back">
+                        <img class="back-arrow" src="/gskPortugalPhase2/assets/images/svg/right.svg"/>
+                    </div>
                     ${locale["labels"]["chooseBrands"]}
                 </div>
-                <div class="icon view_checkout">
+                <div class="icon view_checkout hint--left hint--rounded hint--bounce" aria-label="Cart">
                     <img src="/gskPortugalPhase2/assets/images/svg/basket.svg" />
                     <div class="count_wrapper hide"></div>
                 </div>

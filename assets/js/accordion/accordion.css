@@ -223,6 +223,14 @@
     /* border-bottom: 0.5px solid #e6e6e6; */
 }
 
+.accordian.table .info_row.brandscreen .info_data.pname {
+    padding: 0 0 0 6px;
+}
+
+.accordian.table .info_row.brandscreen .info_data.pcount {
+    padding: 0 6px 0 0;
+}
+
 .accordian.table .info_row.brandscreen .info_data .counter__wrapper .counter__container {
     padding-right: 0px;
     /* border-bottom: 0.5px solid #e6e6e6; */
@@ -236,6 +244,10 @@
 .accordian.table .info_row.paddingBottom {
     height: 8px;
     border-bottom: 1px solid #E6E6E6;
+}
+
+.accordian.table tr.info_row.brandscreen.bg-grayed {
+    background: #f0efed;
 }
 
 .accordian.table .info_row.brandscreen td.skuBrand_level_progress {

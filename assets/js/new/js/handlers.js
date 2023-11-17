@@ -17,7 +17,7 @@ function showSkuLevelDetailsBrand(data, currentSku, requestType, requestSku) {
             <div class="sub_detail_wrapper">
                 <div class="sub_detail"><strong>${locale["labels"]["start"]}:</strong> ${data["start_date"]} <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span> </div>
                 <div class="sub_detail"><strong>${locale["labels"]["end"]}:</strong> ${data["last_date"]}</div>
-                <div class="sub_detail highlight">${isAdditionDiscountEligible ? locale["labels"]["additionalDiscount"] : ""}</div>
+                <div class="sub_detail highlight ${isAdditionDiscountEligible ? '' : 'hide'}">${isAdditionDiscountEligible ? locale["labels"]["additionalDiscount"] : ""}</div>
             </div>
             
             <div class="brandprogresscontainer skulevel">
@@ -584,7 +584,7 @@ function showBrandLevelDetails(data, currentSku, requestType, requestSku) {
             <div class="sub_detail_wrapper">
                 <div class="sub_detail"><strong>${locale["labels"]["start"]}:</strong> ${data["start_date"]}</div>
                 <div class="sub_detail"><strong>${locale["labels"]["end"]}:</strong> ${data["last_date"]}</div>
-                <div class="sub_detail highlight">${isAdditionDiscountEligible ? locale["labels"]["additionalDiscount"] : ""}</div>
+                <div class="sub_detail highlight ${isAdditionDiscountEligible ? '' : 'hide'}">${isAdditionDiscountEligible ? locale["labels"]["additionalDiscount"] : ""}</div>
             </div>
             <div class="brandprogresscontainer">
                 <div class="confettibgContainer">
@@ -1241,7 +1241,7 @@ function addnewOrder(data, currentSku) {
             <div class="accordion-item">
                 <div class="accordion-item-header orderdetail active">
                     <div class="flex">
-                        <div class="edit swapWholesalerAccount" style="height: auto; width: 16px; margin-right: 10px;" skudata=${data["sku"]} _id=${data["_id"]}>
+                        <div class="edit swapWholesalerAccount hint--right hint--rounded hint--bounce" aria-label="Swap" style="height: auto; width: 16px; margin-right: 10px;" skudata=${data["sku"]} _id=${data["_id"]}>
                             <img src="/gskPortugalPhase2/assets/images/svg/edit.svg" />
                         </div>
                         ${data["account_no"]}
@@ -1642,7 +1642,7 @@ function addnewOrderBrand(data, currentSku, skulevel) {
             <div class="accordion-item">
                 <div class="accordion-item-header orderdetail active">
                     <div class="flex">
-                        <div class="edit swapWholesalerAccount" style="height: auto; width: 16px; margin-right: 10px;" skudata=${data["sku"]} _id=${data["_id"]}>
+                        <div class="edit swapWholesalerAccount hint--right hint--rounded hint--bounce" aria-label="Swap" style="height: auto; width: 16px; margin-right: 10px;" skudata=${data["sku"]} _id=${data["_id"]}>
                             <img src="/gskPortugalPhase2/assets/images/svg/edit.svg" />
                         </div>
                         ${data["account_no"]}
@@ -1950,22 +1950,16 @@ function addnewOrderBrand(data, currentSku, skulevel) {
         let uuid = create_UUID();
         if(productData["brand"] === currentSku) {
             $("#new_order_body").append(`
-                <tr class="info_row">
-                    <td class="info_data" style="vertical-align: middle; padding: 0; width: calc(100% - 24px); font-size: 12px;" colspan="2">${productData["name"]}</td>
-                    <!-- <td class="info_data highlight" style="vertical-align: middle; padding: 8px 0 0 0; text-align: right;" colspan="2">
-                        ${productData["discounts"]["on_invoice_range"] ? "On Invoice" : "Off Invoice"}
-                    </td> -->
-                </tr>
-                <tr class="info_row brandscreen">
+                <tr class="info_row brandscreen bg-grayed">
                     <td class="info_data skuBrand_level_progress" id="skulevelprogress-${productData["sku"]}-${data['_id']}" colspan="4">
                         ${loadProgressCards({"brands": [productData["discounts"]]}, true, true)}
                     </td>
                 </tr>
                 <tr class="info_row brandscreen">
-                    <td class="info_data" style="vertical-align: middle; padding: 0px 0 0 0;" colspan="2">
-                        ${locale["labels"]["periodTotal"]}:   <span style="font-weight: 600;">${Number(productData["discounts"]["purchased"]) ? Number(productData["discounts"]["purchased"]) : 0}</span>
+                    <td class="info_data pname" style="vertical-align: middle;" colspan="2">
+                        ${productData["name"]}
                     </td>
-                    <td class="info_data" style="vertical-align: middle; padding: 0px 0 0 0;" colspan="2">
+                    <td class="info_data pcount" style="vertical-align: middle;" colspan="2">
                         <div class="counter__wrapper">
                             <div class="counter__container" skudata="${productData["sku"]}" parentskudata=${data["sku"]} _id=${data["_id"]}>
                                 <div class="counter__box__container sub">
