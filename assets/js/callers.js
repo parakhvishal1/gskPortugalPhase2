@@ -11,7 +11,8 @@
         GlobalVarInit();
         // CallScreen(0);
         CallScreen(1);
-        CallScreen(4);
+        // CallScreen(2);
+        CallScreen(20);
     }, 500);
 })();
 
@@ -338,6 +339,9 @@ function ToApp(eventName, data, orgData) {
             break;
         case "legal-copyright":
             addLegalCopyright(data);
+            break;
+        case "load-pharmacy-question":
+            loadPharmacyQues();
             break;
         default:
             break;

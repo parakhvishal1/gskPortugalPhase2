@@ -29,11 +29,11 @@ function loadUserWelcomeUI(data) {
                     <div class="flex">
                         <div class="order_status">
                             <div class="info highlight outer">${lastOrder["account_no"]}</div>
-                            <div class="info"><span class="light-colored">${locale["labels"]["orderNo"]}:</span> <span class="bold">${lastOrder["order_no"]}</span></div>
+                            <div class="info"><span class="light-colored">${locale["labels"]["orderNo"]}:</span> <span class="bold">${lastOrder["order_no"] || ""}</span></div>
                         </div>
                         <div class="order_status">
-                        <div class="info"><span class="light-colored">${locale["labels"]["orderNo"]}:</span> <span class="bold">${lastOrder["order_no"]}</span></div>
-                            <div class="info"><span class="light-colored">${locale["labels"]["status"]}:</span> <span class="bold">${lastOrder["status"]}</span></div>
+                        <div class="info"><span class="light-colored">${locale["labels"]["orderNo"]}:</span> <span class="bold">${lastOrder["order_no"] || ""}</span></div>
+                            <div class="info"><span class="light-colored">${locale["labels"]["status"]}:</span> <span class="bold">${lastOrder["status"] || ""}</span></div>
                         </div>
                         <div class="order_on_date">
                             <div class="info"><span class="light-colored">${locale["labels"]["orderedOn"]}:</span></div>
@@ -262,7 +262,6 @@ function loadUserWelcomeUI(data) {
                 let getTableBodyChildElement = $(childElement).children().children().children("#order_card_tablebody");
                 if (childElement.hasClass("hide")) {
                     childElement.removeClass("hide");
-                    console.log($(this));
                     $(this).removeClass("close");
                     getTableBodyChildElement.empty();
                     additionalDetails && additionalDetails.map((item, index) => {
@@ -386,6 +385,26 @@ function loadUserWelcomeUI(data) {
         $("#content_box").prepend(`<div class='empty_screen_msg'>${locale["labels"]["emptyOrder"]}`);
         $("#last_order_history").append(`<div class="progress_plan" id="progress_plan_main"></div>`);
     }
+
+    $("#download_file").click(function (e) {
+        e.stopPropagation();
+        e.stopImmediatePropagation();
+        let blob = new Blob([data["download_url"]], { type: 'text/csv;charset=utf-8' });
+        if(navigator.msSavedBlob) {
+            navigator.msSavedBlob(blob, "orderhistory.csv");
+        } else {
+            let link = document.createElement("a");
+            if(link.download !== undefined) {
+                let url = URL.createObjectURL(blob);
+                link.setAttribute("href", url);
+                link.setAttribute("download", "orderhistory.csv");
+                link.style.visibility = "hidden";
+                document.body.appendChild(link);
+                link.click();
+                document.body.removeChild(link);
+            }
+        }
+    });
 }
 
 function loadBrandSelectionUI(data) {

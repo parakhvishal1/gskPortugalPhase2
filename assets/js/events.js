@@ -16060,6 +16060,11 @@ function CallScreen(caseNum) {
                 }
             });
             break;
+        case "20": 
+            ToApp("load-pharmacy-question", {
+                "data": ""
+            });
+            break;
         default:
             break;
     }
