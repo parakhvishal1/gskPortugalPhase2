@@ -16065,6 +16065,18 @@ function CallScreen(caseNum) {
                 "data": ""
             });
             break;
+        case "22":
+            ToApp("userwelcome-screen", base1pharmacy);
+            break;
+        case "23":
+            ToApp("userwelcome-screen", base1pharmacyQ);
+            break;
+        case "24":
+            ToApp("userwelcome-screen", base4pharmacy);
+            break;
+        case "25":
+            ToApp("userwelcome-screen", base4pharmacyQ);
+            break;
         default:
             break;
     }

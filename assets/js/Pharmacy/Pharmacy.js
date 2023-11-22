@@ -31,6 +31,6 @@ function loadPharmacyQues() {
         e.stopPropagation();
         e.stopImmediatePropagation();
         $("#logout_option").empty();
-        CallScreen(4);
+        CallScreen(3);
     });
 }
