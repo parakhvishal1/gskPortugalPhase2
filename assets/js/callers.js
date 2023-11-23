@@ -339,6 +339,9 @@ function ToApp(eventName, data, orgData) {
         case "legal-copyright":
             addLegalCopyright(data);
             break;
+        case "load-pharmacy-question":
+            loadPharmacyQues();
+            break;
         default:
             break;
     }
