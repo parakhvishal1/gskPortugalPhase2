@@ -121,6 +121,91 @@ window.addEventListener('message', function (eventData) {
 
     }
 
+    if (parsedData?.event_code == 'custom-event' && parsedData?.data?.code == "welcome-screen-filled-step1") {
+        let source = parsedData.data.data.source;
+        localStorage.setItem("source", source);
+        if (source == 'Mobile') {
+            injectDynamicCssForMobileBot();
+            localStorage.setItem("screen", 'bot');
+            console.log('Event Data-->>', parsedData.data.data);
+            document.getElementById('ymIframe').contentWindow.postMessage(JSON.stringify({
+                event_code: 'welcome-screen-filled-step1',
+                data: parsedData.data.data
+            }), '*');
+            console.log("welcome-screen-filled-step1")
+            console.log('Event Data-->>', parsedData.data.data)
+            return;
+        } else {
+            console.log(source, 'Source--->')
+            console.log('Event Data-->>', parsedData.data.data);
+            document.getElementById('ymIframe').contentWindow.postMessage(JSON.stringify({
+                event_code: 'welcome-screen-filled-step1',
+                data: parsedData.data.data
+            }), '*');
+            console.log("welcome-screen-filled-step1")
+            console.log('Event Data-->>', parsedData.data.data)
+            return;
+        }
+
+    }
+
+    if (parsedData?.event_code == 'custom-event' && parsedData?.data?.code == "welcome-screen-filled-step2") {
+        let source = parsedData.data.data.source;
+        localStorage.setItem("source", source);
+        if (source == 'Mobile') {
+            injectDynamicCssForMobileBot();
+            localStorage.setItem("screen", 'bot');
+            console.log('Event Data-->>', parsedData.data.data);
+            document.getElementById('ymIframe').contentWindow.postMessage(JSON.stringify({
+                event_code: 'welcome-screen-filled-step2',
+                data: parsedData.data.data
+            }), '*');
+            console.log("welcome-screen-filled-step2")
+            console.log('Event Data-->>', parsedData.data.data)
+            return;
+        } else {
+            console.log(source, 'Source--->')
+            console.log('Event Data-->>', parsedData.data.data);
+            document.getElementById('ymIframe').contentWindow.postMessage(JSON.stringify({
+                event_code: 'welcome-screen-filled-step2',
+                data: parsedData.data.data
+            }), '*');
+            console.log("welcome-screen-filled-step2")
+            console.log('Event Data-->>', parsedData.data.data)
+            return;
+        }
+
+    }
+
+    if (parsedData?.event_code == 'custom-event' && parsedData?.data?.code == "welcome-screen-filled-step3") {
+        let source = parsedData.data.data.source;
+        localStorage.setItem("source", source);
+        if (source == 'Mobile') {
+            injectDynamicCssForMobileBot();
+            localStorage.setItem("screen", 'bot');
+            console.log('Event Data-->>', parsedData.data.data);
+            document.getElementById('ymIframe').contentWindow.postMessage(JSON.stringify({
+                event_code: 'welcome-screen-filled-step3',
+                data: parsedData.data.data
+            }), '*');
+            console.log("welcome-screen-filled-step3")
+            console.log('Event Data-->>', parsedData.data.data)
+            return;
+        } else {
+            console.log(source, 'Source--->')
+            console.log('Event Data-->>', parsedData.data.data);
+            document.getElementById('ymIframe').contentWindow.postMessage(JSON.stringify({
+                event_code: 'welcome-screen-filled-step3',
+                data: parsedData.data.data
+            }), '*');
+            console.log("welcome-screen-filled-step3")
+            console.log('Event Data-->>', parsedData.data.data)
+            return;
+        }
+
+    }
+
+
     if (parsedData?.event_code == 'custom-event' && parsedData?.data?.code == "attach") {
         document.getElementById('ymIframe').contentWindow.postMessage(JSON.stringify({
             event_code: 'attach',
