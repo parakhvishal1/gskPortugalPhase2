@@ -93,6 +93,33 @@ window.addEventListener('message', function (eventData) {
 
     console.log("parsedData", parsedData)
 
+    if (parsedData?.event_code == 'custom-event' && parsedData?.data?.code == "welcome-screen-unfilled-steps") {
+        let source = parsedData.data.data.source;
+        localStorage.setItem("source", source);
+        if (source == 'Mobile') {
+            injectDynamicCssForMobileBot();
+            localStorage.setItem("screen", 'bot');
+            console.log('Event Data-->>', parsedData.data.data);
+            document.getElementById('ymIframe').contentWindow.postMessage(JSON.stringify({
+                event_code: 'welcome-screen-unfilled-steps',
+                data: parsedData.data.data
+            }), '*');
+            console.log("welcome-screen-unfilled-steps")
+            console.log('Event Data-->>', parsedData.data.data)
+            return;
+        } else {
+            console.log(source, 'Source--->')
+            console.log('Event Data-->>', parsedData.data.data);
+            document.getElementById('ymIframe').contentWindow.postMessage(JSON.stringify({
+                event_code: 'welcome-screen-unfilled-steps',
+                data: parsedData.data.data
+            }), '*');
+            console.log("welcome-screen-unfilled-steps")
+            console.log('Event Data-->>', parsedData.data.data)
+            return;
+        }
+
+    }
 
     if (parsedData?.event_code == 'custom-event' && parsedData?.data?.code == "attach") {
         document.getElementById('ymIframe').contentWindow.postMessage(JSON.stringify({
