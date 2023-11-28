@@ -89,7 +89,7 @@ function injectDynamicCssToParent() {
 
 window.addEventListener('message', function (eventData) {
     // console.error('eventData', eventData);
-    if(eventData.origin !== '*') return;
+  //  if(eventData.origin !== '*') return;
     let parsedData = JSON.parse(eventData.data);
 
     console.log("parsedData", parsedData)
