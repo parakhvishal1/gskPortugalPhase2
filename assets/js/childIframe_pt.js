@@ -53,7 +53,7 @@ function remove_blur() {
 
 window.addEventListener('message', function (eventData) {
     console.log("eventDataTocheck---", eventData);
-    if(eventData.origin !== "https://r5.cloud.yellow.ai") return;
+  //  if(eventData.origin !== "https://r5.cloud.yellow.ai") return;
     let parsedEventData = JSON.parse(eventData.data);
 
     if (parsedEventData.event_code === "welcome-screen-unfilled-steps" && parsedEventData.data) {
