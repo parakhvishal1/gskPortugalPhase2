@@ -1,5 +1,6 @@
 function loadGeneralWelcome(data) {
     $("#content_box").empty();
+    $("#header").removeClass('tnc');
     $("#content_box").append(`
         <div class="splash_screen">
             <div class="branding">

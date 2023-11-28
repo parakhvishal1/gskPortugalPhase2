@@ -52,14 +52,14 @@ function remove_blur() {
 }
 
 window.addEventListener('message', function (eventData) {
-
+    if(eventData.origin !== 'https://app.yellowmessenger.com') return;
     let parsedEventData = JSON.parse(eventData.data);
 
     if (parsedEventData.event_code === "welcome-screen-unfilled-steps" && parsedEventData.data) {
         document.querySelector("iframe").contentWindow.postMessage(JSON.stringify({
             event_code: 'welcome-screen-unfilled-steps',                                                // added new event name
             data: parsedEventData.data
-        }), '*');
+        }), 'https://app.yellowmessenger.com');
         let eventName = parsedEventData.event_code;
         let data = parsedEventData.data;
         console.log("eventName---", eventName);
@@ -70,7 +70,7 @@ window.addEventListener('message', function (eventData) {
         document.querySelector("iframe").contentWindow.postMessage(JSON.stringify({
             event_code: 'welcome-screen-filled-step1',                                                // added new event name
             data: parsedEventData.data
-        }), '*');
+        }), 'https://app.yellowmessenger.com');
         let eventName = parsedEventData.event_code;
         let data = parsedEventData.data;
         console.log("eventName---", eventName);
@@ -80,7 +80,7 @@ window.addEventListener('message', function (eventData) {
         document.querySelector("iframe").contentWindow.postMessage(JSON.stringify({
             event_code: 'welcome-screen-filled-step2',                                                // added new event name
             data: parsedEventData.data
-        }), '*');
+        }), 'https://app.yellowmessenger.com');
         let eventName = parsedEventData.event_code;
         let data = parsedEventData.data;
         console.log("eventName---", eventName);
@@ -90,7 +90,7 @@ window.addEventListener('message', function (eventData) {
         document.querySelector("iframe").contentWindow.postMessage(JSON.stringify({
             event_code: 'welcome-screen-filled-step3',                                                // added new event name
             data: parsedEventData.data
-        }), '*');
+        }), 'https://app.yellowmessenger.com');
         let eventName = parsedEventData.event_code;
         let data = parsedEventData.data;
         console.log("eventName---", eventName);
@@ -107,7 +107,7 @@ window.addEventListener('message', function (eventData) {
         document.querySelector("iframe").contentWindow.postMessage(JSON.stringify({
             event_code: 'welcome-screen',                                                // added new event name
             data: parsedEventData.data
-        }), '*');
+        }), 'https://app.yellowmessenger.com');
         let eventName = parsedEventData.event_code;
         let data = parsedEventData.data;
         console.log("eventName---", eventName);
@@ -118,7 +118,7 @@ window.addEventListener('message', function (eventData) {
         document.querySelector("iframe").contentWindow.postMessage(JSON.stringify({
             event_code: 'termsui-screen',                                                // added new event name
             data: parsedEventData.data
-        }), '*');
+        }), 'https://app.yellowmessenger.com');
         let eventName = parsedEventData.event_code;
         let data = parsedEventData.data;
         console.log("eventName---", eventName);
@@ -129,7 +129,7 @@ window.addEventListener('message', function (eventData) {
         document.querySelector("iframe").contentWindow.postMessage(JSON.stringify({
             event_code: 'legal-copyright',                                                // added new event name
             data: parsedEventData.data
-        }), '*');
+        }), 'https://app.yellowmessenger.com');
         let eventName = parsedEventData.event_code;
         let data = parsedEventData.data;
         console.log("eventName---", eventName);
@@ -142,7 +142,7 @@ window.addEventListener('message', function (eventData) {
         document.querySelector("iframe").contentWindow.postMessage(JSON.stringify({
             event_code: 'userwelcome-screen',                                                // added new event name
             data: parsedEventData.data
-        }), '*');
+        }), 'https://app.yellowmessenger.com');
         let eventName = parsedEventData.event_code;
         let data = parsedEventData.data;
         console.log("eventName---", eventName);
@@ -153,7 +153,7 @@ window.addEventListener('message', function (eventData) {
         document.querySelector("iframe").contentWindow.postMessage(JSON.stringify({
             event_code: 'user-login',                                                // added new event name
             data: parsedEventData.data
-        }), '*');
+        }), 'https://app.yellowmessenger.com');
         let eventName = parsedEventData.event_code;
         let data = parsedEventData.data;
         console.log("eventName---", eventName);
@@ -164,7 +164,7 @@ window.addEventListener('message', function (eventData) {
         document.querySelector("iframe").contentWindow.postMessage(JSON.stringify({
             event_code: 'ordercart-screen',                                                // added new event name
             data: parsedEventData.data
-        }), '*');
+        }), 'https://app.yellowmessenger.com');
         let eventName = parsedEventData.event_code;
         let data = parsedEventData.data;
         console.log("eventName---", eventName);
@@ -175,7 +175,7 @@ window.addEventListener('message', function (eventData) {
         document.querySelector("iframe").contentWindow.postMessage(JSON.stringify({
             event_code: 'load-userwelcome-screen',                                                // added new event name
             data: parsedEventData.data
-        }), '*');
+        }), 'https://app.yellowmessenger.com');
         let eventName = parsedEventData.event_code;
         let data = parsedEventData.data;
         console.log("eventName---", eventName);
@@ -186,7 +186,7 @@ window.addEventListener('message', function (eventData) {
         document.querySelector("iframe").contentWindow.postMessage(JSON.stringify({
             event_code: 'show-brand-selection',                                                // added new event name
             data: parsedEventData.data
-        }), '*');
+        }), 'https://app.yellowmessenger.com');
         let eventName = parsedEventData.event_code;
         let data = parsedEventData.data;
         console.log("eventName---", eventName);
@@ -199,7 +199,7 @@ window.addEventListener('message', function (eventData) {
         document.querySelector("iframe").contentWindow.postMessage(JSON.stringify({
             event_code: 'show-brand-detailing',                                                // added new event name
             data: parsedEventData.data
-        }), '*');
+        }), 'https://app.yellowmessenger.com');
         let eventName = parsedEventData.event_code;
         let data = parsedEventData.data;
         console.log("eventName---", eventName);
@@ -210,7 +210,7 @@ window.addEventListener('message', function (eventData) {
         document.querySelector("iframe").contentWindow.postMessage(JSON.stringify({
             event_code: 'orderhistory-screen',                                                // added new event name
             data: parsedEventData.data
-        }), '*');
+        }), 'https://app.yellowmessenger.com');
         let eventName = parsedEventData.event_code;
         let data = parsedEventData.data;
         console.log("eventName---", eventName);
@@ -221,7 +221,7 @@ window.addEventListener('message', function (eventData) {
         document.querySelector("iframe").contentWindow.postMessage(JSON.stringify({
             event_code: 'confirmorderon-bot',                                                // added new event name
             data: parsedEventData.data
-        }), '*');
+        }), 'https://app.yellowmessenger.com');
         let eventName = parsedEventData.event_code;
         let data = parsedEventData.data;
         console.log("eventName---", eventName);
@@ -232,7 +232,7 @@ window.addEventListener('message', function (eventData) {
         document.querySelector("iframe").contentWindow.postMessage(JSON.stringify({
             event_code: 'bot-reloaded',                                                // added new event name
             data: parsedEventData.data
-        }), '*');
+        }), 'https://app.yellowmessenger.com');
         let eventName = parsedEventData.event_code;
         let data = parsedEventData.data;
         console.log("eventName---", eventName);
@@ -249,7 +249,7 @@ window.addEventListener('message', function (eventData) {
         parent.postMessage(JSON.stringify({
             event_code: 'logout',
             data: parsedEventData.data
-        }), '*');
+        }), 'https://app.yellowmessenger.com');
     }
 
     if (parsedEventData.event_code === "place-new-order") {
@@ -257,7 +257,7 @@ window.addEventListener('message', function (eventData) {
         parent.postMessage(JSON.stringify({
             event_code: 'place-new-order',
             data: parsedEventData.data
-        }), '*');
+        }), 'https://app.yellowmessenger.com');
     }
 
     if (parsedEventData.event_code === "view-checkout") {
@@ -265,7 +265,7 @@ window.addEventListener('message', function (eventData) {
         parent.postMessage(JSON.stringify({
             event_code: 'view-checkout',
             data: parsedEventData.data
-        }), '*');
+        }), 'https://app.yellowmessenger.com');
     }
 
     if (parsedEventData.event_code === "select-brand") {
@@ -273,7 +273,7 @@ window.addEventListener('message', function (eventData) {
         parent.postMessage(JSON.stringify({
             event_code: 'select-brand',
             data: parsedEventData.data
-        }), '*');
+        }), 'https://app.yellowmessenger.com');
     }
 
     if (parsedEventData.event_code === "ordercart-continue") {
@@ -281,7 +281,7 @@ window.addEventListener('message', function (eventData) {
         parent.postMessage(JSON.stringify({
             event_code: 'ordercart-continue',
             data: parsedEventData.data
-        }), '*');
+        }), 'https://app.yellowmessenger.com');
     }
 
     if (parsedEventData.event_code === "confirm-order") {
@@ -289,7 +289,7 @@ window.addEventListener('message', function (eventData) {
         parent.postMessage(JSON.stringify({
             event_code: 'confirm-order',
             data: parsedEventData.data
-        }), '*');
+        }), 'https://app.yellowmessenger.com');
     }
 
     if (parsedEventData.event_code === "cancel-order") {
@@ -297,7 +297,7 @@ window.addEventListener('message', function (eventData) {
         parent.postMessage(JSON.stringify({
             event_code: 'cancel-order',
             data: parsedEventData.data
-        }), '*');
+        }), 'https://app.yellowmessenger.com');
     }
 
     if (parsedEventData.event_code === "confirm-order-total-invoice") {
@@ -305,7 +305,7 @@ window.addEventListener('message', function (eventData) {
         parent.postMessage(JSON.stringify({
             event_code: 'confirm-order-total-invoice',
             data: parsedEventData.data
-        }), '*');
+        }), 'https://app.yellowmessenger.com');
     }
 
     if (parsedEventData.event_code === "cancel-order-total-invoice") {
@@ -313,7 +313,7 @@ window.addEventListener('message', function (eventData) {
         parent.postMessage(JSON.stringify({
             event_code: 'cancel-order-total-invoice',
             data: parsedEventData.data
-        }), '*');
+        }), 'https://app.yellowmessenger.com');
     }
 
     if (parsedEventData.event_code === "back-brand-select") {
@@ -321,7 +321,7 @@ window.addEventListener('message', function (eventData) {
         parent.postMessage(JSON.stringify({
             event_code: 'back-brand-select',
             data: parsedEventData.data
-        }), '*');
+        }), 'https://app.yellowmessenger.com');
     }
 
     if (parsedEventData.event_code === "ordercart-back") {
@@ -329,7 +329,7 @@ window.addEventListener('message', function (eventData) {
         parent.postMessage(JSON.stringify({
             event_code: 'ordercart-back',
             data: parsedEventData.data
-        }), '*');
+        }), 'https://app.yellowmessenger.com');
     }
 
     if (parsedEventData.event_code === "back-on-orderhistory") {
@@ -337,7 +337,7 @@ window.addEventListener('message', function (eventData) {
         parent.postMessage(JSON.stringify({
             event_code: 'back-on-orderhistory',
             data: parsedEventData.data
-        }), '*');
+        }), 'https://app.yellowmessenger.com');
     }
 
     if (parsedEventData.event_code === "checkout-add-brands") {
@@ -345,7 +345,7 @@ window.addEventListener('message', function (eventData) {
         parent.postMessage(JSON.stringify({
             event_code: 'checkout-add-brands',
             data: parsedEventData.data
-        }), '*');
+        }), 'https://app.yellowmessenger.com');
     }
 
     if (parsedEventData.event_code === "checkout-to-brand-detailing") {
@@ -353,7 +353,7 @@ window.addEventListener('message', function (eventData) {
         parent.postMessage(JSON.stringify({
             event_code: 'checkout-to-brand-detailing',
             data: parsedEventData.data
-        }), '*');
+        }), 'https://app.yellowmessenger.com');
     }
 
     if (parsedEventData.event_code === "update-order-data") {
@@ -361,7 +361,7 @@ window.addEventListener('message', function (eventData) {
         parent.postMessage(JSON.stringify({
             event_code: 'update-order-data',
             data: parsedEventData.data
-        }), '*');
+        }), 'https://app.yellowmessenger.com');
     }
 
 
@@ -370,7 +370,7 @@ window.addEventListener('message', function (eventData) {
         parent.postMessage(JSON.stringify({
             event_code: 'update-data-on-refresh',
             data: parsedEventData.data
-        }), '*');
+        }), 'https://app.yellowmessenger.com');
     }
 
     if (parsedEventData.event_code === "help") {
@@ -378,7 +378,7 @@ window.addEventListener('message', function (eventData) {
         parent.postMessage(JSON.stringify({
             event_code: 'help',
             data: parsedEventData.data
-        }), '*');
+        }), 'https://app.yellowmessenger.com');
     }
 
     if (parsedEventData.event_code === "profile-details") {
@@ -386,7 +386,7 @@ window.addEventListener('message', function (eventData) {
         parent.postMessage(JSON.stringify({
             event_code: 'profile-details',
             data: parsedEventData.data
-        }), '*');
+        }), 'https://app.yellowmessenger.com');
     }
 
     if (parsedEventData.event_code === "associated-accounts") {
@@ -394,7 +394,7 @@ window.addEventListener('message', function (eventData) {
         parent.postMessage(JSON.stringify({
             event_code: 'associated-accounts',
             data: parsedEventData.data
-        }), '*');
+        }), 'https://app.yellowmessenger.com');
     }
 
     if (parsedEventData.event_code === "notification") {
@@ -402,7 +402,7 @@ window.addEventListener('message', function (eventData) {
         parent.postMessage(JSON.stringify({
             event_code: 'notification',
             data: parsedEventData.data
-        }), '*');
+        }), 'https://app.yellowmessenger.com');
     }
 
     if (parsedEventData.event_code === "addaccount-associatedaccounts") {
@@ -410,7 +410,7 @@ window.addEventListener('message', function (eventData) {
         parent.postMessage(JSON.stringify({
             event_code: 'addaccount-associatedaccounts',
             data: parsedEventData.data
-        }), '*');
+        }), 'https://app.yellowmessenger.com');
     }
 
     if (parsedEventData.event_code === "delete") {
@@ -418,7 +418,7 @@ window.addEventListener('message', function (eventData) {
         parent.postMessage(JSON.stringify({
             event_code: 'delete',
             data: parsedEventData.data
-        }), '*');
+        }), 'https://app.yellowmessenger.com');
     }
 
     if (parsedEventData.event_code === "profile-settings") {
@@ -426,7 +426,7 @@ window.addEventListener('message', function (eventData) {
         parent.postMessage(JSON.stringify({
             event_code: 'profile-settings',
             data: parsedEventData.data
-        }), '*');
+        }), 'https://app.yellowmessenger.com');
     }
 
     if (parsedEventData.event_code === "delete-user") {
@@ -434,7 +434,7 @@ window.addEventListener('message', function (eventData) {
         parent.postMessage(JSON.stringify({
             event_code: 'delete-user',
             data: parsedEventData.data
-        }), '*');
+        }), 'https://app.yellowmessenger.com');
     }
 
     if (parsedEventData.event_code === "get-data-from-localstorage") {
@@ -442,7 +442,7 @@ window.addEventListener('message', function (eventData) {
         parent.postMessage(JSON.stringify({
             event_code: 'get-data-from-localstorage',
             data: parsedEventData.data
-        }), '*');
+        }), 'https://app.yellowmessenger.com');
     }
 
 });
