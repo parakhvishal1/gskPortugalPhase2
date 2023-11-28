@@ -28,6 +28,8 @@ function logoutApp() {
         removeHeader();
         loadProfileOptions();
         $("#logout_option").empty();
+        $("#header").removeClass('user');
+        $("#header").removeClass('tnc');
         ToBot("logout", {
             "timestamp": new Date().getTime(),
         });
