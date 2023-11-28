@@ -52,6 +52,7 @@ function remove_blur() {
 }
 
 window.addEventListener('message', function (eventData) {
+    console.log("eventName---", eventData);
     if(eventData.origin !== 'https://app.yellowmessenger.com') return;
     let parsedEventData = JSON.parse(eventData.data);
 
