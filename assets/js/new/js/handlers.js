@@ -1046,6 +1046,7 @@ function addnewOrder(data, currentSku) {
     const startDate = new Date();
     const endDate = getLocalDataForDate['last_date'];
     const minDate = `${getMonthName( new Date(startDate))} ${new Date(startDate).getDate()}, ${String(new Date(startDate).getFullYear()).substring(2)}`;
+    console.log("minDate handlers --> ", minDate);
     const maxDate = `${getMonthName( new Date(endDate))} ${new Date(endDate).getDate()}, ${String(new Date(endDate).getFullYear()).substring(2)}`;
     const filteredBrand = getLocalDataForDate["plan_progress"]["brands"].filter(brand => brand["sku"] === currentSku);
     const isDailyOffer = filteredBrand?.[0]?.["isDailyOffer"];
