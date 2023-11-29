@@ -19,7 +19,7 @@ function loadClientList(data) {
                         <span>${clientList.name}</span>
                     </div>
                     <div class="icon">
-                        <img src="/assets/images/svg/right.svg" />
+                        <img src="assets/images/svg/right.svg" />
                     </div>
                 </div>
             </li>
