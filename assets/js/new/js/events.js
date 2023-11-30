@@ -25,7 +25,7 @@ function CallScreen(caseNum) {
                 "tnc": `At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis
                 praesentium voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint
                 occaecati cupiditate non provident, similique sunt in culpa qui officia deserunt mollitia.`,
-                "bg-img": "/gskPortugalPhase2/assets/images/png/brand.png"
+                "bg-img": "assets/images/png/brand.png"
             });
             break;
         case "3":
@@ -1334,7 +1334,7 @@ function CallScreen(caseNum) {
                         "accountSelected": "All Acc Selected!!!",
                     }
                 },
-                "download_url": "https://stats.govt.nz/gskPortugalPhase2/assets/Uploads/Annual-enterprise-survey/Annual-enterprise-survey-2021-financial-year-provisional/Download-data/annual-enterprise-survey-2021-financial-year-provisional-csv.csv",
+                "download_url": "https://stats.govt.nz/assets/Uploads/Annual-enterprise-survey/Annual-enterprise-survey-2021-financial-year-provisional/Download-data/annual-enterprise-survey-2021-financial-year-provisional-csv.csv",
                 "totalcheckout": "",
                 "plan_progress": {
                     "title": "Plan Progress",
