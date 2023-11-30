@@ -15,11 +15,11 @@ function loadClientList(data) {
             <li class="item">
                 <div class="space-bw clientEdit" _id=${clientList['_id']}>
                     <div class="detail">
-                        <span class="bold">Client Code ${index + 1}:</span>
+                        <span class="bold">${index + 1}:</span>
                         <span>${clientList.name}</span>
                     </div>
                     <div class="icon">
-                        <img src="assets/images/svg/right.svg" />
+                        <img src="/gskPortugalPhase2/assets/images/svg/right.svg" />
                     </div>
                 </div>
             </li>

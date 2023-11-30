@@ -23,7 +23,7 @@ function loadPlanProgress(data, basicProgress, hideSelectedProgress, initial) {
             <div class="name highlight">${locale["labels"]["title"]}</div>
             <div class="arrow calendar">
                 <!-- <span>
-                    <img src="assets/images/svg/calendar.svg" />
+                    <img src="/gskPortugalPhase2/assets/images/svg/calendar.svg" />
                 </span> -->
                 <p style="color: #f36633;">${locale["labels"]["endDate"]}:&nbsp;&nbsp;</p> ${data["last_date"]}
             </div>
@@ -207,11 +207,11 @@ function getProductsProgress(item, detailed, hideAdd, basicProgress, colorscheme
                 <label style="font-size: 12px;">${parseInt(item["purchased"] || 0) + parseInt(item["selected"]) > parseInt(item["max_limit"]) ? parseInt(item["max_limit"]) : parseInt(item["selected"])}</label>
                 <div class="progressbar_wrapper" skudata=${`${item["sku"]}`} >
                     <!--<div class="main reset" style="cursor: pointer;">
-                        <img src="assets/images/svg/plus.svg" class="icon_add"/>
+                        <img src="/gskPortugalPhase2/assets/images/svg/plus.svg" class="icon_add"/>
                     </div>-->
                     <div class="main reset rounded_btn">
                         <div class="inner hint--left hint--rounded hint--bounce" aria-label="Edit">
-                            <img src="assets/images/svg/edit.svg" />
+                            <img src="/gskPortugalPhase2/assets/images/svg/edit.svg" />
                         </div>
                     </div>
                 </div>
