@@ -10,7 +10,8 @@
     setTimeout(() => {
         GlobalVarInit();
         // CallScreen(0);
-        // CallScreen(1);
+        CallScreen(1);
+        CallScreen(26);
         // CallScreen(2);
         //CallScreen(2);
     }, 500);

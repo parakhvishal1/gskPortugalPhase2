@@ -1331,12 +1331,14 @@ function addnewOrderBrand(data, currentSku, skulevel) {
     const startDate = new Date();
     const endDate = getLocalDataForDate['last_date'];
     const minDate = `${getMonthName( new Date(startDate))} ${new Date(startDate).getDate()}, ${String(new Date(startDate).getFullYear()).substring(2)}`;
+    const filteredBrand = getLocalDataForDate["plan_progress"]["brands"].filter(brand => brand["sku"] === currentSku);
+    const isDailyOffer = filteredBrand?.[0]?.["isDailyOffer"];
     const maxDate = `${getMonthName( new Date(endDate))} ${new Date(endDate).getDate()}, ${String(new Date(endDate).getFullYear()).substring(2)}`;
     /* Disable current date selection by default */
     $(`#tbDate-dpicker-${data["_id"]}`).datepicker({ 
         dateFormat: 'M dd, y', 
         minDate: minDate, 
-        maxDate: maxDate,
+        maxDate: isDailyOffer ? minDate : maxDate,
         onSelect: function(dateText, inst) {
             var date = $(this).val();
             let selectedAccountId = $(this).parent().parent().attr("_id");
