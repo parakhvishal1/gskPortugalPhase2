@@ -510,10 +510,6 @@ function showBrandLevelDetails(data, currentSku, requestType, requestSku) {
                 <div class="reward_snackbar"></div>
             </div>
             <div class="new_orders"></div>
-
-            <div class="place_order addanotheraccount">
-                <button class="btn outline" id="addanotheraccount" data=${encodeURIComponent(JSON.stringify(data))}>${locale["buttons"]["addAnotherAccount"]}</button>
-            </div>
             <div id="previous-orders-accordion">
             </div>
         </div> 
