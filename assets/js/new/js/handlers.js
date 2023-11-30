@@ -31,8 +31,8 @@ function showSkuLevelDetailsBrand(data, currentSku, requestType, requestSku) {
                 <div class="reward_snackbar"></div>
             </div>
             <!-- <div class="new_orders"></div> -->
- 
-            <div id="previous-orders-accordion"> 
+
+            <div id="previous-orders-accordion">
             </div>
         </div> 
         
@@ -1262,12 +1262,16 @@ function addnewOrder(data, currentSku) {
     const startDate = new Date();
     const endDate = getLocalDataForDate['last_date'];
     const minDate = `${getMonthName( new Date(startDate))} ${new Date(startDate).getDate()}, ${String(new Date(startDate).getFullYear()).substring(2)}`;
+    console.log("minDate handlers --> ", minDate);
     const maxDate = `${getMonthName( new Date(endDate))} ${new Date(endDate).getDate()}, ${String(new Date(endDate).getFullYear()).substring(2)}`;
+    const filteredBrand = getLocalDataForDate["plan_progress"]["brands"].filter(brand => brand["sku"] === currentSku);
+    const isDailyOffer = filteredBrand?.[0]?.["isDailyOffer"];
+
     /* Disable current date selection by default */
     $(`#tbDate-dpicker-${data["_id"]}`).datepicker({ 
         dateFormat: 'M dd, y', 
         minDate: minDate, 
-        maxDate: maxDate,
+        maxDate: isDailyOffer ? minDate : maxDate,
         onSelect: function(dateText, inst) {
             var date = $(this).val();
             let selectedAccountId = $(this).parent().parent().attr("_id");
