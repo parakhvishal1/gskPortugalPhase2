@@ -351,7 +351,7 @@ function ToApp(eventName, data, orgData) {
 
 window.addEventListener('message', function (eventData) {
     let parsedEventData = JSON.parse(eventData.data);
-    if(eventData.origin !== 'https://r5.cloud.yellow.ai') return;
+    //if(eventData.origin !== 'https://r5.cloud.yellow.ai') return;
     if (parsedEventData.event_code === "welcome-screen-unfilled-steps" && parsedEventData.data) {
         // document.querySelector("iframe").contentWindow.postMessage(JSON.stringify({
         //     event_code: 'welcome-screen',                                                // added new event name
