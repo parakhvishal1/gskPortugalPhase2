@@ -90,7 +90,7 @@ function injectDynamicCssToParent() {
 window.addEventListener('message', function (eventData) {
     // console.error('eventData', eventData);
    // if(eventData.origin !== 'https://r5.cloud.yellow.ai') return;
-    console.log("eventDataVishal19932023",eventData);
+    console.log("eventDataVishal19932023",eventData.data);
     let parsedData = JSON.parse(eventData.data);
 
     console.log("parsedData", parsedData)
